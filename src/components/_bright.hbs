@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+
+  <!-- Common meta tags -->
+  <meta charset="utf-8">
+  <title>{{ _config.project.title }}</title>
+
+  <!-- Mobile viewport meta tags -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+  <meta name="MobileOptimized" content="width"/>
+  <meta name="HandheldFriendly" content="true"/>
+
+  <!-- Other meta tags -->
+  <meta name="format-detection" content="telephone=no">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta http-equiv="cleartype" content="on">
+
+  <!-- Styles -->
+  {{#eachFile 'css'}}
+    <link rel="stylesheet" type="text/css" href="{{path this}}">
+  {{/eachFile}}
+
+</head>
+<body>
+  {{{ yield }}}
+
+  <!-- Scripts -->
+  {{#eachFile 'js'}}
+    <script src="{{path this}}"></script>
+  {{/eachFile}}
+</body>
+</html>

@@ -1,0 +1,9 @@
+node_modules/
+.idea/
+dist/library
+.sass-cache
+
+yarn.lock
+*.js.map
+npm-debug.log*
+TODO

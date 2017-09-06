@@ -1,0 +1,48 @@
+{
+  "name": "drupal-message",
+  "version": "1.0.0",
+  "description": "Drupal Message Frontend Component",
+  "keywords": [
+    "drupal",
+    "message",
+    "drupal",
+    "message",
+    "frontend",
+    "component"
+  ],
+  "repository": "julmot/drupal-message",
+  "bugs": {
+    "url": "https://github.com/julmot/drupal-message/issues"
+  },
+  "author": {
+    "name": "Julian Motz",
+    "url": "https://github.com/julmot"
+  },
+  "homepage": "https://github.com/julmot/drupal-message",
+  "license": "MIT",
+  "fractal": {
+    "main": "build/fractal.js"
+  },
+  "main": "build/fractal.js",
+  "devDependencies": {
+    "@frctl/fractal": "^1.1.5",
+    "@frctl/handlebars": "^1.1.4",
+    "@frctl/mandelbrot": "^1.2.0",
+    "glob": "^7.1.2",
+    "grunt": "^1.0.1",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-replace": "^1.0.1",
+    "grunt-sass": "^2.0.0",
+    "grunt-webfont": "^1.7.1",
+    "jit-grunt": "^0.10.0",
+    "slash": "^1.0.0"
+  },
+  "scripts": {
+    "fractal:dev": "fractal start --sync",
+    "fractal:prod": "fractal build",
+    "grunt": "grunt --gruntfile build/grunt.js --base ./",
+    "build": "npm run grunt && npm run fractal:prod",
+    "dev": "npm run fractal:dev",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
