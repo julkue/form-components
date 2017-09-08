@@ -1,7 +1,7 @@
 node_modules/
 .idea/
-dist/library
-.sass-cache
+.settings/
+build/library/
 
 yarn.lock
 *.js.map

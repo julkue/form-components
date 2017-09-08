@@ -9,7 +9,7 @@
 
 %icons-before-base {
  &:before {
-   font-family: "drupal-message-icons";
+   font-family: "form-components-icons";
    display: inline-block;
    line-height: 1;
    font-weight: normal;
@@ -23,7 +23,7 @@
  }
 }
 
-@mixin drupal-message-icons-before($icon) {
+@mixin form-components-icons-before($icon) {
 
   @extend %icons-before-base;
 
@@ -47,7 +47,7 @@
 
 %icons-after-base {
    &:after {
-     font-family: "drupal-message-icons";
+     font-family: "form-components-icons";
      display: inline-block;
      line-height: 1;
      font-weight: normal;
@@ -61,7 +61,7 @@
    }
  }
 
-@mixin drupal-message-icons-after($icon) {
+@mixin form-components-icons-after($icon) {
 
   @extend %icons-after-base;
 

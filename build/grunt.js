@@ -1,6 +1,5 @@
-// Why Grunt at all? Because grunt webfont isn't available as plain Node.js
-// module. To have one straight way, other build tasks are implemented with
-// Grunt too
+// Why Grunt at all? Because grunt-webfont isn't available as plain Node.js
+// module
 const jitGrunt = require('jit-grunt');
 module.exports = grunt => {
 
@@ -8,7 +7,7 @@ module.exports = grunt => {
   jitGrunt(grunt, {});
 
   // grunt configuration
-  const iconName = 'drupal-message-icons';
+  const iconName = 'form-components-icons';
   let iconFontFace = '';
   grunt.initConfig({
     // generate web icon font
@@ -82,36 +81,8 @@ module.exports = grunt => {
           }
         ]
       }
-    },
-    // compile SCSS
-    sass: {
-      dist: {
-        options: {
-          style: 'expanded',
-          includePaths: ['src/components/__common/']
-        },
-        files: [{
-          expand: true,
-          cwd: 'src/components',
-          src: ['**/*.scss', '!_common/**/*'],
-          dest: 'dist/',
-          ext: '.css'
-        }]
-      }
-    },
-    // copy JS
-    copy: {
-      dist: {
-        files: [{
-          expand: true,
-          cwd: 'src/components',
-          src: ['**/*.js', '!_common/**/*'],
-          dest: 'dist/',
-          ext: '.js'
-        }]
-      }
     }
   });
 
-  grunt.registerTask('default', ['webfont', 'replace', 'sass', 'copy']);
+  grunt.registerTask('generate-icon-font', ['webfont', 'replace']);
 };

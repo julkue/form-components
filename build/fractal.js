@@ -5,15 +5,17 @@ const path = require('path'),
   fractal = require('@frctl/fractal').create(),
   mandelbrot = require('@frctl/mandelbrot'),
   hbs = require('@frctl/handlebars'),
-  pkg = require('../package.json');
+  pkg = require(path.join(__dirname, '../package.json'));
 
-fractal.set('project.title', pkg.name.replace('-', ' ').replace(
-  /\b\w/g, l => l.toUpperCase())
+let projectName = pkg.name.split('/');
+projectName = projectName[projectName.length - 1].replace('-', ' ').replace(
+  /\b\w/g, l => l.toUpperCase()
 );
+fractal.set('project.title', `${projectName} v${pkg.version}`);
 fractal.components.set('path', path.join(__dirname, '../src/components'));
 fractal.docs.set('path', path.join(__dirname, '../src/docs'));
 fractal.web.set('static.path', path.join(__dirname, '../dist'));
-fractal.web.set('builder.dest', path.join(__dirname, '../dist/library'));
+fractal.web.set('builder.dest', path.join(__dirname, '../build/library'));
 fractal.components.set('default.preview', '@bright');
 fractal.web.theme(mandelbrot({
   skin: 'navy'

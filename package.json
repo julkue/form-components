@@ -1,24 +1,21 @@
 {
-  "name": "drupal-message",
+  "name": "@julmot/form-components",
   "version": "1.0.0",
-  "description": "Drupal Message Frontend Component",
+  "description": "Frontend Form Components. Without Any Framework.",
   "keywords": [
-    "drupal",
-    "message",
-    "drupal",
-    "message",
-    "frontend",
-    "component"
+    "form",
+    "components",
+    "frontend"
   ],
-  "repository": "julmot/drupal-message",
+  "repository": "julmot/form-components",
   "bugs": {
-    "url": "https://github.com/julmot/drupal-message/issues"
+    "url": "https://github.com/julmot/form-components/issues"
   },
   "author": {
     "name": "Julian Motz",
     "url": "https://github.com/julmot"
   },
-  "homepage": "https://github.com/julmot/drupal-message",
+  "homepage": "https://github.com/julmot/form-components",
   "license": "MIT",
   "fractal": {
     "main": "build/fractal.js"
@@ -30,9 +27,7 @@
     "@frctl/mandelbrot": "^1.2.0",
     "glob": "^7.1.2",
     "grunt": "^1.0.1",
-    "grunt-contrib-copy": "^1.0.0",
     "grunt-replace": "^1.0.1",
-    "grunt-sass": "^2.0.0",
     "grunt-webfont": "^1.7.1",
     "jit-grunt": "^0.10.0",
     "slash": "^1.0.0"
@@ -40,8 +35,8 @@
   "scripts": {
     "fractal:dev": "fractal start --sync",
     "fractal:prod": "fractal build",
-    "grunt": "grunt --gruntfile build/grunt.js --base ./",
-    "build": "npm run grunt && npm run fractal:prod",
+    "font": "grunt generate-icon-font --gruntfile build/grunt.js --base ./",
+    "build": "npm run font && npm run fractal:prod",
     "dev": "npm run fractal:dev",
     "test": "echo \"Error: no test specified\" && exit 1"
   }
