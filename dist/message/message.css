@@ -1,0 +1,5 @@
+/*! (c) 2017 Julian Motz (https://github.com/julmot) */
+.message--error,
+.message--status,
+.message--warning {
+  background: red; }
