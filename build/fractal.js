@@ -1,7 +1,4 @@
 const path = require('path'),
-  fs = require('fs'),
-  glob = require('glob'),
-  slash = require('slash'),
   fractal = require('@frctl/fractal').create(),
   mandelbrot = require('@frctl/mandelbrot'),
   hbs = require('@frctl/handlebars'),

@@ -1,0 +1,57 @@
+@import "variables";
+
+// full width sections
+@mixin container {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0 $container-padding-x;
+  max-width: $container-max-width + ($container-padding-x * 2);
+  margin: 0 auto;
+}
+
+// adds common transition function and backface-visibility
+@mixin transition($transitions...) {
+  $result: ();
+  @each $transition in $transitions {
+    $result: append($result, unquote($transition) unquote($animation-function), comma);
+  }
+  backface-visibility: hidden;
+  transition: $result;
+}
+
+// animated link underline on hover
+@mixin link-underline($color, $hoverColor) {
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+  color: $color;
+  @include transition("color .3s");
+
+  &:after {
+    position: absolute;
+    bottom: 3px;
+    width: 100%;
+    height: 1px;
+    background: $hoverColor;
+    content: "";
+    display: block;
+    transition: all .25s ease-in-out;
+  }
+
+  &:hover {
+    color: $hoverColor;
+
+    &:after {
+      transform: scaleX(0);
+    }
+  }
+}
+
+// animated link underline on hover
+@mixin link-underline-small($color, $hoverColor) {
+  @include link-underline($color, $hoverColor);
+
+  &:after {
+    bottom: 0;
+  }
+}

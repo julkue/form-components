@@ -1,5 +1,133 @@
-.message--error,
-.message--status,
-.message--warning {
-  background: red;
+@import "base";
+
+$fontFamily: inherit;
+$fontSize: 1.125rem;
+$lineHeight: 1.33;
+$iconSize: 20px;
+
+$statusBackgroundColor: #e0ede5;
+$statusColor: #257340;
+$statusLinkHoverColor: $statusColor;
+
+$warningBackgroundColor: #fffbd4;
+$warningColor: #bd8300;
+$warningLinkHoverColor: $warningColor;
+
+$errorBackgroundColor: #fdd9d9;
+$errorColor: #920005;
+$errorLinkHoverColor: $errorColor;
+
+/*******************************************************************************
+ * General
+ ******************************************************************************/
+.message {
+
+  &--error,
+  &--warning,
+  &--status {
+    padding: 15px 0;
+    font-family: $fontFamily;
+    font-size: $fontSize;
+    line-height: $lineHeight;
+
+    &.is-inline {
+      margin: 10px 0;
+    }
+
+    em {
+      // em is used to indicate a title quote
+      font-style: normal;
+      &:before {
+        content: "\00BB";
+      }
+      &:after {
+        content: "\00AB";
+      }
+    }
+  }
+
+  &--error {
+    background: $errorBackgroundColor;
+    color: $errorColor;
+
+    a {
+      @include link-underline-small($errorColor, $errorLinkHoverColor);
+    }
+  }
+  &--warning {
+    background: $warningBackgroundColor;
+    color: $warningColor;
+
+    a {
+      @include link-underline-small($warningColor, $warningLinkHoverColor);
+    }
+  }
+  &--status {
+    background: $statusBackgroundColor;
+    color: $statusColor;
+
+    a {
+      @include link-underline-small($statusColor, $statusLinkHoverColor);
+    }
+  }
+
+  &__container {
+    @include container;
+  }
+
+  /*****************************************************************************
+   * Icon
+   ****************************************************************************/
+  &__icon-container {
+    position: relative;
+    padding: 0 0 0 #{$iconSize + 15};
+
+    &:before {
+      position: absolute;
+      top: 3px; // optical alignment
+      left: 0;
+      font-size: $iconSize;
+      line-height: $iconSize;
+      color: inherit;
+    }
+  }
+  &--error &__icon-container {
+    @include form-components-icons-before("error");
+  }
+  &--warning &__icon-container {
+    @include form-components-icons-before("warning");
+  }
+  &--status &__icon-container {
+    @include form-components-icons-before("status");
+  }
+
+  /*****************************************************************************
+   * List
+   ****************************************************************************/
+  &__list {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+
+    &-item {
+      position: relative;
+      margin: 0;
+      padding: 0 0 0 20px;
+
+      &:before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        content: "–";
+      }
+    }
+  }
+
+  /*****************************************************************************
+   * Text
+   ****************************************************************************/
+  &__text {
+    margin: 0;
+    padding: 0;
+  }
 }

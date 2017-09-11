@@ -1,11 +1,11 @@
 const path = require('path'),
   extractTextPlugin = require('extract-text-webpack-plugin'),
   webpack = require('webpack'),
-  hbs = require('handlebars'),
   fs = require('fs'),
+  hbs = require('handlebars'),
   pkg = require(path.join(__dirname, '../package.json'));
 
-module.exports = {
+let config = module.exports = {
   entry: {
     message: path.join(__dirname, '../src/components/message/message.js'),
     bundle: path.join(__dirname, '../src/components/_common/index.js'),
@@ -84,3 +84,15 @@ module.exports = {
     })
   ]
 };
+
+if (process.argv.indexOf('-p') !== -1) {
+  // compress and remove console statements. Only add this plugin in production
+  // as even if drop_console is set to false, other options may be set to true
+  config.plugins.push(new webpack.optimize.UglifyJsPlugin({
+    compress: {
+      'drop_console': true
+    }
+  }));
+}
+
+module.exports = config;

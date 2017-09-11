@@ -1,7 +1,7 @@
 {
   "name": "@julmot/form-components",
-  "version": "1.0.0",
-  "description": "Frontend Form Components. Without Any Framework.",
+  "version": "0.1.0",
+  "description": "Custom Form Components. Without Any Framework.",
   "keywords": [
     "form",
     "components",
@@ -35,16 +35,15 @@
     "eslint-loader": "^1.9.0",
     "extract-text-webpack-plugin": "^3.0.0",
     "file-loader": "^0.11.2",
-    "glob": "^7.1.2",
     "grunt": "^1.0.1",
     "grunt-replace": "^1.0.1",
     "grunt-webfont": "^1.7.1",
     "jit-grunt": "^0.10.0",
     "node-sass": "^4.5.3",
+    "normalize.css": "^7.0.0",
     "postcss-cssnext": "^3.0.2",
     "postcss-loader": "^2.0.6",
     "sass-loader": "^6.0.6",
-    "slash": "^1.0.0",
     "style-loader": "^0.18.2",
     "url-loader": "^0.5.9",
     "webpack": "^3.5.6"
