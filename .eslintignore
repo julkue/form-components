@@ -1,2 +1,3 @@
-# Usually this file isn't necessary. Create it for text editors with ESLint compatibility
+# Usually this file isn't necessary. It exists for text editors with ESLint
+# compatibility
 dist/

@@ -14,7 +14,7 @@ module.exports = grunt => {
     webfont: {
       icons: {
         src: './src/icons/*.svg',
-        dest: './src/fonts/icons',
+        dest: `./src/fonts/${iconName}`,
         destCss: './src/components/_common/',
         options: {
           font: iconName,
@@ -22,10 +22,10 @@ module.exports = grunt => {
           engine: 'fontforge',
           stylesheets: ['scss'],
           htmlDemo: false,
-          relativeFontPath: '../../fonts/icons/',
+          relativeFontPath: `../../fonts/${iconName}/`,
           types: ['woff'],
           order: ['woff'],
-          template: './build/icon-template.css.tpl',
+          template: './build/templates/icon-template.css.tpl',
           normalize: true
         }
       }

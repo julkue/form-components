@@ -1,6 +1,8 @@
 const path = require('path'),
   extractTextPlugin = require('extract-text-webpack-plugin'),
   webpack = require('webpack'),
+  hbs = require('handlebars'),
+  fs = require('fs'),
   pkg = require(path.join(__dirname, '../package.json'));
 
 module.exports = {
@@ -65,9 +67,19 @@ module.exports = {
   plugins: [
     new extractTextPlugin(`[name]/[name].${
       process.argv.indexOf('-p') !== -1 ? 'min.css' : 'css'
-      }`),
+    }`),
     new webpack.BannerPlugin({
-      banner: `(c) ${new Date().getFullYear()} ${pkg.author.name} (${pkg.author.url})`
+      banner: hbs.compile(fs.readFileSync(path.join(
+        __dirname, 'templates/copyright.hbs'
+      ), 'utf8'))({
+        name: pkg.name.split('/').pop(),
+        version: `v${pkg.version}`,
+        homepage: pkg.homepage,
+        author: pkg.author.name,
+        license: pkg.license,
+        year: new Date().getFullYear()
+      }),
+      raw: true
     })
   ]
 };
