@@ -10,7 +10,11 @@ Using npm:
 $ npm install @julmot/form-components
 ```
 
-You can now embed individual form components from the `dist` folder. They are available as CommonJS (e.g. Webpack), AMD (e.g. RequireJS) and global (attached to the `window` object) packages with their corresponding CSS files.
+Using a CDN:
+
+- [jsDelivr](https://www.jsdelivr.com/package/npm/@julmot/form-components?path=dist)
+
+You can embed individual form components from the `dist` folder. They are available as CommonJS (e.g. Webpack), AMD (e.g. RequireJS) and global (attached to the `window` object) packages with their corresponding CSS files.
 
 ## Currently Available Components
 
