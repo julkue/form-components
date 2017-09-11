@@ -20,17 +20,6 @@ fractal.web.theme(mandelbrot({
 }));
 fractal.components.engine(hbs({
   helpers: {
-    eachFile: function(extension, options) {
-      const dir = path.join(__dirname, '../dist/'),
-        files = glob.sync(`${dir}**/*.${extension}`);
-      let buffer = '';
-      files.map(file => {
-        file = file.replace(slash(dir), '/');
-        buffer += options.fn(file);
-        return file;
-      });
-      return buffer;
-    },
     /* eslint-disable */
     ifCond: function(v1, operator, v2, options) {
       switch (operator) {

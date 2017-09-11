@@ -2,6 +2,7 @@ node_modules/
 .idea/
 .settings/
 build/library/
+dist/bundle
 
 yarn.lock
 *.js.map

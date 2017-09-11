@@ -17,12 +17,12 @@
   <meta http-equiv="cleartype" content="on">
 
   <!-- Styles -->
-  {{#eachFile 'css'}}
-    <link rel="stylesheet" type="text/css" href="{{path this}}">
-  {{/eachFile}}
+  <link rel="stylesheet" type="text/css" href="{{path "/bundle/bundle.css"}}">
 
 </head>
 <body>
   {{{ yield }}}
+
+  <script src="{{path "/bundle/bundle.js"}}"></script>
 </body>
 </html>

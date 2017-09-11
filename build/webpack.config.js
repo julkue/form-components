@@ -7,7 +7,8 @@ const path = require('path'),
 
 module.exports = {
   entry: {
-    message: path.join(__dirname, '../src/components/message/message.js')
+    message: path.join(__dirname, '../src/components/message/message.js'),
+    bundle: path.join(__dirname, '../src/components/_common/index.js'),
   },
   module: {
     rules: [{
