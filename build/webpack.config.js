@@ -2,14 +2,23 @@ const path = require('path'),
   extractTextPlugin = require('extract-text-webpack-plugin'),
   webpack = require('webpack'),
   fs = require('fs'),
+  glob = require('glob'),
   hbs = require('handlebars'),
   pkg = require(path.join(__dirname, '../package.json'));
 
+let components = {
+  bundle: path.join(__dirname, '../src/components/_common/index.js')
+};
+glob.sync(path.join(__dirname, '../src/components/*/*.js'), {
+  ignore: path.join(__dirname, '../src/components/_common/**/*')
+}).forEach(file => {
+  let folder = file.split('/');
+  folder = folder[folder.length - 2];
+  components[folder] = file;
+});
+
 let config = module.exports = {
-  entry: {
-    message: path.join(__dirname, '../src/components/message/message.js'),
-    bundle: path.join(__dirname, '../src/components/_common/index.js'),
-  },
+  entry: components,
   module: {
     rules: [{
       test: /\.js$/,
