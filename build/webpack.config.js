@@ -7,7 +7,7 @@ const path = require('path'),
   pkg = require(path.join(__dirname, '../package.json'));
 
 let components = {
-  bundle: path.join(__dirname, '../src/components/_common/index.js')
+  bundle: path.join(__dirname, '../src/components/_common/development.js')
 };
 glob.sync(path.join(__dirname, '../src/components/*/*.js'), {
   ignore: path.join(__dirname, '../src/components/_common/**/*')

@@ -49,10 +49,10 @@ $variants: "black", "white";
     $selectDropdownBorderColor: $selectBorderBottomColor !global;
     $selectDropdownOptionColor: $black !global;
     $selectDropdownOptionBackgroundColor: $white !global;
-    $selectDropdownOptionHoverBackgroundColor: #ded4cb !global;
+    $selectDropdownOptionHoverBackgroundColor: $clouds !global;
     $selectDropdownOptionHoverColor: $selectDropdownOptionColor !global;
-    $selectDropdownOptionActiveBackgroundColor: $white !global;
-    $selectDropdownOptionActiveColor: $dark-sand !global;
+    $selectDropdownOptionActiveBackgroundColor: #EEEEEE !global;
+    $selectDropdownOptionActiveColor: $black !global;
   } @else {
     // color settings
     $selectBackgroundColor: transparent !global;
@@ -67,10 +67,10 @@ $variants: "black", "white";
     $selectDropdownBorderColor: $selectBorderBottomColor !global;
     $selectDropdownOptionColor: $black !global;
     $selectDropdownOptionBackgroundColor: $white !global;
-    $selectDropdownOptionHoverBackgroundColor: #ded4cb !global;
+    $selectDropdownOptionHoverBackgroundColor: $clouds !global;
     $selectDropdownOptionHoverColor: $selectDropdownOptionColor !global;
-    $selectDropdownOptionActiveBackgroundColor: $white !global;
-    $selectDropdownOptionActiveColor: $dark-sand !global;
+    $selectDropdownOptionActiveBackgroundColor: #EEEEEE !global;
+    $selectDropdownOptionActiveColor: $black !global;
   }
 
   /*****************************************************************************

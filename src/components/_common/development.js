@@ -1,4 +1,5 @@
 import 'normalize.css/normalize.css';
+import './development.scss';
 const components = require.context('../', true, /^(.*\.(js$))[^.]*$/igm);
 
 class Bootstrap {
@@ -29,7 +30,7 @@ class Bootstrap {
     // occurrence). Don't initialize the same occurrence multiple times
     components.keys().forEach(key => {
       // Exclude the current file
-      if (key.includes('index.js')) {
+      if (key.includes('development.js')) {
         return;
       }
       const component = components(key);
