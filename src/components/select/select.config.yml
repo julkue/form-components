@@ -29,4 +29,5 @@ default: "default-black"
 variants:
   - name: "default-black"
   - name: "default-white"
+    preview: "@dark"
 notes: "The select field has no real color variants at the moment. They are created to be consistent with text field, where they are necessary!"

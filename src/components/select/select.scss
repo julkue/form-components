@@ -13,25 +13,11 @@ $selectPaddingX: 0;
 $selectDropdownOptionPaddingX: 5px;
 $selectDropdownMaxHeight: 12.075rem; // 7 rows ~ 17.6rem line height, 10px padding
 
-// color settings
-$selectBackgroundColor: transparent;
-$selectColor: $black;
-$selectBorderBottomColor: $black;
-$selectErrorColor: $red;
-
-$selectLabelColor: $black;
-
-$selectDropdownBorderColor: $selectBorderBottomColor;
-$selectDropdownOptionColor: $black;
-$selectDropdownOptionBackgroundColor: $white;
-$selectDropdownOptionHoverBackgroundColor: #ded4cb;
-$selectDropdownOptionHoverColor: $selectDropdownOptionColor;
-$selectDropdownOptionActiveBackgroundColor: $white;
-$selectDropdownOptionActiveColor: $dark-sand;
-
 // font settings
 $selectFontFamily: inherit;
 $selectFontSize: 1.125rem;
+
+$selectArrowFontSize: 0.75rem;
 
 $selectLabelFontFamily: inherit;
 $selectLabelFontSize: 0.75rem;
@@ -39,7 +25,6 @@ $selectLabelFontSize: 0.75rem;
 $selectDropdownOptionFontFamily: inherit;
 $selectDropdownOptionFontSize: 1rem;
 $selectDropdownOptionLineHeight: 1.1;
-$selectArrowFontSize: 0.75rem;
 
 // NOTE: The select field currently has no color variants. But for consistency
 // with the text field element, it's necessary to also support these color
@@ -50,6 +35,44 @@ $selectArrowFontSize: 0.75rem;
 // https://github.com/webpack-contrib/sass-loader/issues/487
 $variants: "black", "white";
 @each $color in $variants {
+  @if $color == "black" {
+    // color settings
+    $selectBackgroundColor: transparent !global;
+    $selectColor: $black !global;
+    $selectBorderBottomColor: $black !global;
+    $selectErrorColor: $red !global;
+
+    $selectArrowColor: $black !global;
+
+    $selectLabelColor: $black !global;
+
+    $selectDropdownBorderColor: $selectBorderBottomColor !global;
+    $selectDropdownOptionColor: $black !global;
+    $selectDropdownOptionBackgroundColor: $white !global;
+    $selectDropdownOptionHoverBackgroundColor: #ded4cb !global;
+    $selectDropdownOptionHoverColor: $selectDropdownOptionColor !global;
+    $selectDropdownOptionActiveBackgroundColor: $white !global;
+    $selectDropdownOptionActiveColor: $dark-sand !global;
+  } @else {
+    // color settings
+    $selectBackgroundColor: transparent !global;
+    $selectColor: $white !global;
+    $selectBorderBottomColor: $white !global;
+    $selectErrorColor: $red !global;
+
+    $selectArrowColor: $white !global;
+
+    $selectLabelColor: $white !global;
+
+    $selectDropdownBorderColor: $selectBorderBottomColor !global;
+    $selectDropdownOptionColor: $black !global;
+    $selectDropdownOptionBackgroundColor: $white !global;
+    $selectDropdownOptionHoverBackgroundColor: #ded4cb !global;
+    $selectDropdownOptionHoverColor: $selectDropdownOptionColor !global;
+    $selectDropdownOptionActiveBackgroundColor: $white !global;
+    $selectDropdownOptionActiveColor: $dark-sand !global;
+  }
+
   /*****************************************************************************
    * General
    ****************************************************************************/
@@ -87,6 +110,7 @@ $variants: "black", "white";
           font-size: $selectArrowFontSize;
           line-height: $selectHeight;
           height: $selectHeight;
+          color: $selectArrowColor;
           pointer-events: none; // forward clicks on after to select
         }
       }
