@@ -4,14 +4,6 @@
  * Contextual classes:
  * - is-disabled: When input is disabled
  ******************************************************************************/
-// color settings
-$checkboxColor: $black;
-$checkboxIconColor: $checkboxColor;
-$checkboxIconBorderColor: #9b9b9b;
-$checkboxLinkColor: $checkboxColor;
-$checkboxLinkColorHover: $dark-sand;
-$checkboxErrorColor: $red;
-
 // font settings
 $checkboxFontSize: 1.125rem;
 $checkboxLineHeight: 1.2;
@@ -27,6 +19,24 @@ $checkboxFontFamily: inherit;
 // https://github.com/webpack-contrib/sass-loader/issues/487
 $variants: "black", "white";
 @each $color in $variants {
+  @if $color == "black" {
+    // color settings
+    $checkboxColor: $black !global;
+    $checkboxIconColor: $checkboxColor !global;
+    $checkboxIconBorderColor: #9b9b9b !global;
+    $checkboxLinkColor: $checkboxColor !global;
+    $checkboxLinkColorHover: $dark-sand !global;
+    $checkboxErrorColor: $red !global;
+  } @else {
+    // color settings
+    $checkboxColor: $white !global;
+    $checkboxIconColor: $white !global;
+    $checkboxIconBorderColor: #9b9b9b !global;
+    $checkboxLinkColor: $checkboxColor !global;
+    $checkboxLinkColorHover: $dark-sand !global;
+    $checkboxErrorColor: $red !global;
+  }
+
   /*****************************************************************************
    * General
    ****************************************************************************/
