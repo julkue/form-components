@@ -17,6 +17,10 @@ fractal.web.theme(mandelbrot({
 }));
 fractal.components.engine(hbs({
   helpers: {
+    splitDashLast: function(str) {
+      const arr = str.split('-');
+      return arr[arr.length - 1];
+    },
     /* eslint-disable */
     ifCond: function(v1, operator, v2, options) {
       switch (operator) {

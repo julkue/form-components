@@ -1,0 +1,32 @@
+title: "Select"
+status: "ready"
+context:
+  id: "select"
+  name: "select"
+  label: "Text"
+  required: false
+  disabled: false
+  # selected accepts either false or a number starting with 1 that indicates
+  # the option index
+  selected: false
+  options:
+    - "Long long option Long long option Long long option Long long option Long long option Long long option Long long option Long long option"
+    - "option 2"
+    - "option 3"
+    - "option 4"
+    - "option 5"
+    - "option 6"
+    - "option 7"
+    - "option 8"
+    - "option 9"
+    - "option 10"
+    - "option 11"
+    - "option 12"
+    - "option 13"
+    - "option 14"
+    - "option 15"
+default: "default-black"
+variants:
+  - name: "default-black"
+  - name: "default-white"
+notes: "The select field has no real color variants at the moment. They are created to be consistent with text field, where they are necessary!"

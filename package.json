@@ -29,6 +29,7 @@
     "babel-loader": "^7.1.2",
     "babel-polyfill": "^6.26.0",
     "babel-preset-env": "^1.6.0",
+    "bowser": "^1.7.3",
     "concurrently": "^3.5.0",
     "css-loader": "^0.28.6",
     "eslint": "^4.6.1",

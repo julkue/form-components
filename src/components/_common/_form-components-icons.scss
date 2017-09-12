@@ -27,19 +27,24 @@
 
   @extend %icons-before-base;
 
-@if ($icon == "error") {
+@if ($icon == "arrow-down") {
   &:before {
     content: "\f101";
   }
 }
-@else if ($icon == "status") {
+@else if ($icon == "error") {
   &:before {
     content: "\f102";
   }
 }
-@else if ($icon == "warning") {
+@else if ($icon == "status") {
   &:before {
     content: "\f103";
+  }
+}
+@else if ($icon == "warning") {
+  &:before {
+    content: "\f104";
   }
 }
 
@@ -65,19 +70,24 @@
 
   @extend %icons-after-base;
 
-@if ($icon == "error") {
+@if ($icon == "arrow-down") {
   &:after {
     content: "\f101";
   }
 }
-@else if ($icon == "status") {
+@else if ($icon == "error") {
   &:after {
     content: "\f102";
   }
 }
-@else if ($icon == "warning") {
+@else if ($icon == "status") {
   &:after {
     content: "\f103";
+  }
+}
+@else if ($icon == "warning") {
+  &:after {
+    content: "\f104";
   }
 }
 

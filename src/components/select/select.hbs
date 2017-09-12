@@ -1,0 +1,18 @@
+<div class="select--{{splitDashLast _self.name}}">
+  <div class="select__wrapper">
+    <select class="select__select" id="{{id}}" name="{{name}}"{{#if disabled}} disabled{{/if}} {{#if required }}required="true"{{/if}}>
+    {{#unless selected}}
+      <option value="" disabled selected>Please choose</option>
+    {{/unless}}
+    {{#each options}}
+      <option value="{{this}}">{{this}}</option>
+    {{/each}}
+    </select>
+    {{#if label}}
+      <label class="select__label" for="{{id}}">{{label}}</label>
+    {{/if}}
+  </div>
+  <!-- NOTE: This div is reserved for field-specific error messages by a backend
+  <div class="select__error"></div>
+  -->
+</div>

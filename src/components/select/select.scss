@@ -1,0 +1,264 @@
+@import "base";
+
+/*******************************************************************************
+ * Contextual classes:
+ * - is-disabled: When input is disabled
+ * - is-filled-in: When a value is available or the user clicked on the select
+ * - is-open: If the dropdown is open
+ * - has-no-label: If the select has no label
+ ******************************************************************************/
+// sizes
+$selectHeight: 2.375rem; // 38px + 12px == 50px height
+$selectPaddingX: 0;
+$selectDropdownOptionPaddingX: 5px;
+$selectDropdownMaxHeight: 12.075rem; // 7 rows ~ 17.6rem line height, 10px padding
+
+// color settings
+$selectBackgroundColor: transparent;
+$selectColor: $black;
+$selectBorderBottomColor: $black;
+$selectErrorColor: $red;
+
+$selectLabelColor: $black;
+
+$selectDropdownBorderColor: $selectBorderBottomColor;
+$selectDropdownOptionColor: $black;
+$selectDropdownOptionBackgroundColor: $white;
+$selectDropdownOptionHoverBackgroundColor: #ded4cb;
+$selectDropdownOptionHoverColor: $selectDropdownOptionColor;
+$selectDropdownOptionActiveBackgroundColor: $white;
+$selectDropdownOptionActiveColor: $dark-sand;
+
+// font settings
+$selectFontFamily: inherit;
+$selectFontSize: 1.125rem;
+
+$selectLabelFontFamily: inherit;
+$selectLabelFontSize: 0.75rem;
+
+$selectDropdownOptionFontFamily: inherit;
+$selectDropdownOptionFontSize: 1rem;
+$selectDropdownOptionLineHeight: 1.1;
+$selectArrowFontSize: 0.75rem;
+
+// NOTE: The select field currently has no color variants. But for consistency
+// with the text field element, it's necessary to also support these color
+// variant modifiers. Because of &.is-open statements its the same effort to
+// workaround this like to generate explicit color variants -- I've chosen the
+// latter as it's future proof
+// Need to use string here due to:
+// https://github.com/webpack-contrib/sass-loader/issues/487
+$variants: "black", "white";
+@each $color in $variants {
+  /*****************************************************************************
+   * General
+   ****************************************************************************/
+  .select {
+    $block: &;
+
+    &--#{unquote($color)} {
+      position: relative;
+
+      &, * {
+        user-select: none;
+      }
+
+      &.is-disabled {
+        &, * {
+          cursor: not-allowed !important;
+        }
+      }
+
+      #{$block}__wrapper {
+        position: relative;
+        width: 100%;
+        height: $selectHeight;
+        padding-top: $selectLabelFontSize;
+        overflow: hidden; // for IE text indent fix (see below in select)
+        @include form-components-icons-after("arrow-down");
+
+        // NOTE: Specify the arrow on a wrapper as after, as using background
+        // image on the select itself will be overwritten by Chrome's autofill
+        // feature
+        &:after {
+          position: absolute;
+          top: $selectLabelFontSize;
+          right: 0;
+          font-size: $selectArrowFontSize;
+          line-height: $selectHeight;
+          height: $selectHeight;
+          pointer-events: none; // forward clicks on after to select
+        }
+      }
+      &.is-open #{$block}__wrapper {
+        &:after {
+          transform: rotate(-180deg);
+        }
+      }
+      &.has-no-label #{$block}__wrapper {
+        padding-top: 0;
+
+        &:after {
+          top: 0;
+        }
+      }
+
+      /*************************************************************************
+       * Native select
+       ************************************************************************/
+      #{$block}__select {
+        font-size: $selectFontSize;
+        font-family: $selectFontFamily;
+        height: $selectHeight;
+        line-height: $selectHeight;
+        padding: 0 calc(#{$selectPaddingX} + #{$selectArrowFontSize} + 10px) 0 $selectPaddingX;
+        width: 100%;
+        box-sizing: border-box;
+        background-color: $selectBackgroundColor;
+        color: $selectColor;
+        cursor: pointer;
+        display: block;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+        appearance: none; // avoid native arrow
+        outline: 0;
+        border-color: $selectBorderBottomColor;
+        border-width: 0 0 1px 0;
+        border-style: solid;
+        border-radius: 0; // iOS default removal
+
+        // Some hacks to remove native text indentation of select fields, as
+        // described in: https://stackoverflow.com/a/45976351/3894981
+        @-moz-document url-prefix() {
+          // Firefox only
+          & {
+            text-indent: -2px
+          }
+        }
+        @supports (-ms-ime-align: auto) {
+          // Edge only
+          & {
+            width: calc(100% + 4px);
+            margin-left: -4px;
+          }
+        }
+        @media screen and (-ms-high-contrast: active), screen and (-ms-high-contrast: none) {
+          // IE11 only
+          & {
+            width: calc(100% + 4px);
+            margin-left: -3px;
+          }
+        }
+
+        // hide dotted outline in Firefox
+        &:-moz-focusring {
+          color: transparent;
+          text-shadow: 0 0 0 $selectColor;
+        }
+
+        // hide native arrow in IE11
+        &::-ms-expand {
+          display: none;
+        }
+
+        // hide blue background when active in IE11
+        &::-ms-value {
+          background-color: $selectBackgroundColor;
+          color: $selectColor;
+        }
+
+        // use a "bug" of Chrome to overwrite autofill styling
+        // https://stackoverflow.com/a/37432260/3894981
+        // !important is necessary as it won't work otherwise
+        @-webkit-keyframes autofill {
+          to {
+            color: $selectColor !important;
+            background-color: $selectBackgroundColor;
+          }
+        }
+        &:-webkit-autofill {
+          -webkit-animation-name: autofill;
+          -webkit-animation-fill-mode: both;
+        }
+      }
+
+      /*************************************************************************
+       * Label (will be moved to top when value available)
+       ************************************************************************/
+      #{$block}__label {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: auto;
+        line-height: $selectLabelFontSize;
+        color: $selectLabelColor;
+        font-size: $selectLabelFontSize;
+        font-family: $selectLabelFontFamily;
+        padding: 0 $selectPaddingX;
+        box-sizing: border-box;
+        transform-origin: 0 0;
+      }
+
+      /*************************************************************************
+       * Dropdown
+       ************************************************************************/
+      #{$block}__dropdown {
+        position: absolute;
+        border-color: $selectDropdownBorderColor;
+        border-width: 0 1px 1px 1px; // there's already the border of the select
+        border-style: solid;
+        width: 100%;
+        z-index: 9;
+        margin: 0;
+        padding: 0;
+        max-height: calc(#{$selectDropdownMaxHeight} + 1px); // 1px border
+        overflow-x: hidden;
+        overflow-y: auto;
+        box-sizing: border-box;
+        display: none;
+      }
+      &.is-open #{$block}__dropdown {
+        display: block;
+      }
+
+      #{$block}__dropdown-option {
+        display: block;
+        font-family: $selectDropdownOptionFontFamily;
+        font-size: $selectDropdownOptionFontSize;
+        line-height: $selectDropdownOptionLineHeight;
+        padding: 5px $selectDropdownOptionPaddingX;
+        color: $selectDropdownOptionColor;
+        background-color: $selectDropdownOptionBackgroundColor;
+        cursor: pointer;
+
+        &.is-selected {
+          background-color: $selectDropdownOptionActiveBackgroundColor;
+          color: $selectDropdownOptionActiveColor;
+        }
+
+        &.is-disabled {
+          cursor: not-allowed;
+        }
+
+        &:not(.is-disabled):hover {
+          background-color: $selectDropdownOptionHoverBackgroundColor;
+          color: $selectDropdownOptionHoverColor;
+        }
+      }
+
+      /*************************************************************************
+       * Error message
+       ************************************************************************/
+      #{$block}__error {
+        color: $selectErrorColor;
+        margin: 5px $selectPaddingX;
+
+        a {
+          color: $selectErrorColor;
+        }
+      }
+    }
+  }
+}
