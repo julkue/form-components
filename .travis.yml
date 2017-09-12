@@ -8,3 +8,5 @@ before_script:
   - sudo apt-get install fontforge
 script:
   - npm run build
+after_success:
+  - npm run deploy
