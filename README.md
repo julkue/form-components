@@ -22,11 +22,12 @@ You can embed individual form components from the `dist` folder. They are availa
 
 ## Currently Available Components
 
-- [x] Message (e.g. validation)
-- [ ] Select
-- [ ] Text Field (single and multi line)
-- [ ] Checkbox
+- [x] Select
+- [x] Text Field (single and multi line)
+- [x] Checkbox
+- [x] Message (e.g. to output validation messages at the top of a document)
 - [ ] Radio
+- [ ] File Upload
 
 
 ## Requirements

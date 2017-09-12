@@ -1,0 +1,15 @@
+title: "Checkbox"
+status: "ready"
+context:
+  id: "choice"
+  name: "choice"
+  label: "I agree with the Shipping and Billing terms and conditions conditions conditions conditions conditions conditions conditions conditions conditions conditions conditions"
+  value: "1"
+  required: false
+  disabled: false
+  checked: false
+default: "default-black"
+variants:
+  - name: "default-black"
+  - name: "default-white"
+notes: "Checkbox has no real color variants at the moment. They are created to be consistent with text field, where they are necessary!"

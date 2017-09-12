@@ -32,19 +32,24 @@
     content: "\f101";
   }
 }
-@else if ($icon == "error") {
+@else if ($icon == "checkmark") {
   &:before {
     content: "\f102";
   }
 }
-@else if ($icon == "status") {
+@else if ($icon == "error") {
   &:before {
     content: "\f103";
   }
 }
-@else if ($icon == "warning") {
+@else if ($icon == "status") {
   &:before {
     content: "\f104";
+  }
+}
+@else if ($icon == "warning") {
+  &:before {
+    content: "\f105";
   }
 }
 
@@ -75,19 +80,24 @@
     content: "\f101";
   }
 }
-@else if ($icon == "error") {
+@else if ($icon == "checkmark") {
   &:after {
     content: "\f102";
   }
 }
-@else if ($icon == "status") {
+@else if ($icon == "error") {
   &:after {
     content: "\f103";
   }
 }
-@else if ($icon == "warning") {
+@else if ($icon == "status") {
   &:after {
     content: "\f104";
+  }
+}
+@else if ($icon == "warning") {
+  &:after {
+    content: "\f105";
   }
 }
 
