@@ -4,9 +4,11 @@ const path = require('path'),
   hbs = require('@frctl/handlebars'),
   pkg = require(path.join(__dirname, '../package.json'));
 
-fractal.set('project.title', `${pkg.name.split('/').pop().replace(
-  '-', ' '
-).replace(/\b\w/g, l => l.toUpperCase())} v${pkg.version}`);
+const title = `${pkg.name.split('/').pop().replace('-', ' ').replace(
+  /\b\w/g, l => l.toUpperCase())
+}`;
+fractal.set('project.title', `${title} v${pkg.version}`);
+fractal.docs.set('indexLabel', title);
 fractal.components.set('path', path.join(__dirname, '../src/components'));
 fractal.docs.set('path', path.join(__dirname, '../src/docs'));
 fractal.web.set('static.path', path.join(__dirname, '../dist'));

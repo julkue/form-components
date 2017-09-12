@@ -6,32 +6,14 @@
 [![npm Version](https://img.shields.io/npm/v/@julmot/form-components.svg?style=flat-square)](https://www.npmjs.com/package/@julmot/form-components)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](https://raw.githubusercontent.com/julmot/form-components/master/LICENSE)
 
-## Installation
+## Further Information
 
-Using npm:
+**Please view the [website](https://form-components.io/) for documentation and further information!**
 
-```bash
-$ npm install @julmot/form-components
-```
+## Contributing
 
-Using a CDN:
+See the [contribution guidelines](./CONTRIBUTING.md).
 
-- [jsDelivr](https://www.jsdelivr.com/package/npm/@julmot/form-components?path=dist)
+## Changelog
 
-You can embed individual form components from the `dist` folder. They are available as CommonJS (e.g. Webpack), AMD (e.g. RequireJS) and global (attached to the `window` object) packages with their corresponding CSS files.
-
-## Currently Available Components
-
-- [x] Select
-- [x] Text Field (single and multi line)
-- [x] Checkbox
-- [x] Message (e.g. to output validation messages at the top of a document)
-- [ ] Radio
-- [ ] File Upload
-
-
-## Requirements
-
-- Root _content_ element must be the `<main>` element (necessary for detection of inline messages)
-- Work best with embedded [normalize.css](https://github.com/necolas/normalize.css)
-- Inherits your app-specific fonts
+Changes are documented in [release](https://github.com/julmot/form-components/releases) descriptions.  

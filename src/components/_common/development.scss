@@ -1,6 +1,16 @@
+// This file is only used for development purposes and won't be integrated into
+// other components in any way.
 @import url('https://fonts.googleapis.com/css?family=Lato');
 
 html,
 body {
   font-family: 'Lato', sans-serif;
+}
+
+// transitions only after page load
+body:not(.transition-ready) {
+  &,
+  * {
+    transition: none !important;
+  }
 }

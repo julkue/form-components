@@ -16,6 +16,11 @@ class Bootstrap {
       console.debug('Listening for ready event');
       document.addEventListener('DOMContentLoaded', () => this.initOnce());
     }
+
+    // Add class to only add transitions if the page is loaded
+    window.addEventListener('load', () => {
+      document.body.classList.add('transition-ready');
+    });
   }
 
   initOnce() {
