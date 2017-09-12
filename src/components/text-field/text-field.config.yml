@@ -1,0 +1,23 @@
+title: "Text Field"
+status: "ready"
+context:
+  id: "text"
+  name: "text"
+  label: "Text"
+  required: false
+  value: ""
+  disabled: false
+default: "default-black"
+variants:
+  - name: "default-black"
+    context:
+      type: "text"
+      autocomplete: ""
+  - name: "default-white"
+    preview: "@dark"
+    context:
+      type: "text"
+      autocomplete: ""
+  - name: "multiline-black"
+  - name: "multiline-white"
+    preview: "@dark"

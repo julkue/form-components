@@ -47,8 +47,14 @@ fractal.components.engine(hbs({
       default:
         return options.inverse(this);
       }
-    }
+    },
     /* eslint-enable */
+    ifStartsWith: function(str, pattern, options) {
+      if (typeof str !== 'undefined' && str.trim().startsWith(pattern)) {
+        return options.fn(this);
+      }
+      return options.inverse(this);
+    }
   }
 }));
 fractal.web.set('server.syncOptions', {
