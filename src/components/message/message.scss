@@ -44,6 +44,10 @@ $errorLinkHoverColor: $errorColor;
         content: "\00AB";
       }
     }
+
+    span.visually-hidden{
+      @include visually-hidden;
+    }
   }
 
   &--error {

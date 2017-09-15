@@ -1,5 +1,6 @@
 import 'normalize.css/normalize.css';
 import './development.scss';
+import 'babel-polyfill';
 const components = require.context('../', true, /^(.*\.(js$))[^.]*$/igm);
 
 class Bootstrap {
