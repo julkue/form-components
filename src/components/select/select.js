@@ -12,6 +12,7 @@ export default class Select extends FormComponent {
 
     this.wrapper = context.querySelector('.select__wrapper');
     this.label = this.wrapper.querySelector('.select__label');
+    this.error = context.querySelector('.select__error');
     this.dropdown = null;
     this.dropdownOptions = [];
 
@@ -38,7 +39,11 @@ export default class Select extends FormComponent {
       this.dropdown.appendChild(option);
       return option;
     });
-    this.context.appendChild(this.dropdown);
+    if (!this.error) {
+      this.context.appendChild(this.dropdown);
+    } else {
+      this.context.insertBefore(this.dropdown, this.error);
+    }
   }
 
   initEvents() {

@@ -34,6 +34,7 @@ new Message.default(document.querySelector(Message.selector));
 - Checkbox
 - Message (e.g. to output validation messages at the top of a document)
 
+There's also an example form that renders all of them in a single form for demonstration purposes.
 
 ## Browser Compatibility
 
@@ -50,5 +51,6 @@ Successfully tested in:
 
 - Root _content_ element must be the `<main>` element (necessary for detection of inline messages)
 - Needs the [babel polyfill](https://babeljs.io/docs/usage/polyfill/) to work with old browsers
+- Expects a `novalidate` attribute on the `<form>` tag
 - Work best with embedded [normalize.css](https://github.com/necolas/normalize.css)
 - Inherits your app-specific fonts

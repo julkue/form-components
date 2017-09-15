@@ -16,6 +16,11 @@ $textFieldLabelFontSizeFilledIn: 0.75rem;
 $textFieldLabelFontFamily: inherit;
 $textFieldFontSize: 1.125rem;
 $textFieldFontFamily: inherit;
+// Don't use the same line height as "height" to avoid a large cursor
+// in Safari on macOS. Also multiply the font size with 1.35 and use it
+// as line height to avoid text jump in FF when you mark the text
+$textFieldLineHeight: $textFieldFontSize * 1.35;
+$textFieldPadding: ($textFieldHeight - $textFieldLineHeight) / 2;
 
 // need to use string here due to:
 // https://github.com/webpack-contrib/sass-loader/issues/487
@@ -64,15 +69,10 @@ $variants: "black", "white";
         cursor: text;
         display: block;
         height: $textFieldHeight;
-        // Don't use the same line height as "height" to avoid a large cursor
-        // in Safari on macOS. Also multiply the font size with 1.35 and use it
-        // as line height to avoid text jump in FF when you mark the text
-        $lineHeight: $textFieldFontSize * 1.35;
-        line-height: $lineHeight;
+        line-height: $textFieldLineHeight;
         // add 1 px additional padding to avoid text jumping when
         // border-bottom-width is set to 2px when focused
-        $padding: ($textFieldHeight - $lineHeight) / 2;
-        padding: $padding $textFieldPaddingX calc(#{$padding} + 1px) $textFieldPaddingX;
+        padding: $textFieldPadding $textFieldPaddingX calc(#{$textFieldPadding} + 1px) $textFieldPaddingX;
         background: $textFieldBackgroundColor;
         color: $textFieldColor;
         box-sizing: border-box;
@@ -97,11 +97,21 @@ $variants: "black", "white";
 
         &:focus {
           border-bottom-width: 2px;
-          padding: $padding $textFieldPaddingX;
+          padding: $textFieldPadding $textFieldPaddingX;
         }
       }
       &.is-disabled #{$block}__input {
         cursor: not-allowed;
+      }
+
+      /*************************************************************************
+       * Textarea Input
+       ************************************************************************/
+      #{selector-append("textarea", $block, "__input")} {
+        height: $textFieldTextareaHeight;
+        resize: vertical;
+        line-height: 1.25;
+        box-sizing: content-box;
       }
 
       /*************************************************************************
@@ -153,17 +163,6 @@ $variants: "black", "white";
       &.is-disabled #{$block}__label {
         cursor: not-allowed;
         user-select: none;
-      }
-
-      /*************************************************************************
-       * Textarea Input
-       ************************************************************************/
-      #{selector-append("textarea", $block, "__input")} {
-        $paddingTop: 5px;
-        height: calc(#{$textFieldTextareaHeight} - #{$paddingTop});
-        resize: vertical;
-        line-height: 1.25;
-        padding-top: $paddingTop;
       }
 
       /*************************************************************************

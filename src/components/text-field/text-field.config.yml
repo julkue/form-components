@@ -7,6 +7,7 @@ context:
   required: false
   value: ""
   disabled: false
+  error: "Please provide a value for this field"
 default: "default-black"
 variants:
   - name: "default-black"

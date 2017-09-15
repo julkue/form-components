@@ -25,6 +25,7 @@ context:
     - "option 13"
     - "option 14"
     - "option 15"
+  error: "Please provide a value for this field"
 default: "default-black"
 variants:
   - name: "default-black"

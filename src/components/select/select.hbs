@@ -12,7 +12,10 @@
       <label class="select__label" for="{{id}}">{{label}}</label>
     {{/if}}
   </div>
-  <!-- NOTE: This div is reserved for field-specific error messages by a backend
-  <div class="select__error"></div>
-  -->
+  <!-- NOTE: This div is reserved for field-specific error messages by a backend -->
+  {{#if error}}
+    <div class="select__error">{{error}}</div>
+  {{else}}
+    <!--<div class="select__error">Put in the error message here...</div>-->
+  {{/if}}
 </div>

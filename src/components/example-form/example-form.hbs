@@ -1,0 +1,11 @@
+{{#ifCond _self.name "===" "with-validation"}}
+  {{render '@message--error'}}
+{{/ifCond}}
+<form novalidate>
+  {{render '@select--default-black' salutation}}
+  {{render '@text-field--default-black' firstname}}
+  {{render '@text-field--default-black' lastname}}
+  {{render '@text-field--default-black' email}}
+  {{render '@text-field--multiline-black' message}}
+  {{render '@checkbox--default-black' copy}}
+</form>

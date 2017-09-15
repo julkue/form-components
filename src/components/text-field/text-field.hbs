@@ -7,7 +7,10 @@
     {{/ifStartsWith}}
     <label class="text-field__label" for="{{id}}">{{label}}</label>
   </div>
-  <!-- NOTE: This div is reserved for field-specific error messages by a backend
-  <div class="select__error"></div>
-  -->
+  <!-- NOTE: This div is reserved for field-specific error messages by a backend -->
+  {{#if error}}
+    <div class="text-field__error">{{error}}</div>
+  {{else}}
+    <!--<div class="text-field__error">Put in the error message here...</div>-->
+  {{/if}}
 </div>
