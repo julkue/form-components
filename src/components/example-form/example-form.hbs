@@ -2,6 +2,8 @@
   {{render '@message--error'}}
 {{/ifCond}}
 <form novalidate>
+  {{render '@radio--default-black' already_user}}
+  {{render '@radio--default-black' no_user}}
   {{render '@select--default-black' salutation}}
   {{render '@text-field--default-black' firstname}}
   {{render '@text-field--default-black' lastname}}

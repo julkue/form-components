@@ -12,11 +12,13 @@ default: "default-black"
 variants:
   - name: "default-black"
     context:
+      # Any text format, no checkbox/radio:
       type: "text"
       autocomplete: ""
   - name: "default-white"
     preview: "@dark"
     context:
+      # Any text format, no checkbox/radio:
       type: "text"
       autocomplete: ""
   - name: "multiline-black"

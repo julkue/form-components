@@ -1,9 +1,9 @@
-title: "Checkbox"
+title: "Radio"
 status: "ready"
 context:
   id: "choice"
   name: "choice"
-  label: "I agree with the Shipping and Billing terms and conditions conditions conditions conditions conditions conditions conditions conditions conditions conditions conditions"
+  label: "Some condition"
   value: "1"
   required: false
   disabled: false

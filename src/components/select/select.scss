@@ -26,11 +26,6 @@ $selectDropdownOptionFontFamily: inherit;
 $selectDropdownOptionFontSize: 1rem;
 $selectDropdownOptionLineHeight: 1.1;
 
-// NOTE: The select field currently has no color variants. But for consistency
-// with the text field element, it's necessary to also support these color
-// variant modifiers. Because of &.is-open statements its the same effort to
-// workaround this like to generate explicit color variants -- I've chosen the
-// latter as it's future proof
 // Need to use string here due to:
 // https://github.com/webpack-contrib/sass-loader/issues/487
 $variants: "black", "white";

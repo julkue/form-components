@@ -32,6 +32,7 @@ new Message.default(document.querySelector(Message.selector));
 - Select
 - Text Field (single and multi line)
 - Checkbox
+- Radio
 - Message (e.g. to output validation messages at the top of a document)
 
 There's also an example form that renders all of them in a single form for demonstration purposes.

@@ -5,10 +5,10 @@
  * - is-disabled: When input is disabled
  ******************************************************************************/
 // font settings
-$checkboxFontSize: 1.125rem;
-$checkboxLineHeight: 1.2;
-$checkboxIconFontSize: 0.75rem;
-$checkboxFontFamily: inherit;
+$radioFontSize: 1.125rem;
+$radioLineHeight: 1.2;
+$radioIconFontSize: 1rem;
+$radioFontFamily: inherit;
 
 // Need to use string here due to:
 // https://github.com/webpack-contrib/sass-loader/issues/487
@@ -16,26 +16,26 @@ $variants: "black", "white";
 @each $color in $variants {
   @if $color == "black" {
     // color settings
-    $checkboxColor: $black !global;
-    $checkboxIconColor: $checkboxColor !global;
-    $checkboxIconBorderColor: $checkboxIconColor !global;
-    $checkboxLinkColor: $checkboxColor !global;
-    $checkboxLinkColorHover: $clouds !global;
-    $checkboxErrorColor: $red !global;
+    $radioColor: $black !global;
+    $radioInnerColor: $black !global;
+    $radioBorderColor: $radioInnerColor !global;
+    $radioLinkColor: $radioColor !global;
+    $radioLinkColorHover: $clouds !global;
+    $radioErrorColor: $red !global;
   } @else {
     // color settings
-    $checkboxColor: $white !global;
-    $checkboxIconColor: $white !global;
-    $checkboxIconBorderColor: #9b9b9b !global;
-    $checkboxLinkColor: $checkboxColor !global;
-    $checkboxLinkColorHover: $clouds !global;
-    $checkboxErrorColor: $red !global;
+    $radioColor: $white !global;
+    $radioInnerColor: $white !global;
+    $radioBorderColor: $radioInnerColor !global;
+    $radioLinkColor: $radioColor !global;
+    $radioLinkColorHover: $clouds !global;
+    $radioErrorColor: $red !global;
   }
 
   /*****************************************************************************
    * General
    ****************************************************************************/
-  .checkbox {
+  .radio {
     $block: &;
 
     &--#{unquote($color)} {
@@ -55,7 +55,7 @@ $variants: "black", "white";
       }
 
       /*************************************************************************
-       * Hide native checkbox
+       * Hide native radio
        ************************************************************************/
       #{$block}__input {
         @include visually-hidden;
@@ -65,52 +65,53 @@ $variants: "black", "white";
        * Label
        ************************************************************************/
       #{$block}__label {
-        $padding: 2px;
         $border: 1px;
         position: relative;
-        line-height: $checkboxLineHeight;
-        color: $checkboxColor;
-        font-size: $checkboxFontSize;
-        font-family: $checkboxFontFamily;
-        padding: 0 0 0 calc(#{$checkboxIconFontSize} + #{$padding * 2} + #{$border * 2} + 10px);
+        line-height: $radioLineHeight;
+        color: $radioColor;
+        font-size: $radioFontSize;
+        font-family: $radioFontFamily;
+        padding: 0 0 0 calc(#{$radioIconFontSize} + #{$border * 2} + 10px);
         box-sizing: border-box;
         cursor: pointer;
         width: 100%;
         display: block; // use padding for a second line too
-        @include form-components-icons-before("checkmark");
 
-        // after contains the squash, before the checkmark.
+        // after contains the rounded border, before the inner color.
         // this is necessary due to animation purposes
         &:after,
         &:before {
           position: absolute;
           top: 50%;
           left: 0;
-          transform: translateY(-50%);
-          padding: $padding;
-        }
-        &:after {
-          width: #{$checkboxIconFontSize};
-          height: #{$checkboxIconFontSize};
-          border: $border solid $checkboxIconBorderColor;
           content: "";
           display: inline-block;
-          z-index: 1;
+          transform: translateY(-50%);
+          border-radius: 50%;
+        }
+        &:after {
+          border: $border solid $radioBorderColor;
+          width: #{$radioIconFontSize};
+          height: #{$radioIconFontSize};
+          z-index: 2;
         }
         &:before {
-          font-size: $checkboxIconFontSize;
-          line-height: $checkboxIconFontSize;
-          color: $checkboxIconColor;
-          border: $border solid transparent;
-          margin-top: 1px; // optical icon alignment
-          z-index: 2;
+          font-size: $radioIconFontSize;
+          line-height: $radioIconFontSize;
+          color: $radioInnerColor;
+          width: calc(#{$radioIconFontSize} - #{$border * 8});
+          height: calc(#{$radioIconFontSize} - #{$border * 8});
+          border: #{$border} solid transparent;
+          left: #{$border * 4};
+          z-index: 1;
           transform-origin: center center;
           transform: translateY(-50%) scale(0);
-          transition: transform 0.1s ease-in-out
+          transition: transform 0.1s ease-in-out;
+          background: $radioInnerColor;
         }
 
         a {
-          @include link-underline-medium($checkboxLinkColor, $checkboxLinkColorHover);
+          @include link-underline-medium($radioLinkColor, $radioLinkColorHover);
         }
       }
       #{$block}__input:checked + #{$block}__label:before {
@@ -121,11 +122,11 @@ $variants: "black", "white";
        * Error message
        ************************************************************************/
       #{$block}__error {
-        color: $checkboxErrorColor;
+        color: $radioErrorColor;
         margin: 5px 0;
 
         a {
-          color: $checkboxErrorColor;
+          color: $radioErrorColor;
         }
       }
     }

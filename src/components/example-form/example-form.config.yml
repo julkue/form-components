@@ -3,6 +3,24 @@ status: "ready"
 variants:
   - name: "default"
     context:
+      already_user:
+        id: "already-user-true"
+        name: "already_user"
+        label: "I have an account already"
+        value: "true"
+        required: false
+        disabled: false
+        checked: false
+        error: ""
+      no_user:
+        id: "already-user-false"
+        name: "already_user"
+        label: "I don't have an account yet"
+        value: "false"
+        required: false
+        disabled: false
+        checked: false
+        error: ""
       salutation:
         id: "salutation"
         name: "salutation"
@@ -64,6 +82,24 @@ variants:
         error: ""
   - name: "with-validation"
     context:
+      already_user:
+        id: "already-user-true"
+        name: "already_user"
+        label: "I have an account already"
+        value: "true"
+        required: false
+        disabled: false
+        checked: false
+        error: "Please provide a value for this field"
+      no_user:
+        id: "already-user-false"
+        name: "already_user"
+        label: "I don't have an account yet"
+        value: "false"
+        required: false
+        disabled: false
+        checked: false
+        error: "Please provide a value for this field"
       salutation:
         id: "salutation"
         name: "salutation"
