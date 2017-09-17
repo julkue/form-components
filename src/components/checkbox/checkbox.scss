@@ -3,6 +3,7 @@
 /*******************************************************************************
  * Contextual classes:
  * - is-disabled: When input is disabled
+ * - is-pressed: When the user has the mouse down on the checkbox
  ******************************************************************************/
 // font settings
 $checkboxFontSize: 1.125rem;
@@ -115,6 +116,9 @@ $variants: "black", "white";
       }
       #{$block}__input:checked + #{$block}__label:before {
         transform: translateY(-50%) scale(1);
+      }
+      &.is-pressed #{$block}__label:before {
+        transform: translateY(-50%) scale(1.2);
       }
 
       /*************************************************************************
