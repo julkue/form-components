@@ -1,5 +1,6 @@
 const path = require('path'),
   extractTextPlugin = require('extract-text-webpack-plugin'),
+  cleanPlugin = require('clean-webpack-plugin'),
   webpack = require('webpack'),
   fs = require('fs'),
   glob = require('glob'),
@@ -7,7 +8,7 @@ const path = require('path'),
   pkg = require(path.join(__dirname, '../package.json'));
 
 let components = {
-  bundle: path.join(__dirname, '../src/components/_common/development.js')
+  development: path.join(__dirname, '../src/components/_common/development.js')
 };
 glob.sync(path.join(__dirname, '../src/components/*/*.js'), {
   ignore: path.join(__dirname, '../src/components/_common/**/*')
@@ -75,6 +76,9 @@ let config = module.exports = {
     libraryTarget: 'umd'
   },
   plugins: [
+    new cleanPlugin('dist/**/*', {
+      root: path.join(__dirname, '../')
+    }),
     new extractTextPlugin(`[name]/[name].${
       process.argv.indexOf('-p') !== -1 ? 'min.css' : 'css'
     }`),
