@@ -1,5 +1,5 @@
-import './select.scss';
-import FormComponent from '../form-component';
+import './select-material-like.scss';
+import FormComponent from '../../form-component';
 import Bowser from 'bowser';
 
 export default class Select extends FormComponent {

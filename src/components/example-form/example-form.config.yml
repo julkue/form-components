@@ -1,7 +1,7 @@
-title: "Example Form"
 status: "ready"
+default: "material-like"
 variants:
-  - name: "default"
+  - name: "material-like"
     context:
       already_user:
         id: "already-user-true"
@@ -80,7 +80,7 @@ variants:
         disabled: false
         checked: false
         error: ""
-  - name: "with-validation"
+  - name: "material-like-with-validation"
     context:
       already_user:
         id: "already-user-true"

@@ -56,7 +56,15 @@ fractal.components.engine(hbs({
         return options.fn(this);
       }
       return options.inverse(this);
-    }
+    },
+    ifLastDash: function(str, needle, options) {
+      const arr = str.split('-');
+      if (arr[arr.length - 1] === needle) {
+        return options.fn(this);
+      } else {
+        return options.inverse(this);
+      }
+    },
   }
 }));
 fractal.web.set('server.syncOptions', {

@@ -10,7 +10,7 @@ const path = require('path'),
 let components = {
   development: path.join(__dirname, '../src/components/_common/development.js')
 };
-glob.sync(path.join(__dirname, '../src/components/*/*.js'), {
+glob.sync(path.join(__dirname, '../src/components/*/**/*.js'), {
   ignore: path.join(__dirname, '../src/components/_common/**/*')
 }).forEach(file => {
   let folder = file.split('/');
@@ -39,15 +39,19 @@ let config = module.exports = {
         use: [{
           loader: 'css-loader'
         }, {
+          loader: 'resolve-url-loader'
+        }, {
           loader: 'postcss-loader',
           options: {
             config: {
               path: './build/postcss.config.js'
-            }
+            },
+            sourceMap: true
           }
         }, {
           loader: 'sass-loader',
           options: {
+            sourceMap: true,
             includePaths: [
               'node_modules',
               'src/components/_common'
