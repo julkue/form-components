@@ -1,12 +1,11 @@
 # Form Components
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/julmot/form-components.svg)](https://greenkeeper.io/)
-
 > Custom Form Components. Without Any Framework.
 
-[![Build Status](https://img.shields.io/travis/julmot/form-components/master.svg?style=flat-square)](https://travis-ci.org/julmot/form-components)
-[![npm Version](https://img.shields.io/npm/v/@julmot/form-components.svg?style=flat-square)](https://www.npmjs.com/package/@julmot/form-components)
-[![License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](https://raw.githubusercontent.com/julmot/form-components/master/LICENSE)
+[![Build Status](https://img.shields.io/travis/julmot/form-components/master.svg)](https://travis-ci.org/julmot/form-components)
+[![npm Version](https://img.shields.io/npm/v/@julmot/form-components.svg)](https://www.npmjs.com/package/@julmot/form-components)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/julmot/form-components/master/LICENSE)
+[![Dependency Status](https://badges.greenkeeper.io/julmot/form-components.svg)](https://github.com/julmot/form-components)
 
 ## Further Information
 
