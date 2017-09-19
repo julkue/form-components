@@ -1,6 +1,5 @@
 const path = require('path'),
   extractTextPlugin = require('extract-text-webpack-plugin'),
-  cleanPlugin = require('clean-webpack-plugin'),
   webpack = require('webpack'),
   fs = require('fs'),
   glob = require('glob'),
@@ -80,9 +79,6 @@ let config = module.exports = {
     libraryTarget: 'umd'
   },
   plugins: [
-    new cleanPlugin('dist/**/*', {
-      root: path.join(__dirname, '../')
-    }),
     new extractTextPlugin(`[name]/[name].${
       process.argv.indexOf('-p') !== -1 ? 'min.css' : 'css'
     }`),

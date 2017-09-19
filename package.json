@@ -22,7 +22,7 @@
   },
   "main": "build/fractal.js",
   "devDependencies": {
-    "@frctl/fractal": "frctl/fractal#63514e270d344e62dac7e5323b5561da1dd2f608",
+    "@frctl/fractal": "^1.1.7",
     "@frctl/handlebars": "^1.1.4",
     "@frctl/mandelbrot": "^1.2.0",
     "babel-core": "^6.26.0",
@@ -30,9 +30,9 @@
     "babel-polyfill": "^6.26.0",
     "babel-preset-env": "^1.6.0",
     "bowser": "^1.7.3",
-    "clean-webpack-plugin": "^0.1.16",
     "concurrently": "^3.5.0",
     "css-loader": "^0.28.6",
+    "del-cli": "^1.1.0",
     "eslint": "^4.6.1",
     "eslint-loader": "^1.9.0",
     "extract-text-webpack-plugin": "^3.0.0",
@@ -60,8 +60,8 @@
     "webpack:dev-watch": "webpack -w --config build/webpack.config.js",
     "webpack:prod": "webpack -p --config build/webpack.config.js",
     "font": "grunt generate-icon-font --gruntfile build/grunt.config.js --base ./",
-    "dev": "npm update && concurrently --kill-others \"npm run fractal:dev\" \"npm run webpack:dev-watch\"",
-    "build": "npm install && npm run font && npm run webpack:dev && npm run webpack:prod && npm run fractal:prod",
+    "dev": "npm update && del-cli dist/**/* && concurrently --kill-others \"npm run fractal:dev\" \"npm run webpack:dev-watch\"",
+    "build": "npm install && del-cli dist/**/* && npm run font && npm run webpack:dev && npm run webpack:prod && npm run fractal:prod",
     "deploy": "node build/deploy.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   }
