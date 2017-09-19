@@ -4,6 +4,7 @@
  * Contextual classes:
  * - is-disabled: When input is disabled
  * - is-pressed: When the user has the mouse down on the checkbox
+ * - is-focused: When the input is focused (a11y)
  ******************************************************************************/
 // font settings
 $checkboxFontSize: 1.125rem;
@@ -23,6 +24,7 @@ $variants: "black", "white";
     $checkboxLinkColor: $checkboxColor !global;
     $checkboxLinkColorHover: $clouds !global;
     $checkboxErrorColor: $red !global;
+    $checkboxFocusBorderColor: #8e44ad !global;
   } @else {
     // color settings
     $checkboxColor: $white !global;
@@ -31,6 +33,7 @@ $variants: "black", "white";
     $checkboxLinkColor: $checkboxColor !global;
     $checkboxLinkColorHover: $clouds !global;
     $checkboxErrorColor: $red !global;
+    $checkboxFocusBorderColor: #8e44ad !global;
   }
 
   /*****************************************************************************
@@ -50,9 +53,15 @@ $variants: "black", "white";
         }
       }
 
+      &.is-focused{
+        outline: 1px solid $checkboxFocusBorderColor;
+        outline-offset: 3px;
+      }
+
       #{$block}__wrapper {
         position: relative;
         width: 100%;
+        overflow: hidden; // necessary for outline
       }
 
       /*************************************************************************

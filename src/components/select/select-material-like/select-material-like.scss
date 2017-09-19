@@ -6,6 +6,7 @@
  * - is-filled-in: When a value is available or the user clicked on the select
  * - is-open: If the dropdown is open
  * - has-no-label: If the select has no label
+ * - is-focused: When the select is focused (a11y)
  ******************************************************************************/
 // sizes
 $selectHeight: 2.375rem; // 38px + 12px == 50px height
@@ -36,6 +37,7 @@ $variants: "black", "white";
     $selectColor: $black !global;
     $selectBorderBottomColor: $black !global;
     $selectErrorColor: $red !global;
+    $selectFocusBorderColor: #8e44ad !global;
 
     $selectArrowColor: $black !global;
 
@@ -54,6 +56,7 @@ $variants: "black", "white";
     $selectColor: $white !global;
     $selectBorderBottomColor: $white !global;
     $selectErrorColor: $red !global;
+    $selectFocusBorderColor: #8e44ad !global;
 
     $selectArrowColor: $white !global;
 
@@ -85,6 +88,11 @@ $variants: "black", "white";
         &, * {
           cursor: not-allowed !important;
         }
+      }
+
+      &.is-focused{
+        outline: 1px solid $selectFocusBorderColor;
+        outline-offset: 3px;
       }
 
       #{$block}__wrapper {

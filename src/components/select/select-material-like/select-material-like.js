@@ -161,13 +161,13 @@ export default class Select extends FormComponent {
   }
 
   open() {
-    this.setStateClass('is-open', true);
+    this.context.classList.add('is-open');
     this.field.focus();
     this.scrollActiveDropdownOptionIntoView();
   }
 
   close() {
-    this.setStateClass('is-open', false);
+    this.context.classList.remove('is-open');
     this.setIsFilledIn();
   }
 

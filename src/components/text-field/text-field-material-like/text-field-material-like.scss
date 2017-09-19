@@ -4,6 +4,7 @@
  * Contextual classes:
  * - is-disabled: When input is disabled
  * - is-filled-in: When value is available or the user clicked into the input
+ * - is-focused: When the input is focused (a11y)
  ******************************************************************************/
 // size settings
 $textFieldHeight: 2.375rem; // 38px + 12px == 50px height
@@ -34,6 +35,7 @@ $variants: "black", "white";
     $textFieldLabelColor: $black !global;
     $textFieldLabelColorFilledIn: $black !global;
     $textFieldErrorColor: $red !global;
+    $textFieldFocusBorderColor: #8e44ad !global;
   } @else {
     // color settings
     $textFieldBorderColor: $white !global;
@@ -42,6 +44,7 @@ $variants: "black", "white";
     $textFieldLabelColor: $white !global;
     $textFieldLabelColorFilledIn: $white !global;
     $textFieldErrorColor: $red !global;
+    $textFieldFocusBorderColor: #8e44ad !global;
   }
 
   /*****************************************************************************
@@ -52,6 +55,11 @@ $variants: "black", "white";
     height: $textFieldHeight;
 
     &--#{unquote($color)} {
+
+      &.is-focused {
+        outline: 1px solid $textFieldFocusBorderColor;
+        outline-offset: 3px;
+      }
 
       #{$block}__wrapper {
         position: relative;

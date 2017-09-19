@@ -7,16 +7,28 @@ export default class FormComponent {
 
   init() {
     if (this.field.hasAttribute('disabled')) {
-      this.setStateClass('is-disabled', true);
+      this.context.classList.add('is-disabled');
     }
     this.setIsFilledIn();
+    this.initFocus();
+  }
+
+  initFocus() {
+    document.addEventListener('focus', event => {
+      const ctx = this.context;
+      if (event.target === ctx || ctx.contains(event.target)) {
+        this.context.classList.add('is-focused');
+      }
+    }, true);
+    document.addEventListener('focusout', event => {
+      const ctx = this.context;
+      if (event.target === ctx || ctx.contains(event.target)) {
+        this.context.classList.remove('is-focused');
+      }
+    }, true);
   }
 
   setIsFilledIn(isFilledIn = !!this.field.value) {
-    this.setStateClass('is-filled-in', isFilledIn);
-  }
-
-  setStateClass(className, add) {
-    this.context.classList[add ? 'add' : 'remove'](className);
+    this.context.classList[isFilledIn ? 'add' : 'remove']('is-filled-in');
   }
 }

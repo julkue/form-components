@@ -3,6 +3,7 @@
 /*******************************************************************************
  * Contextual classes:
  * - is-disabled: When input is disabled
+ * - is-focused: When the input is focused (a11y)
  ******************************************************************************/
 // font settings
 $radioFontSize: 1.125rem;
@@ -22,6 +23,7 @@ $variants: "black", "white";
     $radioLinkColor: $radioColor !global;
     $radioLinkColorHover: $clouds !global;
     $radioErrorColor: $red !global;
+    $radioFocusBorderColor: #8e44ad !global;
   } @else {
     // color settings
     $radioColor: $white !global;
@@ -30,6 +32,7 @@ $variants: "black", "white";
     $radioLinkColor: $radioColor !global;
     $radioLinkColorHover: $clouds !global;
     $radioErrorColor: $red !global;
+    $radioFocusBorderColor: #8e44ad !global;
   }
 
   /*****************************************************************************
@@ -49,9 +52,15 @@ $variants: "black", "white";
         }
       }
 
+      &.is-focused{
+        outline: 1px solid $radioFocusBorderColor;
+        outline-offset: 3px;
+      }
+
       #{$block}__wrapper {
         position: relative;
         width: 100%;
+        overflow: hidden; // necessary for outline
       }
 
       /*************************************************************************
