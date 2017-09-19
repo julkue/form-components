@@ -1,9 +1,8 @@
-title: "Radio"
 status: "ready"
 context:
   id: "choice"
   name: "choice"
-  label: "Some condition"
+  label: "I agree with the Shipping and Billing terms and conditions conditions conditions conditions conditions conditions conditions conditions conditions conditions conditions"
   value: "1"
   required: false
   disabled: false

@@ -1,13 +1,17 @@
-{{#ifCond _self.name "===" "with-validation"}}
-  {{render '@message--error'}}
-{{/ifCond}}
+{{#ifLastDash _self.name "validation"}}
+  {{#ifStartsWith _self.name "material-like"}}
+    {{render '@message-material-like--error'}}
+  {{/ifStartsWith}}
+{{/ifLastDash}}
 <form novalidate>
-  {{render '@radio--default-black' already_user}}
-  {{render '@radio--default-black' no_user}}
-  {{render '@select--default-black' salutation}}
-  {{render '@text-field--default-black' firstname}}
-  {{render '@text-field--default-black' lastname}}
-  {{render '@text-field--default-black' email}}
-  {{render '@text-field--multiline-black' message}}
-  {{render '@checkbox--default-black' copy}}
+  {{#ifStartsWith _self.name "material-like"}}
+    {{render '@radio-material-like--default-black' already_user}}
+    {{render '@radio-material-like--default-black' no_user}}
+    {{render '@select-material-like--default-black' salutation}}
+    {{render '@text-field-material-like--default-black' firstname}}
+    {{render '@text-field-material-like--default-black' lastname}}
+    {{render '@text-field-material-like--default-black' email}}
+    {{render '@text-field-material-like--multiline-black' message}}
+    {{render '@checkbox-material-like--default-black' copy}}
+  {{/ifStartsWith}}
 </form>

@@ -1,4 +1,4 @@
-import './message.scss';
+import './message-material-like.scss';
 
 export default class Message {
   constructor(context) {
@@ -11,10 +11,12 @@ export default class Message {
     // check if the parent element of the message (or the parents parent in case
     // one div is wrapped our) is matching the <main> tag. Otherwise we can
     // assume it's an inline message
-    if (this.message.parentElement) {
-      if (this.message.parentElement.nodeName !== 'MAIN') {
-        if (this.message.parentElement.parentElement) {
-          if (this.message.parentElement.parentElement.nodeName !== 'MAIN') {
+    const parent = this.message.parentElement;
+    if (parent) {
+      if (parent.nodeName !== 'MAIN' && parent.nodeName !== 'BODY') {
+        const parentParent = parent.parentElement;
+        if (parentParent && parentParent.nodeName !== 'MAIN') {
+          if (parentParent.nodeName !== 'BODY') {
             this.message.classList.add('is-inline');
           }
         }
