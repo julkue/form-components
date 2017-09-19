@@ -14,18 +14,26 @@ export default class FormComponent {
   }
 
   initFocus() {
-    document.addEventListener('focus', event => {
-      const ctx = this.context;
-      if (event.target === ctx || ctx.contains(event.target)) {
-        this.context.classList.add('is-focused');
+    document.addEventListener('keyup', event => {
+      if (event.keyCode === 9) {
+        const chk = document.activeElement;
+        if (chk === this.context || this.context.contains(chk)) {
+          this.context.classList.add('is-focused');
+          const listener = event => {
+            const chk = event.target;
+            if (chk === this.context || this.context.contains(chk)) {
+              this.context.classList.remove('is-focused');
+              document.removeEventListener('focusout', listener);
+            }
+          };
+          document.addEventListener('focusout', listener);
+        } else {
+          if (this.context.classList.contains('is-focused')) {
+            this.context.classList.remove('is-focused');
+          }
+        }
       }
-    }, true);
-    document.addEventListener('focusout', event => {
-      const ctx = this.context;
-      if (event.target === ctx || ctx.contains(event.target)) {
-        this.context.classList.remove('is-focused');
-      }
-    }, true);
+    });
   }
 
   setIsFilledIn(isFilledIn = !!this.field.value) {

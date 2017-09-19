@@ -24,7 +24,7 @@ $variants: "black", "white";
     $checkboxLinkColor: $checkboxColor !global;
     $checkboxLinkColorHover: $clouds !global;
     $checkboxErrorColor: $red !global;
-    $checkboxFocusBorderColor: #8e44ad !global;
+    $checkboxFocusBorderColor: #95a5a6 !global;
   } @else {
     // color settings
     $checkboxColor: $white !global;
@@ -33,7 +33,7 @@ $variants: "black", "white";
     $checkboxLinkColor: $checkboxColor !global;
     $checkboxLinkColorHover: $clouds !global;
     $checkboxErrorColor: $red !global;
-    $checkboxFocusBorderColor: #8e44ad !global;
+    $checkboxFocusBorderColor: #95a5a6 !global;
   }
 
   /*****************************************************************************

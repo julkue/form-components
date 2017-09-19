@@ -23,7 +23,7 @@ $variants: "black", "white";
     $radioLinkColor: $radioColor !global;
     $radioLinkColorHover: $clouds !global;
     $radioErrorColor: $red !global;
-    $radioFocusBorderColor: #8e44ad !global;
+    $radioFocusBorderColor: #95a5a6 !global;
   } @else {
     // color settings
     $radioColor: $white !global;
@@ -32,7 +32,7 @@ $variants: "black", "white";
     $radioLinkColor: $radioColor !global;
     $radioLinkColorHover: $clouds !global;
     $radioErrorColor: $red !global;
-    $radioFocusBorderColor: #8e44ad !global;
+    $radioFocusBorderColor: #95a5a6 !global;
   }
 
   /*****************************************************************************

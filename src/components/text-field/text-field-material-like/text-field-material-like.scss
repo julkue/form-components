@@ -35,7 +35,7 @@ $variants: "black", "white";
     $textFieldLabelColor: $black !global;
     $textFieldLabelColorFilledIn: $black !global;
     $textFieldErrorColor: $red !global;
-    $textFieldFocusBorderColor: #8e44ad !global;
+    $textFieldFocusBorderColor: #95a5a6 !global;
   } @else {
     // color settings
     $textFieldBorderColor: $white !global;
@@ -44,7 +44,7 @@ $variants: "black", "white";
     $textFieldLabelColor: $white !global;
     $textFieldLabelColorFilledIn: $white !global;
     $textFieldErrorColor: $red !global;
-    $textFieldFocusBorderColor: #8e44ad !global;
+    $textFieldFocusBorderColor: #95a5a6 !global;
   }
 
   /*****************************************************************************
