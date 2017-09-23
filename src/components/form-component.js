@@ -2,7 +2,6 @@ export default class FormComponent {
   constructor(context, field) {
     this.context = context;
     this.field = field;
-    console.debug('Form component initialized');
   }
 
   init() {

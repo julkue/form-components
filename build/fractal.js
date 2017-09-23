@@ -2,7 +2,9 @@ const path = require('path'),
   fractal = require('@frctl/fractal').create(),
   mandelbrot = require('@frctl/mandelbrot'),
   hbs = require('@frctl/handlebars'),
-  pkg = require(path.join(__dirname, '../package.json'));
+  pkg = require(path.join(__dirname, '../package.json')),
+  slash = require('slash'),
+  glob = require('glob');
 
 const title = `${pkg.name.split('/').pop().replace('-', ' ').replace(
   /\b\w/g, l => l.toUpperCase())
@@ -19,6 +21,20 @@ fractal.web.theme(mandelbrot({
 }));
 fractal.components.engine(hbs({
   helpers: {
+    eachComponentFile: function(extension, target, options) {
+      const fullPath = slash(target.component.viewPath),
+        component = fullPath.split('/').reverse()[1],
+        distDir = slash(path.join(__dirname, '../dist/')),
+        dir = slash(path.join(distDir, component)),
+        files = glob.sync(`${dir}/**/*.${extension}`);
+      let buffer = '';
+      files.map(file => {
+        file = file.replace(distDir, '/');
+        buffer += options.fn(file);
+        return file;
+      });
+      return buffer;
+    },
     splitDashLast: function(str) {
       const arr = str.split('-');
       return arr[arr.length - 1];

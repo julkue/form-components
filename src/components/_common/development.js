@@ -1,7 +1,12 @@
 import 'normalize.css/normalize.css';
 import './development.scss';
 import 'babel-polyfill';
-const components = require.context('../', true, /^(.*\.(js$))[^.]*$/igm);
+// all non bundle JS files in subdirectories excluding the current file
+const components = require.context(
+  '../',
+  true,
+  /^\.\/[a-z-]+\/(?!development\.js$)[a-z-]+\/(?!.*-bundle\.js)[a-z-]+\.js/gm
+);
 
 class Bootstrap {
   constructor() {
@@ -18,7 +23,8 @@ class Bootstrap {
       document.addEventListener('DOMContentLoaded', () => this.initOnce());
     }
 
-    // Add class to only add transitions if the page is loaded
+    // Add class to only add transitions if the page is loaded (for development
+    // purposes only)
     window.addEventListener('load', () => {
       document.body.classList.add('transition-ready');
     });
@@ -31,20 +37,10 @@ class Bootstrap {
 
   initComponents(context) {
     console.debug('Initializing components in context: ', context);
-
-    // Initialize all components (one class instance per component
-    // occurrence). Don't initialize the same occurrence multiple times
+    // Initialize all components (one class instance per component occurrence).
+    // Don't initialize the same occurrence multiple times
     components.keys().forEach(key => {
-      // Exclude the current file
-      if (key.includes('development.js')) {
-        return;
-      }
       const component = components(key);
-      // Catch cases where it's a class only for extending purposes, therefore
-      // no selector is available
-      if (!component.selector) {
-        return;
-      }
       // Iterate over all contexts, in case an array was provided
       [].concat(context).forEach(context => {
         // if the context itself matches the component selector
@@ -60,7 +56,7 @@ class Bootstrap {
 
             // continue initializing other components if one component fails
             try {
-              new component['default'](context);
+              new component[Object.keys(component)[0]](context);
             } catch (e) {
               console.error(e.message, e.stack);
             }

@@ -1,5 +1,6 @@
 status: "ready"
 default: "material-like"
+notes: "The only reason for this component is to demonstrate all form components in one place and for development purposes. It won't be shipped in releases"
 variants:
   - name: "material-like"
     context:

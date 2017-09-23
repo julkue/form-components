@@ -1,7 +1,6 @@
-import './checkbox-material-like.scss';
 import FormComponent from '../../form-component';
 
-export default class Checkbox extends FormComponent {
+export class Checkbox extends FormComponent {
   constructor(context) {
     super(
       context,

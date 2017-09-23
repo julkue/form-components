@@ -1,7 +1,6 @@
-import './radio-material-like.scss';
 import FormComponent from '../../form-component';
 
-export default class Radio extends FormComponent {
+export class Radio extends FormComponent {
   constructor(context) {
     super(
       context,

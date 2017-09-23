@@ -9,7 +9,7 @@ const path = require('path'),
 let components = {
   development: path.join(__dirname, '../src/components/_common/development.js')
 };
-glob.sync(path.join(__dirname, '../src/components/*/**/*.js'), {
+glob.sync(path.join(__dirname, '../src/components/*/**/*-bundle.js'), {
   ignore: path.join(__dirname, '../src/components/_common/**/*')
 }).forEach(file => {
   let folder = file.split('/');

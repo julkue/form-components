@@ -16,24 +16,28 @@ You can embed individual form components from the `dist` folder. They are availa
 
 ## Getting Started
 
-After you've embedded the components you want to use (including their CSS files), you need to initialize them. Create a new class instance of the exported `default` class. In case you'd like to dynamically initialize instances, you can use the also exported `selector` string to determine if a component exists.
+After you've embedded the components you want to use (including their CSS files), you need to initialize them. Create a new class instance of the exported class. In case you'd like to dynamically initialize instances, you can use the also exported `selector` string to determine if a component exists.
 
 For example when using Webpack with ES6:
 
 ```js
-import '@julmot/form-components/dist/message/message.css';
-import * as Message from '@julmot/form-components/dist/message/message';
+import '@julmot/form-components/dist/message-material-like/message-material-like.css';
+import {
+  Message,
+  selector as MessageSelector
+} from '@julmot/form-components/dist/message-material-like/message-material-like';
 
-new Message.default(document.querySelector(Message.selector));
+new Message(document.querySelector(MessageSelector));
 ```
 
 ## Currently Available Components
 
-- Select
-- Text Field (single and multi line)
-- Checkbox
-- Radio
-- Message (e.g. to output validation messages at the top of a document)
+- Theme: Material Like:
+  - Select
+  - Text Field (single and multi line)
+  - Checkbox
+  - Radio
+  - Message (e.g. to output validation messages at the top of a document)
 
 There's also an example form that renders all of them in a single form for demonstration purposes.
 

@@ -1,6 +1,4 @@
-import './message-material-like.scss';
-
-export default class Message {
+export class Message {
   constructor(context) {
     this.message = context;
     this.init();

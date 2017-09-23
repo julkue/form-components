@@ -1,7 +1,6 @@
-import './text-field-material-like.scss';
 import FormComponent from '../../form-component';
 
-export default class TextField extends FormComponent {
+export class TextField extends FormComponent {
   constructor(context) {
     super(
       context,
