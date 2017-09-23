@@ -2,8 +2,8 @@ node_modules/
 .idea/
 .settings/
 build/library/
-dist/bundle
-dist/example-form
+dist/development/
+dist/example-form*/
 
 yarn.lock
 *.js.map
