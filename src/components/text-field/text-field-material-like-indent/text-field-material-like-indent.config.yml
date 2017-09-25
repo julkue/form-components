@@ -1,0 +1,25 @@
+status: "ready"
+context:
+  id: "text"
+  name: "text"
+  label: "Text"
+  required: false
+  value: ""
+  disabled: false
+  error: "Please provide a value for this field"
+default: "default-black"
+variants:
+  - name: "default-black"
+    context:
+      # Any text format, no checkbox/radio:
+      type: "text"
+      autocomplete: ""
+  - name: "default-white"
+    preview: "@dark"
+    context:
+      # Any text format, no checkbox/radio:
+      type: "text"
+      autocomplete: ""
+  - name: "multiline-black"
+  - name: "multiline-white"
+    preview: "@dark"

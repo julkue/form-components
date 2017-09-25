@@ -1,0 +1,55 @@
+@import "base";
+
+/*******************************************************************************
+ * Contextual classes:
+ * - is-disabled: When input is disabled
+ * - is-filled-in: When value is available or the user clicked into the input
+ * - is-focused: When the input is focused (a11y)
+ ******************************************************************************/
+// size settings
+$textFieldPaddingX: 10px;
+
+// need to use string here due to:
+// https://github.com/webpack-contrib/sass-loader/issues/487
+$variants: "black", "white";
+@each $color in $variants {
+
+  /*****************************************************************************
+   * General
+   ****************************************************************************/
+  .text-field {
+    $block: &;
+
+    &--#{unquote($color)} {
+
+      /*************************************************************************
+       * Input
+       ************************************************************************/
+      #{$block}__input {
+        padding-left: $textFieldPaddingX;
+        padding-right: $textFieldPaddingX;
+
+        &:focus {
+          padding-left: $textFieldPaddingX;
+          padding-right: $textFieldPaddingX;
+        }
+      }
+
+      /*************************************************************************
+       * Label (will be moved to top when value available)
+       ************************************************************************/
+      #{$block}__label {
+        padding-left: $textFieldPaddingX;
+        padding-right: $textFieldPaddingX;
+      }
+
+      /*************************************************************************
+       * Error
+       ************************************************************************/
+      #{$block}__error {
+        margin-left: $textFieldPaddingX;
+        margin-right: $textFieldPaddingX;
+      }
+    }
+  }
+}
