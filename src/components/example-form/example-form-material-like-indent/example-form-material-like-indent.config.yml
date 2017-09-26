@@ -1,0 +1,162 @@
+status: "ready"
+default: "material-like-indent"
+notes: "The only reason for this component is to demonstrate all form components in one place and for development purposes. It won't be shipped in releases"
+variants:
+  - name: "material-like-indent"
+    context:
+      already_user:
+        id: "already-user-true"
+        name: "already_user"
+        label: "I have an account already"
+        value: "true"
+        required: false
+        disabled: false
+        checked: false
+        error: ""
+      no_user:
+        id: "already-user-false"
+        name: "already_user"
+        label: "I don't have an account yet"
+        value: "false"
+        required: false
+        disabled: false
+        checked: false
+        error: ""
+      salutation:
+        id: "salutation"
+        name: "salutation"
+        label: "Salutation"
+        required: true
+        disabled: false
+        selected: false
+        options:
+          - "Mr."
+          - "Ms."
+          - "Mrs."
+        error: ""
+      firstname:
+        id: "firstname"
+        name: "firstname"
+        label: "Firstname"
+        required: true
+        value: ""
+        disabled: false
+        type: "text"
+        autocomplete: ""
+        error: ""
+      lastname:
+        id: "lastname"
+        name: "lastname"
+        label: "Lastname"
+        required: true
+        value: ""
+        disabled: false
+        type: "text"
+        autocomplete: ""
+        error: ""
+      email:
+        id: "email"
+        name: "email"
+        label: "Email"
+        required: true
+        value: ""
+        disabled: false
+        type: "email"
+        autocomplete: ""
+        error: ""
+      message:
+        id: "message"
+        name: "message"
+        label: "Message"
+        required: true
+        value: ""
+        disabled: false
+        error: ""
+      copy:
+        id: "copy"
+        name: "copy"
+        label: "I want a copy of my message"
+        value: "true"
+        required: false
+        disabled: false
+        checked: false
+        error: ""
+  - name: "material-like-indent-with-validation"
+    context:
+      already_user:
+        id: "already-user-true"
+        name: "already_user"
+        label: "I have an account already"
+        value: "true"
+        required: false
+        disabled: false
+        checked: false
+        error: "Please provide a value for this field"
+      no_user:
+        id: "already-user-false"
+        name: "already_user"
+        label: "I don't have an account yet"
+        value: "false"
+        required: false
+        disabled: false
+        checked: false
+        error: "Please provide a value for this field"
+      salutation:
+        id: "salutation"
+        name: "salutation"
+        label: "Salutation"
+        required: true
+        disabled: false
+        selected: false
+        options:
+          - "Mr."
+          - "Ms."
+          - "Mrs."
+        error: "Please provide a value for this field"
+      firstname:
+        id: "firstname"
+        name: "firstname"
+        label: "Firstname"
+        required: true
+        value: ""
+        disabled: false
+        type: "text"
+        autocomplete: ""
+        error: "Please provide a value for this field"
+      lastname:
+        id: "lastname"
+        name: "lastname"
+        label: "Lastname"
+        required: true
+        value: ""
+        disabled: false
+        type: "text"
+        autocomplete: ""
+        error: "Please provide a value for this field"
+      email:
+        id: "email"
+        name: "email"
+        label: "Email"
+        required: true
+        value: ""
+        disabled: false
+        type: "email"
+        autocomplete: ""
+        error: "Please provide a value for this field"
+      message:
+        id: "message"
+        name: "message"
+        label: "Message"
+        required: true
+        value: ""
+        disabled: false
+        error: "Please provide a value for this field"
+      copy:
+        id: "copy"
+        name: "copy"
+        label: "I want a copy of my message"
+        value: "true"
+        required: false
+        disabled: false
+        checked: false
+        error: "Please provide a value for this field"

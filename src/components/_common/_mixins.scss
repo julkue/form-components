@@ -76,3 +76,15 @@
   padding: 0;
   border: 0;
 }
+
+// common form styles
+@mixin form {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  box-sizing: border-box;
+
+  > *:not(:last-child) {
+    margin-bottom: 20px;
+  }
+}
