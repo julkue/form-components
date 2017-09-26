@@ -14,7 +14,7 @@ $selectDropdownOptionPaddingX: 10px;
 
 // Need to use string here due to:
 // https://github.com/webpack-contrib/sass-loader/issues/487
-$variants: "black", "white";
+$variants: "dark", "light";
 @each $color in $variants {
 
   /*****************************************************************************

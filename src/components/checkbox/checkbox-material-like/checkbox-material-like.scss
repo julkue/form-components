@@ -14,9 +14,9 @@ $checkboxFontFamily: inherit;
 
 // Need to use string here due to:
 // https://github.com/webpack-contrib/sass-loader/issues/487
-$variants: "black", "white";
+$variants: "dark", "light";
 @each $color in $variants {
-  @if $color == "black" {
+  @if $color == "light" {
     // color settings
     $checkboxColor: $black !global;
     $checkboxIconColor: $checkboxColor !global;

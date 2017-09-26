@@ -7,19 +7,19 @@ context:
   value: ""
   disabled: false
   error: "Please provide a value for this field"
-default: "default-black"
+default: "default-light"
 variants:
-  - name: "default-black"
+  - name: "default-light"
     context:
       # Any text format, no checkbox/radio:
       type: "text"
       autocomplete: ""
-  - name: "default-white"
+  - name: "default-dark"
     preview: "@dark"
     context:
       # Any text format, no checkbox/radio:
       type: "text"
       autocomplete: ""
-  - name: "multiline-black"
-  - name: "multiline-white"
+  - name: "multiline-light"
+  - name: "multiline-dark"
     preview: "@dark"

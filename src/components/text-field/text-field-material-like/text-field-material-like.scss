@@ -25,9 +25,9 @@ $textFieldPadding: ($textFieldHeight - $textFieldLineHeight) / 2;
 
 // need to use string here due to:
 // https://github.com/webpack-contrib/sass-loader/issues/487
-$variants: "black", "white";
+$variants: "dark", "light";
 @each $color in $variants {
-  @if $color == "black" {
+  @if $color == "light" {
     // color settings
     $textFieldBorderColor: $black !global;
     $textFieldBackgroundColor: transparent !global;

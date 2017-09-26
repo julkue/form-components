@@ -8,8 +8,8 @@ context:
   disabled: false
   checked: false
   error: "Please provide a value for this field"
-default: "default-black"
+default: "default-light"
 variants:
-  - name: "default-black"
-  - name: "default-white"
+  - name: "default-light"
+  - name: "default-dark"
     preview: "@dark"
