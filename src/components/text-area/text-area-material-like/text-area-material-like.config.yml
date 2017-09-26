@@ -7,9 +7,6 @@ context:
   value: ""
   disabled: false
   error: "Please provide a value for this field"
-  # Any text format, no checkbox/radio:
-  type: "text"
-  autocomplete: ""
 default: "default-light"
 variants:
   - name: "default-light"

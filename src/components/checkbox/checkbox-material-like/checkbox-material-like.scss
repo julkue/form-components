@@ -4,7 +4,8 @@
  * Contextual classes:
  * - is-disabled: When input is disabled
  * - is-pressed: When the user has the mouse down on the checkbox
- * - is-focused: When the input is focused (a11y)
+ * - is-tabbed: When the input is focused by tabbing (a11y)
+ * - is-focused: When the input is focused
  ******************************************************************************/
 // font settings
 $checkboxFontSize: 1.125rem;
@@ -53,7 +54,7 @@ $variants: "dark", "light";
         }
       }
 
-      &.is-focused{
+      &.is-tabbed{
         outline: 1px solid $checkboxFocusBorderColor;
         outline-offset: 3px;
       }

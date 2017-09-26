@@ -1,10 +1,6 @@
 <div class="text-field--{{splitDashLast _self.name}}">
   <div class="text-field__wrapper">
-    {{#ifStartsWith _self.name "default"}}
-      <input class="text-field__input" id="{{id}}" type="{{type}}" name="{{name}}" {{#if value}}value="{{value}}"{{/if}} {{#if disabled}}disabled{{/if}} {{#if required }}required="true"{{/if}} {{#if autocomplete}}autocomplete="{{autocomplete}}"{{/if}}/>
-    {{ else }}
-      <textarea class="text-field__input" id="{{id}}" type="text" name="{{name}}" {{#if value}}value="{{value}}"{{/if}} {{#if disabled}}disabled{{/if}} {{#if required }}required="true"{{/if}}></textarea>
-    {{/ifStartsWith}}
+    <input class="text-field__input" id="{{id}}" type="{{type}}" name="{{name}}" {{#if value}}value="{{value}}"{{/if}} {{#if disabled}}disabled{{/if}} {{#if required }}required="true"{{/if}} {{#if autocomplete}}autocomplete="{{autocomplete}}"{{/if}}/>
     <label class="text-field__label" for="{{id}}">{{label}}</label>
   </div>
   <!-- NOTE: This div is reserved for field-specific error messages by a backend -->

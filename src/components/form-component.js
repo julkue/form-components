@@ -17,21 +17,27 @@ export default class FormComponent {
       if (event.keyCode === 9) {
         const chk = document.activeElement;
         if (chk === this.context || this.context.contains(chk)) {
-          this.context.classList.add('is-focused');
+          this.context.classList.add('is-tabbed');
           const listener = event => {
             const chk = event.target;
             if (chk === this.context || this.context.contains(chk)) {
-              this.context.classList.remove('is-focused');
+              this.context.classList.remove('is-tabbed');
               document.removeEventListener('focusout', listener);
             }
           };
           document.addEventListener('focusout', listener);
         } else {
-          if (this.context.classList.contains('is-focused')) {
-            this.context.classList.remove('is-focused');
+          if (this.context.classList.contains('is-tabbed')) {
+            this.context.classList.remove('is-tabbed');
           }
         }
       }
+    });
+    this.field.addEventListener('focus', () => {
+      this.context.classList.add('is-focused');
+    });
+    this.field.addEventListener('focusout', () => {
+      this.context.classList.remove('is-focused');
     });
   }
 

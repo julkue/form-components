@@ -4,7 +4,8 @@
  * Contextual classes:
  * - is-disabled: When input is disabled
  * - is-filled-in: When value is available or the user clicked into the input
- * - is-focused: When the input is focused (a11y)
+ * - is-tabbed: When the input is focused by tabbing (a11y)
+ * - is-focused: When the input is focused
  ******************************************************************************/
 // size settings
 $textFieldPaddingX: 10px;
