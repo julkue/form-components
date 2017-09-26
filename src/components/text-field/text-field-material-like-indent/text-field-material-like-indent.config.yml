@@ -20,6 +20,3 @@ variants:
       # Any text format, no checkbox/radio:
       type: "text"
       autocomplete: ""
-  - name: "multiline-light"
-  - name: "multiline-dark"
-    preview: "@dark"

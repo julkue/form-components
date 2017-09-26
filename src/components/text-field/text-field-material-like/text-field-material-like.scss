@@ -113,15 +113,6 @@ $variants: "dark", "light";
       }
 
       /*************************************************************************
-       * Textarea Input
-       ************************************************************************/
-      #{selector-append("textarea", $block, "__input")} {
-        height: $textFieldTextareaHeight;
-        resize: vertical;
-        line-height: 1.25;
-      }
-
-      /*************************************************************************
        * Label (will be moved to top when value available)
        ************************************************************************/
       #{$block}__label {

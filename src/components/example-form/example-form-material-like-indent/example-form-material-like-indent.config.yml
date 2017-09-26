@@ -64,14 +64,6 @@ variants:
         type: "email"
         autocomplete: ""
         error: ""
-      message:
-        id: "message"
-        name: "message"
-        label: "Message"
-        required: true
-        value: ""
-        disabled: false
-        error: ""
       copy:
         id: "copy"
         name: "copy"
@@ -142,14 +134,6 @@ variants:
         disabled: false
         type: "email"
         autocomplete: ""
-        error: "Please provide a value for this field"
-      message:
-        id: "message"
-        name: "message"
-        label: "Message"
-        required: true
-        value: ""
-        disabled: false
         error: "Please provide a value for this field"
       copy:
         id: "copy"
