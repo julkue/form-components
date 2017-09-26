@@ -102,7 +102,7 @@ $variants: "dark", "light";
         height: $selectHeight;
         padding-top: $selectLabelFontSize;
         overflow: hidden; // for IE text indent fix (see below in select)
-        @include form-components-icons-after("arrow-down");
+        @include form-components-icons-after("arrow-down-material");
 
         // NOTE: Specify the arrow on a wrapper as after, as using background
         // image on the select itself will be overwritten by Chrome's autofill
