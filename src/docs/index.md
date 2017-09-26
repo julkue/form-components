@@ -32,12 +32,7 @@ new Message(document.querySelector(MessageSelector));
 
 ## Currently Available Components
 
-- Theme: Material Like:
-  - Select
-  - Text Field (single and multi line)
-  - Checkbox
-  - Radio
-  - Message (e.g. to output validation messages at the top of a document)
+Please head over to the components list on the left side to see a full list of all available components.
 
 There's also an example form that renders all of them in a single form for demonstration purposes.
 

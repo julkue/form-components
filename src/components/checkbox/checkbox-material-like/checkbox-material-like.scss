@@ -87,7 +87,7 @@ $variants: "dark", "light";
         cursor: pointer;
         width: 100%;
         display: block; // use padding for a second line too
-        @include form-components-icons-before("checkmark");
+        @include form-components-icons-before("checkmark-material");
 
         // after contains the squash, before the checkmark.
         // this is necessary due to animation purposes
