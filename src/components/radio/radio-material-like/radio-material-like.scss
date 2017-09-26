@@ -8,7 +8,7 @@
 // font settings
 $radioFontSize: 1.125rem;
 $radioLineHeight: 1.2;
-$radioIconFontSize: 1rem;
+$radioIconFontSize: 1.125rem;
 $radioFontFamily: inherit;
 
 // Need to use string here due to:
@@ -52,7 +52,7 @@ $variants: "black", "white";
         }
       }
 
-      &.is-focused{
+      &.is-focused {
         outline: 1px solid $radioFocusBorderColor;
         outline-offset: 3px;
       }
@@ -76,11 +76,12 @@ $variants: "black", "white";
       #{$block}__label {
         $border: 1px;
         position: relative;
-        line-height: $radioLineHeight;
         color: $radioColor;
         font-size: $radioFontSize;
+        line-height: $radioLineHeight;
         font-family: $radioFontFamily;
-        padding: 0 0 0 calc(#{$radioIconFontSize} + #{$border * 2} + 10px);
+        // subtract -2px as checkbox is 2px smaller (Material Design sizes)
+        padding: 0 0 0 calc(#{$radioIconFontSize} + #{$border * 2} + 10px - 2px);
         box-sizing: border-box;
         cursor: pointer;
         width: 100%;
@@ -108,10 +109,10 @@ $variants: "black", "white";
           font-size: $radioIconFontSize;
           line-height: $radioIconFontSize;
           color: $radioInnerColor;
-          width: calc(#{$radioIconFontSize} - #{$border * 8});
-          height: calc(#{$radioIconFontSize} - #{$border * 8});
+          width: calc(#{$radioIconFontSize} - #{$border * 10});
+          height: calc(#{$radioIconFontSize} - #{$border * 10});
           border: #{$border} solid transparent;
-          left: #{$border * 4};
+          left: #{$border * 5};
           z-index: 1;
           transform-origin: center center;
           transform: translateY(-50%) scale(0);
