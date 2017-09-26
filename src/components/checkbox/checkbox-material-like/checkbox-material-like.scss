@@ -6,6 +6,7 @@
  * - is-pressed: When the user has the mouse down on the checkbox
  * - is-tabbed: When the input is focused by tabbing (a11y)
  * - is-focused: When the input is focused
+ * - is-initialized: When the JS for the component is initialized
  ******************************************************************************/
 // font settings
 $checkboxFontSize: 1.125rem;

@@ -8,6 +8,7 @@
  * - has-no-label: If the select has no label
  * - is-tabbed: When the select is focused (a11y)
  * - is-focused: When the input is focused
+ * - is-initialized: When the JS for the component is initialized
  ******************************************************************************/
 // sizes
 $selectHeight: 2.375rem; // 38px + 12px == 50px height

@@ -6,6 +6,7 @@
  * - is-filled-in: When value is available or the user clicked into the input
  * - is-tabbed: When the input is focused by tabbing (a11y)
  * - is-focused: When the input is focused
+ * - is-initialized: When the JS for the component is initialized
  ******************************************************************************/
 // size settings
 $textFieldPaddingX: 10px;

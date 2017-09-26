@@ -10,6 +10,7 @@ export default class FormComponent {
     }
     this.setIsFilledIn();
     this.initFocus();
+    this.context.classList.add('is-initialized');
   }
 
   initFocus() {

@@ -6,6 +6,7 @@
  * - is-filled-in: When value is available or the user clicked into the input
  * - is-tabbed: When the input is focused by tabbing (a11y)
  * - is-focused: When the input is focused
+ * - is-initialized: When the JS for the component is initialized
  ******************************************************************************/
 // font settings
 $textAreaLabelFontSize: 1.125rem;
@@ -147,7 +148,7 @@ $variants: "dark", "light";
       // to avoid label jumping when forms with filled-in values are loaded
       // via AJAX
       &.is-filled-in #{$block}__label,
-      &:not([data-is-initialized]) #{$block}__label {
+      &:not(.is-initialized) #{$block}__label {
         top: $textAreaPaddingY;
         height: $textAreaLabelFontSizeFilledIn;
         font-size: $textAreaLabelFontSizeFilledIn;
