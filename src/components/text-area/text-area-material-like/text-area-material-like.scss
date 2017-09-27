@@ -109,6 +109,7 @@ $variants: "dark", "light";
         &:focus {
           border-bottom-width: 2px;
           padding: $textAreaPaddingY $textAreaPaddingX;
+          outline: none;
         }
       }
       &.is-focused #{$block}__input {

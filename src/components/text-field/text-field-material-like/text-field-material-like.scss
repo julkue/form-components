@@ -107,6 +107,7 @@ $variants: "dark", "light";
         &:focus {
           border-bottom-width: 2px;
           padding: $textFieldPadding $textFieldPaddingX;
+          outline: none;
         }
       }
       &.is-disabled #{$block}__input {
