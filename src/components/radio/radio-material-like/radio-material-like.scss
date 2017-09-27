@@ -9,8 +9,8 @@
  ******************************************************************************/
 // font settings
 $radioFontSize: 1.125rem;
-$radioLineHeight: 1.2;
-$radioIconFontSize: 1.125rem;
+$radioLineHeight: 1.35rem;
+$radioIconFontSize: 1.25rem;
 $radioFontFamily: inherit;
 
 // Need to use string here due to:
@@ -94,17 +94,17 @@ $variants: "dark", "light";
         &:after,
         &:before {
           position: absolute;
-          top: 50%;
+          top: ($radioLineHeight - $radioIconFontSize) / 2;
           left: 0;
           content: "";
           display: inline-block;
-          transform: translateY(-50%);
           border-radius: 50%;
+          box-sizing: border-box;
+          width: #{$radioIconFontSize};
+          height: #{$radioIconFontSize};
         }
         &:after {
           border: $border solid $radioBorderColor;
-          width: #{$radioIconFontSize};
-          height: #{$radioIconFontSize};
           z-index: 2;
         }
         &:before {
@@ -115,9 +115,10 @@ $variants: "dark", "light";
           height: calc(#{$radioIconFontSize} - #{$border * 10});
           border: #{$border} solid transparent;
           left: #{$border * 5};
+          top: calc(#{($radioLineHeight - $radioIconFontSize) / 2} + #{$border * 5});
           z-index: 1;
           transform-origin: center center;
-          transform: translateY(-50%) scale(0);
+          transform: scale(0);
           transition: transform 0.1s ease-in-out;
           background: $radioInnerColor;
         }
@@ -127,7 +128,7 @@ $variants: "dark", "light";
         }
       }
       #{$block}__input:checked + #{$block}__label:before {
-        transform: translateY(-50%) scale(1);
+        transform: scale(1);
       }
 
       /*************************************************************************

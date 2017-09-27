@@ -13,3 +13,5 @@ variants:
   - name: "default-light"
   - name: "default-dark"
     preview: "@dark"
+    context:
+      label: "I agree with the Shipping and Billing terms"

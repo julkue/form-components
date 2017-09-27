@@ -2,7 +2,7 @@ status: "ready"
 context:
   id: "choice"
   name: "choice"
-  label: "Some condition"
+  label: "Some long long condition condition condition condition condition condition condition condition condition condition condition condition condition condition condition condition"
   value: "1"
   required: false
   disabled: false
@@ -13,3 +13,5 @@ variants:
   - name: "default-light"
   - name: "default-dark"
     preview: "@dark"
+    context:
+      label: "Some condition"
