@@ -47,24 +47,19 @@
     content: "\f104";
   }
 }
-@else if ($icon == "checkmark-thick") {
+@else if ($icon == "error") {
   &:before {
     content: "\f105";
   }
 }
-@else if ($icon == "error") {
+@else if ($icon == "status") {
   &:before {
     content: "\f106";
   }
 }
-@else if ($icon == "status") {
-  &:before {
-    content: "\f107";
-  }
-}
 @else if ($icon == "warning") {
   &:before {
-    content: "\f108";
+    content: "\f107";
   }
 }
 
@@ -110,24 +105,19 @@
     content: "\f104";
   }
 }
-@else if ($icon == "checkmark-thick") {
+@else if ($icon == "error") {
   &:after {
     content: "\f105";
   }
 }
-@else if ($icon == "error") {
+@else if ($icon == "status") {
   &:after {
     content: "\f106";
   }
 }
-@else if ($icon == "status") {
-  &:after {
-    content: "\f107";
-  }
-}
 @else if ($icon == "warning") {
   &:after {
-    content: "\f108";
+    content: "\f107";
   }
 }
 

@@ -7,6 +7,7 @@
  * - is-tabbed: When the input is focused by tabbing (a11y)
  * - is-focused: When the input is focused
  * - is-initialized: When the JS for the component is initialized
+ * - has-no-label: If there is no label available
  ******************************************************************************/
 // font settings
 $textAreaLabelFontSize: 1.125rem;
@@ -112,9 +113,6 @@ $variants: "dark", "light";
           outline: none;
         }
       }
-      &.is-focused #{$block}__input {
-        //margin-left: -1px;
-      }
       &.is-disabled #{$block}__input {
         cursor: not-allowed;
       }
@@ -131,10 +129,7 @@ $variants: "dark", "light";
         width: 100%;
         box-sizing: border-box;
         cursor: text;
-        // a border and padding is necessary to have the same line height like
-        // input
-        border-bottom: 1px solid transparent;
-        padding: 0 $textAreaPaddingX 1px $textAreaPaddingX;
+        padding: 0 $textAreaPaddingX;
         font-size: $textAreaLabelFontSize;
         font-family: $textAreaLabelFontFamily;
         color: $textAreaLabelColor;

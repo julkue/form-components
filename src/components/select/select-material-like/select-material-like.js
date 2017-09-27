@@ -10,15 +10,11 @@ export class Select extends FormComponent {
     super.init();
 
     this.wrapper = context.querySelector('.select__wrapper');
-    this.label = this.wrapper.querySelector('.select__label');
     this.error = context.querySelector('.select__error');
     this.dropdown = null;
     this.dropdownOptions = [];
 
     this.createDropdown();
-    if (!this.label) {
-      this.context.classList.add('has-no-label');
-    }
     if (!this.field.hasAttribute('disabled')) {
       this.initEvents();
     }

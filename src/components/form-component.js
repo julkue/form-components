@@ -2,11 +2,15 @@ export default class FormComponent {
   constructor(context, field) {
     this.context = context;
     this.field = field;
+    this.label = this.context.querySelector('label');
   }
 
   init() {
     if (this.field.hasAttribute('disabled')) {
       this.context.classList.add('is-disabled');
+    }
+    if (!this.label) {
+      this.context.classList.add('has-no-label');
     }
     this.setIsFilledIn();
     this.initFocus();
