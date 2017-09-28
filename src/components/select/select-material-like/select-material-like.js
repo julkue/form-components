@@ -2,10 +2,11 @@ import FormComponent from '../../form-component';
 import Bowser from 'bowser';
 
 export class Select extends FormComponent {
-  constructor(context) {
+  constructor(context, options) {
     super(
       context,
-      context.querySelector('.select__select')
+      context.querySelector('.select__select'),
+      options
     );
     super.init();
 

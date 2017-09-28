@@ -16,7 +16,7 @@ You can embed individual form components from the `dist` folder. They are availa
 
 ## Getting Started
 
-After you've embedded the components you want to use (including their CSS files), you need to initialize them. Create a new class instance of the exported class. In case you'd like to dynamically initialize instances, you can use the also exported `selector` string to determine if a component exists.
+After you've installed the components, you need to load and initialize them. Create a new class instance of the exported class. In case you'd like to dynamically initialize instances, you can use the also exported `selector` string to determine if a component exists.
 
 For example when using Webpack with ES6:
 
@@ -29,6 +29,23 @@ import {
 
 new Message(document.querySelector(MessageSelector));
 ```
+
+You can also pass in options for every form component instance (not the message component). For example:
+
+```js
+new Message(document.querySelector(MessageSelector), {
+  tabbed: false
+});
+```
+
+### Options
+
+**tabbed**
+
+Type: boolean  
+Default: true
+
+If the form component should receive a focus outline when tabbing with the keyboard. 
 
 ## Currently Available Components
 

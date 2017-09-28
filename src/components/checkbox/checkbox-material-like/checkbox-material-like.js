@@ -1,10 +1,11 @@
 import FormComponent from '../../form-component';
 
 export class Checkbox extends FormComponent {
-  constructor(context) {
+  constructor(context, options) {
     super(
       context,
-      context.querySelector('.checkbox__input')
+      context.querySelector('.checkbox__input'),
+      options
     );
     super.init();
     this.minAnimationDuration = 500;

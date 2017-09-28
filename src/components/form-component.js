@@ -1,7 +1,10 @@
 export default class FormComponent {
-  constructor(context, field) {
+  constructor(context, field, options) {
     this.context = context;
     this.field = field;
+    this.options = Object.assign({}, {
+      tabbed: true
+    }, options);
     this.label = this.context.querySelector('label');
   }
 
@@ -18,26 +21,28 @@ export default class FormComponent {
   }
 
   initFocus() {
-    document.addEventListener('keyup', event => {
-      if (event.keyCode === 9) {
-        const chk = document.activeElement;
-        if (chk === this.context || this.context.contains(chk)) {
-          this.context.classList.add('is-tabbed');
-          const listener = event => {
-            const chk = event.target;
-            if (chk === this.context || this.context.contains(chk)) {
+    if (this.options.tabbed) {
+      document.addEventListener('keyup', event => {
+        if (event.keyCode === 9) {
+          const chk = document.activeElement;
+          if (chk === this.context || this.context.contains(chk)) {
+            this.context.classList.add('is-tabbed');
+            const listener = event => {
+              const chk = event.target;
+              if (chk === this.context || this.context.contains(chk)) {
+                this.context.classList.remove('is-tabbed');
+                document.removeEventListener('focusout', listener);
+              }
+            };
+            document.addEventListener('focusout', listener);
+          } else {
+            if (this.context.classList.contains('is-tabbed')) {
               this.context.classList.remove('is-tabbed');
-              document.removeEventListener('focusout', listener);
             }
-          };
-          document.addEventListener('focusout', listener);
-        } else {
-          if (this.context.classList.contains('is-tabbed')) {
-            this.context.classList.remove('is-tabbed');
           }
         }
-      }
-    });
+      });
+    }
     this.field.addEventListener('focus', () => {
       this.context.classList.add('is-focused');
     });

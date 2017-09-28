@@ -1,10 +1,11 @@
 import FormComponent from '../../form-component';
 
 export class TextField extends FormComponent {
-  constructor(context) {
+  constructor(context, options) {
     super(
       context,
-      context.querySelector('.text-field__input')
+      context.querySelector('.text-field__input'),
+      options
     );
     super.init();
     this.initEvents();

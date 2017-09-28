@@ -1,10 +1,11 @@
 import FormComponent from '../../form-component';
 
 export class TextArea extends FormComponent {
-  constructor(context) {
+  constructor(context, options) {
     super(
       context,
-      context.querySelector('.text-area__input')
+      context.querySelector('.text-area__input'),
+      options
     );
     super.init();
     this.initEvents();
