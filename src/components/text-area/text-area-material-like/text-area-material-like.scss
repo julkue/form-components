@@ -174,7 +174,7 @@ $variants: "dark", "light";
        ************************************************************************/
       #{$block}__error {
         color: $textAreaErrorColor;
-        margin: 5px $textAreaPaddingX;
+        margin: 5px 0;
 
         a {
           color: $textAreaErrorColor;

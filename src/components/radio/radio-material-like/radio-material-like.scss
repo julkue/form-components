@@ -84,7 +84,7 @@ $variants: "dark", "light";
         line-height: $radioLineHeight;
         font-family: $radioFontFamily;
         // subtract -2px as checkbox is 2px smaller (Material Design sizes)
-        padding: 0 0 0 calc(#{$radioIconFontSize} + #{$border * 2} + 10px - 2px);
+        padding: 0 0 0 calc(#{$radioIconFontSize} + #{$border * 2} + 10px + 2px);
         box-sizing: border-box;
         cursor: pointer;
         width: 100%;
