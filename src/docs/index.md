@@ -21,19 +21,19 @@ After you've installed the components, you need to load and initialize them. Cre
 For example when using Webpack with ES6:
 
 ```js
-import '@julmot/form-components/dist/message-material-like/message-material-like.css';
+import '@julmot/form-components/dist/radio-material-like/radio-material-like.css';
 import {
-  Message,
-  selector as MessageSelector
-} from '@julmot/form-components/dist/message-material-like/message-material-like';
+  Radio as RadioComponent,
+  selector as RadioComponentSelector
+} from '@julmot/form-components/dist/radio-material-like/radio-material-like';
 
-new Message(document.querySelector(MessageSelector));
+new RadioComponent(document.querySelector(RadioComponentSelector));
 ```
 
 You can also pass in options for every form component instance (not the message component). For example:
 
 ```js
-new Message(document.querySelector(MessageSelector), {
+new RadioComponent(document.querySelector(RadioComponentSelector), {
   tabbed: false
 });
 ```
