@@ -1,7 +1,7 @@
 {
   "name": "@julmot/form-components",
   "version": "0.7.0",
-  "description": "Custom Form Components. Without Any Framework.",
+  "description": "Custom Form Components. Without Any Framework. Accessible.",
   "keywords": [
     "form",
     "components",

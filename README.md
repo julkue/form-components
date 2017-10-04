@@ -1,6 +1,6 @@
 # Form Components
 
-> Custom Form Components. Without Any Framework.
+> Custom Form Components. Without Any Framework. Accessible.
 
 [![Build Status](https://img.shields.io/travis/julmot/form-components/master.svg)](https://travis-ci.org/julmot/form-components)
 [![Greenkeeper](https://badges.greenkeeper.io/julmot/form-components.svg)](https://github.com/julmot/form-components)

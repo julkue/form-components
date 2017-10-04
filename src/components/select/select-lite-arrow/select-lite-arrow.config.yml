@@ -30,3 +30,4 @@ variants:
   - name: "default-light"
   - name: "default-dark"
     preview: "@dark"
+notes: "This component is based on 'select material like' and inherits its behavior"

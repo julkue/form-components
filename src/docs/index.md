@@ -1,4 +1,4 @@
-> Custom Form Components. Without Any Framework.
+> Custom Form Components. Without Any Framework. Accessible.
 
 ## Installation
 
@@ -49,7 +49,7 @@ If the form component should receive a focus outline when tabbing with the keybo
 
 ## Currently Available Components
 
-Please head over to the components list on the left side to see a full list of all available components.
+Please head over to the components list on the left side to see a full list of all available components. If you open a component, head over to the "Notes" tab. Individual components may contain a separate documentation or notes.
 
 There's also an example form that renders all of them in a single form for demonstration purposes.
 

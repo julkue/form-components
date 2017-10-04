@@ -13,3 +13,4 @@ variants:
   - name: "default-light"
   - name: "default-dark"
     preview: "@dark"
+notes: "This component is based on 'checkbox material like' and inherits its behavior"
