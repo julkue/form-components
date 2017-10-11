@@ -1,0 +1,15 @@
+<style>
+@media (max-width: 480px) {
+  .Header-title + iframe {
+    display: none;
+  }
+}
+</style>
+<div class="Header">
+    <button class="Header-button Header-navToggle" data-action="toggle-sidebar">
+        {% include 'icons/close-nav.svg' %}
+        {% include 'icons/open-nav.svg' %}
+    </button>
+    <a href="{{ path('/') }}" class="Header-title" data-pjax>{{ frctl.get('project.title') | default('Component Library') }}</a>
+    <a class="github-button" href="https://github.com/julmot/form-components" data-size="large" aria-label="Star julmot/form-components on GitHub">Star</a>
+</div>

@@ -17,8 +17,12 @@ fractal.web.set('static.path', path.join(__dirname, '../dist'));
 fractal.web.set('builder.dest', path.join(__dirname, '../build/library'));
 fractal.components.set('default.preview', '@light');
 fractal.web.theme(mandelbrot({
-  skin: 'navy'
-}));
+  skin: 'navy',
+  scripts: [
+    'default',
+    'https://buttons.github.io/buttons.js'
+  ]
+}).addLoadPath(path.join(__dirname, '../ui-overrides')));
 fractal.components.engine(hbs({
   helpers: {
     eachComponentFile: function(extension, target, options) {
