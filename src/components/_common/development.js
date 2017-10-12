@@ -5,7 +5,7 @@ import 'babel-polyfill';
 const components = require.context(
   '../',
   true,
-  /^\.\/[a-z-]+\/(?!development\.js$)[a-z-]+\/(?!.*-bundle\.js)[a-z-]+\.js/gm
+  /^\.\/[a-z-]+\/(?!development\.js$)[a-z-]+\/(?!.*-bundle\.js)[a-z-]+\.js/
 );
 
 class Bootstrap {
