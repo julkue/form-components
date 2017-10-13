@@ -21,6 +21,7 @@ $textAreaFontFamily: inherit;
 $textAreaHeight: $textAreaLineHeight * 5;
 $textAreaPaddingX: 15px;
 $textAreaPaddingY: 10px;
+$textAreaLabelSpacing: 5px;
 $textAreaBorderRadius: 2px;
 
 // need to use string here due to:
@@ -83,10 +84,10 @@ $variants: "dark", "light";
         border: none;
         cursor: text;
         display: block;
-        height: calc(#{$textAreaHeight} + #{$textAreaLabelFontSizeFilledIn} + (#{$textAreaPaddingY} * 2));
+        height: calc(#{$textAreaHeight} + #{$textAreaLabelFontSizeFilledIn} + (#{$textAreaPaddingY} * 2) + #{$textAreaLabelSpacing});
         line-height: $textAreaLineHeight;
         box-sizing: border-box;
-        padding: calc(#{$textAreaLabelFontSizeFilledIn} + #{$textAreaPaddingY}) #{$textAreaPaddingX} #{$textAreaPaddingY} #{$textAreaPaddingX};
+        padding: calc(#{$textAreaLabelFontSizeFilledIn} + #{$textAreaPaddingY} + #{$textAreaLabelSpacing}) #{$textAreaPaddingX} #{$textAreaPaddingY} #{$textAreaPaddingX};
         background: $textAreaBackgroundColor;
         font-size: $textAreaFontSize;
         font-family: $textAreaFontFamily;
