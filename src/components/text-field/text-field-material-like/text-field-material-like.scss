@@ -136,6 +136,7 @@ $variants: "dark", "light";
         color: $textFieldLabelColor;
         user-select: none;
         background-color: transparent;
+        transform: translateY(0);
         @include transition("all .275s");
       }
       // NOTE: We need to use two selectors here, as otherwise it won't work in
@@ -146,7 +147,7 @@ $variants: "dark", "light";
       // via AJAX
       &.is-filled-in #{$block}__label,
       &:not(.is-initialized) #{$block}__label {
-        top: 0;
+        transform: translateY(-#{$textFieldLabelFontSizeFilledIn});
         height: $textFieldLabelFontSizeFilledIn;
         font-size: $textFieldLabelFontSizeFilledIn;
         color: $textFieldLabelColorFilledIn;
@@ -155,7 +156,7 @@ $variants: "dark", "light";
       #{$block}__input:-webkit-autofill + #{$block}__label {
         // webkit autofill is used to remove the delay between Chrome, which
         // fills in predefined data, and JS that's being loaded
-        top: 0;
+        transform: translateY(-#{$textFieldLabelFontSizeFilledIn});
         height: $textFieldLabelFontSizeFilledIn;
         font-size: $textFieldLabelFontSizeFilledIn;
         color: $textFieldLabelColorFilledIn;
