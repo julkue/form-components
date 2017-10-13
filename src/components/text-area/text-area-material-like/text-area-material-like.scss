@@ -31,7 +31,6 @@ $variants: "dark", "light";
   @if $color == "light" {
     // color settings
     $textAreaWrapperBorderColor: $black !global;
-    $textAreaBorderBottomColor: $black !global;
     $textAreaBackgroundColor: transparent !global;
     $textAreaColor: $black !global;
     $textAreaLabelColor: $black !global;
@@ -41,7 +40,6 @@ $variants: "dark", "light";
   } @else {
     // color settings
     $textAreaWrapperBorderColor: $white !global;
-    $textAreaBorderBottomColor: $white !global;
     $textAreaBackgroundColor: transparent !global;
     $textAreaColor: $white !global;
     $textAreaLabelColor: $white !global;
@@ -94,6 +92,7 @@ $variants: "dark", "light";
         resize: none;
         border-radius: $textAreaBorderRadius;
         width: 100%;
+        color: $textAreaColor;
 
         &:focus {
           outline: none;
