@@ -14,8 +14,8 @@ $textAreaLabelFontSize: 1.125rem;
 $textAreaLabelFontSizeFilledIn: 0.75rem;
 $textAreaLabelFontFamily: inherit;
 $textAreaFontSize: 1.125rem;
+$textAreaLineHeight: 1.375rem;
 $textAreaFontFamily: inherit;
-$textAreaLineHeight: $textAreaFontSize * 1.35;
 
 // size settings
 $textAreaHeight: $textAreaLineHeight * 5;
@@ -54,7 +54,6 @@ $variants: "dark", "light";
    ****************************************************************************/
   .text-area {
     $block: &;
-    height: $textAreaHeight;
 
     &--#{unquote($color)} {
 
@@ -66,50 +65,36 @@ $variants: "dark", "light";
       #{$block}__wrapper {
         position: relative;
         width: 100%;
-        border-width: 1px 1px 0 1px;
-        border-style: solid;
-        border-color: $textAreaWrapperBorderColor;
-        padding-top: calc(#{$textAreaLabelFontSizeFilledIn} + #{$textAreaPaddingY} + 1px);
-        padding-left: 1px;
-        padding-right: 1px;
+        border: 1px solid $textAreaWrapperBorderColor;
+        padding: 1px;
         box-sizing: border-box;
         border-radius: $textAreaBorderRadius;
       }
 
       &.is-focused #{$block}__wrapper {
-        border-width: 2px 2px 0 2px;
-        padding-top: calc(#{$textAreaLabelFontSizeFilledIn} + #{$textAreaPaddingY});
-        padding-left: 0;
-        padding-right: 0;
+        border-width: 2px;
+        padding: 0;
       }
 
       /*************************************************************************
        * Input
        ************************************************************************/
       #{$block}__input {
-        border-width: 0 0 1px 0;
-        border-style: solid;
-        border-color: transparent transparent $textAreaBorderBottomColor transparent;
+        border: none;
         cursor: text;
         display: block;
-        height: $textAreaHeight;
+        height: calc(#{$textAreaHeight} + #{$textAreaLabelFontSizeFilledIn} + (#{$textAreaPaddingY} * 2));
         line-height: $textAreaLineHeight;
-        // add 1 px additional padding to avoid text jumping when
-        // border-bottom-width is set to 2px when focused
-        padding: $textAreaPaddingY $textAreaPaddingX calc(#{$textAreaPaddingY} + 1px) $textAreaPaddingX;
-        background: $textAreaBackgroundColor;
-        color: $textAreaColor;
         box-sizing: border-box;
-        width: calc(100% + 2px);
-        margin-left: -1px;
+        padding: calc(#{$textAreaLabelFontSizeFilledIn} + #{$textAreaPaddingY}) #{$textAreaPaddingX} #{$textAreaPaddingY} #{$textAreaPaddingX};
+        background: $textAreaBackgroundColor;
         font-size: $textAreaFontSize;
         font-family: $textAreaFontFamily;
         resize: none;
         border-radius: $textAreaBorderRadius;
+        width: 100%;
 
         &:focus {
-          border-bottom-width: 2px;
-          padding: $textAreaPaddingY $textAreaPaddingX;
           outline: none;
         }
       }
