@@ -51,8 +51,10 @@ export class Select extends FormComponent {
     if ((!Bowser.mobile && !Bowser.tablet)) {
       // It's important to use mousedown instead of click for Desktop, otherwise
       // it's too late to prevent the default select dropdown
-      // Also listen for touchstart, in case its a touch Desktop device
-      ['mousedown', 'touchstart'].forEach(listener => {
+      // Also listen for pointerdown, in case its a touch Desktop device
+      // (Edge doesn't listen to touchstart if it's a touch Desktop device,
+      // only for pointerdown)
+      ['mousedown', 'pointerdown'].forEach(listener => {
         this.field.addEventListener(listener, e => {
           e.preventDefault();
           // prevent other above named listeners from handling the same action:
