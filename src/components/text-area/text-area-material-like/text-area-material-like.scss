@@ -138,6 +138,7 @@ $variants: "dark", "light";
           border-radius: $textAreaBorderRadius;
           width: 100%;
           color: $textAreaColor;
+          box-shadow: none; // red border removal in case it's invalid/required
 
           // Active
           &:focus {
