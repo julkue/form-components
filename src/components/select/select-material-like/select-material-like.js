@@ -6,6 +6,7 @@ export class Select extends FormComponent {
     super(
       context,
       context.querySelector('.select__select'),
+      context.querySelector('.select__error'),
       options
     );
     super.init();

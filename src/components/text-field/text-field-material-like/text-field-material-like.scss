@@ -33,7 +33,7 @@ $variants: "dark", "light";
     // color settings
     $textFieldBorderColor: $black !global;
     $textFieldBorderActiveColor: $black !global;
-    $textFieldBorderInvalidColor: $red-light !global;
+    $textFieldBorderInvalidColor: $red !global;
     $textFieldBorderInvalidActiveColor: $red !global;
 
     $textFieldBackgroundColor: transparent !global;
@@ -48,9 +48,9 @@ $variants: "dark", "light";
 
     $textFieldLabelColor: $black !global;
     $textFieldLabelFilledInColor: $black !global;
-    $textFieldLabelInvalidFilledInColor: $red-light !global;
+    $textFieldLabelInvalidFilledInColor: $red !global;
     $textFieldLabelInvalidFilledInActiveColor: $red !global;
-    $textFieldLabelInvalidColor: $red-light !global;
+    $textFieldLabelInvalidColor: $red !global;
     $textFieldLabelInvalidActiveColor: $red !global;
 
     $textFieldErrorColor: $red !global;
@@ -60,7 +60,7 @@ $variants: "dark", "light";
     // color settings
     $textFieldBorderColor: $white !global;
     $textFieldBorderActiveColor: $white !global;
-    $textFieldBorderInvalidColor: $red-light !global;
+    $textFieldBorderInvalidColor: $red !global;
     $textFieldBorderInvalidActiveColor: $red !global;
 
     $textFieldBackgroundColor: transparent !global;
@@ -75,9 +75,9 @@ $variants: "dark", "light";
 
     $textFieldLabelColor: $white !global;
     $textFieldLabelFilledInColor: $white !global;
-    $textFieldLabelInvalidFilledInColor: $red-light !global;
+    $textFieldLabelInvalidFilledInColor: $red !global;
     $textFieldLabelInvalidFilledInActiveColor: $red !global;
-    $textFieldLabelInvalidColor: $red-light !global;
+    $textFieldLabelInvalidColor: $red !global;
     $textFieldLabelInvalidActiveColor: $red !global;
 
     $textFieldErrorColor: $red !global;

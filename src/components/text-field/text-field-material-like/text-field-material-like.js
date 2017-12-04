@@ -5,6 +5,7 @@ export class TextField extends FormComponent {
     super(
       context,
       context.querySelector('.text-field__input'),
+      context.querySelector('.text-field__error'),
       options
     );
     super.init();

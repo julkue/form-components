@@ -1,7 +1,8 @@
 export default class FormComponent {
-  constructor(context, field, options) {
+  constructor(context, field, errorField, options) {
     this.context = context;
     this.field = field;
+    this.errorField = errorField;
     this.options = Object.assign({}, {
       tabbed: true
     }, options);
@@ -14,6 +15,9 @@ export default class FormComponent {
     }
     if (!this.label) {
       this.context.classList.add('has-no-label');
+    }
+    if (this.errorField) {
+      this.context.classList.add('is-invalid');
     }
     this.setIsFilledIn();
     this.initFocus();

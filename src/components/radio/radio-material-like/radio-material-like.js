@@ -5,6 +5,7 @@ export class Radio extends FormComponent {
     super(
       context,
       context.querySelector('.radio__input'),
+      context.querySelector('.radio__error'),
       options
     );
     super.init();

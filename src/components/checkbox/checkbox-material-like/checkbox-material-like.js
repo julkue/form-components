@@ -5,6 +5,7 @@ export class Checkbox extends FormComponent {
     super(
       context,
       context.querySelector('.checkbox__input'),
+      context.querySelector('.checkbox__error'),
       options
     );
     super.init();
