@@ -1,7 +1,7 @@
 {{#ifLastDash _self.name "validation"}}
   {{render '@message-material-like--error'}}
 {{/ifLastDash}}
-<form novalidate>
+<form>
   {{render '@radio-material-like--default-light' already_user}}
   {{render '@radio-material-like--default-light' no_user}}
   {{render '@select-material-like--default-light' salutation}}

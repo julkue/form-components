@@ -67,7 +67,6 @@ Successfully tested in:
 ## Requirements
 
 - Needs the [babel polyfill](https://babeljs.io/docs/usage/polyfill/) to work with old browsers
-- Expects a `novalidate` attribute on the `<form>` tag
 - Work best with embedded [normalize.css](https://github.com/necolas/normalize.css)
 - Root _content_ element should be the `<main>` element (for detection of inline messages)
 - Inherits your app-specific fonts
