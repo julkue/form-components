@@ -146,6 +146,7 @@ $variants: "dark", "light";
           -webkit-animation-fill-mode: both;
         }
 
+        // Active
         &:focus,
         &:invalid:focus,
         &:required:focus {
@@ -157,14 +158,19 @@ $variants: "dark", "light";
           outline: none;
         }
       }
+
+      // Disabled
       &.is-disabled #{$block}__input {
         cursor: not-allowed;
       }
+
+      // Invalid
       &.is-invalid #{$block}__input {
         border-color: transparent transparent $textFieldBorderInvalidColor transparent;
         color: $textFieldInvalidColor;
         background: $textFieldBackgroundInvalidColor;
 
+        // Invalid & Active
         &:focus,
         &:invalid:focus,
         &:required:focus {
