@@ -32,8 +32,10 @@ $variants: "dark", "light";
   @if $color == "light" {
     // color settings
     $textFieldBorderColor: $black !global;
+    $textFieldBorderActiveColor: $black !global;
     $textFieldBackgroundColor: transparent !global;
     $textFieldColor: $black !global;
+    $textFieldActiveColor: $black !global;
     $textFieldLabelColor: $black !global;
     $textFieldLabelColorFilledIn: $black !global;
     $textFieldErrorColor: $red !global;
@@ -41,8 +43,10 @@ $variants: "dark", "light";
   } @else {
     // color settings
     $textFieldBorderColor: $white !global;
+    $textFieldBorderActiveColor: $white !global;
     $textFieldBackgroundColor: transparent !global;
     $textFieldColor: $white !global;
+    $textFieldActiveColor: $white !global;
     $textFieldLabelColor: $white !global;
     $textFieldLabelColorFilledIn: $white !global;
     $textFieldErrorColor: $red !global;
@@ -73,23 +77,28 @@ $variants: "dark", "light";
        * Input
        ************************************************************************/
       #{$block}__input {
-        border-width: 0 0 1px 0;
-        border-style: solid;
-        border-color: transparent transparent $textFieldBorderColor transparent;
-        cursor: text;
-        display: block;
-        height: $textFieldHeight;
-        line-height: $textFieldLineHeight;
-        // add 1 px additional padding to avoid text jumping when
-        // border-bottom-width is set to 2px when focused
-        padding: $textFieldPadding $textFieldPaddingX calc(#{$textFieldPadding} + 1px) $textFieldPaddingX;
-        background: $textFieldBackgroundColor;
-        color: $textFieldColor;
-        box-sizing: border-box;
-        width: 100%;
-        font-size: $textFieldFontSize;
-        font-family: $textFieldFontFamily;
-        border-radius: 0; // iOS default removal
+        &,
+        &:invalid,
+        &:required {
+          border-width: 0 0 1px 0;
+          border-style: solid;
+          border-color: transparent transparent $textFieldBorderColor transparent;
+          cursor: text;
+          display: block;
+          height: $textFieldHeight;
+          line-height: $textFieldLineHeight;
+          // add 1 px additional padding to avoid text jumping when
+          // border-bottom-width is set to 2px when focused
+          padding: $textFieldPadding $textFieldPaddingX calc(#{$textFieldPadding} + 1px) $textFieldPaddingX;
+          background: $textFieldBackgroundColor;
+          color: $textFieldColor;
+          box-sizing: border-box;
+          width: 100%;
+          font-size: $textFieldFontSize;
+          font-family: $textFieldFontFamily;
+          border-radius: 0; // iOS default removal
+          box-shadow: none; // red border removal in case it's invalid/required
+        }
 
         // use a "bug" of Chrome to overwrite autofill styling
         // https://stackoverflow.com/a/37432260/3894981
@@ -105,9 +114,13 @@ $variants: "dark", "light";
           -webkit-animation-fill-mode: both;
         }
 
-        &:focus {
+        &:focus,
+        &:invalid:focus,
+        &:required:focus {
           border-bottom-width: 2px;
+          border-color: transparent transparent $textFieldBorderActiveColor transparent;
           padding: $textFieldPadding $textFieldPaddingX;
+          color: $textFieldActiveColor;
           outline: none;
         }
       }
