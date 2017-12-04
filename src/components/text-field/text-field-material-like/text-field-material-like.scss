@@ -33,24 +33,56 @@ $variants: "dark", "light";
     // color settings
     $textFieldBorderColor: $black !global;
     $textFieldBorderActiveColor: $black !global;
+    $textFieldBorderInvalidColor: $red-light !global;
+    $textFieldBorderInvalidActiveColor: $red !global;
+
     $textFieldBackgroundColor: transparent !global;
+    $textFieldBackgroundActiveColor: transparent !global;
+    $textFieldBackgroundInvalidColor: transparent !global;
+    $textFieldBackgroundInvalidActiveColor: transparent !global;
+
     $textFieldColor: $black !global;
     $textFieldActiveColor: $black !global;
+    $textFieldInvalidColor: $black !global;
+    $textFieldInvalidActiveColor: $black !global;
+
     $textFieldLabelColor: $black !global;
-    $textFieldLabelColorFilledIn: $black !global;
+    $textFieldLabelFilledInColor: $black !global;
+    $textFieldLabelInvalidFilledInColor: $red-light !global;
+    $textFieldLabelInvalidFilledInActiveColor: $red !global;
+    $textFieldLabelInvalidColor: $red-light !global;
+    $textFieldLabelInvalidActiveColor: $red !global;
+
     $textFieldErrorColor: $red !global;
-    $textFieldFocusBorderColor: #95a5a6 !global;
+
+    $textFieldBorderTabbedColor: #95a5a6 !global;
   } @else {
     // color settings
     $textFieldBorderColor: $white !global;
     $textFieldBorderActiveColor: $white !global;
+    $textFieldBorderInvalidColor: $red-light !global;
+    $textFieldBorderInvalidActiveColor: $red !global;
+
     $textFieldBackgroundColor: transparent !global;
+    $textFieldBackgroundActiveColor: transparent !global;
+    $textFieldBackgroundInvalidColor: transparent !global;
+    $textFieldBackgroundInvalidActiveColor: transparent !global;
+
     $textFieldColor: $white !global;
     $textFieldActiveColor: $white !global;
+    $textFieldInvalidColor: $white !global;
+    $textFieldInvalidActiveColor: $white !global;
+
     $textFieldLabelColor: $white !global;
-    $textFieldLabelColorFilledIn: $white !global;
+    $textFieldLabelFilledInColor: $white !global;
+    $textFieldLabelInvalidFilledInColor: $red-light !global;
+    $textFieldLabelInvalidFilledInActiveColor: $red !global;
+    $textFieldLabelInvalidColor: $red-light !global;
+    $textFieldLabelInvalidActiveColor: $red !global;
+
     $textFieldErrorColor: $red !global;
-    $textFieldFocusBorderColor: #95a5a6 !global;
+
+    $textFieldBorderTabbedColor: #95a5a6 !global;
   }
 
   /*****************************************************************************
@@ -63,7 +95,7 @@ $variants: "dark", "light";
     &--#{unquote($color)} {
 
       &.is-tabbed {
-        outline: 1px solid $textFieldFocusBorderColor;
+        outline: 1px solid $textFieldBorderTabbedColor;
         outline-offset: 3px;
       }
 
@@ -121,11 +153,25 @@ $variants: "dark", "light";
           border-color: transparent transparent $textFieldBorderActiveColor transparent;
           padding: $textFieldPadding $textFieldPaddingX;
           color: $textFieldActiveColor;
+          background: $textFieldBackgroundActiveColor;
           outline: none;
         }
       }
       &.is-disabled #{$block}__input {
         cursor: not-allowed;
+      }
+      &.is-invalid #{$block}__input {
+        border-color: transparent transparent $textFieldBorderInvalidColor transparent;
+        color: $textFieldInvalidColor;
+        background: $textFieldBackgroundInvalidColor;
+
+        &:focus,
+        &:invalid:focus,
+        &:required:focus {
+          border-color: transparent transparent $textFieldBorderInvalidActiveColor transparent;
+          color: $textFieldInvalidActiveColor;
+          background: $textFieldBackgroundInvalidActiveColor;
+        }
       }
 
       /*************************************************************************
@@ -163,7 +209,7 @@ $variants: "dark", "light";
         transform: translateY(-#{$textFieldLabelFontSizeFilledIn});
         height: $textFieldLabelFontSizeFilledIn;
         font-size: $textFieldLabelFontSizeFilledIn;
-        color: $textFieldLabelColorFilledIn;
+        color: $textFieldLabelFilledInColor;
         line-height: $textFieldLabelFontSizeFilledIn;
       }
       #{$block}__input:-webkit-autofill + #{$block}__label {
@@ -172,12 +218,35 @@ $variants: "dark", "light";
         transform: translateY(-#{$textFieldLabelFontSizeFilledIn});
         height: $textFieldLabelFontSizeFilledIn;
         font-size: $textFieldLabelFontSizeFilledIn;
-        color: $textFieldLabelColorFilledIn;
+        color: $textFieldLabelFilledInColor;
         line-height: $textFieldLabelFontSizeFilledIn;
       }
       &.is-disabled #{$block}__label {
         cursor: not-allowed;
         user-select: none;
+      }
+      &.is-invalid #{$block}__label {
+        color: $textFieldLabelInvalidColor;
+
+        &:focus,
+        &:invalid:focus,
+        &:required:focus {
+          color: $textFieldLabelInvalidActiveColor;
+        }
+      }
+      &.is-invalid.is-filled-in #{$block}__label,
+      &.is-invalid:not(.is-initialized) #{$block}__label {
+        color: $textFieldLabelInvalidFilledInColor;
+      }
+      &.is-invalid #{$block}__input:-webkit-autofill + #{$block}__label {
+        color: $textFieldLabelInvalidFilledInColor;
+      }
+      &.is-invalid.is-filled-in #{$block}__input:focus + #{$block}__label,
+      &.is-invalid:not(.is-initialized) #{$block}__input:focus + #{$block}__label {
+        color: $textFieldLabelInvalidFilledInActiveColor;
+      }
+      &.is-invalid #{$block}__input:-webkit-autofill:focus + #{$block}__label {
+        color: $textFieldLabelInvalidFilledInActiveColor;
       }
 
       /*************************************************************************
