@@ -114,7 +114,6 @@ $variants: "dark", "light";
           border: $border solid $radioBorderColor;
           z-index: 2;
           background: $radioBackgroundColor;
-          background: transparent;
           @include transition("background .3s");
         }
         &:before {
