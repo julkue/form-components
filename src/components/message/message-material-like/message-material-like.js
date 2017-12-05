@@ -23,10 +23,18 @@ export class Message {
     }
 
     if (this.closeButton) {
-      this.closeButton.addEventListener('click', () => {
-        this.message.classList.add('is-hidden');
+      this.closeButton.addEventListener('click', () => this.hide());
+      this.closeButton.addEventListener('keydown', event => {
+        if (event.keyCode === 13) {
+          this.hide();
+        }
       });
     }
+  }
+
+  hide() {
+    this.message.classList.add('is-hidden');
+    this.closeButton.setAttribute('tabindex', '-1');
   }
 }
 

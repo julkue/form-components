@@ -135,9 +135,13 @@ export class Form {
   }
 
   showMessage() {
-    const message = this.form.querySelector('.message--error');
+    const message = this.form.querySelector('.message--error'),
+      messageClose = message.querySelector('.message__close-button');
     if (message) {
       message.classList.remove('is-hidden');
+      if (messageClose) {
+        messageClose.setAttribute('tabindex', '0');
+      }
       new MoveTo({
         duration: 400,
         tolerance: 10
@@ -147,9 +151,13 @@ export class Form {
   }
 
   hideMessage() {
-    const message = this.form.querySelector('.message--error');
+    const message = this.form.querySelector('.message--error'),
+      messageClose = message.querySelector('.message__close-button');
     if (message) {
       message.classList.add('is-hidden');
+      if (messageClose) {
+        messageClose.setAttribute('tabindex', '-1');
+      }
     }
   }
 }
