@@ -24,9 +24,7 @@ export class Message {
 
     if (this.closeButton) {
       this.closeButton.addEventListener('click', () => {
-        if (this.message.parentElement) {
-          this.message.parentElement.removeChild(this.message);
-        }
+        this.message.classList.add('is-hidden');
       });
     }
   }

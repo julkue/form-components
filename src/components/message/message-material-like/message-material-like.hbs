@@ -1,5 +1,5 @@
 {{#ifCond _self.name "===" "error"}}
-  <div class="message--error" role="alert">
+  <div class="message--error {{#if isHidden}}is-hidden{{/if}}" role="alert">
     <div class="message__container">
       <div class="message__icon-container">
         <span class="visually-hidden">Error message</span>
@@ -15,7 +15,7 @@
   </div>
 {{/ifCond}}
 {{#ifCond _self.name "===" "warning"}}
-  <div class="message--warning" role="alert">
+  <div class="message--warning {{#if isHidden}}is-hidden{{/if}}" role="alert">
     <div class="message__container">
       <div class="message__icon-container">
         <span class="visually-hidden">Warning message</span>
@@ -28,7 +28,7 @@
   </div>
 {{/ifCond}}
 {{#ifCond _self.name "===" "status"}}
-  <div class="message--status" role="alert">
+  <div class="message--status {{#if isHidden}}is-hidden{{/if}}" role="alert">
     <div class="message__container">
       <div class="message__icon-container">
         <span class="visually-hidden">Status message</span>

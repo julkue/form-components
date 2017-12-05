@@ -123,27 +123,27 @@ export class Select extends FormComponent {
   onKeydown(event) {
     const keyCode = event.keyCode;
     switch (keyCode) {
-    case 13: // enter
-      event.preventDefault();
-      this.onEnter();
-      break;
-    case 32: // space
-      event.preventDefault();
-      this.onSpace();
-      break;
-    case 37: // left
-    case 38: // up
-    case 39: // right
-    case 40: // down
-      event.preventDefault();
-      this.onArrowKey(keyCode);
-      break;
-    case 27: // esc
-      event.preventDefault();
-      this.onEsc();
-      break;
-    default:
-      return;
+      case 13: // enter
+        event.preventDefault();
+        this.onEnter();
+        break;
+      case 32: // space
+        event.preventDefault();
+        this.onSpace();
+        break;
+      case 37: // left
+      case 38: // up
+      case 39: // right
+      case 40: // down
+        event.preventDefault();
+        this.onArrowKey(keyCode);
+        break;
+      case 27: // esc
+        event.preventDefault();
+        this.onEsc();
+        break;
+      default:
+        return;
     }
   }
 

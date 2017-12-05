@@ -120,10 +120,6 @@ $variants: "dark", "light";
     &--#{unquote($color)} {
       position: relative;
 
-      &, * {
-        user-select: none;
-      }
-
       &.is-disabled {
         &, * {
           cursor: not-allowed !important;
@@ -145,6 +141,9 @@ $variants: "dark", "light";
         padding-top: $selectLabelFontSize;
         overflow: hidden; // for IE text indent fix (see below in select)
         @include form-components-icons-after("arrow-down-material");
+        &, * {
+          user-select: none;
+        }
 
         // NOTE: Specify the arrow on a wrapper as after, as using background
         // image on the select itself will be overwritten by Chrome's autofill

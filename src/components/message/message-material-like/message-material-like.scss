@@ -4,7 +4,7 @@ $fontFamily: inherit;
 $fontSize: 1.125rem;
 $lineHeight: 1.33;
 $iconSize: 20px;
-$closeButtonIconSize: 15px;
+$closeButtonIconSize: 13px;
 
 $statusBackgroundColor: #e0ede5;
 $statusColor: #257340;
@@ -35,6 +35,9 @@ $closeButtonIconColor: #4a4a4a;
 
     &.is-inline {
       margin: 10px 0;
+    }
+    &.is-hidden {
+      display: none;
     }
 
     em {
@@ -144,7 +147,7 @@ $closeButtonIconColor: #4a4a4a;
    ****************************************************************************/
   &__close-button {
     position: absolute;
-    top: 0;
+    top: -4px; // optical alignment with icon on the left side
     right: 0;
     cursor: pointer;
     border: 0;
