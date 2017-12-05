@@ -9,6 +9,7 @@ export class Checkbox extends FormComponent {
       options
     );
     super.init();
+    this.wrapper = context.querySelector('.checkbox__wrapper');
     this.minAnimationDuration = 500;
     this.animationPassed = false;
     this.initEvents();
@@ -16,7 +17,9 @@ export class Checkbox extends FormComponent {
   }
 
   initEvents() {
-    this.context.addEventListener('mousedown', () => {
+    // Apply events to the wrapper and not context to ignore error messages
+    // that are located outside the wrapper
+    this.wrapper.addEventListener('mousedown', () => {
       if (this.field.checked) {
         return;
       }
@@ -26,7 +29,7 @@ export class Checkbox extends FormComponent {
       }, this.minAnimationDuration);
       this.context.classList.add('is-pressed');
     });
-    this.context.addEventListener('mouseup', () => {
+    this.wrapper.addEventListener('mouseup', () => {
       if (this.field.checked) {
         return;
       }
