@@ -1,15 +1,17 @@
 export class Form {
   constructor(form) {
-    this.form = form;
-    this.init();
+    if (form) {
+      this.form = form;
+      this.init();
+    }
   }
 
   init() {
     this.form.setAttribute('novalidate', '');
     this.form.addEventListener('submit', event => {
-      const fields = this.formElements;
       let valid = true;
-      fields.forEach(field => {
+      this.formElements.forEach(field => {
+        // validate with browser's rules
         if (!field.checkValidity()) {
           valid = false;
           this.createError(field);
@@ -70,21 +72,51 @@ export class Form {
     }
   }
 
+  getExistingError(field) {
+    const type = this.getType(field);
+    let element;
+    if (type !== 'radio') {
+      element = field;
+    } else {
+      element = this.getLastRadio(field.name);
+    }
+    return element.parentElement.parentElement.querySelector(`.${type}__error`);
+  }
+
+  getLastRadio(name) {
+    let ret = null;
+    [...this.form.querySelectorAll(
+      `input[type="radio"][name="${name}"]`
+    )].forEach((field, idx, items) => {
+      if (idx === (items.length - 1)) {
+        ret = field;
+      }
+    });
+    return ret;
+  }
+
   createError(field) {
-    const type = this.getType(field),
-      target = field.parentElement; // wrapper
-    let error = target.parentElement.querySelector(`.${type}__error`);
-    if (error === null) {
+    const type = this.getType(field);
+    let error = this.getExistingError(field);
+    if (!error) {
       error = document.createElement('div');
       error.classList.add(`${type}__error`);
-      let next = error.nextSibling,
-        dropdown = error.nextElementSibling;
-      if (dropdown && dropdown.tagName === 'DIV') {
-        if (dropdown.classList.contains('select__dropdown')) {
-          next = next.nextSibling; // insert after dropdown
+      let target = null,
+        insertBefore = null;
+      if (type !== 'radio') {
+        let next = field.parentElement.nextSibling,
+          dropdown = field.parentElement.nextElementSibling;
+        if (dropdown && dropdown.classList.contains('select__dropdown')) {
+          next = dropdown.nextSibling; // insert after dropdown
         }
+        target = field.parentElement.parentElement;
+        insertBefore = next;
+      } else {
+        const radio = this.getLastRadio(field.name);
+        target = radio.parentElement.parentElement;
+        insertBefore = radio.parentElement.nextSibling;
       }
-      target.parentElement.insertBefore(error, next);
+      target.insertBefore(error, insertBefore);
     }
     error.innerText = field.validationMessage || 'Please fill out this field';
   }

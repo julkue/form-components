@@ -12,7 +12,7 @@ variants:
         name: "already_user"
         label: "I have an account already"
         value: "true"
-        required: false
+        required: true
         disabled: false
         checked: false
         error: ""
@@ -21,7 +21,7 @@ variants:
         name: "already_user"
         label: "I don't have an account yet"
         value: "false"
-        required: false
+        required: true
         disabled: false
         checked: false
         error: ""
@@ -80,7 +80,7 @@ variants:
         name: "copy"
         label: "I want a copy of my message"
         value: "true"
-        required: false
+        required: true
         disabled: false
         checked: false
         error: ""
@@ -91,7 +91,7 @@ variants:
         name: "already_user"
         label: "I have an account already"
         value: "true"
-        required: false
+        required: true
         disabled: false
         checked: false
         error: "Please provide a value for this field"
@@ -100,7 +100,7 @@ variants:
         name: "already_user"
         label: "I don't have an account yet"
         value: "false"
-        required: false
+        required: true
         disabled: false
         checked: false
         error: "Please provide a value for this field"
@@ -159,7 +159,7 @@ variants:
         name: "copy"
         label: "I want a copy of my message"
         value: "true"
-        required: false
+        required: true
         disabled: false
         checked: false
         error: "Please provide a value for this field"
