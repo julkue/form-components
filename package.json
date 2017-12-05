@@ -43,6 +43,7 @@
     "grunt-replace": "^1.0.1",
     "grunt-webfont": "^1.7.1",
     "jit-grunt": "^0.10.0",
+    "moveto": "^1.7.1",
     "node-sass": "^4.5.3",
     "normalize.css": "^7.0.0",
     "postcss-cssnext": "^3.0.2",

@@ -1,3 +1,5 @@
+import MoveTo from 'moveto';
+
 export class Form {
   constructor(form) {
     if (form) {
@@ -46,6 +48,7 @@ export class Form {
     const target = field.parentElement.parentElement;
     if (target) {
       target.classList.add('is-invalid');
+      target.setAttribute('aria-invalid', 'true');
     }
   }
 
@@ -53,6 +56,7 @@ export class Form {
     const target = field.parentElement.parentElement;
     if (target) {
       target.classList.remove('is-invalid');
+      target.removeAttribute('aria-invalid');
     }
   }
 
@@ -134,6 +138,11 @@ export class Form {
     const message = this.form.querySelector('.message--error');
     if (message) {
       message.classList.remove('is-hidden');
+      new MoveTo({
+        duration: 400,
+        tolerance: 10
+      }).move(message);
+      message.focus();
     }
   }
 
