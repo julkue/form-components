@@ -103,12 +103,12 @@ $variants: "dark", "light";
     $selectLabelInvalidColor: $red !global;
     $selectLabelInvalidActiveColor: $selectLabelInvalidColor !global;
 
-    $selectDropdownOptionColor: $white !global;
+    $selectDropdownOptionColor: $black !global;
     $selectDropdownOptionBackgroundColor: $white !global;
     $selectDropdownOptionHoverBackgroundColor: $clouds !global;
     $selectDropdownOptionHoverColor: $selectDropdownOptionColor !global;
     $selectDropdownOptionActiveBackgroundColor: #EEEEEE !global;
-    $selectDropdownOptionActiveColor: $white !global;
+    $selectDropdownOptionActiveColor: $black !global;
   }
 
   /*****************************************************************************
