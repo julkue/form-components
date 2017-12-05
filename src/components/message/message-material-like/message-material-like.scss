@@ -91,7 +91,7 @@ $closeButtonIconColor: #4a4a4a;
    ****************************************************************************/
   &__icon-container {
     position: relative;
-    padding: 0 0 0 #{$iconSize + 15};
+    padding: 0 #{$closeButtonIconSize + 15} 0 #{$iconSize + 15};
 
     &:before {
       position: absolute;

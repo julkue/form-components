@@ -4,11 +4,11 @@ export class Form {
   constructor(form) {
     if (form) {
       this.form = form;
-      this.init();
+      this.initEvents();
     }
   }
 
-  init() {
+  initEvents() {
     this.form.setAttribute('novalidate', '');
     this.form.addEventListener('submit', event => {
       let valid = true;
@@ -36,11 +36,11 @@ export class Form {
 
   get formElements() {
     return [...this.form.querySelectorAll([
-      '.text-field__input',
-      '.text-area__input',
-      '.select__select',
-      '.radio__input',
-      '.checkbox__input'
+      '[class^="text-field--"] .text-field__input',
+      '[class^="text-area--"] .text-area__input',
+      '[class^="select--"] .select__select',
+      '[class^="radio--"] .radio__input',
+      '[class^="checkbox--"] .checkbox__input'
     ].join(','))];
   }
 
