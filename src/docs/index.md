@@ -30,7 +30,7 @@ import {
 new RadioComponent(document.querySelector(RadioComponentSelector));
 ```
 
-You can also pass in options for every form component instance (not the message component). For example:
+You can also pass in options for every form component instance (not the message and "form" component). For example:
 
 ```js
 new RadioComponent(document.querySelector(RadioComponentSelector), {
@@ -53,6 +53,10 @@ Please head over to the components list on the left side to see a full list of a
 
 There's also an example form that renders all of them in a single form for demonstration purposes.
 
+## Form Validation
+
+There's one component that isn't listed on the left side since it's only one JavaScript file: "form". This component can be used for client-side validation. Basically it validates like a browser does, respecting e.g. "required" or "pattern" attributes. It also shows the same error messages like your browser does. However, the messages are shown in a design-conform way that looks nice with our custom form components. If you'd like to try it out; it's integrated in the "Example Form" components. It's exported like a normal component, so you can directly start using it.
+
 ## Browser Compatibility
 
 Successfully tested in:
@@ -67,7 +71,7 @@ Successfully tested in:
 ## Requirements
 
 - Needs the [babel polyfill](https://babeljs.io/docs/usage/polyfill/) to work with old browsers
-- Expects a `novalidate` attribute on the `<form>` tag
 - Work best with embedded [normalize.css](https://github.com/necolas/normalize.css)
 - Root _content_ element should be the `<main>` element (for detection of inline messages)
+- Requires either the `novalidate` attribute on `<form>` tags (only backend-side validation) or an initialization of the "form" component on them (client-side validation)
 - Inherits your app-specific fonts

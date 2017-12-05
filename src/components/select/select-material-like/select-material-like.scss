@@ -36,16 +36,35 @@ $variants: "dark", "light";
   @if $color == "light" {
     // color settings
     $selectBackgroundColor: transparent !global;
+    $selectBackgroundActiveColor: $selectBackgroundColor !global;
+    $selectBackgroundInvalidColor: $selectBackgroundColor !global;
+    $selectBackgroundInvalidActiveColor: $selectBackgroundColor !global;
+
     $selectColor: $black !global;
+    $selectActiveColor: $selectColor !global;
+    $selectInvalidColor: $selectColor !global;
+    $selectInvalidActiveColor: $selectColor !global;
+
     $selectBorderBottomColor: $black !global;
+    $selectBorderBottomActiveColor: $selectBorderBottomColor !global;
+    $selectBorderBottomInvalidColor: $red !global;
+    $selectBorderBottomInvalidActiveColor: $selectBorderBottomInvalidColor !global;
+    $selectDropdownBorderColor: $selectBorderBottomActiveColor !global;
+    $selectDropdownBorderInvalidColor: $selectBorderBottomInvalidActiveColor !global;
+
     $selectErrorColor: $red !global;
-    $selectFocusBorderColor: #95a5a6 !global;
+    $selectTabbedBorderColor: #95a5a6 !global;
 
     $selectArrowColor: $black !global;
+    $selectArrowActiveColor: $selectArrowColor !global;
+    $selectArrowInvalidColor: $selectArrowColor !global;;
+    $selectArrowInvalidActiveColor: $selectArrowColor !global;
 
     $selectLabelColor: $black !global;
+    $selectLabelActiveColor: $selectLabelColor !global;
+    $selectLabelInvalidColor: $red !global;
+    $selectLabelInvalidActiveColor: $selectLabelInvalidColor !global;
 
-    $selectDropdownBorderColor: $selectBorderBottomColor !global;
     $selectDropdownOptionColor: $black !global;
     $selectDropdownOptionBackgroundColor: $white !global;
     $selectDropdownOptionHoverBackgroundColor: $clouds !global;
@@ -55,16 +74,35 @@ $variants: "dark", "light";
   } @else {
     // color settings
     $selectBackgroundColor: transparent !global;
+    $selectBackgroundActiveColor: $selectBackgroundColor !global;
+    $selectBackgroundInvalidColor: $selectBackgroundColor !global;
+    $selectBackgroundInvalidActiveColor: $selectBackgroundColor !global;
+
     $selectColor: $white !global;
+    $selectActiveColor: $selectColor !global;
+    $selectInvalidColor: $selectColor !global;
+    $selectInvalidActiveColor: $selectColor !global;
+
     $selectBorderBottomColor: $white !global;
+    $selectBorderBottomActiveColor: $selectBorderBottomColor !global;
+    $selectBorderBottomInvalidColor: $red !global;
+    $selectBorderBottomInvalidActiveColor: $selectBorderBottomInvalidColor !global;
+    $selectDropdownBorderColor: $selectBorderBottomActiveColor !global;
+    $selectDropdownBorderInvalidColor: $selectBorderBottomInvalidActiveColor !global;
+
     $selectErrorColor: $red !global;
-    $selectFocusBorderColor: #95a5a6 !global;
+    $selectTabbedBorderColor: #95a5a6 !global;
 
     $selectArrowColor: $white !global;
+    $selectArrowActiveColor: $selectArrowColor !global;
+    $selectArrowInvalidColor: $selectArrowColor !global;;
+    $selectArrowInvalidActiveColor: $selectArrowColor !global;
 
     $selectLabelColor: $white !global;
+    $selectLabelActiveColor: $selectLabelColor !global;
+    $selectLabelInvalidColor: $red !global;
+    $selectLabelInvalidActiveColor: $selectLabelInvalidColor !global;
 
-    $selectDropdownBorderColor: $selectBorderBottomColor !global;
     $selectDropdownOptionColor: $black !global;
     $selectDropdownOptionBackgroundColor: $white !global;
     $selectDropdownOptionHoverBackgroundColor: $clouds !global;
@@ -82,21 +120,20 @@ $variants: "dark", "light";
     &--#{unquote($color)} {
       position: relative;
 
-      &, * {
-        user-select: none;
-      }
-
       &.is-disabled {
         &, * {
           cursor: not-allowed !important;
         }
       }
 
-      &.is-tabbed{
-        outline: 1px solid $selectFocusBorderColor;
+      &.is-tabbed {
+        outline: 1px solid $selectTabbedBorderColor;
         outline-offset: 3px;
       }
 
+      /*************************************************************************
+       * Wrapper
+       ************************************************************************/
       #{$block}__wrapper {
         position: relative;
         width: 100%;
@@ -104,6 +141,9 @@ $variants: "dark", "light";
         padding-top: $selectLabelFontSize;
         overflow: hidden; // for IE text indent fix (see below in select)
         @include form-components-icons-after("arrow-down-material");
+        &, * {
+          user-select: none;
+        }
 
         // NOTE: Specify the arrow on a wrapper as after, as using background
         // image on the select itself will be overwritten by Chrome's autofill
@@ -119,11 +159,15 @@ $variants: "dark", "light";
           pointer-events: none; // forward clicks on after to select
         }
       }
+
+      // Opened
       &.is-open #{$block}__wrapper {
         &:after {
           transform: rotate(-180deg);
         }
       }
+
+      // No label
       &.has-no-label #{$block}__wrapper {
         padding-top: 0;
 
@@ -132,83 +176,205 @@ $variants: "dark", "light";
         }
       }
 
+      // Active
+      &.is-focused #{$block}__wrapper {
+        &:after {
+          color: $selectArrowActiveColor;
+        }
+      }
+
+      // Invalid
+      &.is-invalid #{$block}__wrapper {
+        &:after {
+          color: $selectArrowInvalidColor;
+        }
+      }
+
+      // Invalid & Active
+      &.is-invalid.is-focused #{$block}__wrapper {
+        &:after {
+          color: $selectArrowInvalidActiveColor;
+        }
+      }
+
       /*************************************************************************
        * Native select
        ************************************************************************/
       #{$block}__select {
-        font-size: $selectFontSize;
-        font-family: $selectFontFamily;
-        height: $selectHeight;
-        line-height: $selectHeight;
-        padding: 0 calc(#{$selectPaddingX} + #{$selectArrowFontSize} + 10px) 0 $selectPaddingX;
-        width: 100%;
-        box-sizing: border-box;
-        background-color: $selectBackgroundColor;
-        color: $selectColor;
-        cursor: pointer;
-        display: block;
-        text-overflow: ellipsis;
-        overflow: hidden;
-        white-space: nowrap;
-        appearance: none; // avoid native arrow
-        outline: 0;
-        border-color: $selectBorderBottomColor;
-        border-width: 0 0 1px 0;
-        border-style: solid;
-        border-radius: 0; // iOS default removal
-
-        // Some hacks to remove native text indentation of select fields, as
-        // described in: https://stackoverflow.com/a/45976351/3894981
-        @-moz-document url-prefix() {
-          // Firefox only
-          & {
-            text-indent: -2px
-          }
-        }
-        @supports (-ms-ime-align: auto) {
-          // Edge only
-          & {
-            width: calc(100% + 4px);
-            margin-left: -4px;
-          }
-        }
-        @media screen and (-ms-high-contrast: active), screen and (-ms-high-contrast: none) {
-          // IE11 only
-          & {
-            width: calc(100% + 4px);
-            margin-left: -3px;
-          }
-        }
-
-        // hide dotted outline in Firefox
-        &:-moz-focusring {
-          color: transparent;
-          text-shadow: 0 0 0 $selectColor;
-        }
-
-        // hide native arrow in IE11
-        &::-ms-expand {
-          display: none;
-        }
-
-        // hide blue background when active in IE11
-        &::-ms-value {
+        &,
+        &:invalid,
+        &:required {
+          font-size: $selectFontSize;
+          font-family: $selectFontFamily;
+          height: $selectHeight;
+          line-height: $selectHeight;
+          padding: 0 calc(#{$selectPaddingX} + #{$selectArrowFontSize} + 10px) 0 $selectPaddingX;
+          width: 100%;
+          box-sizing: border-box;
           background-color: $selectBackgroundColor;
           color: $selectColor;
-        }
+          cursor: pointer;
+          display: block;
+          text-overflow: ellipsis;
+          overflow: hidden;
+          white-space: nowrap;
+          appearance: none; // avoid native arrow
+          outline: 0;
+          border-color: $selectBorderBottomColor;
+          border-width: 0 0 1px 0;
+          border-style: solid;
+          border-radius: 0; // iOS default removal
+          box-shadow: none; // red border removal in case it's invalid/required
 
-        // use a "bug" of Chrome to overwrite autofill styling
-        // https://stackoverflow.com/a/37432260/3894981
-        // !important is necessary as it won't work otherwise
-        @-webkit-keyframes autofill {
-          to {
-            color: $selectColor !important;
+          // Some hacks to remove native text indentation of select fields, as
+          // described in: https://stackoverflow.com/a/45976351/3894981
+          @-moz-document url-prefix() {
+            // Firefox only
+            & {
+              text-indent: -2px
+            }
+          }
+          @supports (-ms-ime-align: auto) {
+            // Edge only
+            & {
+              width: calc(100% + 4px);
+              margin-left: -4px;
+            }
+          }
+          @media screen and (-ms-high-contrast: active), screen and (-ms-high-contrast: none) {
+            // IE11 only
+            & {
+              width: calc(100% + 4px);
+              margin-left: -3px;
+            }
+          }
+
+          // hide dotted outline in Firefox
+          &:-moz-focusring {
+            color: transparent;
+            text-shadow: 0 0 0 $selectColor;
+          }
+
+          // hide native arrow in IE11
+          &::-ms-expand {
+            display: none;
+          }
+
+          // hide blue background when active in IE11
+          &::-ms-value {
             background-color: $selectBackgroundColor;
+            color: $selectColor;
+          }
+
+          // use a "bug" of Chrome to overwrite autofill styling
+          // https://stackoverflow.com/a/37432260/3894981
+          // !important is necessary as it won't work otherwise
+          @-webkit-keyframes autofill {
+            to {
+              color: $selectColor !important;
+              background-color: $selectBackgroundColor;
+            }
+          }
+          &:-webkit-autofill {
+            -webkit-animation-name: autofill;
+            -webkit-animation-fill-mode: both;
           }
         }
-        &:-webkit-autofill {
-          -webkit-animation-name: autofill;
-          -webkit-animation-fill-mode: both;
+      }
+
+      // Active
+      &.is-focused #{$block}__select {
+        &,
+        &:invalid,
+        &:required {
+          background: $selectBackgroundActiveColor;
+          color: $selectActiveColor;
+          border-color: $selectBorderBottomActiveColor;
+
+          &:-moz-focusring {
+            color: transparent;
+            text-shadow: 0 0 0 $selectActiveColor;
+          }
+
+          &::-ms-expand {
+            display: none;
+          }
+
+          &::-ms-value {
+            background-color: $selectBackgroundActiveColor;
+            color: $selectActiveColor;
+          }
+
+          @-webkit-keyframes autofill {
+            to {
+              color: $selectActiveColor !important;
+              background-color: $selectBackgroundActiveColor;
+            }
+          }
+        }
+      }
+
+      // Invalid
+      &.is-invalid #{$block}__select {
+        &,
+        &:invalid,
+        &:required {
+          background: $selectBackgroundInvalidColor;
+          color: $selectInvalidColor;
+          border-color: $selectBorderBottomInvalidColor;
+
+          &:-moz-focusring {
+            color: transparent;
+            text-shadow: 0 0 0 $selectInvalidColor;
+          }
+
+          &::-ms-expand {
+            display: none;
+          }
+
+          &::-ms-value {
+            background-color: $selectBackgroundInvalidColor;
+            color: $selectInvalidColor;
+          }
+
+          @-webkit-keyframes autofill {
+            to {
+              color: $selectInvalidColor !important;
+              background-color: $selectBackgroundInvalidColor;
+            }
+          }
+        }
+      }
+
+      // Invalid & Active
+      &.is-invalid.is-focused #{$block}__select {
+        &,
+        &:invalid,
+        &:required {
+          background: $selectBackgroundInvalidActiveColor;
+          color: $selectInvalidActiveColor;
+          border-color: $selectBorderBottomInvalidActiveColor;
+
+          &:-moz-focusring {
+            color: transparent;
+            text-shadow: 0 0 0 $selectInvalidActiveColor;
+          }
+
+          &::-ms-expand {
+            display: none;
+          }
+
+          &::-ms-value {
+            background-color: $selectBackgroundInvalidActiveColor;
+            color: $selectInvalidActiveColor;
+          }
+
+          @-webkit-keyframes autofill {
+            to {
+              color: $selectInvalidActiveColor !important;
+              background-color: $selectBackgroundInvalidActiveColor;
+            }
+          }
         }
       }
 
@@ -230,6 +396,21 @@ $variants: "dark", "light";
         transform-origin: 0 0;
       }
 
+      // Active
+      &.is-focused #{$block}__label {
+        color: $selectLabelActiveColor;
+      }
+
+      // Invalid
+      &.is-invalid #{$block}__label {
+        color: $selectLabelInvalidColor;
+      }
+
+      // Invalid & Active
+      &.is-invalid.is-focused #{$block}__label {
+        color: $selectLabelInvalidActiveColor;
+      }
+
       /*************************************************************************
        * Dropdown
        ************************************************************************/
@@ -248,8 +429,15 @@ $variants: "dark", "light";
         box-sizing: border-box;
         display: none;
       }
+
+      // Opened
       &.is-open #{$block}__dropdown {
         display: block;
+      }
+
+      // Invalid
+      &.is-invalid #{$block}__dropdown {
+        border-color: $selectDropdownBorderInvalidColor;
       }
 
       #{$block}__dropdown-option {

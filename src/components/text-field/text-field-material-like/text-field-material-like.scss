@@ -15,7 +15,7 @@ $textFieldPaddingX: 0;
 
 // font settings
 $textFieldLabelFontSize: 1.125rem;
-$textFieldLabelFontSizeFilledIn: 0.75rem;
+$textFieldLabelFilledInFontSize: 0.75rem;
 $textFieldLabelFontFamily: inherit;
 $textFieldFontSize: 1.125rem;
 $textFieldFontFamily: inherit;
@@ -32,21 +32,57 @@ $variants: "dark", "light";
   @if $color == "light" {
     // color settings
     $textFieldBorderColor: $black !global;
+    $textFieldBorderActiveColor: $black !global;
+    $textFieldBorderInvalidColor: $red !global;
+    $textFieldBorderInvalidActiveColor: $red !global;
+
     $textFieldBackgroundColor: transparent !global;
+    $textFieldBackgroundActiveColor: transparent !global;
+    $textFieldBackgroundInvalidColor: transparent !global;
+    $textFieldBackgroundInvalidActiveColor: transparent !global;
+
     $textFieldColor: $black !global;
+    $textFieldActiveColor: $black !global;
+    $textFieldInvalidColor: $black !global;
+    $textFieldInvalidActiveColor: $black !global;
+
     $textFieldLabelColor: $black !global;
-    $textFieldLabelColorFilledIn: $black !global;
+    $textFieldLabelFilledInColor: $textFieldLabelColor !global;
+    $textFieldLabelFilledInActiveColor: $textFieldLabelColor !global;
+    $textFieldLabelInvalidColor: $red !global;
+    $textFieldLabelInvalidFilledInColor: $textFieldLabelInvalidColor !global;
+    $textFieldLabelInvalidFilledInActiveColor: $textFieldLabelInvalidColor !global;
+
     $textFieldErrorColor: $red !global;
-    $textFieldFocusBorderColor: #95a5a6 !global;
+
+    $textFieldBorderTabbedColor: #95a5a6 !global;
   } @else {
     // color settings
     $textFieldBorderColor: $white !global;
+    $textFieldBorderActiveColor: $white !global;
+    $textFieldBorderInvalidColor: $red !global;
+    $textFieldBorderInvalidActiveColor: $red !global;
+
     $textFieldBackgroundColor: transparent !global;
+    $textFieldBackgroundActiveColor: transparent !global;
+    $textFieldBackgroundInvalidColor: transparent !global;
+    $textFieldBackgroundInvalidActiveColor: transparent !global;
+
     $textFieldColor: $white !global;
+    $textFieldActiveColor: $white !global;
+    $textFieldInvalidColor: $white !global;
+    $textFieldInvalidActiveColor: $white !global;
+
     $textFieldLabelColor: $white !global;
-    $textFieldLabelColorFilledIn: $white !global;
+    $textFieldLabelFilledInColor: $textFieldLabelColor !global;
+    $textFieldLabelFilledInActiveColor: $textFieldLabelColor !global;
+    $textFieldLabelInvalidColor: $red !global;
+    $textFieldLabelInvalidFilledInColor: $textFieldLabelInvalidColor !global;
+    $textFieldLabelInvalidFilledInActiveColor: $textFieldLabelInvalidColor !global;
+
     $textFieldErrorColor: $red !global;
-    $textFieldFocusBorderColor: #95a5a6 !global;
+
+    $textFieldBorderTabbedColor: #95a5a6 !global;
   }
 
   /*****************************************************************************
@@ -59,13 +95,13 @@ $variants: "dark", "light";
     &--#{unquote($color)} {
 
       &.is-tabbed {
-        outline: 1px solid $textFieldFocusBorderColor;
+        outline: 1px solid $textFieldBorderTabbedColor;
         outline-offset: 3px;
       }
 
       #{$block}__wrapper {
         position: relative;
-        padding-top: $textFieldLabelFontSizeFilledIn;
+        padding-top: $textFieldLabelFilledInFontSize;
         width: 100%;
       }
 
@@ -73,23 +109,28 @@ $variants: "dark", "light";
        * Input
        ************************************************************************/
       #{$block}__input {
-        border-width: 0 0 1px 0;
-        border-style: solid;
-        border-color: transparent transparent $textFieldBorderColor transparent;
-        cursor: text;
-        display: block;
-        height: $textFieldHeight;
-        line-height: $textFieldLineHeight;
-        // add 1 px additional padding to avoid text jumping when
-        // border-bottom-width is set to 2px when focused
-        padding: $textFieldPadding $textFieldPaddingX calc(#{$textFieldPadding} + 1px) $textFieldPaddingX;
-        background: $textFieldBackgroundColor;
-        color: $textFieldColor;
-        box-sizing: border-box;
-        width: 100%;
-        font-size: $textFieldFontSize;
-        font-family: $textFieldFontFamily;
-        border-radius: 0; // iOS default removal
+        &,
+        &:invalid,
+        &:required {
+          border-width: 0 0 1px 0;
+          border-style: solid;
+          border-color: transparent transparent $textFieldBorderColor transparent;
+          cursor: text;
+          display: block;
+          height: $textFieldHeight;
+          line-height: $textFieldLineHeight;
+          // add 1 px additional padding to avoid text jumping when
+          // border-bottom-width is set to 2px when focused
+          padding: $textFieldPadding $textFieldPaddingX calc(#{$textFieldPadding} + 1px) $textFieldPaddingX;
+          background: $textFieldBackgroundColor;
+          color: $textFieldColor;
+          box-sizing: border-box;
+          width: 100%;
+          font-size: $textFieldFontSize;
+          font-family: $textFieldFontFamily;
+          border-radius: 0; // iOS default removal
+          box-shadow: none; // red border removal in case it's invalid/required
+        }
 
         // use a "bug" of Chrome to overwrite autofill styling
         // https://stackoverflow.com/a/37432260/3894981
@@ -105,14 +146,38 @@ $variants: "dark", "light";
           -webkit-animation-fill-mode: both;
         }
 
-        &:focus {
+        // Active
+        &:focus,
+        &:invalid:focus,
+        &:required:focus {
           border-bottom-width: 2px;
+          border-color: transparent transparent $textFieldBorderActiveColor transparent;
           padding: $textFieldPadding $textFieldPaddingX;
+          color: $textFieldActiveColor;
+          background: $textFieldBackgroundActiveColor;
           outline: none;
         }
       }
+
+      // Disabled
       &.is-disabled #{$block}__input {
         cursor: not-allowed;
+      }
+
+      // Invalid
+      &.is-invalid #{$block}__input {
+        border-color: transparent transparent $textFieldBorderInvalidColor transparent;
+        color: $textFieldInvalidColor;
+        background: $textFieldBackgroundInvalidColor;
+
+        // Invalid & Active
+        &:focus,
+        &:invalid:focus,
+        &:required:focus {
+          border-color: transparent transparent $textFieldBorderInvalidActiveColor transparent;
+          color: $textFieldInvalidActiveColor;
+          background: $textFieldBackgroundInvalidActiveColor;
+        }
       }
 
       /*************************************************************************
@@ -120,7 +185,7 @@ $variants: "dark", "light";
        ************************************************************************/
       #{$block}__label {
         position: absolute;
-        top: $textFieldLabelFontSizeFilledIn;
+        top: $textFieldLabelFilledInFontSize;
         left: 0;
         height: $textFieldHeight;
         line-height: $textFieldHeight;
@@ -139,6 +204,14 @@ $variants: "dark", "light";
         transform: translateY(0);
         @include transition("all .275s");
       }
+
+      // Disabled
+      &.is-disabled #{$block}__label {
+        cursor: not-allowed;
+        user-select: none;
+      }
+
+      // Filled in
       // NOTE: We need to use two selectors here, as otherwise it won't work in
       // Firefox. Mixins aren't allowed inside @each directives, so we can only
       // use redundant code in these two selectors
@@ -147,24 +220,56 @@ $variants: "dark", "light";
       // via AJAX
       &.is-filled-in #{$block}__label,
       &:not(.is-initialized) #{$block}__label {
-        transform: translateY(-#{$textFieldLabelFontSizeFilledIn});
-        height: $textFieldLabelFontSizeFilledIn;
-        font-size: $textFieldLabelFontSizeFilledIn;
-        color: $textFieldLabelColorFilledIn;
-        line-height: $textFieldLabelFontSizeFilledIn;
+        transform: translateY(-#{$textFieldLabelFilledInFontSize});
+        height: $textFieldLabelFilledInFontSize;
+        font-size: $textFieldLabelFilledInFontSize;
+        color: $textFieldLabelFilledInColor;
+        line-height: $textFieldLabelFilledInFontSize;
       }
       #{$block}__input:-webkit-autofill + #{$block}__label {
         // webkit autofill is used to remove the delay between Chrome, which
         // fills in predefined data, and JS that's being loaded
-        transform: translateY(-#{$textFieldLabelFontSizeFilledIn});
-        height: $textFieldLabelFontSizeFilledIn;
-        font-size: $textFieldLabelFontSizeFilledIn;
-        color: $textFieldLabelColorFilledIn;
-        line-height: $textFieldLabelFontSizeFilledIn;
+        transform: translateY(-#{$textFieldLabelFilledInFontSize});
+        height: $textFieldLabelFilledInFontSize;
+        font-size: $textFieldLabelFilledInFontSize;
+        color: $textFieldLabelFilledInColor;
+        line-height: $textFieldLabelFilledInFontSize;
       }
-      &.is-disabled #{$block}__label {
-        cursor: not-allowed;
-        user-select: none;
+
+      // Filled in & Active
+      &.is-filled-in.is-focused #{$block}__label,
+      &.is-filled-in.is-focused:not(.is-initialized) #{$block}__label {
+        color: $textFieldLabelFilledInActiveColor;
+      }
+      &.is-filled-in.is-focused #{$block}__input:-webkit-autofill + #{$block}__label {
+        color: $textFieldLabelFilledInActiveColor;
+      }
+
+      // Invalid
+      &.is-invalid #{$block}__label,
+      &.is-invalid:not(.is-initialized) #{$block}__label {
+        color: $textFieldLabelInvalidColor;
+      }
+      &.is-invalid #{$block}__input:-webkit-autofill + #{$block}__label {
+        color: $textFieldLabelInvalidColor;
+      }
+
+      // Invalid & Filled In
+      &.is-invalid.is-filled-in #{$block}__label,
+      &.is-invalid.is-filled-in:not(.is-initialized) #{$block}__label {
+        color: $textFieldLabelInvalidFilledInColor;
+      }
+      &.is-invalid.is-filled-in #{$block}__input:-webkit-autofill + #{$block}__label {
+        color: $textFieldLabelInvalidFilledInColor;
+      }
+
+      // Invalid & Filled in & Active
+      &.is-invalid.is-filled-in.is-focused #{$block}__label,
+      &.is-invalid.is-filled-in.is-focused:not(.is-initialized) #{$block}__label {
+        color: $textFieldLabelInvalidFilledInActiveColor;
+      }
+      &.is-invalid.is-filled-in.is-focused #{$block}__input:-webkit-autofill + #{$block}__label {
+        color: $textFieldLabelInvalidFilledInActiveColor;
       }
 
       /*************************************************************************

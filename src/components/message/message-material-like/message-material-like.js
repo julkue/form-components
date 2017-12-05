@@ -1,6 +1,7 @@
 export class Message {
   constructor(context) {
     this.message = context;
+    this.closeButton = context.querySelector('.message__close-button');
     this.init();
     console.debug('Message initialized');
   }
@@ -19,6 +20,12 @@ export class Message {
           }
         }
       }
+    }
+
+    if (this.closeButton) {
+      this.closeButton.addEventListener('click', () => {
+        this.message.classList.add('is-hidden');
+      });
     }
   }
 }

@@ -1,7 +1,8 @@
-{{#ifLastDash _self.name "validation"}}
+{{#ifLastDash _self.name "errors"}}
     {{render '@message-material-like--error'}}
 {{/ifLastDash}}
-<form novalidate>
+<form class="example-form-material-like-indent">
+  {{render '@message-material-like--error' message}}
   {{render '@radio-material-like--default-light' already_user}}
   {{render '@radio-material-like--default-light' no_user}}
   {{render '@select-material-like--default-light' salutation}}
@@ -10,4 +11,5 @@
   {{render '@text-field-material-like--default-light' email}}
   {{render '@text-area-material-like--default-light' message}}
   {{render '@checkbox-material-like--default-light' copy}}
+  <button type="submit">Submit</button>
 </form>

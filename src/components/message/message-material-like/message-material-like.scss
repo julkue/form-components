@@ -4,6 +4,7 @@ $fontFamily: inherit;
 $fontSize: 1.125rem;
 $lineHeight: 1.33;
 $iconSize: 20px;
+$closeButtonIconSize: 13px;
 
 $statusBackgroundColor: #e0ede5;
 $statusColor: #257340;
@@ -16,6 +17,8 @@ $warningLinkHoverColor: $warningColor;
 $errorBackgroundColor: #fdd9d9;
 $errorColor: #920005;
 $errorLinkHoverColor: $errorColor;
+
+$closeButtonIconColor: #4a4a4a;
 
 /*******************************************************************************
  * General
@@ -33,6 +36,9 @@ $errorLinkHoverColor: $errorColor;
     &.is-inline {
       margin: 10px 0;
     }
+    &.is-hidden {
+      display: none;
+    }
 
     em {
       // em is used to indicate a title quote
@@ -45,7 +51,7 @@ $errorLinkHoverColor: $errorColor;
       }
     }
 
-    span.visually-hidden{
+    span.visually-hidden {
       @include visually-hidden;
     }
   }
@@ -77,6 +83,7 @@ $errorLinkHoverColor: $errorColor;
 
   &__container {
     @include container;
+    position: relative;
   }
 
   /*****************************************************************************
@@ -133,5 +140,30 @@ $errorLinkHoverColor: $errorColor;
   &__text {
     margin: 0;
     padding: 0;
+  }
+
+  /*****************************************************************************
+   * Close Button
+   ****************************************************************************/
+  &__close-button {
+    position: absolute;
+    top: -4px; // optical alignment with icon on the left side
+    right: 0;
+    cursor: pointer;
+    border: 0;
+    outline: 0;
+    @include form-components-icons-after("close");
+
+    // hide dotted outline in Firefox
+    &:-moz-focusring {
+      color: transparent;
+      text-shadow: 0 0 0 $closeButtonIconColor;
+    }
+
+    &:after {
+      color: $closeButtonIconColor;
+      font-size: $closeButtonIconSize;
+      line-height: $closeButtonIconSize;
+    }
   }
 }

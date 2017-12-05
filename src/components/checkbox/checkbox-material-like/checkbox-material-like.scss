@@ -21,21 +21,27 @@ $variants: "dark", "light";
 @each $color in $variants {
   @if $color == "light" {
     // color settings
+    $checkboxBackgroundColor: transparent !global;
+    $checkboxErrorBackgroundColor: $red-light !global;
     $checkboxColor: $black !global;
     $checkboxIconColor: $checkboxColor !global;
     $checkboxIconBorderColor: $checkboxIconColor !global;
+    $checkboxIconBorderErrorColor: $red !global;
     $checkboxLinkColor: $checkboxColor !global;
     $checkboxLinkColorHover: $clouds !global;
-    $checkboxErrorColor: $red !global;
+    $checkboxErrorMsgColor: $red !global;
     $checkboxFocusBorderColor: #95a5a6 !global;
   } @else {
     // color settings
+    $checkboxBackgroundColor: transparent !global;
+    $checkboxErrorBackgroundColor: $red-light !global;
     $checkboxColor: $white !global;
     $checkboxIconColor: $white !global;
     $checkboxIconBorderColor: #9b9b9b !global;
+    $checkboxIconBorderErrorColor: $red !global;
     $checkboxLinkColor: $checkboxColor !global;
     $checkboxLinkColorHover: $clouds !global;
-    $checkboxErrorColor: $red !global;
+    $checkboxErrorMsgColor: $red !global;
     $checkboxFocusBorderColor: #95a5a6 !global;
   }
 
@@ -109,6 +115,8 @@ $variants: "dark", "light";
           content: "";
           display: inline-block;
           z-index: 1;
+          background: $checkboxBackgroundColor;
+          @include transition("background .3s");
         }
         &:before {
           font-size: calc(#{$checkboxIconFontSize} - #{$padding * 2} - #{$border * 2});
@@ -132,16 +140,22 @@ $variants: "dark", "light";
       &.is-pressed #{$block}__label:before {
         transform: scale(1.2);
       }
+      &.is-invalid #{$block}__input:not(:checked) + #{$block}__label {
+        &:after {
+          background: $checkboxErrorBackgroundColor;
+          border-color: $checkboxIconBorderErrorColor;
+        }
+      }
 
       /*************************************************************************
        * Error message
        ************************************************************************/
       #{$block}__error {
-        color: $checkboxErrorColor;
+        color: $checkboxErrorMsgColor;
         margin: 5px 0;
 
         a {
-          color: $checkboxErrorColor;
+          color: $checkboxErrorMsgColor;
         }
       }
     }

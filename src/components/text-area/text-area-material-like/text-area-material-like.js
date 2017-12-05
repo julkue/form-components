@@ -5,6 +5,7 @@ export class TextArea extends FormComponent {
     super(
       context,
       context.querySelector('.text-area__input'),
+      context.querySelector('.text-area__error'),
       options
     );
     super.init();

@@ -30,22 +30,58 @@ $variants: "dark", "light";
 @each $color in $variants {
   @if $color == "light" {
     // color settings
-    $textAreaWrapperBorderColor: $black !global;
+    $textAreaBorderColor: $black !global;
+    $textAreaBorderActiveColor: $black !global;
+    $textAreaBorderInvalidColor: $red !global;
+    $textAreaBorderInvalidActiveColor: $red !global;
+
     $textAreaBackgroundColor: transparent !global;
+    $textAreaBackgroundActiveColor: transparent !global;
+    $textAreaBackgroundInvalidColor: transparent !global;
+    $textAreaBackgroundInvalidActiveColor: transparent !global;
+
     $textAreaColor: $black !global;
+    $textAreaActiveColor: $black !global;
+    $textAreaInvalidColor: $black !global;
+    $textAreaInvalidActiveColor: $black !global;
+
     $textAreaLabelColor: $black !global;
-    $textAreaLabelColorFilledIn: $black !global;
+    $textAreaLabelFilledInColor: $textAreaLabelColor !global;
+    $textAreaLabelFilledInActiveColor: $textAreaLabelColor !global;
+    $textAreaLabelInvalidColor: $red !global;
+    $textAreaLabelInvalidFilledInColor: $textAreaLabelInvalidColor !global;
+    $textAreaLabelInvalidFilledInActiveColor: $textAreaLabelInvalidColor !global;
+
     $textAreaErrorColor: $red !global;
-    $textAreaFocusBorderColor: #95a5a6 !global;
+
+    $textAreaBorderTabbedColor: #95a5a6 !global;
   } @else {
     // color settings
-    $textAreaWrapperBorderColor: $white !global;
+    $textAreaBorderColor: $white !global;
+    $textAreaBorderActiveColor: $white !global;
+    $textAreaBorderInvalidColor: $red !global;
+    $textAreaBorderInvalidActiveColor: $red !global;
+
     $textAreaBackgroundColor: transparent !global;
+    $textAreaBackgroundActiveColor: transparent !global;
+    $textAreaBackgroundInvalidColor: transparent !global;
+    $textAreaBackgroundInvalidActiveColor: transparent !global;
+
     $textAreaColor: $white !global;
+    $textAreaActiveColor: $white !global;
+    $textAreaInvalidColor: $white !global;
+    $textAreaInvalidActiveColor: $white !global;
+
     $textAreaLabelColor: $white !global;
-    $textAreaLabelColorFilledIn: $white !global;
+    $textAreaLabelFilledInColor: $textAreaLabelColor !global;
+    $textAreaLabelFilledInActiveColor: $textAreaLabelColor !global;
+    $textAreaLabelInvalidColor: $red !global;
+    $textAreaLabelInvalidFilledInColor: $textAreaLabelInvalidColor !global;
+    $textAreaLabelInvalidFilledInActiveColor: $textAreaLabelInvalidColor !global;
+
     $textAreaErrorColor: $red !global;
-    $textAreaFocusBorderColor: #95a5a6 !global;
+
+    $textAreaBorderTabbedColor: #95a5a6 !global;
   }
 
   /*****************************************************************************
@@ -57,49 +93,80 @@ $variants: "dark", "light";
     &--#{unquote($color)} {
 
       &.is-tabbed {
-        outline: 1px solid $textAreaFocusBorderColor;
+        outline: 1px solid $textAreaBorderTabbedColor;
         outline-offset: 3px;
       }
 
       #{$block}__wrapper {
         position: relative;
         width: 100%;
-        border: 1px solid $textAreaWrapperBorderColor;
+        border: 1px solid $textAreaBorderColor;
         padding: 1px;
         box-sizing: border-box;
         border-radius: $textAreaBorderRadius;
       }
-
       &.is-focused #{$block}__wrapper {
         border-width: 2px;
+        border-color: $textAreaBorderActiveColor;
         padding: 0;
+      }
+      &.is-invalid #{$block}__wrapper {
+        border-color: $textAreaBorderInvalidColor;
+      }
+      &.is-invalid.is-focused #{$block}__wrapper {
+        border-color: $textAreaBorderInvalidActiveColor;
       }
 
       /*************************************************************************
        * Input
        ************************************************************************/
       #{$block}__input {
-        border: none;
-        cursor: text;
-        display: block;
-        height: calc(#{$textAreaHeight} + #{$textAreaLabelFontSizeFilledIn} + (#{$textAreaPaddingY} * 2) + #{$textAreaLabelSpacing});
-        line-height: $textAreaLineHeight;
-        box-sizing: border-box;
-        padding: calc(#{$textAreaLabelFontSizeFilledIn} + #{$textAreaPaddingY} + #{$textAreaLabelSpacing}) #{$textAreaPaddingX} #{$textAreaPaddingY} #{$textAreaPaddingX};
-        background: $textAreaBackgroundColor;
-        font-size: $textAreaFontSize;
-        font-family: $textAreaFontFamily;
-        resize: none;
-        border-radius: $textAreaBorderRadius;
-        width: 100%;
-        color: $textAreaColor;
+        &,
+        &:invalid,
+        &:required {
+          border: none;
+          cursor: text;
+          display: block;
+          height: calc(#{$textAreaHeight} + #{$textAreaLabelFontSizeFilledIn} + (#{$textAreaPaddingY} * 2) + #{$textAreaLabelSpacing});
+          line-height: $textAreaLineHeight;
+          box-sizing: border-box;
+          padding: calc(#{$textAreaLabelFontSizeFilledIn} + #{$textAreaPaddingY} + #{$textAreaLabelSpacing}) #{$textAreaPaddingX} #{$textAreaPaddingY} #{$textAreaPaddingX};
+          background: $textAreaBackgroundColor;
+          font-size: $textAreaFontSize;
+          font-family: $textAreaFontFamily;
+          resize: none;
+          border-radius: $textAreaBorderRadius;
+          width: 100%;
+          color: $textAreaColor;
+          box-shadow: none; // red border removal in case it's invalid/required
 
-        &:focus {
-          outline: none;
+          // Active
+          &:focus {
+            outline: none;
+            background: $textAreaBackgroundActiveColor;
+            color: $textAreaActiveColor;
+          }
         }
       }
+
+      // Disabled
       &.is-disabled #{$block}__input {
         cursor: not-allowed;
+      }
+
+      // Invalid
+      &.is-invalid #{$block}__input {
+        background: $textAreaBackgroundInvalidColor;
+        color: $textAreaInvalidColor;
+
+        // Invalid & Active
+        &:focus,
+        &:invalid:focus,
+        &:required:focus {
+          border-color: transparent transparent $textAreaBorderInvalidActiveColor transparent;
+          color: $textAreaInvalidActiveColor;
+          background: $textAreaBackgroundInvalidActiveColor;
+        }
       }
 
       /*************************************************************************
@@ -123,6 +190,14 @@ $variants: "dark", "light";
         transform: translateY(0);
         @include transition("transform .275s", "height .275s", "font-size .275s", "color .275s", "line-height .275s");
       }
+
+      // Disabled
+      &.is-disabled #{$block}__label {
+        cursor: not-allowed;
+        user-select: none;
+      }
+
+      // Filled in
       // NOTE: We need to use two selectors here, as otherwise it won't work in
       // Firefox. Mixins aren't allowed inside @each directives, so we can only
       // use redundant code in these two selectors
@@ -134,7 +209,7 @@ $variants: "dark", "light";
         transform: translateY(-#{$textAreaPaddingY});
         height: $textAreaLabelFontSizeFilledIn;
         font-size: $textAreaLabelFontSizeFilledIn;
-        color: $textAreaLabelColorFilledIn;
+        color: $textAreaLabelFilledInColor;
         line-height: $textAreaLabelFontSizeFilledIn;
       }
       #{$block}__input:-webkit-autofill + #{$block}__label {
@@ -143,16 +218,48 @@ $variants: "dark", "light";
         transform: translateY(-#{$textAreaPaddingY});
         height: $textAreaLabelFontSizeFilledIn;
         font-size: $textAreaLabelFontSizeFilledIn;
-        color: $textAreaLabelColorFilledIn;
+        color: $textAreaLabelFilledInColor;
         line-height: $textAreaLabelFontSizeFilledIn;
       }
-      &.is-disabled #{$block}__label {
-        cursor: not-allowed;
-        user-select: none;
-      }
-      &.is-focused #{$block}__label {
+
+      // Filled in & Active
+      &.is-filled-in.is-focused #{$block}__label,
+      &.is-filled-in.is-focused:not(.is-initialized) #{$block}__label {
+        color: $textAreaLabelFilledInActiveColor;
         margin-top: -1px;
         margin-left: -1px;
+      }
+      &.is-filled-in.is-focused #{$block}__input:-webkit-autofill + #{$block}__label {
+        color: $textAreaLabelFilledInActiveColor;
+        margin-top: -1px;
+        margin-left: -1px;
+      }
+
+      // Invalid
+      &.is-invalid #{$block}__label,
+      &.is-invalid:not(.is-initialized) #{$block}__label {
+        color: $textAreaLabelInvalidColor;
+      }
+      &.is-invalid #{$block}__input:-webkit-autofill + #{$block}__label {
+        color: $textAreaLabelInvalidColor;
+      }
+
+      // Invalid & Filled In
+      &.is-invalid.is-filled-in #{$block}__label,
+      &.is-invalid.is-filled-in:not(.is-initialized) #{$block}__label {
+        color: $textAreaLabelInvalidFilledInColor;
+      }
+      &.is-invalid.is-filled-in #{$block}__input:-webkit-autofill + #{$block}__label {
+        color: $textAreaLabelInvalidFilledInColor;
+      }
+
+      // Invalid & Filled in & Active
+      &.is-invalid.is-filled-in.is-focused #{$block}__label,
+      &.is-invalid.is-filled-in.is-focused:not(.is-initialized) #{$block}__label {
+        color: $textAreaLabelInvalidFilledInActiveColor;
+      }
+      &.is-invalid.is-filled-in.is-focused #{$block}__input:-webkit-autofill + #{$block}__label {
+        color: $textAreaLabelInvalidFilledInActiveColor;
       }
 
       /*************************************************************************

@@ -29,12 +29,19 @@ $variants: "dark", "light";
        * Input
        ************************************************************************/
       #{$block}__input {
-        padding-left: $textFieldPaddingX;
-        padding-right: $textFieldPaddingX;
-
-        &:focus {
+        &,
+        &:invalid,
+        &:required {
           padding-left: $textFieldPaddingX;
           padding-right: $textFieldPaddingX;
+
+          // Active
+          &:focus,
+          &:invalid:focus,
+          &:required:focus {
+            padding-left: $textFieldPaddingX;
+            padding-right: $textFieldPaddingX;
+          }
         }
       }
 
