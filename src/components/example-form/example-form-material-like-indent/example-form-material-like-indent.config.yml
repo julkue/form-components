@@ -84,7 +84,7 @@ variants:
         disabled: false
         checked: false
         error: ""
-  - name: "material-like-indent-with-validation"
+  - name: "material-like-indent-with-validation-errors"
     context:
       already_user:
         id: "already-user-true"
