@@ -45,7 +45,11 @@ $variants: "dark", "light";
        * Native select
        ************************************************************************/
       #{$block}__select {
-        padding-right: calc(#{$selectPaddingX} + #{$selectArrowFontSize} + 10px);
+        &,
+        &:invalid,
+        &:required {
+          padding-right: calc(#{$selectPaddingX} + #{$selectArrowFontSize} + 10px);
+        }
       }
     }
   }

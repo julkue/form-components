@@ -32,7 +32,11 @@ $variants: "dark", "light";
        * Native select
        ************************************************************************/
       #{$block}__select {
-        padding-left: $selectPaddingX;
+        &,
+        &:invalid,
+        &:required {
+          padding-left: $selectPaddingX;
+        }
       }
 
       /*************************************************************************
