@@ -4,6 +4,7 @@ node_modules/
 build/library/
 dist/development/
 dist/example-form*/
+dist/*.zip
 
 yarn.lock
 *.js.map
