@@ -29,6 +29,9 @@ export class Message {
           this.hide();
         }
       });
+      if (this.message.classList.contains('is-hidden')) {
+        this.hide(); // make sure tabindex is correctly
+      }
     }
   }
 

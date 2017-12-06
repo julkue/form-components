@@ -1,9 +1,12 @@
 import MoveTo from 'moveto';
 
 export class Form {
-  constructor(form) {
+  constructor(form, options) {
     if (form) {
       this.form = form;
+      this.options = Object.assign({}, {
+        message: true
+      }, options);
       this.initEvents();
     }
   }
@@ -137,7 +140,7 @@ export class Form {
   showMessage() {
     const message = this.form.querySelector('.message--error'),
       messageClose = message.querySelector('.message__close-button');
-    if (message) {
+    if (message && this.options.message) {
       message.classList.remove('is-hidden');
       if (messageClose) {
         messageClose.setAttribute('tabindex', '0');
@@ -153,7 +156,7 @@ export class Form {
   hideMessage() {
     const message = this.form.querySelector('.message--error'),
       messageClose = message.querySelector('.message__close-button');
-    if (message) {
+    if (message && this.options.message) {
       message.classList.add('is-hidden');
       if (messageClose) {
         messageClose.setAttribute('tabindex', '-1');

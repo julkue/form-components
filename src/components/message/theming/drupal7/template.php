@@ -28,6 +28,9 @@ function your_theme_status_messages(&$variables) {
     else {
       $output .= '<p class="message__text">' . reset($messages) . '</p>';
     }
+    $output .= "<span class=\"message__close-button\" tabindex=\"0\">\n";
+    $output .= "<span class=\"visually-hidden\">" . t('Close') . "</span>\n";
+    $output .= "</span>\n";
     $output .= "</div>\n</div>\n</div>\n";
   }
   return $output;

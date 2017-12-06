@@ -39,6 +39,9 @@
         {% else %}
           <p class="message__text">{{ messages|first }}</p>
         {% endif %}
+        <span class="message__close-button" tabindex="0">
+          <span class="visually-hidden">{{ "Close"|t }}</span>
+        </span>
       </div>
     </div>
   </div>
