@@ -125,7 +125,25 @@ export class Form {
       }
       target.insertBefore(error, insertBefore);
     }
+    this.setErrorDescribedBy(field, error);
     error.innerText = field.validationMessage || 'Please fill out this field';
+  }
+
+  setErrorDescribedBy(field, error) {
+    let id;
+    if (field.hasAttribute('id')) {
+      id = `error-${field.getAttribute('id')}`;
+    } else if (field.hasAttribute('name')) {
+      id = `error-${field.getAttribute('name')}`;
+    }
+    if (id) {
+      error.setAttribute('id', id);
+      field.setAttribute('aria-describedby', id);
+    }
+  }
+
+  removeErrorDescribedBy(field) {
+    field.removeAttribute('aria-describedby');
   }
 
   removeError(field) {
@@ -134,6 +152,7 @@ export class Form {
       error = target.querySelector(`.${type}__error`);
     if (error) {
       target.removeChild(error);
+      this.removeErrorDescribedBy(field);
     }
   }
 
