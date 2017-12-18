@@ -4,6 +4,7 @@ export class Form {
   constructor(form, options) {
     if (form) {
       this.form = form;
+      this.message = this.form.querySelector('.message--error');
       this.options = Object.assign({}, {
         message: true
       }, options);
@@ -29,6 +30,7 @@ export class Form {
       if (!valid) {
         event.preventDefault();
         this.showMessage();
+        this.focusFirstError();
         return false;
       } else {
         this.hideMessage();
@@ -146,6 +148,34 @@ export class Form {
     field.removeAttribute('aria-describedby');
   }
 
+  getErrors() {
+    let errors = [];
+    this.formElements.forEach(element => {
+      const err = this.getExistingError(element);
+      if (err) {
+        errors.push(err);
+      }
+    });
+    errors = errors.sort((a, b) => {
+      // https://stackoverflow.com/a/22613028/3894981
+      if (a === b) {
+        return 0;
+      }
+      if (!a.compareDocumentPosition) {
+        return a.sourceIndex - b.sourceIndex;
+      }
+      if (a.compareDocumentPosition(b) & 2) {
+        return 1;
+      }
+      return -1;
+    });
+    if (Array.isArray(errors) && errors.length > 0) {
+      return errors;
+    } else {
+      return [];
+    }
+  }
+
   removeError(field) {
     const type = this.getType(field),
       target = field.parentElement.parentElement,
@@ -156,27 +186,31 @@ export class Form {
     }
   }
 
+  focusFirstError() {
+    const errors = this.getErrors();
+    if (errors.length >= 1) {
+      errors[0].focus();
+    }
+  }
+
   showMessage() {
-    const message = this.form.querySelector('.message--error'),
-      messageClose = message.querySelector('.message__close-button');
-    if (message && this.options.message) {
-      message.classList.remove('is-hidden');
+    const messageClose = this.message.querySelector('.message__close-button');
+    if (this.message && this.options.message) {
+      this.message.classList.remove('is-hidden');
       if (messageClose) {
         messageClose.setAttribute('tabindex', '0');
       }
       new MoveTo({
         duration: 400,
         tolerance: 10
-      }).move(message);
-      message.focus();
+      }).move(this.message);
     }
   }
 
   hideMessage() {
-    const message = this.form.querySelector('.message--error'),
-      messageClose = message.querySelector('.message__close-button');
-    if (message && this.options.message) {
-      message.classList.add('is-hidden');
+    const messageClose = this.message.querySelector('.message__close-button');
+    if (this.message && this.options.message) {
+      this.message.classList.add('is-hidden');
       if (messageClose) {
         messageClose.setAttribute('tabindex', '-1');
       }
