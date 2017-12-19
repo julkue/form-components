@@ -1,6 +1,10 @@
 export class Message {
-  constructor(context) {
+  constructor(context, options) {
+    this.options = Object.assign({}, {
+      focusOnStart: true
+    }, options);
     this.message = context;
+    this.messages = [...document.querySelectorAll(selector)];
     this.closeButton = context.querySelector('.message__close-button');
     this.init();
     console.debug('Message initialized');
@@ -31,6 +35,20 @@ export class Message {
       });
       if (this.message.classList.contains('is-hidden')) {
         this.hide(); // make sure tabindex is correctly
+      }
+    }
+
+    if (this.messages[0] === this.message && this.options.focusOnStart) {
+      if (!this.message.classList.contains('is-hidden')) {
+        // the browser focuses the document on init by default. Wait for it
+        // with setTimeout and focus the message instead. Also, remove and add
+        // the class otherwise the browser won't focus the message since it's
+        // not focusable by default (has no tabindex)
+        this.message.classList.add('is-hidden');
+        setTimeout(() => {
+          this.message.classList.remove('is-hidden');
+          this.message.focus();
+        }, 100);
       }
     }
   }

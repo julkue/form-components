@@ -16,9 +16,9 @@ You can embed individual form components from the `dist` folder. They are availa
 
 ## Getting Started
 
-After you've installed the components, you need to load and initialize them. Create a new class instance of the exported class. In case you'd like to dynamically initialize instances, you can use the also exported `selector` string to determine if a component exists.
+After you've installed the components, you need to generate the HTML according to each component and load and initialize those you want to use. Create a new class instance of the exported class and pass in the element on which you want to initialize the component. In case you'd like to dynamically initialize instances, you can use the also exported `selector` string to determine if a component exists.
 
-For example when using Webpack with ES6:
+For example when you want to embed the radio component using Webpack with ES6:
 
 ```js
 import '@julmot/form-components/dist/radio-material-like/radio-material-like.css';
@@ -30,15 +30,20 @@ import {
 new RadioComponent(document.querySelector(RadioComponentSelector));
 ```
 
-You can also pass in options for every form component instance (not the message and "form" component). For example:
+## Options
+
+In addition to the element on which you want to initialize the component, you can also pass options to the component (see above). For example:
 
 ```js
 new RadioComponent(document.querySelector(RadioComponentSelector), {
+  // an object of the options, e.g.
   tabbed: false
 });
 ```
 
-### Options
+**These are the options for different components**:
+
+### Form Components (Checkbox, Radio, Select, Text Area, Text Field)
 
 **tabbed**
 
@@ -46,6 +51,26 @@ Type: boolean
 Default: true
 
 If the form component should receive a focus outline when tabbing with the keyboard. 
+
+### Form
+
+_NOTE: This component isn't listed on the left side, since it only contains a JS file_.
+
+**message**
+
+Type: boolean  
+Default: true
+
+When there's a message in the corresponding `<form>` element (needs the `.is-hidden` class), then this message will be shown/hidden during client-side validation. If you specify `false` then this message will be ignored even when the message is available in the DOM.
+
+### Message
+
+**focusOnStart**
+
+Type: boolean  
+Default: true
+
+When there's a message available on the site, this message will be focused for screen readers when the DOM is ready.
 
 ## Currently Available Components
 
@@ -55,24 +80,9 @@ There's also an example form that renders all of them in a single form for demon
 
 ## Form Validation
 
-There's one component that isn't listed on the left side since it's only one JavaScript file: "form". This component can be used for client-side validation. Basically it validates like a browser does, respecting e.g. "required" or "pattern" attributes. It also shows the same error messages like your browser does – or if you've specified custom validation messages then it'll show them (using the HTML5 API). However, the messages are shown in a design-conform way that looks nice with our custom form components. If you'd like to try it out; it's integrated in the "Example Form" components. It's exported like a normal component, so you can directly start using it.
+There's one component that isn't listed on the left side since it's only one JavaScript file: "form". This component can be used for client-side validation. Basically it validates like a browser does, respecting e.g. "required" or "pattern" attributes. It also shows the same error messages like your browser does – or if you've specified custom validation messages then it'll show them (using the HTML5 API, e.g. `setCustomValidity()`). However, the messages are shown in a design-conform way that looks nice with our custom form components. If you'd like to try it out; it's integrated in the "Example Form" components. It's exported like a normal component, so you can directly start using it.
 
 The initialization is similar to normal components, you can pass in the `<form>` DOM element and an optional options object.
-
-```js
-new Form(document.querySelector('form.my-form'), {
-  message: false
-});
-```
-
-### Options
-
-**message**
-
-Type: boolean  
-Default: true
-
-When there's a message in the corresponding `<form>` element (needs the `.is-hidden` class), then this message will be shown/hidden according to the form validation status. If you specify `false` then this message will be ignored even when the message is available in the DOM.
 
 ## Browser Compatibility
 
