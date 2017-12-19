@@ -133,10 +133,14 @@ export class Form {
 
   setErrorDescribedBy(field, error) {
     let id;
-    if (field.hasAttribute('id')) {
-      id = `error-${field.getAttribute('id')}`;
-    } else if (field.hasAttribute('name')) {
-      id = `error-${field.getAttribute('name')}`;
+    if (error.hasAttribute('id')) {
+      id = error.getAttribute('id');
+    } else {
+      if (field.hasAttribute('id')) {
+        id = `error-${field.getAttribute('id')}`;
+      } else if (field.hasAttribute('name')) {
+        id = `error-${field.getAttribute('name')}`;
+      }
     }
     if (id) {
       error.setAttribute('id', id);
@@ -146,34 +150,6 @@ export class Form {
 
   removeErrorDescribedBy(field) {
     field.removeAttribute('aria-describedby');
-  }
-
-  getErrors() {
-    let errors = [];
-    this.formElements.forEach(element => {
-      const err = this.getExistingError(element);
-      if (err) {
-        errors.push(err);
-      }
-    });
-    errors = errors.sort((a, b) => {
-      // https://stackoverflow.com/a/22613028/3894981
-      if (a === b) {
-        return 0;
-      }
-      if (!a.compareDocumentPosition) {
-        return a.sourceIndex - b.sourceIndex;
-      }
-      if (a.compareDocumentPosition(b) & 2) {
-        return 1;
-      }
-      return -1;
-    });
-    if (Array.isArray(errors) && errors.length > 0) {
-      return errors;
-    } else {
-      return [];
-    }
   }
 
   removeError(field) {
@@ -187,10 +163,21 @@ export class Form {
   }
 
   focusFirstError() {
-    const errors = this.getErrors();
-    if (errors.length >= 1) {
-      errors[0].focus();
-    }
+    this.formElements.filter(element => {
+      return this.getExistingError(element);
+    }).sort((a, b) => {
+      // https://stackoverflow.com/a/22613028/3894981
+      if (a === b) {
+        return 0;
+      }
+      if (!a.compareDocumentPosition) {
+        return a.sourceIndex - b.sourceIndex;
+      }
+      if (a.compareDocumentPosition(b) & 2) {
+        return 1;
+      }
+      return -1;
+    })[0].focus();
   }
 
   showMessage() {
