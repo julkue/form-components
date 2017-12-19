@@ -1,3 +1,5 @@
+import MoveTo from 'moveto';
+
 export class Message {
   constructor(context, options) {
     this.options = Object.assign({}, {
@@ -6,11 +8,13 @@ export class Message {
     this.message = context;
     this.messages = [...document.querySelectorAll(selector)];
     this.closeButton = context.querySelector('.message__close-button');
-    this.init();
+    this.determineInlineMessage();
+    this.initCloseButton();
+    this.focusFirstMessage();
     console.debug('Message initialized');
   }
 
-  init() {
+  determineInlineMessage() {
     // check if the parent element of the message (or the parents parent in case
     // one div is wrapped our) is matching the <main> tag. Otherwise we can
     // assume it's an inline message
@@ -25,7 +29,9 @@ export class Message {
         }
       }
     }
+  }
 
+  initCloseButton() {
     if (this.closeButton) {
       // set role button if not available already
       if (!this.closeButton.hasAttribute('role')) {
@@ -41,7 +47,9 @@ export class Message {
         this.hide(); // make sure tabindex is correctly
       }
     }
+  }
 
+  focusFirstMessage() {
     if (this.messages[0] === this.message && this.options.focusOnStart) {
       if (!this.message.classList.contains('is-hidden')) {
         // the browser focuses the document on init by default. Wait for it
@@ -52,6 +60,10 @@ export class Message {
         setTimeout(() => {
           this.message.classList.remove('is-hidden');
           this.message.focus();
+          new MoveTo({
+            duration: 400,
+            tolerance: 10
+          }).move(this.message);
         }, 100);
       }
     }
