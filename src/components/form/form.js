@@ -30,7 +30,6 @@ export class Form {
       if (!valid) {
         event.preventDefault();
         this.showMessage();
-        this.focusFirstError();
         return false;
       } else {
         this.hideMessage();
@@ -160,24 +159,6 @@ export class Form {
       target.removeChild(error);
       this.removeErrorDescribedBy(field);
     }
-  }
-
-  focusFirstError() {
-    this.formElements.filter(element => {
-      return this.getExistingError(element);
-    }).sort((a, b) => {
-      // https://stackoverflow.com/a/22613028/3894981
-      if (a === b) {
-        return 0;
-      }
-      if (!a.compareDocumentPosition) {
-        return a.sourceIndex - b.sourceIndex;
-      }
-      if (a.compareDocumentPosition(b) & 2) {
-        return 1;
-      }
-      return -1;
-    })[0].focus();
   }
 
   showMessage() {
