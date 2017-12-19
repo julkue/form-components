@@ -3,10 +3,14 @@
     <div class="message__container">
       <div class="message__icon-container">
         <span class="visually-hidden">Error message</span>
-        <ul class="message__list">
-          <li class="message__list-item">E-mail <a href="#">field</a> is required.</li>
-          <li class="message__list-item">Message field is required.<br>New line</li>
-        </ul>
+        {{#if message}}
+          {{{message}}}
+        {{else}}
+          <ul class="message__list">
+            <li class="message__list-item">E-mail <a href="#">field</a> is required.</li>
+            <li class="message__list-item">Message field is required.<br>New line</li>
+          </ul>
+        {{/if}}
         <span class="message__close-button" tabindex="{{#if isHidden}}-1{{else}}0{{/if}}">
           <span class="visually-hidden">Close</span>
         </span>
@@ -19,7 +23,11 @@
     <div class="message__container">
       <div class="message__icon-container">
         <span class="visually-hidden">Warning message</span>
-        <p class="message__text">Please <a href="#">mind</a> the gap.<br>There might be a problem.</p>
+        {{#if message}}
+          {{{message}}}
+        {{else}}
+          <p class="message__text">Please <a href="#">mind</a> the gap.<br>There might be a problem.</p>
+        {{/if}}
         <span class="message__close-button" tabindex="{{#if isHidden}}-1{{else}}0{{/if}}">
           <span class="visually-hidden">Close</span>
         </span>
@@ -32,7 +40,11 @@
     <div class="message__container">
       <div class="message__icon-container">
         <span class="visually-hidden">Status message</span>
-        <p class="message__text">Yip. That <a href="#">action</a> worked! Updated Page <em>Test Title</em> successfully</p>
+        {{#if message}}
+          {{{message}}}
+        {{else}}
+          <p class="message__text">Yip. That <a href="#">action</a> worked! Updated Page <em>Test Title</em> successfully</p>
+        {{/if}}
         <span class="message__close-button" tabindex="{{#if isHidden}}-1{{else}}0{{/if}}">
           <span class="visually-hidden">Close</span>
         </span>

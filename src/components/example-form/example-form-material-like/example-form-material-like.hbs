@@ -1,8 +1,8 @@
-{{#ifLastDash _self.name "errors"}}
-  {{render '@message-material-like--error'}}
-{{/ifLastDash}}
 <form class="example-form-material-like">
-  {{render '@message-material-like--error' message}}
+  {{#ifLastDash _self.name "errors"}}
+    {{render '@message-material-like--error' form-message}}
+  {{/ifLastDash}}
+  {{render '@message-material-like--error' form-message-hidden}}
   {{render '@radio-material-like--default-light' already_user}}
   {{render '@radio-material-like--default-light' no_user}}
   {{render '@select-material-like--default-light' salutation}}

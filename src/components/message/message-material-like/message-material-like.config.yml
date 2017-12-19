@@ -2,6 +2,7 @@ status: "ready"
 default: "error"
 context:
   isHidden: false
+  message: ""
 variants:
   - name: "error"
   - name: "warning"

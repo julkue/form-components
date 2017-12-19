@@ -2,8 +2,12 @@ status: "ready"
 default: "material-like"
 notes: "The only reason for this component is to demonstrate all form components in one place and for development purposes. It won't be shipped in releases"
 context:
-  message:
+  form-message-hidden:
     isHidden: true
+    message: "<p><b>Error</b>. The form is not valid! Please check the fields. This message is 100% customizable!</p>"
+  form-message:
+    isHidden: false
+    message: "<p><b>Error</b>. The form is not valid! Please check the fields. This message is 100% customizable!</p>"
 variants:
   - name: "material-like"
     context:
@@ -84,7 +88,7 @@ variants:
         disabled: false
         checked: false
         error: ""
-  - name: "material-like-with-validation-errors"
+  - name: "material-like-with-backend-validation-errors"
     context:
       already_user:
         id: "already-user-true"
