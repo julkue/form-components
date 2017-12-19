@@ -27,6 +27,10 @@ export class Message {
     }
 
     if (this.closeButton) {
+      // set role button if not available already
+      if (!this.closeButton.hasAttribute('role')) {
+        this.closeButton.setAttribute('role', 'button');
+      }
       this.closeButton.addEventListener('click', () => this.hide());
       this.closeButton.addEventListener('keydown', event => {
         if (event.keyCode === 13) {
