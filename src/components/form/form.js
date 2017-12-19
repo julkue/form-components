@@ -164,6 +164,10 @@ export class Form {
   showMessage() {
     const messageClose = this.message.querySelector('.message__close-button');
     if (this.message && this.options.message) {
+      // Remove the role temporarily in order to notify the screen reader that
+      // this is a new notification and he should read it
+      const role = this.message.getAttribute('role');
+      this.message.removeAttribute('role');
       this.message.classList.remove('is-hidden');
       if (messageClose) {
         messageClose.setAttribute('tabindex', '0');
@@ -172,6 +176,7 @@ export class Form {
         duration: 400,
         tolerance: 10
       }).move(this.message);
+      this.message.setAttribute('role', role);
     }
   }
 
