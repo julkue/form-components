@@ -40,6 +40,7 @@ export class Message {
       this.closeButton.addEventListener('click', () => this.hide());
       this.closeButton.addEventListener('keydown', event => {
         if (event.keyCode === 13) {
+          event.preventDefault(); // in case message is located in a <form>
           this.hide();
         }
       });
