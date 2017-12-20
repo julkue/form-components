@@ -98,7 +98,7 @@ variants:
         required: true
         disabled: false
         checked: false
-        error: "Please provide a value for this field"
+        error: ""
       no_user:
         id: "already-user-false"
         name: "already_user"
@@ -107,7 +107,7 @@ variants:
         required: true
         disabled: false
         checked: false
-        error: "Please provide a value for this field"
+        error: ""
       salutation:
         id: "salutation"
         name: "salutation"
@@ -166,4 +166,4 @@ variants:
         required: true
         disabled: false
         checked: false
-        error: "Please provide a value for this field"
+        error: "Please accept this field"

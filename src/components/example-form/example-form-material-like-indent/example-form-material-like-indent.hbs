@@ -5,6 +5,11 @@
   {{render '@message-material-like--error' form-message-hidden}}
   {{render '@radio-material-like--default-light' already_user}}
   {{render '@radio-material-like--default-light' no_user}}
+  {{#ifLastDash _self.name "errors"}}
+    <div class="radio__error">
+      Please check one option
+    </div>
+  {{/ifLastDash}}
   {{render '@select-material-like--default-light' salutation}}
   {{render '@text-field-material-like--default-light' firstname}}
   {{render '@text-field-material-like--default-light' lastname}}

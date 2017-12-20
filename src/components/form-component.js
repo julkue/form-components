@@ -17,7 +17,7 @@ export default class FormComponent {
       this.context.classList.add('has-no-label');
     }
     if (this.errorField) {
-      this.context.classList.add('is-invalid');
+      this.setInvalid();
     }
     this.setIsFilledIn();
     this.initFocus();
@@ -55,7 +55,50 @@ export default class FormComponent {
     });
   }
 
+  setInvalid() {
+    if (this.field.matches('input[type="radio"]')) {
+      // Also mark other fields of the same radio group as invalid.
+      // This is necessary as an error message can be located after all
+      // grouped radios and in this case the error element will only be
+      // relocated to the last radio of this group. But invalid applies to all
+      // of the radios (see also radio component).
+      // Make sure to apply invalid only to radios of the same form
+      const name = this.field.getAttribute('name'),
+        form = this.getParentByTagName(this.field, 'form');
+      if (name && form) {
+        const elements = [...form.querySelectorAll(
+          `input[type="radio"][name="${name}"]`
+        )];
+        elements.forEach(element => {
+          // the wrapper is always two levels above the field
+          const context = element.parentElement.parentElement;
+          if (context) {
+            context.classList.add('is-invalid');
+          }
+        });
+      }
+    } else {
+      this.context.classList.add('is-invalid');
+    }
+  }
+
   setIsFilledIn(isFilledIn = !!this.field.value) {
     this.context.classList[isFilledIn ? 'add' : 'remove']('is-filled-in');
+  }
+
+  getParentByTagName(node, tagName) {
+    let parent;
+    if (node === null || tagName === '') {
+      return parent;
+    }
+    parent = node.parentNode;
+    tagName = tagName.toUpperCase();
+    while (parent.tagName !== 'HTML') {
+      if (parent.tagName === tagName) {
+        return parent;
+      }
+      parent = parent.parentNode;
+    }
+    return parent;
   }
 }
