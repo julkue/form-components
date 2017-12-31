@@ -87,6 +87,9 @@ export class Select extends FormComponent {
   }
 
   onSpace() {
+    // Due to the fact that Firefox on Windows will open the native
+    // dropdown by using space and there shouldn't be two dropdowns, we can
+    // only close the custom dropdown to make it work with FF on Win.
     this.close();
   }
 
@@ -95,21 +98,17 @@ export class Select extends FormComponent {
   }
 
   onArrowKey(keyCode) {
-    // NOTE: event.preventDefault() doesn't work in FF, therefore exceptions
-    // must be implemented here for this case, to also work in FF. Also only
-    // prevent the default action if it's a known keyCode. Otherwise don't
-    // do anything, e.g. to not prevent tab navigation
-    // Due to the fact that Firefox on Windows will only open the native
-    // dropdown by using space, all other browser are toggling it, we can
-    // only close the custom dropdown to make it work with FF on Win.
+    // Firefox doesn't allow keydown default behavior prevention,
+    // therefore it'll update the value itself and call the change
+    // listener which will update the custom dropdown option. Without
+    // the prevention of the default select keydown action, macOS shows
+    // the native dropdown in this case, meaning it's visible in Firefox
+    // on macOS as soon as you're navigating by keyboard. Therefore
+    // exceptions must be implemented here for this case, to also work in FF.
+    // Also only prevent the default action if it's a known keyCode. Otherwise
+    // don't do anything, e.g. to not prevent tab navigation. Bug:
+    // https://bugzilla.mozilla.org/show_bug.cgi?id=1019630
     if (!Bowser.firefox) {
-      // Firefox doesn't allow keydown default behavior prevention,
-      // therefore it'll update the value itself and call the change
-      // listener which will update the custom dropdown option. Without
-      // the prevention of the default select keydown action, macOS shows
-      // the native dropdown in this case, meaning it's visible in Firefox
-      // on macOS as soon as you're navigating by keyboard. Bug:
-      // https://bugzilla.mozilla.org/show_bug.cgi?id=1019630
       const expectedIdx = this.getSiblingDropdownOption(
         [39, 40].includes(keyCode)
       );
