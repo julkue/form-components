@@ -6,11 +6,11 @@ export class TextField extends FormComponent {
       context,
       context.querySelector('.text-field__input'),
       context.querySelector('.text-field__error'),
+      'Text Field',
       options
     );
     super.init();
     this.initEvents();
-    console.debug('Text field initialized');
   }
 
   initEvents() {

@@ -7,6 +7,7 @@ export class Select extends FormComponent {
       context,
       context.querySelector('.select__select'),
       context.querySelector('.select__error'),
+      'Select',
       options
     );
     super.init();
@@ -20,7 +21,6 @@ export class Select extends FormComponent {
     if (!this.field.hasAttribute('disabled')) {
       this.initEvents();
     }
-    console.debug('Select initialized');
   }
 
   createDropdown() {

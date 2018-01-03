@@ -6,11 +6,11 @@ export class TextArea extends FormComponent {
       context,
       context.querySelector('.text-area__input'),
       context.querySelector('.text-area__error'),
+      'Text Area',
       options
     );
     super.init();
     this.initEvents();
-    console.debug('Text area initialized');
   }
 
   initEvents() {

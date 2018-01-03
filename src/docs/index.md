@@ -50,7 +50,14 @@ new RadioComponent(document.querySelector(RadioComponentSelector), {
 Type: boolean  
 Default: true
 
-If the form component should receive a focus outline when tabbing with the keyboard. 
+If the form component should receive a focus outline when tabbing with the keyboard.
+
+**debug**
+
+Type: boolean  
+Default: true
+
+Whether or not there should be debug logs.
 
 ### Form
 
@@ -71,6 +78,13 @@ Type: boolean
 Default: true
 
 When there's a message available on the site, this message will be focused for screen readers when the DOM is ready.
+
+**debug**
+
+Type: boolean  
+Default: true
+
+Whether or not there should be debug logs.
 
 ## Currently Available Components
 

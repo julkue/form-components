@@ -6,6 +6,7 @@ export class Checkbox extends FormComponent {
       context,
       context.querySelector('.checkbox__input'),
       context.querySelector('.checkbox__error'),
+      'Checkbox',
       options
     );
     super.init();
@@ -13,7 +14,6 @@ export class Checkbox extends FormComponent {
     this.minAnimationDuration = 500;
     this.animationPassed = false;
     this.initEvents();
-    console.debug('Checkbox initialized');
   }
 
   initEvents() {

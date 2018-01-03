@@ -6,11 +6,11 @@ export class Radio extends FormComponent {
       context,
       context.querySelector('.radio__input'),
       context.querySelector('.radio__error'),
+      'Radio',
       options
     );
     this.relocateOuterError();
     super.init();
-    console.debug('Radio initialized');
   }
 
   relocateOuterError() {

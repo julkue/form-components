@@ -3,7 +3,8 @@ import MoveTo from 'moveto';
 export class Message {
   constructor(context, options) {
     this.options = Object.assign({}, {
-      focusOnStart: true
+      focusOnStart: true,
+      debug: true
     }, options);
     this.message = context;
     this.messages = [...document.querySelectorAll(selector)];
@@ -11,7 +12,9 @@ export class Message {
     this.determineInlineMessage();
     this.initCloseButton();
     this.focusFirstMessage();
-    console.debug('Message initialized');
+    if (this.options.debug) {
+      console.debug('Message initialized');
+    }
   }
 
   determineInlineMessage() {

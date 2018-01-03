@@ -1,10 +1,12 @@
 export default class FormComponent {
-  constructor(context, field, errorField, options) {
+  constructor(context, field, errorField, name, options) {
     this.context = context;
     this.field = field;
     this.errorField = errorField;
+    this.name = name;
     this.options = Object.assign({}, {
-      tabbed: true
+      tabbed: true,
+      debug: true
     }, options);
     this.label = this.context.querySelector('label');
   }
@@ -22,6 +24,9 @@ export default class FormComponent {
     this.setIsFilledIn();
     this.initFocus();
     this.context.classList.add('is-initialized');
+    if (this.options.debug) {
+      console.debug(`${this.name} initialized`);
+    }
   }
 
   initFocus() {
