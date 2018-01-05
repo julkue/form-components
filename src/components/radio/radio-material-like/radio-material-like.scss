@@ -130,6 +130,15 @@ $variants: "dark", "light";
           transform: scale(0);
           transition: transform 0.1s ease-in-out;
           background: $radioInnerColor;
+
+          @media screen and (-ms-high-contrast: white-on-black) {
+            border-color: transparent;
+            background: $a11yNonTextColorWhiteOnBlack;
+          }
+          @media screen and (-ms-high-contrast: black-on-white) {
+            border-color: transparent;
+            background: $a11yNonTextColorBlackOnWhite;
+          }
         }
 
         a {

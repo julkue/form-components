@@ -61,30 +61,33 @@ export default class FormComponent {
   }
 
   setInvalid() {
-    if (this.field.matches('input[type="radio"]')) {
-      // Also mark other fields of the same radio group as invalid.
-      // This is necessary as an error message can be located after all
-      // grouped radios and in this case the error element will only be
-      // relocated to the last radio of this group. But invalid applies to all
-      // of the radios (see also radio component).
-      // Make sure to apply invalid only to radios of the same form
-      const name = this.field.getAttribute('name'),
-        form = this.getParentByTagName(this.field, 'form');
-      if (name && form) {
-        const elements = [...form.querySelectorAll(
-          `input[type="radio"][name="${name}"]`
-        )];
-        elements.forEach(element => {
-          // the wrapper is always two levels above the field
-          const context = element.parentElement.parentElement;
-          if (context) {
-            context.classList.add('is-invalid');
-          }
-        });
+    if (this.field.tagName === 'INPUT') {
+      const type = this.field.getAttribute('type');
+      if (type && type === 'radio') {
+        // Also mark other fields of the same radio group as invalid.
+        // This is necessary as an error message can be located after all
+        // grouped radios and in this case the error element will only be
+        // relocated to the last radio of this group. But invalid applies to all
+        // of the radios (see also radio component).
+        // Make sure to apply invalid only to radios of the same form
+        const name = this.field.getAttribute('name'),
+          form = this.getParentByTagName(this.field, 'form');
+        if (name && form) {
+          const elements = [...form.querySelectorAll(
+            `input[type="radio"][name="${name}"]`
+          )];
+          elements.forEach(element => {
+            // the wrapper is always two levels above the field
+            const context = element.parentElement.parentElement;
+            if (context) {
+              context.classList.add('is-invalid');
+            }
+          });
+        }
+        return;
       }
-    } else {
-      this.context.classList.add('is-invalid');
     }
+    this.context.classList.add('is-invalid');
   }
 
   setIsFilledIn(isFilledIn = !!this.field.value) {

@@ -33,6 +33,15 @@ $closeButtonIconColor: #4a4a4a;
     font-size: $fontSize;
     line-height: $lineHeight;
 
+    // in high contrast mode, no background color is displayed, therefore
+    // use border as an alternative design pattern
+    @media screen and (-ms-high-contrast: white-on-black) {
+      border: 1px solid $a11yNonTextColorWhiteOnBlack;
+    }
+    @media screen and (-ms-high-contrast: black-on-white) {
+      border: 1px solid $a11yNonTextColorBlackOnWhite;
+    }
+
     &.is-inline {
       margin: 10px 0;
     }

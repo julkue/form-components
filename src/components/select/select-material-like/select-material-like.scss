@@ -266,6 +266,19 @@ $variants: "dark", "light";
             color: $selectColor;
           }
 
+          // as we have overridden ms-value, we need to fix that in high
+          // contrast mode
+          @media screen and (-ms-high-contrast: white-on-black) {
+            &::-ms-value {
+              color: $a11yTextColorWhiteOnBlack !important;
+            }
+          }
+          @media screen and (-ms-high-contrast: black-on-white) {
+            &::-ms-value {
+              color: $a11yTextColorBlackOnWhite !important;
+            }
+          }
+
           // use a "bug" of Chrome to overwrite autofill styling
           // https://stackoverflow.com/a/37432260/3894981
           // !important is necessary as it won't work otherwise
@@ -453,6 +466,13 @@ $variants: "dark", "light";
         &.is-selected {
           background-color: $selectDropdownOptionActiveBackgroundColor;
           color: $selectDropdownOptionActiveColor;
+
+          @media screen and (-ms-high-contrast: white-on-black) {
+            color: $a11yTextHighlightColorWhiteOnBlack;
+          }
+          @media screen and (-ms-high-contrast: black-on-white) {
+            color: $a11yTextHighlightColorBlackOnWhite;
+          }
         }
 
         &.is-disabled {

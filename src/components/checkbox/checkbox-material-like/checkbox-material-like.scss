@@ -127,7 +127,11 @@ $variants: "dark", "light";
           z-index: 2;
           transform-origin: center center;
           transform: scale(0);
-          transition: transform 0.1s ease-in-out
+          transition: transform 0.1s ease-in-out;
+
+          @media screen and (-ms-high-contrast: active) {
+            border-color: transparent;
+          }
         }
 
         a {

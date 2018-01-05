@@ -5,6 +5,14 @@ $red: #d31a00;
 $red-light: rgba($red, 0.3);
 $clouds: #ecf0f1;
 
+// Accessibility colors
+$a11yNonTextColorWhiteOnBlack: $white;
+$a11yNonTextColorBlackOnWhite: $black;
+$a11yTextColorWhiteOnBlack: $white;
+$a11yTextColorBlackOnWhite: $black;
+$a11yTextHighlightColorWhiteOnBlack: #ffff00;
+$a11yTextHighlightColorBlackOnWhite: #ffff00;
+
 // Container sizing settings
 $container-max-width: 1350px;
 $container-padding-x: 25px;

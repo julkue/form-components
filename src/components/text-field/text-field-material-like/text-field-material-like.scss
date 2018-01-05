@@ -203,6 +203,10 @@ $variants: "dark", "light";
         background-color: transparent;
         transform: translateY(0);
         @include transition("all .275s");
+
+        @media screen and (-ms-high-contrast: active) {
+          border: none;
+        }
       }
 
       // Disabled
