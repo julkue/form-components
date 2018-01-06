@@ -91,7 +91,11 @@ let config = module.exports = {
         homepage: pkg.homepage,
         author: pkg.author.name,
         license: pkg.license,
-        year: new Date().getFullYear()
+        year: (() => {
+          const startYear = 2017,
+            year = new Date().getFullYear();
+          return year > startYear ? `${startYear}–${year}`: year;
+        })()
       }),
       raw: true
     })
