@@ -90,7 +90,12 @@ export class Select extends FormComponent {
     // Due to the fact that Firefox on Windows will open the native
     // dropdown by using space and there shouldn't be two dropdowns, we can
     // only close the custom dropdown to make it work with FF on Win.
-    this.close();
+    if (Bowser.firefox) {
+      this.close();
+    } else {
+      // open is the default behavior of all browsers (not toggling)
+      this.open();
+    }
   }
 
   onEsc() {
