@@ -76,6 +76,9 @@ export class Message {
   hide() {
     this.message.classList.add('is-hidden');
     this.closeButton.setAttribute('tabindex', '-1');
+    // in case it was focused and there's a custom focus library like flying
+    // focus that still highlights the now hidden button
+    this.closeButton.blur();
   }
 }
 
