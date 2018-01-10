@@ -74,12 +74,7 @@ export class Select extends FormComponent {
       });
     });
     this.setActive(this.field.selectedIndex);
-    document.body.addEventListener('click', event => {
-      if (event.target === this.context || this.context.contains(event.target)) {
-        return;
-      }
-      this.close();
-    });
+    this.field.addEventListener('blur', () => this.close());
   }
 
   onEnter() {
