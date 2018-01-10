@@ -162,8 +162,8 @@ export class Form {
   }
 
   showMessage() {
-    const messageClose = this.message.querySelector('.message__close-button');
     if (this.message && this.options.message) {
+      const messageClose = this.message.querySelector('.message__close-button');
       // Remove the role temporarily in order to notify the screen reader that
       // this is a new notification and he should read it
       const role = this.message.getAttribute('role');
@@ -181,8 +181,8 @@ export class Form {
   }
 
   hideMessage() {
-    const messageClose = this.message.querySelector('.message__close-button');
     if (this.message && this.options.message) {
+      const messageClose = this.message.querySelector('.message__close-button');
       this.message.classList.add('is-hidden');
       if (messageClose) {
         messageClose.setAttribute('tabindex', '-1');
