@@ -74,7 +74,17 @@ export class Select extends FormComponent {
       });
     });
     this.setActive(this.field.selectedIndex);
-    this.field.addEventListener('blur', () => this.close());
+    this.field.addEventListener('blur', () => {
+      // Make sure to not close the dropdown before the option click event
+      // is called. Otherwise you can't select any value using click
+      setTimeout(() => {
+        const target = document.activeElement;
+        if (target === this.context || this.context.contains(target)) {
+          return;
+        }
+        this.close();
+      }, 150);
+    });
   }
 
   onEnter() {
