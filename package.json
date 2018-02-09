@@ -45,7 +45,7 @@
     "jit-grunt": "^0.10.0",
     "moveto": "^1.7.1",
     "node-sass": "^4.5.3",
-    "normalize.css": "^7.0.0",
+    "normalize.css": "^8.0.0",
     "postcss-cssnext": "^3.0.2",
     "postcss-loader": "^2.0.6",
     "resolve-url-loader": "^2.1.0",
