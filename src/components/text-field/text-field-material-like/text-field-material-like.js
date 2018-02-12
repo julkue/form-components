@@ -14,15 +14,19 @@ export class TextField extends FormComponent {
   }
 
   initEvents() {
-    this.field.addEventListener('focus', () => this.setIsFilledIn(true));
-    this.field.addEventListener('blur', () => this.setIsFilledIn());
-    this.field.addEventListener('input', () => {
-      // Don't just call setIsFilledIn() for the case where you've removed
-      // the text field value but are still focusing the text field
-      this.setIsFilledIn(
-        this.field.value || this.field === document.activeElement
-      );
-    });
+    if (this.field.type === 'date' || this.field.type === 'time') {
+      this.setIsFilledIn(true);
+    } else {
+      this.field.addEventListener('focus', () => this.setIsFilledIn(true));
+      this.field.addEventListener('blur', () => this.setIsFilledIn());
+      this.field.addEventListener('input', () => {
+        // Don't just call setIsFilledIn() for the case where you've removed
+        // the text field value but are still focusing the text field
+        this.setIsFilledIn(
+          this.field.value || this.field === document.activeElement
+        );
+      });
+    }
   }
 }
 
