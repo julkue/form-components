@@ -68,7 +68,21 @@ _NOTE: This component isn't listed on the left side, since it only contains a JS
 Type: boolean  
 Default: true
 
-When there's a message in the corresponding `<form>` element (needs the `.is-hidden` class), then this message will be shown/hidden during client-side validation. If you specify `false` then this message will be ignored even when the message is available in the DOM.
+**onInvalid**
+
+Type: function  
+Default: `function(){}`  
+Parameters: The `submit` event
+
+A callback when the form was submitted invalid.
+
+**onValid**
+
+Type: function  
+Default: `function(){}`  
+Parameters: The `submit` event
+
+A callback when the form was submitted valid.
 
 ### Message
 

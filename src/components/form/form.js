@@ -6,7 +6,9 @@ export class Form {
       this.form = form;
       this.message = this.form.querySelector('.message--error');
       this.options = Object.assign({}, {
-        message: true
+        message: true,
+        onValid: () => {},
+        onInvalid: () => {}
       }, options);
       this.initEvents();
     }
@@ -30,9 +32,11 @@ export class Form {
       if (!valid) {
         event.preventDefault();
         this.showMessage();
+        this.options.onInvalid(event);
         return false;
       } else {
         this.hideMessage();
+        this.options.onValid(event);
         return true;
       }
     });
