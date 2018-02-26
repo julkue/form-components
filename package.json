@@ -34,7 +34,7 @@
     "css-loader": "^0.28.10",
     "del-cli": "^1.1.0",
     "eslint": "^4.18.1",
-    "eslint-loader": "^1.9.0",
+    "eslint-loader": "^2.0.0",
     "extract-text-webpack-plugin": "^3.0.2",
     "file-loader": "^1.1.9",
     "ftp-deploy": "^1.2.2",
