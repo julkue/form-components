@@ -103,6 +103,7 @@ let config = module.exports = {
   ]
 };
 
+/* disable for debug purposes
 if (process.argv.indexOf('-p') !== -1) {
   // compress and remove console statements. Only add this plugin in production
   // as even if drop_console is set to false, other options may be set to true
@@ -112,5 +113,6 @@ if (process.argv.indexOf('-p') !== -1) {
     }
   }));
 }
+*/
 
 module.exports = config;
