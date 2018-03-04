@@ -59,8 +59,8 @@
   "scripts": {
     "fractal:dev": "fractal start --sync",
     "fractal:prod": "fractal build",
-    "webpack:dev": "webpack --config build/webpack.config.js",
-    "webpack:dev-watch": "webpack --watch --config build/webpack.config.js",
+    "webpack:dev": "webpack --mode development --config build/webpack.config.js",
+    "webpack:dev-watch": "webpack --mode development --watch --config build/webpack.config.js",
     "webpack:prod": "webpack -p --config build/webpack.config.js",
     "font": "grunt generate-icon-font --gruntfile build/grunt.config.js --base ./",
     "dev": "npm update && del-cli dist/**/* && concurrently --kill-others \"npm run fractal:dev\" \"npm run webpack:dev-watch\"",
