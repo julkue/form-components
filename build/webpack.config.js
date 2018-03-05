@@ -39,8 +39,6 @@ let config = module.exports = {
         use: [{
           loader: 'css-loader'
         }, {
-          loader: 'resolve-url-loader'
-        }, {
           loader: 'postcss-loader',
           options: {
             config: {
@@ -48,6 +46,10 @@ let config = module.exports = {
             },
             sourceMap: true
           }
+        }, {
+          // Place resolve-url-loader below postcss-loader due to:
+          // https://github.com/postcss/postcss-loader/issues/340
+          loader: 'resolve-url-loader'
         }, {
           loader: 'sass-loader',
           options: {
