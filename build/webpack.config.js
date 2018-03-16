@@ -1,6 +1,7 @@
 const path = require('path'),
-  extractTextPlugin = require('extract-text-webpack-plugin'),
   webpack = require('webpack'),
+  extractTextPlugin = require('extract-text-webpack-plugin'),
+  uglifyJsPlugin = require('uglifyjs-webpack-plugin'),
   fs = require('fs'),
   glob = require('glob'),
   hbs = require('handlebars'),
@@ -38,8 +39,6 @@ let config = module.exports = {
         use: [{
           loader: 'css-loader'
         }, {
-          loader: 'resolve-url-loader'
-        }, {
           loader: 'postcss-loader',
           options: {
             config: {
@@ -47,6 +46,10 @@ let config = module.exports = {
             },
             sourceMap: true
           }
+        }, {
+          // Place resolve-url-loader below postcss-loader due to:
+          // https://github.com/postcss/postcss-loader/issues/340
+          loader: 'resolve-url-loader'
         }, {
           loader: 'sass-loader',
           options: {
@@ -101,15 +104,5 @@ let config = module.exports = {
     })
   ]
 };
-
-if (process.argv.indexOf('-p') !== -1) {
-  // compress and remove console statements. Only add this plugin in production
-  // as even if drop_console is set to false, other options may be set to true
-  config.plugins.push(new webpack.optimize.UglifyJsPlugin({
-    compress: {
-      'drop_console': true
-    }
-  }));
-}
 
 module.exports = config;
