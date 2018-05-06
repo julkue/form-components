@@ -16,7 +16,7 @@ if (process.env.TRAVIS_BRANCH !== 'master') {
 }
 
 new FtpDeploy().deploy({
-  username: process.env.FTP_USERNAME,
+  user: process.env.FTP_USERNAME,
   password: process.env.FTP_PASSWORD,
   host: process.env.FTP_HOST,
   port: process.env.FTP_PORT,
