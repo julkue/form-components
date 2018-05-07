@@ -22,7 +22,7 @@ new FtpDeploy().deploy({
   port: process.env.FTP_PORT,
   localRoot: path.join(__dirname, 'library/'),
   remoteRoot: '/httpdocs/',
-  include: ['*'],
+  include: ['*', '**/*'],
   exclude: []
 }, function(err) {
   if (err) {
