@@ -33,7 +33,7 @@
     "concurrently": "^3.5.1",
     "css-loader": "^0.28.10",
     "del-cli": "^1.1.0",
-    "eslint": "^4.18.2",
+    "eslint": "^5.0.0",
     "eslint-loader": "^2.0.0",
     "extract-text-webpack-plugin": "v4.0.0-beta.0",
     "file-loader": "^1.1.11",
