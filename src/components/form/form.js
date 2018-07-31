@@ -40,6 +40,16 @@ export class Form {
         return true;
       }
     });
+    this.form.addEventListener('reset', () => {
+      this.formElements.forEach(field => {
+        this.removeError(field);
+        this.setValid(field);
+        const ev = document.createEvent('CustomEvent');
+        ev.initCustomEvent('fieldReset', true, true, {});
+        field.dispatchEvent(ev);
+      });
+      this.hideMessage();
+    });
   }
 
   get formElements() {

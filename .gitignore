@@ -5,6 +5,7 @@ build/library/
 dist/
 
 yarn.lock
+package-lock.json
 *.js.map
 npm-debug.log*
 TODO
