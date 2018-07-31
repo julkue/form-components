@@ -58,6 +58,9 @@ export default class FormComponent {
     this.field.addEventListener('focusout', () => {
       this.context.classList.remove('is-focused');
     });
+    this.field.addEventListener('fieldReset', () => {
+      this.setIsFilledIn();
+    });
   }
 
   setInvalid() {

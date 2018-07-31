@@ -108,7 +108,7 @@ There's also an example form that renders all of them in a single form for demon
 
 ## Form Validation
 
-There's one component that isn't listed on the left side since it's only one JavaScript file: "form". This component can be used for client-side validation. Basically it validates like a browser does, respecting e.g. "required" or "pattern" attributes. It also shows the same error messages like your browser does – or if you've specified custom validation messages then it'll show them (using the HTML5 API, e.g. `setCustomValidity()`). However, the messages are shown in a design-conform way that looks nice with our custom form components. If you'd like to try it out; it's integrated in the "Example Form" components. It's exported like a normal component, so you can directly start using it.
+There's one component that isn't listed on the left side since it's only one JavaScript file: "form". This component can be used for client-side validation. It also includes the functionality to handle "reset" events of forms that you may need. Basically it validates like a browser does, respecting e.g. "required" or "pattern" attributes. It also shows the same error messages like your browser does – or if you've specified custom validation messages then it'll show them (using the HTML5 API, e.g. `setCustomValidity()`). However, the messages are shown in a design-conform way that looks nice with our custom form components. If you'd like to try it out; it's integrated in the "Example Form" components. It's exported like a normal component, so you can directly start using it.
 
 The initialization is similar to normal components, you can pass in the `<form>` DOM element and an optional options object.
 

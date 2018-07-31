@@ -79,7 +79,8 @@ let config = module.exports = {
       process.argv.indexOf('-p') !== -1 ? 'min.js' : 'js'
     }`,
     library: ['[name]'],
-    libraryTarget: 'umd'
+    libraryTarget: 'umd',
+    globalObject: 'this'
   },
   plugins: [
     new extractTextPlugin(`[name]/[name].${
