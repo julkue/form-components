@@ -1,0 +1,56 @@
+@import "base";
+
+/*******************************************************************************
+ * Contextual classes:
+ * - is-disabled: When input is disabled
+ * - is-filled-in: When a value is available or the user clicked on the select
+ * - is-open: If the dropdown is open
+ * - has-no-label: If the select has no label
+ * - is-tabbed: When the select is focused (a11y)
+ * - is-focused: When the input is focused
+ * - is-initialized: When the JS for the component is initialized
+ * - has-no-label: If there is no label available
+ ******************************************************************************/
+
+// sizes
+$selectHeight: 2.375rem; // 38px + 12px == 50px height
+
+// font settings
+$selectPaddingX: 0;
+$selectArrowFontSize: .625rem;
+
+// Need to use string here due to:
+// https://github.com/webpack-contrib/sass-loader/issues/487
+$variants: "dark", "light";
+@each $color in $variants {
+
+  /*****************************************************************************
+   * General
+   ****************************************************************************/
+  .select {
+    $block: &;
+
+    &--#{unquote($color)} {
+
+      #{$block}__wrapper {
+        @include form-components-icons-after("arrow-down-lite");
+
+        &:after {
+          font-size: $selectArrowFontSize;
+          line-height: $selectHeight;
+        }
+      }
+
+      /*************************************************************************
+       * Native select
+       ************************************************************************/
+      #{$block}__select {
+        &,
+        &:invalid,
+        &:required {
+          padding-right: calc(#{$selectPaddingX} + #{$selectArrowFontSize} + 10px);
+        }
+      }
+    }
+  }
+}

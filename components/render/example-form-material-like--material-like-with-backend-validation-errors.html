@@ -1,0 +1,110 @@
+
+
+<form class="example-form-material-like">
+      <div class="message--error " role="alert">
+    <div class="message__container">
+      <div class="message__icon-container">
+        <span class="visually-hidden">Error message</span>
+          <p><b>Error</b>. The form is not valid! Please check the fields. This message is 100% customizable!</p>
+        <span class="message__close-button" tabindex="0" role="button">
+          <span class="visually-hidden">Close</span>
+        </span>
+      </div>
+    </div>
+  </div>
+
+    <div class="message--error is-hidden" role="alert">
+    <div class="message__container">
+      <div class="message__icon-container">
+        <span class="visually-hidden">Error message</span>
+          <p><b>Error</b>. The form is not valid! Please check the fields. This message is 100% customizable!</p>
+        <span class="message__close-button" tabindex="-1" role="button">
+          <span class="visually-hidden">Close</span>
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <div class="radio--light">
+  <div class="radio__wrapper">
+    <input class="radio__input" id="already-user-true" type="radio" name="already_user" value="true"  required="true"  />
+    <label class="radio__label" for="already-user-true">I have an account already</label>
+  </div>
+  <!-- NOTE: This div is reserved for field-specific error messages by a backend -->
+    <!--<div class="radio__error">Put in the error message here...</div>-->
+</div>
+
+  <div class="radio--light">
+  <div class="radio__wrapper">
+    <input class="radio__input" id="already-user-false" type="radio" name="already_user" value="false"  required="true"  />
+    <label class="radio__label" for="already-user-false">I don't have an account yet</label>
+  </div>
+  <!-- NOTE: This div is reserved for field-specific error messages by a backend -->
+    <!--<div class="radio__error">Put in the error message here...</div>-->
+</div>
+
+    <div class="radio__error">
+      Please check one option
+    </div>
+  <div class="select--light">
+  <div class="select__wrapper">
+    <select class="select__select" id="salutation" name="salutation" required="true">
+      <option value="" disabled selected>Please choose</option>
+      <option value="Mr.">Mr.</option>
+      <option value="Ms.">Ms.</option>
+      <option value="Mrs.">Mrs.</option>
+    </select>
+      <label class="select__label" for="salutation">Salutation</label>
+  </div>
+  <!-- NOTE: This div is reserved for field-specific error messages by a backend -->
+    <div class="select__error">Please provide a value for this field</div>
+</div>
+
+  <div class="text-field--light">
+  <div class="text-field__wrapper">
+    <input class="text-field__input" id="firstname" type="text" name="firstname"   required="true" />
+    <label class="text-field__label" for="firstname">Firstname</label>
+  </div>
+  <!-- NOTE: This div is reserved for field-specific error messages by a backend -->
+    <div class="text-field__error">Please provide a value for this field</div>
+</div>
+
+  <div class="text-field--light">
+  <div class="text-field__wrapper">
+    <input class="text-field__input" id="lastname" type="text" name="lastname"   required="true" />
+    <label class="text-field__label" for="lastname">Lastname</label>
+  </div>
+  <!-- NOTE: This div is reserved for field-specific error messages by a backend -->
+    <div class="text-field__error">Please provide a value for this field</div>
+</div>
+
+  <div class="text-field--light">
+  <div class="text-field__wrapper">
+    <input class="text-field__input" id="email" type="email" name="email"   required="true" />
+    <label class="text-field__label" for="email">Email</label>
+  </div>
+  <!-- NOTE: This div is reserved for field-specific error messages by a backend -->
+    <div class="text-field__error">Please provide a value for this field</div>
+</div>
+
+  <div class="text-area--light">
+  <div class="text-area__wrapper">
+    <textarea class="text-area__input" id="message" type="text" name="message"   required="true"></textarea>
+    <label class="text-area__label" for="message">Message</label>
+  </div>
+  <!-- NOTE: This div is reserved for field-specific error messages by a backend -->
+    <div class="text-area__error">Please provide a value for this field</div>
+</div>
+
+  <div class="checkbox--light">
+  <div class="checkbox__wrapper">
+    <input class="checkbox__input" id="copy" type="checkbox" name="copy" value="true"  required="true"  />
+    <label class="checkbox__label" for="copy">I want a copy of my message</label>
+  </div>
+  <!-- NOTE: This div is reserved for field-specific error messages by a backend -->
+    <div class="checkbox__error">Please accept this field</div>
+</div>
+
+  <button type="submit">Submit</button>
+</form>
+

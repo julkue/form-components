@@ -1,0 +1,171 @@
+@import "base";
+
+/*******************************************************************************
+ * Contextual classes:
+ * - is-disabled: When input is disabled
+ * - is-tabbed: When the input is focused by tabbing (a11y)
+ * - is-focused: When the input is focused
+ * - is-initialized: When the JS for the component is initialized
+ * - has-no-label: If there is no label available
+ ******************************************************************************/
+// font settings
+$radioFontSize: 1.125rem;
+$radioLineHeight: 1.35rem;
+$radioIconFontSize: 1.25rem;
+$radioFontFamily: inherit;
+
+// Need to use string here due to:
+// https://github.com/webpack-contrib/sass-loader/issues/487
+$variants: "dark", "light";
+@each $color in $variants {
+  @if $color == "light" {
+    // color settings
+    $radioBackgroundColor: transparent !global;
+    $radioErrorBackgroundColor: $red-light !global;
+    $radioColor: $black !global;
+    $radioInnerColor: $black !global;
+    $radioBorderColor: $radioInnerColor !global;
+    $radioBorderErrorColor: $red !global;
+    $radioLinkColor: $radioColor !global;
+    $radioLinkColorHover: $clouds !global;
+    $radioErrorMsgColor: $red !global;
+    $radioFocusBorderColor: #95a5a6 !global;
+  } @else {
+    // color settings
+    $radioBackgroundColor: transparent !global;
+    $radioErrorBackgroundColor: $red-light !global;
+    $radioColor: $white !global;
+    $radioInnerColor: $white !global;
+    $radioBorderColor: $radioInnerColor !global;
+    $radioBorderErrorColor: $red !global;
+    $radioLinkColor: $radioColor !global;
+    $radioLinkColorHover: $clouds !global;
+    $radioErrorMsgColor: $red !global;
+    $radioFocusBorderColor: #95a5a6 !global;
+  }
+
+  /*****************************************************************************
+   * General
+   ****************************************************************************/
+  .radio {
+    $block: &;
+
+    &--#{unquote($color)} {
+      &, * {
+        user-select: none;
+      }
+
+      &.is-disabled {
+        &, * {
+          cursor: not-allowed !important;
+        }
+      }
+
+      &.is-tabbed {
+        outline: 1px solid $radioFocusBorderColor;
+        outline-offset: 3px;
+      }
+
+      #{$block}__wrapper {
+        position: relative;
+        width: 100%;
+        overflow: hidden; // necessary for outline
+      }
+
+      /*************************************************************************
+       * Hide native radio
+       ************************************************************************/
+      #{$block}__input {
+        @include visually-hidden;
+      }
+
+      /*************************************************************************
+       * Label
+       ************************************************************************/
+      #{$block}__label {
+        $border: 1px;
+        position: relative;
+        color: $radioColor;
+        font-size: $radioFontSize;
+        line-height: $radioLineHeight;
+        font-family: $radioFontFamily;
+        // subtract -2px as checkbox is 2px smaller (Material Design sizes)
+        padding: 0 0 0 calc(#{$radioIconFontSize} + #{$border * 2} + 10px + 2px);
+        box-sizing: border-box;
+        cursor: pointer;
+        width: 100%;
+        display: block; // use padding for a second line too
+
+        // after contains the rounded border, before the inner color.
+        // this is necessary due to animation purposes
+        &:after,
+        &:before {
+          position: absolute;
+          top: ($radioLineHeight - $radioIconFontSize) / 2;
+          left: 0;
+          content: "";
+          display: inline-block;
+          border-radius: 50%;
+          box-sizing: border-box;
+          width: #{$radioIconFontSize};
+          height: #{$radioIconFontSize};
+        }
+        &:after {
+          border: $border solid $radioBorderColor;
+          z-index: 2;
+          background: $radioBackgroundColor;
+          @include transition("background .3s");
+        }
+        &:before {
+          font-size: $radioIconFontSize;
+          line-height: $radioIconFontSize;
+          color: $radioInnerColor;
+          width: calc(#{$radioIconFontSize} - #{$border * 10});
+          height: calc(#{$radioIconFontSize} - #{$border * 10});
+          border: #{$border} solid transparent;
+          left: #{$border * 5};
+          top: calc(#{($radioLineHeight - $radioIconFontSize) / 2} + #{$border * 5});
+          z-index: 1;
+          transform-origin: center center;
+          transform: scale(0);
+          transition: transform 0.1s ease-in-out;
+          background: $radioInnerColor;
+
+          @media screen and (-ms-high-contrast: white-on-black) {
+            border-color: transparent;
+            background: $a11yNonTextColorWhiteOnBlack;
+          }
+          @media screen and (-ms-high-contrast: black-on-white) {
+            border-color: transparent;
+            background: $a11yNonTextColorBlackOnWhite;
+          }
+        }
+
+        a {
+          @include link-underline-medium($radioLinkColor, $radioLinkColorHover);
+        }
+      }
+      #{$block}__input:checked + #{$block}__label:before {
+        transform: scale(1);
+      }
+      &.is-invalid #{$block}__input:not(:checked) + #{$block}__label {
+        &:after {
+          background: $radioErrorBackgroundColor;
+          border-color: $radioBorderErrorColor;
+        }
+      }
+
+      /*************************************************************************
+       * Error message
+       ************************************************************************/
+      #{$block}__error {
+        color: $radioErrorMsgColor;
+        margin: 5px 0;
+
+        a {
+          color: $radioErrorMsgColor;
+        }
+      }
+    }
+  }
+}

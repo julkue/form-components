@@ -1,0 +1,167 @@
+@import "base";
+
+/*******************************************************************************
+ * Contextual classes:
+ * - is-disabled: When input is disabled
+ * - is-pressed: When the user has the mouse down on the checkbox
+ * - is-tabbed: When the input is focused by tabbing (a11y)
+ * - is-focused: When the input is focused
+ * - is-initialized: When the JS for the component is initialized
+ * - has-no-label: If there is no label available
+ ******************************************************************************/
+// font settings
+$checkboxFontSize: 1.125rem;
+$checkboxLineHeight: 1.35rem; // 1.2
+$checkboxIconFontSize: 1.125rem;
+$checkboxFontFamily: inherit;
+
+// Need to use string here due to:
+// https://github.com/webpack-contrib/sass-loader/issues/487
+$variants: "dark", "light";
+@each $color in $variants {
+  @if $color == "light" {
+    // color settings
+    $checkboxBackgroundColor: transparent !global;
+    $checkboxErrorBackgroundColor: $red-light !global;
+    $checkboxColor: $black !global;
+    $checkboxIconColor: $checkboxColor !global;
+    $checkboxIconBorderColor: $checkboxIconColor !global;
+    $checkboxIconBorderErrorColor: $red !global;
+    $checkboxLinkColor: $checkboxColor !global;
+    $checkboxLinkColorHover: $clouds !global;
+    $checkboxErrorMsgColor: $red !global;
+    $checkboxFocusBorderColor: #95a5a6 !global;
+  } @else {
+    // color settings
+    $checkboxBackgroundColor: transparent !global;
+    $checkboxErrorBackgroundColor: $red-light !global;
+    $checkboxColor: $white !global;
+    $checkboxIconColor: $white !global;
+    $checkboxIconBorderColor: #9b9b9b !global;
+    $checkboxIconBorderErrorColor: $red !global;
+    $checkboxLinkColor: $checkboxColor !global;
+    $checkboxLinkColorHover: $clouds !global;
+    $checkboxErrorMsgColor: $red !global;
+    $checkboxFocusBorderColor: #95a5a6 !global;
+  }
+
+  /*****************************************************************************
+   * General
+   ****************************************************************************/
+  .checkbox {
+    $block: &;
+
+    &--#{unquote($color)} {
+      &, * {
+        user-select: none;
+      }
+
+      &.is-disabled {
+        &, * {
+          cursor: not-allowed !important;
+        }
+      }
+
+      &.is-tabbed {
+        outline: 1px solid $checkboxFocusBorderColor;
+        outline-offset: 3px;
+      }
+
+      #{$block}__wrapper {
+        position: relative;
+        width: 100%;
+        overflow: hidden; // necessary for outline
+      }
+
+      /*************************************************************************
+       * Hide native checkbox
+       ************************************************************************/
+      #{$block}__input {
+        @include visually-hidden;
+      }
+
+      /*************************************************************************
+       * Label
+       ************************************************************************/
+      #{$block}__label {
+        $padding: 2px;
+        $border: 1px;
+        position: relative;
+        line-height: $checkboxLineHeight;
+        color: $checkboxColor;
+        font-size: $checkboxFontSize;
+        font-family: $checkboxFontFamily;
+        padding: 0 0 0 calc(#{$checkboxIconFontSize} + #{$padding * 2} + #{$border * 2} + 10px);
+        box-sizing: border-box;
+        cursor: pointer;
+        width: 100%;
+        display: block; // use padding for a second line too
+        @include form-components-icons-before("checkmark-material");
+
+        // after contains the squash, before the checkmark.
+        // this is necessary due to animation purposes
+        &:after,
+        &:before {
+          position: absolute;
+          top: ($checkboxLineHeight - $checkboxIconFontSize) / 2;
+          left: 0;
+          padding: $padding;
+          width: #{$checkboxIconFontSize};
+          height: #{$checkboxIconFontSize};
+          box-sizing: border-box;
+        }
+        &:after {
+          border: $border solid $checkboxIconBorderColor;
+          content: "";
+          display: inline-block;
+          z-index: 1;
+          background: $checkboxBackgroundColor;
+          @include transition("background .3s");
+        }
+        &:before {
+          font-size: calc(#{$checkboxIconFontSize} - #{$padding * 2} - #{$border * 2});
+          line-height: calc(#{$checkboxIconFontSize} - #{$padding * 2} - #{$border * 2});
+          color: $checkboxIconColor;
+          border: $border solid transparent;
+          margin-top: 1px; // optical icon alignment
+          z-index: 2;
+          transform-origin: center center;
+          transform: scale(0);
+          transition: transform 0.1s ease-in-out;
+
+          @media screen and (-ms-high-contrast: active) {
+            border-color: transparent;
+          }
+        }
+
+        a {
+          @include link-underline-medium($checkboxLinkColor, $checkboxLinkColorHover);
+        }
+      }
+      #{$block}__input:checked + #{$block}__label:before {
+        transform: scale(1);
+      }
+      &.is-pressed #{$block}__label:before {
+        transform: scale(1.2);
+      }
+      &.is-invalid #{$block}__input:not(:checked) + #{$block}__label {
+        &:after {
+          background: $checkboxErrorBackgroundColor;
+          border-color: $checkboxIconBorderErrorColor;
+        }
+      }
+
+      /*************************************************************************
+       * Error message
+       ************************************************************************/
+      #{$block}__error {
+        color: $checkboxErrorMsgColor;
+        margin: 5px 0;
+
+        a {
+          color: $checkboxErrorMsgColor;
+        }
+      }
+    }
+  }
+}

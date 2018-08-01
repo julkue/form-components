@@ -1,0 +1,39 @@
+@import "base";
+
+/*******************************************************************************
+ * Contextual classes:
+ * - is-disabled: When input is disabled
+ * - is-pressed: When the user has the mouse down on the checkbox
+ * - is-tabbed: When the input is focused by tabbing (a11y)
+ * - is-focused: When the input is focused
+ * - is-initialized: When the JS for the component is initialized
+ * - has-no-label: If there is no label available
+ ******************************************************************************/
+// font settings
+$checkboxIconFontSize: 1.125rem;
+
+// Need to use string here due to:
+// https://github.com/webpack-contrib/sass-loader/issues/487
+$variants: "dark", "light";
+@each $color in $variants {
+
+  /*****************************************************************************
+   * General
+   ****************************************************************************/
+  .checkbox {
+    $block: &;
+
+    &--#{unquote($color)} {
+
+      /*************************************************************************
+       * Label
+       ************************************************************************/
+      #{$block}__label {
+        $padding: 2px;
+        $border: 1px;
+        padding-left: calc(#{$checkboxIconFontSize} + #{$padding * 2} + #{$border * 2} + 10px);
+        @include form-components-icons-before("checkmark-lite");
+      }
+    }
+  }
+}

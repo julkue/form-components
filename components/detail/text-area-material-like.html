@@ -1,0 +1,1767 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="no-js">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>
+    window.frctl = {
+        env: 'static'
+    };
+    </script>
+    <script>var cl = document.querySelector('html').classList; cl.remove('no-js'); cl.add('has-js');</script>
+    <link rel="shortcut icon" href="../../themes/mandelbrot/favicon.ico" type="image/ico">
+
+<link rel="stylesheet" href="../../themes/mandelbrot/css/navy.css?cachebust=1.2.0" type="text/css">
+
+
+<title>Text Area Material Like | Form Components v0.13.1</title>
+
+</head>
+<body>
+
+
+
+<div class="Frame" id="frame">
+
+    <div class="Frame-header">
+        <style>
+@media (max-width: 480px) {
+  .Header-title + iframe {
+    display: none;
+  }
+}
+</style>
+<div class="Header">
+    <button class="Header-button Header-navToggle" data-action="toggle-sidebar">
+        <svg class="Header-navToggleIcon Header-navToggleIcon--open" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 0h24v24H0z" fill="none"/>
+    <path d="M19 6.4L17.6 5 12 10.6 6.4 5 5 6.4 10.6 12 5 17.6 6.4 19 12 13.4 17.6 19 19 17.6 13.4 12z"/>
+</svg>
+
+        <svg class="Header-navToggleIcon Header-navToggleIcon--closed" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 0h24v24H0z" fill="none"/>
+    <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+</svg>
+
+    </button>
+    <a href="../../index.html" class="Header-title" data-pjax>Form Components v0.13.1</a>
+    <a class="github-button" href="https://github.com/julmot/form-components" data-size="large" aria-label="Star julmot/form-components on GitHub">Star</a>
+</div>
+
+    </div>
+
+    <div class="Frame-body" data-role="body">
+
+        <div class="Frame-panel Frame-panel--main" data-role="main">
+            <div class="Frame-inner" id="pjax-container">
+            
+
+
+    
+    
+
+<div class="Pen" data-behaviour="pen" id="pen-96c89b489865a2f9461ac1d334b84f22">
+
+    
+
+    <div class="Pen-panel Pen-header">
+    <h1 class="Pen-title">
+        <a class="Pen-previewLink" href="../preview/text-area-material-like.html" title="Component preview">
+            Text Area Material Like
+            <svg fill="#000000" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 0h24v24H0z" fill="none"/>
+    <path d="M19 4H5c-1.11 0-2 .9-2 2v12c0 1.1.89 2 2 2h4v-2H5V8h14v10h-4v2h4c1.1 0 2-.9 2-2V6c0-1.1-.89-2-2-2zm-7 6l-4 4h3v6h2v-6h3l-4-4z"/>
+</svg>
+
+        </a>
+    </h1>
+    
+
+<div class="Status Status--tag">
+
+<label class="Status-label" style="background-color: #29CC29; border-color: #29CC29;">Ready</label>
+
+</div>
+
+
+</div>
+
+
+    <div class="Pen-panel Pen-preview Preview" data-behaviour="preview" id="preview-96c89b489865a2f9461ac1d334b84f22">
+    <div class="Preview-wrapper" data-role="resizer">
+        <div class="Preview-resizer">
+            
+             <iframe
+                class="Preview-iframe"
+                data-role="window"
+                src="../preview/text-area-material-like.html"
+                sandbox="allow-same-origin allow-scripts allow-forms"
+                 style=""
+                marginwidth="0" marginheight="0" frameborder="0" vspace="0" hspace="0" scrolling="yes">
+            </iframe>
+        </div>
+        <div class="Preview-handle" data-role="resize-handle"></div>
+        <div class="Preview-overlay"></div>
+    </div>
+</div>
+
+
+    <div class="Pen-handle Pen-handle--browser" data-role="resize-handle"></div>
+
+    <div class="Pen-panel Pen-info" data-role="info">
+    <div class="Browser" data-behaviour="browser" id="browser-96c89b489865a2f9461ac1d334b84f22">
+
+    
+
+<div class="Browser-controls">
+    <ul class="Browser-tabs">
+        
+        
+        <li class="Browser-tab Browser-tab--html is-active " data-role="tab">
+            <a href="#browser-96c89b489865a2f9461ac1d334b84f22-panel-html">HTML</a>
+        </li>
+        
+        
+        
+        <li class="Browser-tab Browser-tab--view" data-role="tab">
+            <a href="#browser-96c89b489865a2f9461ac1d334b84f22-panel-view">View</a>
+        </li>
+        
+        
+        
+        <li class="Browser-tab Browser-tab--context" data-role="tab">
+            <a href="#browser-96c89b489865a2f9461ac1d334b84f22-panel-context">Context</a>
+        </li>
+        
+        
+        
+        
+        
+        <li class="Browser-tab Browser-tab--resources" data-role="tab">
+            <a href="#browser-96c89b489865a2f9461ac1d334b84f22-panel-assets">Assets</a>
+        </li>
+        
+        
+        
+        
+        
+        <li class="Browser-tab Browser-tab--info" data-role="tab">
+            <a href="#browser-96c89b489865a2f9461ac1d334b84f22-panel-info">Info</a>
+        </li>
+        
+        
+        
+        <li class="Browser-tab Browser-tab--notes" data-role="tab">
+            <a href="#browser-96c89b489865a2f9461ac1d334b84f22-panel-notes">Notes</a>
+        </li>
+        
+        
+    </ul>
+</div>
+
+
+    
+    
+<div class="Browser-panel Browser-code is-active" data-role="tab-panel" id="browser-96c89b489865a2f9461ac1d334b84f22-panel-html">
+    <code class="Code Code--lang-html">
+        
+        <pre><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"text-area--light"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"text-area__wrapper"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">textarea</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"text-area__input"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"text"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"text"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">textarea</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"text-area__label"</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"text"</span>&gt;</span>Text<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-comment">&lt;!-- <span class="hljs-doctag">NOTE:</span> This div is reserved for field-specific error messages by a backend --&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"text-area__error"</span>&gt;</span>Please provide a value for this field<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></pre>
+        
+    </code>
+</div>
+
+    
+    <div class="Browser-panel Browser-code" data-role="tab-panel" id="browser-96c89b489865a2f9461ac1d334b84f22-panel-view">
+    <code class="Code Code--lang-handlebars">
+        <pre><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"text-area--</span></span></span><span class="hljs-template-variable">{{splitDashLast _self.name}}</span><span class="xml"><span class="hljs-tag"><span class="hljs-string">"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"text-area__wrapper"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">textarea</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"text-area__input"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"</span></span></span><span class="hljs-template-variable">{{id}}</span><span class="xml"><span class="hljs-tag"><span class="hljs-string">"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"</span></span></span><span class="hljs-template-variable">{{name}}</span><span class="xml"><span class="hljs-tag"><span class="hljs-string">"</span> </span></span><span class="hljs-template-tag">{{#<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> value}}</span><span class="xml"><span class="hljs-tag"><span class="hljs-attr">value</span>=<span class="hljs-string">"</span></span></span><span class="hljs-template-variable">{{value}}</span><span class="xml"><span class="hljs-tag"><span class="hljs-string">"</span></span></span><span class="hljs-template-tag">{{/<span class="hljs-name"><span class="hljs-builtin-name">if</span></span>}}</span><span class="xml"><span class="hljs-tag"> </span></span><span class="hljs-template-tag">{{#<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> disabled}}</span><span class="xml"><span class="hljs-tag"><span class="hljs-attr">disabled</span></span></span><span class="hljs-template-tag">{{/<span class="hljs-name"><span class="hljs-builtin-name">if</span></span>}}</span><span class="xml"><span class="hljs-tag"> </span></span><span class="hljs-template-tag">{{#<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> required }}</span><span class="xml"><span class="hljs-tag"><span class="hljs-attr">required</span>=<span class="hljs-string">"true"</span></span></span><span class="hljs-template-tag">{{/<span class="hljs-name"><span class="hljs-builtin-name">if</span></span>}}</span><span class="xml"><span class="hljs-tag">&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">textarea</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"text-area__label"</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"</span></span></span><span class="hljs-template-variable">{{id}}</span><span class="xml"><span class="hljs-tag"><span class="hljs-string">"</span>&gt;</span></span><span class="hljs-template-variable">{{label}}</span><span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-comment">&lt;!-- <span class="hljs-doctag">NOTE:</span> This div is reserved for field-specific error messages by a backend --&gt;</span>
+  </span><span class="hljs-template-tag">{{#<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> error}}</span><span class="xml">
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"text-area__error"</span>&gt;</span></span><span class="hljs-template-variable">{{error}}</span><span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  </span><span class="hljs-template-variable">{{<span class="hljs-builtin-name">else</span>}}</span><span class="xml">
+    <span class="hljs-comment">&lt;!--&lt;div class="text-area__error"&gt;Put in the error message here...&lt;/div&gt;--&gt;</span>
+  </span><span class="hljs-template-tag">{{/<span class="hljs-name"><span class="hljs-builtin-name">if</span></span>}}</span><span class="xml">
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span></pre>
+    </code>
+</div>
+
+    
+    <div class="Browser-panel Browser-code" data-role="tab-panel" id="browser-96c89b489865a2f9461ac1d334b84f22-panel-context">
+    <code class="Code Code--lang-json">
+        
+            
+            <pre>{
+  <span class="hljs-attr">"id"</span>: <span class="hljs-string">"text"</span>,
+  <span class="hljs-attr">"name"</span>: <span class="hljs-string">"text"</span>,
+  <span class="hljs-attr">"label"</span>: <span class="hljs-string">"Text"</span>,
+  <span class="hljs-attr">"required"</span>: <span class="hljs-literal">null</span>,
+  <span class="hljs-attr">"value"</span>: <span class="hljs-literal">null</span>,
+  <span class="hljs-attr">"disabled"</span>: <span class="hljs-literal">null</span>,
+  <span class="hljs-attr">"error"</span>: <span class="hljs-string">"Please provide a value for this field"</span>
+}</pre>
+            
+        
+    </code>
+</div>
+
+    
+    
+
+
+<div class="Browser-panel Browser-resources" data-role="tab-panel" id="browser-96c89b489865a2f9461ac1d334b84f22-panel-assets">
+    <div class="FileBrowser">
+
+        <div class="FileBrowser-selectWrapper">
+            <label class="FileBrowser-select-label" for="filebrowser-select">File:</label>
+            <select class="FileBrowser-select" id="filebrowser-select">
+                
+                <option value="file-061157376e22a8bc204bcf3f96fac9ad">text-area-material-like-bundle.js</option>
+                
+                <option value="file-339167e32b81d98f0188c50b59574b08">text-area-material-like.js</option>
+                
+                <option value="file-c0d842309ee9dbb8b3d7ea33c0782ccf">text-area-material-like.scss</option>
+                
+            </select>
+        </div>
+
+        
+        <div class="FileBrowser-item is-active" id="file-061157376e22a8bc204bcf3f96fac9ad" data-role="resource-preview">
+            <ul class="Meta">
+                <li class="Meta-item">
+                    <strong class="Meta-key">Content:</strong>
+                    <span class="Meta-value">
+                        <div class="FileBrowser-itemPreview">
+                            
+                            <code class="Code Code--lang-JavaScript FileBrowser-code">
+                                <pre><span class="hljs-keyword">import</span> <span class="hljs-string">'./text-area-material-like.scss'</span>;
+<span class="hljs-keyword">export</span> * <span class="hljs-keyword">from</span> <span class="hljs-string">'./text-area-material-like'</span>;
+</pre>
+                            </code>
+                            
+                        </div>
+                    </span>
+                </li>
+                <li class="Meta-item">
+                    <strong class="Meta-key">URL:</strong>
+                    <span class="Meta-value"><a data-no-pjax href="../raw/text-area-material-like/text-area-material-like-bundle.js"><span>/components/raw/text-area-material-like/text-area-material-like-bundle.js</span></a></span>
+                </li>
+                <li class="Meta-item">
+                    <strong class="Meta-key">Filesystem Path:</strong>
+                    <span class="Meta-value">src/components/text-area/text-area-material-like/text-area-material-like-bundle.js</span>
+                </li>
+                <li class="Meta-item">
+                    <strong class="Meta-key">Size:</strong>
+                    <span class="Meta-value">84 Bytes</span>
+                </li>
+            </ul>
+        </div>
+        
+        <div class="FileBrowser-item" id="file-339167e32b81d98f0188c50b59574b08" data-role="resource-preview">
+            <ul class="Meta">
+                <li class="Meta-item">
+                    <strong class="Meta-key">Content:</strong>
+                    <span class="Meta-value">
+                        <div class="FileBrowser-itemPreview">
+                            
+                            <code class="Code Code--lang-JavaScript FileBrowser-code">
+                                <pre><span class="hljs-keyword">import</span> FormComponent <span class="hljs-keyword">from</span> <span class="hljs-string">'../../form-component'</span>;
+
+<span class="hljs-keyword">export</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">TextArea</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">FormComponent</span> </span>{
+  <span class="hljs-keyword">constructor</span>(context, options) {
+    <span class="hljs-keyword">super</span>(
+      context,
+      context.querySelector(<span class="hljs-string">'.text-area__input'</span>),
+      context.querySelector(<span class="hljs-string">'.text-area__error'</span>),
+      <span class="hljs-string">'Text Area'</span>,
+      options
+    );
+    <span class="hljs-keyword">super</span>.init();
+    <span class="hljs-keyword">this</span>.initEvents();
+  }
+
+  initEvents() {
+    <span class="hljs-keyword">this</span>.field.addEventListener(<span class="hljs-string">'focus'</span>, () =&gt; {
+      <span class="hljs-keyword">this</span>.setIsFilledIn(<span class="hljs-literal">true</span>);
+    });
+    <span class="hljs-keyword">this</span>.field.addEventListener(<span class="hljs-string">'blur'</span>, () =&gt; <span class="hljs-keyword">this</span>.setIsFilledIn());
+    <span class="hljs-keyword">this</span>.field.addEventListener(<span class="hljs-string">'input'</span>, () =&gt; {
+      <span class="hljs-comment">// Don't just call setIsFilledIn() for the case where you've removed</span>
+      <span class="hljs-comment">// the text field value but are still focusing the text field</span>
+      <span class="hljs-keyword">this</span>.setIsFilledIn(
+        <span class="hljs-keyword">this</span>.field.value || <span class="hljs-keyword">this</span>.field === <span class="hljs-built_in">document</span>.activeElement
+      );
+    });
+  }
+}
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> selector = <span class="hljs-string">'[class^="text-area--"]'</span>;
+</pre>
+                            </code>
+                            
+                        </div>
+                    </span>
+                </li>
+                <li class="Meta-item">
+                    <strong class="Meta-key">URL:</strong>
+                    <span class="Meta-value"><a data-no-pjax href="../raw/text-area-material-like/text-area-material-like.js"><span>/components/raw/text-area-material-like/text-area-material-like.js</span></a></span>
+                </li>
+                <li class="Meta-item">
+                    <strong class="Meta-key">Filesystem Path:</strong>
+                    <span class="Meta-value">src/components/text-area/text-area-material-like/text-area-material-like.js</span>
+                </li>
+                <li class="Meta-item">
+                    <strong class="Meta-key">Size:</strong>
+                    <span class="Meta-value">876 Bytes</span>
+                </li>
+            </ul>
+        </div>
+        
+        <div class="FileBrowser-item" id="file-c0d842309ee9dbb8b3d7ea33c0782ccf" data-role="resource-preview">
+            <ul class="Meta">
+                <li class="Meta-item">
+                    <strong class="Meta-key">Content:</strong>
+                    <span class="Meta-value">
+                        <div class="FileBrowser-itemPreview">
+                            
+                            <code class="Code Code--lang-SCSS FileBrowser-code">
+                                <pre>@import "base";
+
+/*******************************************************************************
+ * Contextual classes:
+ * - is-disabled: When input is disabled
+ * - is-filled-in: When value is available or the user clicked into the input
+ * - is-tabbed: When the input is focused by tabbing (a11y)
+ * - is-focused: When the input is focused
+ * - is-initialized: When the JS for the component is initialized
+ * - has-no-label: If there is no label available
+ ******************************************************************************/
+// font settings
+$textAreaLabelFontSize: 1.125rem;
+$textAreaLabelFontSizeFilledIn: 0.75rem;
+$textAreaLabelFontFamily: inherit;
+$textAreaFontSize: 1.125rem;
+$textAreaLineHeight: 1.375rem;
+$textAreaFontFamily: inherit;
+
+// size settings
+$textAreaHeight: $textAreaLineHeight * 5;
+$textAreaPaddingX: 15px;
+$textAreaPaddingY: 10px;
+$textAreaLabelSpacing: 5px;
+$textAreaBorderRadius: 2px;
+
+// need to use string here due to:
+// https://github.com/webpack-contrib/sass-loader/issues/487
+$variants: "dark", "light";
+@each $color in $variants {
+  @if $color == "light" {
+    // color settings
+    $textAreaBorderColor: $black !global;
+    $textAreaBorderActiveColor: $black !global;
+    $textAreaBorderInvalidColor: $red !global;
+    $textAreaBorderInvalidActiveColor: $red !global;
+
+    $textAreaBackgroundColor: transparent !global;
+    $textAreaBackgroundActiveColor: transparent !global;
+    $textAreaBackgroundInvalidColor: transparent !global;
+    $textAreaBackgroundInvalidActiveColor: transparent !global;
+
+    $textAreaColor: $black !global;
+    $textAreaActiveColor: $black !global;
+    $textAreaInvalidColor: $black !global;
+    $textAreaInvalidActiveColor: $black !global;
+
+    $textAreaLabelColor: $black !global;
+    $textAreaLabelFilledInColor: $textAreaLabelColor !global;
+    $textAreaLabelFilledInActiveColor: $textAreaLabelColor !global;
+    $textAreaLabelInvalidColor: $red !global;
+    $textAreaLabelInvalidFilledInColor: $textAreaLabelInvalidColor !global;
+    $textAreaLabelInvalidFilledInActiveColor: $textAreaLabelInvalidColor !global;
+
+    $textAreaErrorColor: $red !global;
+
+    $textAreaBorderTabbedColor: #95a5a6 !global;
+  } @else {
+    // color settings
+    $textAreaBorderColor: $white !global;
+    $textAreaBorderActiveColor: $white !global;
+    $textAreaBorderInvalidColor: $red !global;
+    $textAreaBorderInvalidActiveColor: $red !global;
+
+    $textAreaBackgroundColor: transparent !global;
+    $textAreaBackgroundActiveColor: transparent !global;
+    $textAreaBackgroundInvalidColor: transparent !global;
+    $textAreaBackgroundInvalidActiveColor: transparent !global;
+
+    $textAreaColor: $white !global;
+    $textAreaActiveColor: $white !global;
+    $textAreaInvalidColor: $white !global;
+    $textAreaInvalidActiveColor: $white !global;
+
+    $textAreaLabelColor: $white !global;
+    $textAreaLabelFilledInColor: $textAreaLabelColor !global;
+    $textAreaLabelFilledInActiveColor: $textAreaLabelColor !global;
+    $textAreaLabelInvalidColor: $red !global;
+    $textAreaLabelInvalidFilledInColor: $textAreaLabelInvalidColor !global;
+    $textAreaLabelInvalidFilledInActiveColor: $textAreaLabelInvalidColor !global;
+
+    $textAreaErrorColor: $red !global;
+
+    $textAreaBorderTabbedColor: #95a5a6 !global;
+  }
+
+  /*****************************************************************************
+   * General
+   ****************************************************************************/
+  .text-area {
+    $block: &amp;;
+
+    &amp;--#{unquote($color)} {
+
+      &amp;.is-tabbed {
+        outline: 1px solid $textAreaBorderTabbedColor;
+        outline-offset: 3px;
+      }
+
+      #{$block}__wrapper {
+        position: relative;
+        width: 100%;
+        border: 1px solid $textAreaBorderColor;
+        padding: 1px;
+        box-sizing: border-box;
+        border-radius: $textAreaBorderRadius;
+      }
+      &amp;.is-focused #{$block}__wrapper {
+        border-width: 2px;
+        border-color: $textAreaBorderActiveColor;
+        padding: 0;
+      }
+      &amp;.is-invalid #{$block}__wrapper {
+        border-color: $textAreaBorderInvalidColor;
+      }
+      &amp;.is-invalid.is-focused #{$block}__wrapper {
+        border-color: $textAreaBorderInvalidActiveColor;
+      }
+
+      /*************************************************************************
+       * Input
+       ************************************************************************/
+      #{$block}__input {
+        &amp;,
+        &amp;:invalid,
+        &amp;:required {
+          border: none;
+          cursor: text;
+          display: block;
+          height: calc(#{$textAreaHeight} + #{$textAreaLabelFontSizeFilledIn} + (#{$textAreaPaddingY} * 2) + #{$textAreaLabelSpacing});
+          line-height: $textAreaLineHeight;
+          box-sizing: border-box;
+          padding: calc(#{$textAreaLabelFontSizeFilledIn} + #{$textAreaPaddingY} + #{$textAreaLabelSpacing}) #{$textAreaPaddingX} #{$textAreaPaddingY} #{$textAreaPaddingX};
+          background: $textAreaBackgroundColor;
+          font-size: $textAreaFontSize;
+          font-family: $textAreaFontFamily;
+          resize: none;
+          border-radius: $textAreaBorderRadius;
+          width: 100%;
+          color: $textAreaColor;
+          box-shadow: none; // red border removal in case it's invalid/required
+
+          // Active
+          &amp;:focus {
+            outline: none;
+            background: $textAreaBackgroundActiveColor;
+            color: $textAreaActiveColor;
+          }
+        }
+      }
+
+      // Disabled
+      &amp;.is-disabled #{$block}__input {
+        cursor: not-allowed;
+      }
+
+      // Invalid
+      &amp;.is-invalid #{$block}__input {
+        background: $textAreaBackgroundInvalidColor;
+        color: $textAreaInvalidColor;
+
+        // Invalid &amp; Active
+        &amp;:focus,
+        &amp;:invalid:focus,
+        &amp;:required:focus {
+          border-color: transparent transparent $textAreaBorderInvalidActiveColor transparent;
+          color: $textAreaInvalidActiveColor;
+          background: $textAreaBackgroundInvalidActiveColor;
+        }
+      }
+
+      /*************************************************************************
+       * Label (will be moved to top when value available)
+       ************************************************************************/
+      #{$block}__label {
+        position: absolute;
+        top: calc(#{$textAreaLabelFontSizeFilledIn} + #{$textAreaPaddingY});
+        left: 0;
+        height: $textAreaHeight;
+        line-height: $textAreaLineHeight;
+        width: 100%;
+        box-sizing: border-box;
+        cursor: text;
+        padding: 0 $textAreaPaddingX;
+        font-size: $textAreaLabelFontSize;
+        font-family: $textAreaLabelFontFamily;
+        color: $textAreaLabelColor;
+        user-select: none;
+        background-color: transparent;
+        transform: translateY(0);
+        @include transition("transform .275s", "height .275s", "font-size .275s", "color .275s", "line-height .275s");
+      }
+
+      // Disabled
+      &amp;.is-disabled #{$block}__label {
+        cursor: not-allowed;
+        user-select: none;
+      }
+
+      // Filled in
+      // NOTE: We need to use two selectors here, as otherwise it won't work in
+      // Firefox. Mixins aren't allowed inside @each directives, so we can only
+      // use redundant code in these two selectors
+      // NOTE: Also trigger this style when the text field isn't initialized yet
+      // to avoid label jumping when forms with filled-in values are loaded
+      // via AJAX
+      &amp;.is-filled-in #{$block}__label,
+      &amp;:not(.is-initialized) #{$block}__label {
+        transform: translateY(-#{$textAreaPaddingY});
+        height: $textAreaLabelFontSizeFilledIn;
+        font-size: $textAreaLabelFontSizeFilledIn;
+        color: $textAreaLabelFilledInColor;
+        line-height: $textAreaLabelFontSizeFilledIn;
+      }
+      #{$block}__input:-webkit-autofill + #{$block}__label {
+        // webkit autofill is used to remove the delay between Chrome, which
+        // fills in predefined data, and JS that's being loaded
+        transform: translateY(-#{$textAreaPaddingY});
+        height: $textAreaLabelFontSizeFilledIn;
+        font-size: $textAreaLabelFontSizeFilledIn;
+        color: $textAreaLabelFilledInColor;
+        line-height: $textAreaLabelFontSizeFilledIn;
+      }
+
+      // Filled in &amp; Active
+      &amp;.is-filled-in.is-focused #{$block}__label,
+      &amp;.is-filled-in.is-focused:not(.is-initialized) #{$block}__label {
+        color: $textAreaLabelFilledInActiveColor;
+        margin-top: -1px;
+        margin-left: -1px;
+      }
+      &amp;.is-filled-in.is-focused #{$block}__input:-webkit-autofill + #{$block}__label {
+        color: $textAreaLabelFilledInActiveColor;
+        margin-top: -1px;
+        margin-left: -1px;
+      }
+
+      // Invalid
+      &amp;.is-invalid #{$block}__label,
+      &amp;.is-invalid:not(.is-initialized) #{$block}__label {
+        color: $textAreaLabelInvalidColor;
+      }
+      &amp;.is-invalid #{$block}__input:-webkit-autofill + #{$block}__label {
+        color: $textAreaLabelInvalidColor;
+      }
+
+      // Invalid &amp; Filled In
+      &amp;.is-invalid.is-filled-in #{$block}__label,
+      &amp;.is-invalid.is-filled-in:not(.is-initialized) #{$block}__label {
+        color: $textAreaLabelInvalidFilledInColor;
+      }
+      &amp;.is-invalid.is-filled-in #{$block}__input:-webkit-autofill + #{$block}__label {
+        color: $textAreaLabelInvalidFilledInColor;
+      }
+
+      // Invalid &amp; Filled in &amp; Active
+      &amp;.is-invalid.is-filled-in.is-focused #{$block}__label,
+      &amp;.is-invalid.is-filled-in.is-focused:not(.is-initialized) #{$block}__label {
+        color: $textAreaLabelInvalidFilledInActiveColor;
+      }
+      &amp;.is-invalid.is-filled-in.is-focused #{$block}__input:-webkit-autofill + #{$block}__label {
+        color: $textAreaLabelInvalidFilledInActiveColor;
+      }
+
+      /*************************************************************************
+       * Error
+       ************************************************************************/
+      #{$block}__error {
+        color: $textAreaErrorColor;
+        margin: 5px 0;
+
+        a {
+          color: $textAreaErrorColor;
+        }
+      }
+    }
+  }
+}
+</pre>
+                            </code>
+                            
+                        </div>
+                    </span>
+                </li>
+                <li class="Meta-item">
+                    <strong class="Meta-key">URL:</strong>
+                    <span class="Meta-value"><a data-no-pjax href="../raw/text-area-material-like/text-area-material-like.scss"><span>/components/raw/text-area-material-like/text-area-material-like.scss</span></a></span>
+                </li>
+                <li class="Meta-item">
+                    <strong class="Meta-key">Filesystem Path:</strong>
+                    <span class="Meta-value">src/components/text-area/text-area-material-like/text-area-material-like.scss</span>
+                </li>
+                <li class="Meta-item">
+                    <strong class="Meta-key">Size:</strong>
+                    <span class="Meta-value">10.1 KB</span>
+                </li>
+            </ul>
+        </div>
+        
+    </div>
+</div>
+
+
+
+    
+    <div class="Browser-panel" data-role="tab-panel" id="browser-96c89b489865a2f9461ac1d334b84f22-panel-info">
+    <ul class="Meta">
+        <li class="Meta-item">
+            <strong class="Meta-key">Handle:</strong>
+            <span class="Meta-value">@text-area-material-like</span>
+        </li>
+        
+        
+        
+        
+        
+        <li class="Meta-item">
+            <strong class="Meta-key">Variants <em class="Meta-count">(2)</em>:</strong>
+            <span class="Meta-value Meta-value--linkList">
+            
+                <a href="text-area-material-like--default-light.html">
+                    <span>Default Light</span>
+                </a>, 
+            
+                <a href="text-area-material-like--default-dark.html">
+                    <span>Default Dark</span>
+                </a>
+            
+            </span>
+        </li>
+        
+        <li class="Meta-item">
+            <strong class="Meta-key">Preview:</strong>
+            <span class="Meta-value">
+                <ul>
+                    <li><a data-no-pjax href="../preview/text-area-material-like.html"><span>With layout</span> <svg fill="#000000" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 0h24v24H0z" fill="none"/>
+    <path d="M19 4H5c-1.11 0-2 .9-2 2v12c0 1.1.89 2 2 2h4v-2H5V8h14v10h-4v2h4c1.1 0 2-.9 2-2V6c0-1.1-.89-2-2-2zm-7 6l-4 4h3v6h2v-6h3l-4-4z"/>
+</svg>
+</a></li>
+                    <li><a data-no-pjax href="../render/text-area-material-like.html"><span>Component only</span> <svg fill="#000000" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 0h24v24H0z" fill="none"/>
+    <path d="M19 4H5c-1.11 0-2 .9-2 2v12c0 1.1.89 2 2 2h4v-2H5V8h14v10h-4v2h4c1.1 0 2-.9 2-2V6c0-1.1-.89-2-2-2zm-7 6l-4 4h3v6h2v-6h3l-4-4z"/>
+</svg>
+</a></li>
+                </ul>
+            </span>
+        </li>
+        <li class="Meta-item">
+            <strong class="Meta-key">Filesystem Path:</strong>
+            <span class="Meta-value">src/components/text-area/text-area-material-like/text-area-material-like.hbs</span>
+        </li>
+        
+        
+        <li class="Meta-item">
+            <strong class="Meta-key">Referenced by <em class="Meta-count">(4)</em>:</strong>
+            <span class="Meta-value Meta-value--linkList">
+            
+                <a href="example-form-material-like.html">@<span>example-form-material-like</span></a>, 
+            
+                <a href="example-form-material-like--material-like-with-backend-validation-errors.html">@<span>example-form-material-like--material-like-with-backend-validation-errors</span></a>, 
+            
+                <a href="example-form-material-like-indent.html">@<span>example-form-material-like-indent</span></a>, 
+            
+                <a href="example-form-material-like-indent--material-like-indent-with-backend-validation-errors.html">@<span>example-form-material-like-indent--material-like-indent-with-backend-validation-errors</span></a>
+            
+            </span>
+        </li>
+        
+    </ul>
+</div>
+
+    
+    <div class="Browser-panel Browser-notes" data-role="tab-panel" id="browser-96c89b489865a2f9461ac1d334b84f22-panel-notes">
+    <div class="Prose Prose--condensed">
+        
+        <p class="Browser-isEmptyNote">There are no notes for this item.</p>
+        
+    </div>
+</div>
+
+    
+
+</div>
+
+</div>
+
+
+    
+
+</div>
+
+
+            </div>
+        </div>
+
+        <div class="Frame-handle" data-role="frame-resize-handle"></div>
+        
+        <div class="Frame-panel Frame-panel--sidebar" data-role="sidebar">
+            <nav class="Navigation">
+
+    
+<div class="Navigation-group">
+
+<div class="Tree" data-behaviour="tree" id="tree-components">
+    <h3 class="Tree-title">components</h3>
+    <ul class="Tree-items Tree-depth-1">
+        
+    
+        
+        <li class="Tree-item Tree-collection Tree-depth-2" data-behaviour="collection" id="tree-components-collection-checkbox">
+            <h4 class="Tree-collectionLabel" data-role="toggle">
+                <span>Checkbox</span>
+            </h4>
+            <ul class="Tree-collectionItems" data-role="items">
+            
+            
+            
+            
+    
+        
+        <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-components-collection-checkbox-lite-checkmark">
+            <h4 class="Tree-collectionLabel" data-role="toggle">
+                <span>Checkbox Lite Checkmark</span>
+            </h4>
+            <ul class="Tree-collectionItems" data-role="items">
+            
+            
+            
+            
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="checkbox-lite-checkmark--default-light.html" data-pjax>
+                <span>Default Light</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="checkbox-lite-checkmark--default-dark.html" data-pjax>
+                <span>Default Dark</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+
+            </ul>
+        </li>
+        
+    
+        
+        <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-components-collection-checkbox-material-like">
+            <h4 class="Tree-collectionLabel" data-role="toggle">
+                <span>Checkbox Material Like</span>
+            </h4>
+            <ul class="Tree-collectionItems" data-role="items">
+            
+            
+            
+            
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="checkbox-material-like--default-light.html" data-pjax>
+                <span>Default Light</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="checkbox-material-like--default-dark.html" data-pjax>
+                <span>Default Dark</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+
+            </ul>
+        </li>
+        
+    
+
+            </ul>
+        </li>
+        
+    
+        
+        <li class="Tree-item Tree-collection Tree-depth-2" data-behaviour="collection" id="tree-components-collection-example-form">
+            <h4 class="Tree-collectionLabel" data-role="toggle">
+                <span>Example Form</span>
+            </h4>
+            <ul class="Tree-collectionItems" data-role="items">
+            
+            
+            
+            
+    
+        
+        <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-components-collection-example-form-material-like">
+            <h4 class="Tree-collectionLabel" data-role="toggle">
+                <span>Example Form Material Like</span>
+            </h4>
+            <ul class="Tree-collectionItems" data-role="items">
+            
+            
+            
+            
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="example-form-material-like--material-like.html" data-pjax>
+                <span>Material Like</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="example-form-material-like--material-like-with-backend-validation-errors.html" data-pjax>
+                <span>Material Like With Backend Validation Errors</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+
+            </ul>
+        </li>
+        
+    
+        
+        <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-components-collection-example-form-material-like-indent">
+            <h4 class="Tree-collectionLabel" data-role="toggle">
+                <span>Example Form Material Like Indent</span>
+            </h4>
+            <ul class="Tree-collectionItems" data-role="items">
+            
+            
+            
+            
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="example-form-material-like-indent--material-like-indent.html" data-pjax>
+                <span>Material Like Indent</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="example-form-material-like-indent--material-like-indent-with-backend-validation-errors.html" data-pjax>
+                <span>Material Like Indent With Backend Validation Errors</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+
+            </ul>
+        </li>
+        
+    
+
+            </ul>
+        </li>
+        
+    
+        
+        <li class="Tree-item Tree-collection Tree-depth-2" data-behaviour="collection" id="tree-components-collection-message">
+            <h4 class="Tree-collectionLabel" data-role="toggle">
+                <span>Message</span>
+            </h4>
+            <ul class="Tree-collectionItems" data-role="items">
+            
+            
+            
+            
+    
+        
+        <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-components-collection-message-material-like">
+            <h4 class="Tree-collectionLabel" data-role="toggle">
+                <span>Message Material Like</span>
+            </h4>
+            <ul class="Tree-collectionItems" data-role="items">
+            
+            
+            
+            
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="message-material-like--error.html" data-pjax>
+                <span>Error</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="message-material-like--warning.html" data-pjax>
+                <span>Warning</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="message-material-like--status.html" data-pjax>
+                <span>Status</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+
+            </ul>
+        </li>
+        
+    
+
+            </ul>
+        </li>
+        
+    
+        
+        <li class="Tree-item Tree-collection Tree-depth-2" data-behaviour="collection" id="tree-components-collection-radio">
+            <h4 class="Tree-collectionLabel" data-role="toggle">
+                <span>Radio</span>
+            </h4>
+            <ul class="Tree-collectionItems" data-role="items">
+            
+            
+            
+            
+    
+        
+        <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-components-collection-radio-material-like">
+            <h4 class="Tree-collectionLabel" data-role="toggle">
+                <span>Radio Material Like</span>
+            </h4>
+            <ul class="Tree-collectionItems" data-role="items">
+            
+            
+            
+            
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="radio-material-like--default-light.html" data-pjax>
+                <span>Default Light</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="radio-material-like--default-dark.html" data-pjax>
+                <span>Default Dark</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+
+            </ul>
+        </li>
+        
+    
+
+            </ul>
+        </li>
+        
+    
+        
+        <li class="Tree-item Tree-collection Tree-depth-2" data-behaviour="collection" id="tree-components-collection-select">
+            <h4 class="Tree-collectionLabel" data-role="toggle">
+                <span>Select</span>
+            </h4>
+            <ul class="Tree-collectionItems" data-role="items">
+            
+            
+            
+            
+    
+        
+        <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-components-collection-select-lite-arrow">
+            <h4 class="Tree-collectionLabel" data-role="toggle">
+                <span>Select Lite Arrow</span>
+            </h4>
+            <ul class="Tree-collectionItems" data-role="items">
+            
+            
+            
+            
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="select-lite-arrow--default-light.html" data-pjax>
+                <span>Default Light</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="select-lite-arrow--default-dark.html" data-pjax>
+                <span>Default Dark</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+
+            </ul>
+        </li>
+        
+    
+        
+        <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-components-collection-select-lite-arrow-indent">
+            <h4 class="Tree-collectionLabel" data-role="toggle">
+                <span>Select Lite Arrow Indent</span>
+            </h4>
+            <ul class="Tree-collectionItems" data-role="items">
+            
+            
+            
+            
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="select-lite-arrow-indent--default-light.html" data-pjax>
+                <span>Default Light</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="select-lite-arrow-indent--default-dark.html" data-pjax>
+                <span>Default Dark</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+
+            </ul>
+        </li>
+        
+    
+        
+        <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-components-collection-select-material-like">
+            <h4 class="Tree-collectionLabel" data-role="toggle">
+                <span>Select Material Like</span>
+            </h4>
+            <ul class="Tree-collectionItems" data-role="items">
+            
+            
+            
+            
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="select-material-like--default-light.html" data-pjax>
+                <span>Default Light</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="select-material-like--default-dark.html" data-pjax>
+                <span>Default Dark</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+
+            </ul>
+        </li>
+        
+    
+        
+        <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-components-collection-select-material-like-indent">
+            <h4 class="Tree-collectionLabel" data-role="toggle">
+                <span>Select Material Like Indent</span>
+            </h4>
+            <ul class="Tree-collectionItems" data-role="items">
+            
+            
+            
+            
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="select-material-like-indent--default-light.html" data-pjax>
+                <span>Default Light</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="select-material-like-indent--default-dark.html" data-pjax>
+                <span>Default Dark</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+
+            </ul>
+        </li>
+        
+    
+
+            </ul>
+        </li>
+        
+    
+        
+        <li class="Tree-item Tree-collection Tree-depth-2" data-behaviour="collection" id="tree-components-collection-text-area">
+            <h4 class="Tree-collectionLabel" data-role="toggle">
+                <span>Text Area</span>
+            </h4>
+            <ul class="Tree-collectionItems" data-role="items">
+            
+            
+            
+            
+    
+        
+        <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-components-collection-text-area-material-like">
+            <h4 class="Tree-collectionLabel" data-role="toggle">
+                <span>Text Area Material Like</span>
+            </h4>
+            <ul class="Tree-collectionItems" data-role="items">
+            
+            
+            
+            
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="text-area-material-like--default-light.html" data-pjax>
+                <span>Default Light</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="text-area-material-like--default-dark.html" data-pjax>
+                <span>Default Dark</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+
+            </ul>
+        </li>
+        
+    
+
+            </ul>
+        </li>
+        
+    
+        
+        <li class="Tree-item Tree-collection Tree-depth-2" data-behaviour="collection" id="tree-components-collection-text-field">
+            <h4 class="Tree-collectionLabel" data-role="toggle">
+                <span>Text Field</span>
+            </h4>
+            <ul class="Tree-collectionItems" data-role="items">
+            
+            
+            
+            
+    
+        
+        <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-components-collection-text-field-material-like">
+            <h4 class="Tree-collectionLabel" data-role="toggle">
+                <span>Text Field Material Like</span>
+            </h4>
+            <ul class="Tree-collectionItems" data-role="items">
+            
+            
+            
+            
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="text-field-material-like--default-light.html" data-pjax>
+                <span>Default Light</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="text-field-material-like--default-dark.html" data-pjax>
+                <span>Default Dark</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+
+            </ul>
+        </li>
+        
+    
+        
+        <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-components-collection-text-field-material-like-indent">
+            <h4 class="Tree-collectionLabel" data-role="toggle">
+                <span>Text Field Material Like Indent</span>
+            </h4>
+            <ul class="Tree-collectionItems" data-role="items">
+            
+            
+            
+            
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="text-field-material-like-indent--default-light.html" data-pjax>
+                <span>Default Light</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="text-field-material-like-indent--default-dark.html" data-pjax>
+                <span>Default Dark</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+
+            </ul>
+        </li>
+        
+    
+
+            </ul>
+        </li>
+        
+    
+
+    </ul>
+</div>
+
+</div>
+
+
+
+    
+<div class="Navigation-group">
+
+<div class="Tree" data-behaviour="tree" id="tree-docs">
+    <h3 class="Tree-title">documentation</h3>
+    <ul class="Tree-items Tree-depth-1">
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="../../index.html" data-pjax>
+                <span>Form Components</span>
+                
+            </a>
+        </li>
+        
+    
+
+    </ul>
+</div>
+
+</div>
+
+
+
+    
+
+
+</nav>
+
+        </div>
+    </div>
+</div>
+
+
+
+
+<script src="../../themes/mandelbrot/js/mandelbrot.js?cachebust=1.2.0"></script>
+
+<script src="https://buttons.github.io/buttons.js?cachebust=1.2.0"></script>
+
+
+
+</body>
+</html>

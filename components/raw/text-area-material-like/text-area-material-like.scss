@@ -1,0 +1,278 @@
+@import "base";
+
+/*******************************************************************************
+ * Contextual classes:
+ * - is-disabled: When input is disabled
+ * - is-filled-in: When value is available or the user clicked into the input
+ * - is-tabbed: When the input is focused by tabbing (a11y)
+ * - is-focused: When the input is focused
+ * - is-initialized: When the JS for the component is initialized
+ * - has-no-label: If there is no label available
+ ******************************************************************************/
+// font settings
+$textAreaLabelFontSize: 1.125rem;
+$textAreaLabelFontSizeFilledIn: 0.75rem;
+$textAreaLabelFontFamily: inherit;
+$textAreaFontSize: 1.125rem;
+$textAreaLineHeight: 1.375rem;
+$textAreaFontFamily: inherit;
+
+// size settings
+$textAreaHeight: $textAreaLineHeight * 5;
+$textAreaPaddingX: 15px;
+$textAreaPaddingY: 10px;
+$textAreaLabelSpacing: 5px;
+$textAreaBorderRadius: 2px;
+
+// need to use string here due to:
+// https://github.com/webpack-contrib/sass-loader/issues/487
+$variants: "dark", "light";
+@each $color in $variants {
+  @if $color == "light" {
+    // color settings
+    $textAreaBorderColor: $black !global;
+    $textAreaBorderActiveColor: $black !global;
+    $textAreaBorderInvalidColor: $red !global;
+    $textAreaBorderInvalidActiveColor: $red !global;
+
+    $textAreaBackgroundColor: transparent !global;
+    $textAreaBackgroundActiveColor: transparent !global;
+    $textAreaBackgroundInvalidColor: transparent !global;
+    $textAreaBackgroundInvalidActiveColor: transparent !global;
+
+    $textAreaColor: $black !global;
+    $textAreaActiveColor: $black !global;
+    $textAreaInvalidColor: $black !global;
+    $textAreaInvalidActiveColor: $black !global;
+
+    $textAreaLabelColor: $black !global;
+    $textAreaLabelFilledInColor: $textAreaLabelColor !global;
+    $textAreaLabelFilledInActiveColor: $textAreaLabelColor !global;
+    $textAreaLabelInvalidColor: $red !global;
+    $textAreaLabelInvalidFilledInColor: $textAreaLabelInvalidColor !global;
+    $textAreaLabelInvalidFilledInActiveColor: $textAreaLabelInvalidColor !global;
+
+    $textAreaErrorColor: $red !global;
+
+    $textAreaBorderTabbedColor: #95a5a6 !global;
+  } @else {
+    // color settings
+    $textAreaBorderColor: $white !global;
+    $textAreaBorderActiveColor: $white !global;
+    $textAreaBorderInvalidColor: $red !global;
+    $textAreaBorderInvalidActiveColor: $red !global;
+
+    $textAreaBackgroundColor: transparent !global;
+    $textAreaBackgroundActiveColor: transparent !global;
+    $textAreaBackgroundInvalidColor: transparent !global;
+    $textAreaBackgroundInvalidActiveColor: transparent !global;
+
+    $textAreaColor: $white !global;
+    $textAreaActiveColor: $white !global;
+    $textAreaInvalidColor: $white !global;
+    $textAreaInvalidActiveColor: $white !global;
+
+    $textAreaLabelColor: $white !global;
+    $textAreaLabelFilledInColor: $textAreaLabelColor !global;
+    $textAreaLabelFilledInActiveColor: $textAreaLabelColor !global;
+    $textAreaLabelInvalidColor: $red !global;
+    $textAreaLabelInvalidFilledInColor: $textAreaLabelInvalidColor !global;
+    $textAreaLabelInvalidFilledInActiveColor: $textAreaLabelInvalidColor !global;
+
+    $textAreaErrorColor: $red !global;
+
+    $textAreaBorderTabbedColor: #95a5a6 !global;
+  }
+
+  /*****************************************************************************
+   * General
+   ****************************************************************************/
+  .text-area {
+    $block: &;
+
+    &--#{unquote($color)} {
+
+      &.is-tabbed {
+        outline: 1px solid $textAreaBorderTabbedColor;
+        outline-offset: 3px;
+      }
+
+      #{$block}__wrapper {
+        position: relative;
+        width: 100%;
+        border: 1px solid $textAreaBorderColor;
+        padding: 1px;
+        box-sizing: border-box;
+        border-radius: $textAreaBorderRadius;
+      }
+      &.is-focused #{$block}__wrapper {
+        border-width: 2px;
+        border-color: $textAreaBorderActiveColor;
+        padding: 0;
+      }
+      &.is-invalid #{$block}__wrapper {
+        border-color: $textAreaBorderInvalidColor;
+      }
+      &.is-invalid.is-focused #{$block}__wrapper {
+        border-color: $textAreaBorderInvalidActiveColor;
+      }
+
+      /*************************************************************************
+       * Input
+       ************************************************************************/
+      #{$block}__input {
+        &,
+        &:invalid,
+        &:required {
+          border: none;
+          cursor: text;
+          display: block;
+          height: calc(#{$textAreaHeight} + #{$textAreaLabelFontSizeFilledIn} + (#{$textAreaPaddingY} * 2) + #{$textAreaLabelSpacing});
+          line-height: $textAreaLineHeight;
+          box-sizing: border-box;
+          padding: calc(#{$textAreaLabelFontSizeFilledIn} + #{$textAreaPaddingY} + #{$textAreaLabelSpacing}) #{$textAreaPaddingX} #{$textAreaPaddingY} #{$textAreaPaddingX};
+          background: $textAreaBackgroundColor;
+          font-size: $textAreaFontSize;
+          font-family: $textAreaFontFamily;
+          resize: none;
+          border-radius: $textAreaBorderRadius;
+          width: 100%;
+          color: $textAreaColor;
+          box-shadow: none; // red border removal in case it's invalid/required
+
+          // Active
+          &:focus {
+            outline: none;
+            background: $textAreaBackgroundActiveColor;
+            color: $textAreaActiveColor;
+          }
+        }
+      }
+
+      // Disabled
+      &.is-disabled #{$block}__input {
+        cursor: not-allowed;
+      }
+
+      // Invalid
+      &.is-invalid #{$block}__input {
+        background: $textAreaBackgroundInvalidColor;
+        color: $textAreaInvalidColor;
+
+        // Invalid & Active
+        &:focus,
+        &:invalid:focus,
+        &:required:focus {
+          border-color: transparent transparent $textAreaBorderInvalidActiveColor transparent;
+          color: $textAreaInvalidActiveColor;
+          background: $textAreaBackgroundInvalidActiveColor;
+        }
+      }
+
+      /*************************************************************************
+       * Label (will be moved to top when value available)
+       ************************************************************************/
+      #{$block}__label {
+        position: absolute;
+        top: calc(#{$textAreaLabelFontSizeFilledIn} + #{$textAreaPaddingY});
+        left: 0;
+        height: $textAreaHeight;
+        line-height: $textAreaLineHeight;
+        width: 100%;
+        box-sizing: border-box;
+        cursor: text;
+        padding: 0 $textAreaPaddingX;
+        font-size: $textAreaLabelFontSize;
+        font-family: $textAreaLabelFontFamily;
+        color: $textAreaLabelColor;
+        user-select: none;
+        background-color: transparent;
+        transform: translateY(0);
+        @include transition("transform .275s", "height .275s", "font-size .275s", "color .275s", "line-height .275s");
+      }
+
+      // Disabled
+      &.is-disabled #{$block}__label {
+        cursor: not-allowed;
+        user-select: none;
+      }
+
+      // Filled in
+      // NOTE: We need to use two selectors here, as otherwise it won't work in
+      // Firefox. Mixins aren't allowed inside @each directives, so we can only
+      // use redundant code in these two selectors
+      // NOTE: Also trigger this style when the text field isn't initialized yet
+      // to avoid label jumping when forms with filled-in values are loaded
+      // via AJAX
+      &.is-filled-in #{$block}__label,
+      &:not(.is-initialized) #{$block}__label {
+        transform: translateY(-#{$textAreaPaddingY});
+        height: $textAreaLabelFontSizeFilledIn;
+        font-size: $textAreaLabelFontSizeFilledIn;
+        color: $textAreaLabelFilledInColor;
+        line-height: $textAreaLabelFontSizeFilledIn;
+      }
+      #{$block}__input:-webkit-autofill + #{$block}__label {
+        // webkit autofill is used to remove the delay between Chrome, which
+        // fills in predefined data, and JS that's being loaded
+        transform: translateY(-#{$textAreaPaddingY});
+        height: $textAreaLabelFontSizeFilledIn;
+        font-size: $textAreaLabelFontSizeFilledIn;
+        color: $textAreaLabelFilledInColor;
+        line-height: $textAreaLabelFontSizeFilledIn;
+      }
+
+      // Filled in & Active
+      &.is-filled-in.is-focused #{$block}__label,
+      &.is-filled-in.is-focused:not(.is-initialized) #{$block}__label {
+        color: $textAreaLabelFilledInActiveColor;
+        margin-top: -1px;
+        margin-left: -1px;
+      }
+      &.is-filled-in.is-focused #{$block}__input:-webkit-autofill + #{$block}__label {
+        color: $textAreaLabelFilledInActiveColor;
+        margin-top: -1px;
+        margin-left: -1px;
+      }
+
+      // Invalid
+      &.is-invalid #{$block}__label,
+      &.is-invalid:not(.is-initialized) #{$block}__label {
+        color: $textAreaLabelInvalidColor;
+      }
+      &.is-invalid #{$block}__input:-webkit-autofill + #{$block}__label {
+        color: $textAreaLabelInvalidColor;
+      }
+
+      // Invalid & Filled In
+      &.is-invalid.is-filled-in #{$block}__label,
+      &.is-invalid.is-filled-in:not(.is-initialized) #{$block}__label {
+        color: $textAreaLabelInvalidFilledInColor;
+      }
+      &.is-invalid.is-filled-in #{$block}__input:-webkit-autofill + #{$block}__label {
+        color: $textAreaLabelInvalidFilledInColor;
+      }
+
+      // Invalid & Filled in & Active
+      &.is-invalid.is-filled-in.is-focused #{$block}__label,
+      &.is-invalid.is-filled-in.is-focused:not(.is-initialized) #{$block}__label {
+        color: $textAreaLabelInvalidFilledInActiveColor;
+      }
+      &.is-invalid.is-filled-in.is-focused #{$block}__input:-webkit-autofill + #{$block}__label {
+        color: $textAreaLabelInvalidFilledInActiveColor;
+      }
+
+      /*************************************************************************
+       * Error
+       ************************************************************************/
+      #{$block}__error {
+        color: $textAreaErrorColor;
+        margin: 5px 0;
+
+        a {
+          color: $textAreaErrorColor;
+        }
+      }
+    }
+  }
+}

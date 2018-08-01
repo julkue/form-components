@@ -1,0 +1,178 @@
+@import "base";
+
+$fontFamily: inherit;
+$fontSize: 1.125rem;
+$lineHeight: 1.33;
+$iconSize: 20px;
+$closeButtonIconSize: 13px;
+
+$statusBackgroundColor: #e0ede5;
+$statusColor: #257340;
+$statusLinkHoverColor: $statusColor;
+
+$warningBackgroundColor: #fffbd4;
+$warningColor: #bd8300;
+$warningLinkHoverColor: $warningColor;
+
+$errorBackgroundColor: #fdd9d9;
+$errorColor: #920005;
+$errorLinkHoverColor: $errorColor;
+
+$closeButtonIconColor: #4a4a4a;
+
+/*******************************************************************************
+ * General
+ ******************************************************************************/
+.message {
+
+  &--error,
+  &--warning,
+  &--status {
+    padding: 15px 0;
+    font-family: $fontFamily;
+    font-size: $fontSize;
+    line-height: $lineHeight;
+
+    // in high contrast mode, no background color is displayed, therefore
+    // use border as an alternative design pattern
+    @media screen and (-ms-high-contrast: white-on-black) {
+      border: 1px solid $a11yNonTextColorWhiteOnBlack;
+    }
+    @media screen and (-ms-high-contrast: black-on-white) {
+      border: 1px solid $a11yNonTextColorBlackOnWhite;
+    }
+
+    &.is-inline {
+      margin: 10px 0;
+    }
+    &.is-hidden {
+      display: none;
+    }
+
+    em {
+      // em is used to indicate a title quote
+      font-style: normal;
+      &:before {
+        content: "\00BB";
+      }
+      &:after {
+        content: "\00AB";
+      }
+    }
+
+    span.visually-hidden {
+      @include visually-hidden;
+    }
+  }
+
+  &--error {
+    background: $errorBackgroundColor;
+    color: $errorColor;
+
+    a {
+      @include link-underline-small($errorColor, $errorLinkHoverColor);
+    }
+  }
+  &--warning {
+    background: $warningBackgroundColor;
+    color: $warningColor;
+
+    a {
+      @include link-underline-small($warningColor, $warningLinkHoverColor);
+    }
+  }
+  &--status {
+    background: $statusBackgroundColor;
+    color: $statusColor;
+
+    a {
+      @include link-underline-small($statusColor, $statusLinkHoverColor);
+    }
+  }
+
+  &__container {
+    @include container;
+    position: relative;
+  }
+
+  /*****************************************************************************
+   * Icon
+   ****************************************************************************/
+  &__icon-container {
+    position: relative;
+    padding: 0 #{$closeButtonIconSize + 15} 0 #{$iconSize + 15};
+
+    &:before {
+      position: absolute;
+      top: 3px; // optical alignment
+      left: 0;
+      font-size: $iconSize;
+      line-height: $iconSize;
+      color: inherit;
+    }
+  }
+  &--error &__icon-container {
+    @include form-components-icons-before("error");
+  }
+  &--warning &__icon-container {
+    @include form-components-icons-before("warning");
+  }
+  &--status &__icon-container {
+    @include form-components-icons-before("status");
+  }
+
+  /*****************************************************************************
+   * List
+   ****************************************************************************/
+  &__list {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+
+    &-item {
+      position: relative;
+      margin: 0;
+      padding: 0 0 0 20px;
+
+      &:before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        content: "–";
+      }
+    }
+  }
+
+  /*****************************************************************************
+   * Text
+   ****************************************************************************/
+  &__text {
+    margin: 0;
+    padding: 0;
+  }
+
+  /*****************************************************************************
+   * Close Button
+   ****************************************************************************/
+  &__close-button {
+    position: absolute;
+    top: -4px; // optical alignment with icon on the left side
+    right: 0;
+    cursor: pointer;
+    border: 0;
+    outline: 0;
+    @include form-components-icons-after("close");
+
+    // hide dotted outline in Firefox
+    &:-moz-focusring {
+      color: transparent;
+      text-shadow: 0 0 0 $closeButtonIconColor;
+    }
+
+    &:after {
+      color: $closeButtonIconColor;
+      font-size: $closeButtonIconSize;
+      line-height: $closeButtonIconSize;
+    }
+  }
+}

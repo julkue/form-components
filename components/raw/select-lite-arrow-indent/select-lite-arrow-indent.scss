@@ -1,0 +1,67 @@
+@import "base";
+
+/*******************************************************************************
+ * Contextual classes:
+ * - is-disabled: When input is disabled
+ * - is-filled-in: When a value is available or the user clicked on the select
+ * - is-open: If the dropdown is open
+ * - has-no-label: If the select has no label
+ * - is-tabbed: When the select is focused (a11y)
+ * - is-focused: When the input is focused
+ * - is-initialized: When the JS for the component is initialized
+ * - has-no-label: If there is no label available
+ ******************************************************************************/
+// sizes
+$selectPaddingX: 10px;
+$selectDropdownOptionPaddingX: 10px;
+
+// Need to use string here due to:
+// https://github.com/webpack-contrib/sass-loader/issues/487
+$variants: "dark", "light";
+@each $color in $variants {
+
+  /*****************************************************************************
+   * General
+   ****************************************************************************/
+  .select {
+    $block: &;
+
+    &--#{unquote($color)} {
+
+      /*************************************************************************
+       * Native select
+       ************************************************************************/
+      #{$block}__select {
+        &,
+        &:invalid,
+        &:required {
+          padding-left: $selectPaddingX;
+        }
+      }
+
+      /*************************************************************************
+       * Label (will be moved to top when value available)
+       ************************************************************************/
+      #{$block}__label {
+        padding-left: $selectPaddingX;
+        padding-right: $selectPaddingX;
+      }
+
+      /*************************************************************************
+       * Dropdown
+       ************************************************************************/
+      #{$block}__dropdown-option {
+        padding-left: $selectDropdownOptionPaddingX;
+        padding-right: $selectDropdownOptionPaddingX;
+      }
+
+      /*************************************************************************
+       * Error message
+       ************************************************************************/
+      #{$block}__error {
+        margin-left: $selectPaddingX;
+        margin-right: $selectPaddingX;
+      }
+    }
+  }
+}
