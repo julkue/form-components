@@ -1,5 +1,5 @@
 /*!***************************************************
- * form-components v0.13.1
+ * form-components v0.13.2
  * https://github.com/julmot/form-components
  * Copyright (c) 2017–2018, Julian Kühnel
  * Released under the MIT license https://git.io/v5XLY
@@ -144,9 +144,9 @@ eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n
   !*** ./src/components/text-area/text-area-material-like/text-area-material-like.scss ***!
   \***************************************************************************************/
 /*! no static exports found */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-eval("// removed by extract-text-webpack-plugin\n\n//# sourceURL=webpack://%5Bname%5D/./src/components/text-area/text-area-material-like/text-area-material-like.scss?");
+eval("// extracted by mini-css-extract-plugin\n\n//# sourceURL=webpack://%5Bname%5D/./src/components/text-area/text-area-material-like/text-area-material-like.scss?");
 
 /***/ })
 

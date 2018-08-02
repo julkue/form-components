@@ -1,5 +1,5 @@
 /*!***************************************************
- * form-components v0.13.1
+ * form-components v0.13.2
  * https://github.com/julmot/form-components
  * Copyright (c) 2017–2018, Julian Kühnel
  * Released under the MIT license https://git.io/v5XLY
