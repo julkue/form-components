@@ -1,5 +1,7 @@
 const path = require('path'),
   webpack = require('webpack'),
+  uglifyJsPlugin = require('uglifyjs-webpack-plugin'),
+  optimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin'),
   miniCssExtractPlugin = require('mini-css-extract-plugin'),
   fs = require('fs'),
   glob = require('glob'),
@@ -108,7 +110,17 @@ let config = module.exports = {
       }),
       raw: true
     })
-  ]
+  ],
+  optimization: {
+    minimizer: [
+      new uglifyJsPlugin({
+        cache: true,
+        parallel: false,
+        sourceMap: true
+      }),
+      new optimizeCSSAssetsPlugin({})
+    ]
+  },
 };
 
 module.exports = config;
