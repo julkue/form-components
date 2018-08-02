@@ -1,7 +1,6 @@
 const path = require('path'),
   webpack = require('webpack'),
-  extractTextPlugin = require('extract-text-webpack-plugin'),
-  uglifyJsPlugin = require('uglifyjs-webpack-plugin'),
+  miniCssExtractPlugin = require('mini-css-extract-plugin'),
   fs = require('fs'),
   glob = require('glob'),
   hbs = require('handlebars'),
@@ -34,33 +33,32 @@ let config = module.exports = {
       }]
     }, { // sass and postcss at the end
       test: /\.(scss|css)$/,
-      use: extractTextPlugin.extract({
-        fallback: 'style-loader',
-        use: [{
-          loader: 'css-loader'
-        }, {
-          loader: 'postcss-loader',
-          options: {
-            config: {
-              path: './build/postcss.config.js'
-            },
-            sourceMap: true
-          }
-        }, {
-          // Place resolve-url-loader below postcss-loader due to:
-          // https://github.com/postcss/postcss-loader/issues/340
-          loader: 'resolve-url-loader'
-        }, {
-          loader: 'sass-loader',
-          options: {
-            sourceMap: true,
-            includePaths: [
-              'node_modules',
-              'src/components/_common'
-            ]
-          }
-        }]
-      })
+      use: [{
+        loader: miniCssExtractPlugin.loader
+      },{
+        loader: 'css-loader'
+      }, {
+        loader: 'postcss-loader',
+        options: {
+          config: {
+            path: './build/postcss.config.js'
+          },
+          sourceMap: true
+        }
+      }, {
+        // Place resolve-url-loader below postcss-loader due to:
+        // https://github.com/postcss/postcss-loader/issues/340
+        loader: 'resolve-url-loader'
+      }, {
+        loader: 'sass-loader',
+        options: {
+          sourceMap: true,
+          includePaths: [
+            'node_modules',
+            'src/components/_common'
+          ]
+        }
+      }]
     }, { // images (file references)
       test: /\.(jpg|jpeg|png|gif|svg)$/,
       loader: 'file-loader',
@@ -83,9 +81,16 @@ let config = module.exports = {
     globalObject: 'this'
   },
   plugins: [
-    new extractTextPlugin(`[name]/[name].${
-      process.argv.indexOf('-p') !== -1 ? 'min.css' : 'css'
-    }`),
+    new miniCssExtractPlugin({
+      // Options similar to the same options in webpackOptions.output
+      // both options are optional
+      filename: `[name]/[name].${
+        process.argv.indexOf('-p') !== -1 ? 'min.css' : 'css'
+      }`,
+      chunkFilename: `[id]/[id].${
+        process.argv.indexOf('-p') !== -1 ? 'min.css' : 'css'
+      }`
+    }),
     new webpack.BannerPlugin({
       banner: hbs.compile(fs.readFileSync(path.join(
         __dirname, 'templates/copyright.hbs'
