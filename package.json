@@ -42,7 +42,7 @@
     "grunt-replace": "^1.0.1",
     "grunt-webfont": "^1.7.1",
     "jit-grunt": "^0.10.0",
-    "mini-css-extract-plugin": "^0.4.1",
+    "mini-css-extract-plugin": "^0.5.0",
     "moveto": "^1.7.1",
     "node-sass": "^4.7.2",
     "normalize.css": "^8.0.0",
