@@ -68,6 +68,13 @@ _NOTE: This component isn't listed on the left side, since it only contains a JS
 Type: boolean  
 Default: true
 
+**focusMessage**
+
+Type: boolean  
+Default: true
+
+When the form is invalid and a message is present and the message option is set to true, the message can be focused (viewport will be shifted to see the message). Set this option to false e.g. if the form is shown within a modal.
+
 **onInvalid**
 
 Type: function  

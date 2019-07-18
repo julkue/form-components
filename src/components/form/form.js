@@ -7,6 +7,7 @@ export class Form {
       this.message = this.form.querySelector('.message--error');
       this.options = Object.assign({}, {
         message: true,
+        focusMessage: true,
         onValid: () => {},
         onInvalid: () => {}
       }, options);
@@ -186,10 +187,12 @@ export class Form {
       if (messageClose) {
         messageClose.setAttribute('tabindex', '0');
       }
-      new MoveTo({
-        duration: 400,
-        tolerance: 10
-      }).move(this.message);
+      if (this.options.focusMessage) {
+        new MoveTo({
+          duration: 400,
+          tolerance: 10
+        }).move(this.message);
+      }
       this.message.setAttribute('role', role);
     }
   }

@@ -21,6 +21,11 @@ glob.sync(path.join(__dirname, '../src/components/*/**/*-bundle.js'), {
 
 let config = module.exports = {
   entry: components,
+  resolve: {
+    alias: {
+      shared: path.join(__dirname, '../src/components/_common/'),
+    }
+  },
   module: {
     rules: [{
       test: /\.js$/,
@@ -28,7 +33,18 @@ let config = module.exports = {
       use: [{
         loader: 'babel-loader',
         options: {
-          presets: ['env']
+          presets: [
+            [
+              '@babel/preset-env',
+              {
+                targets: [
+                  '> 0.25%',
+                  'last 2 versions',
+                  'ie 11'
+                ]
+              }
+            ]
+          ]
         }
       }, {
         loader: 'eslint-loader'
@@ -55,10 +71,7 @@ let config = module.exports = {
         loader: 'sass-loader',
         options: {
           sourceMap: true,
-          includePaths: [
-            'node_modules',
-            'src/components/_common'
-          ]
+          includePaths: ['node_modules']
         }
       }]
     }, { // images (file references)
