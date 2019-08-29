@@ -16,6 +16,7 @@ export class Select extends FormComponent {
     this.error = context.querySelector('.select__error');
     this.dropdown = null;
     this.dropdownOptions = [];
+    this.userInfo = Bowser.parse(window.navigator.userAgent);
 
     this.createDropdown();
     if (!this.field.hasAttribute('disabled')) {
@@ -49,7 +50,7 @@ export class Select extends FormComponent {
     this.field.addEventListener('change', () => {
       this.setActive(this.field.selectedIndex);
     });
-    if ((!Bowser.mobile && !Bowser.tablet)) {
+    if (this.userInfo.platform.type === 'desktop') {
       // It's important to use mousedown instead of click for Desktop, otherwise
       // it's too late to prevent the default select dropdown
       // Also listen for pointerdown, in case its a touch Desktop device
@@ -95,7 +96,7 @@ export class Select extends FormComponent {
     // Due to the fact that Firefox on Windows will open the native
     // dropdown by using space and there shouldn't be two dropdowns, we can
     // only close the custom dropdown to make it work with FF on Win.
-    if (Bowser.firefox) {
+    if (this.userInfo.browser.name === 'Firefox') {
       this.close();
     } else {
       // open is the default behavior of all browsers (not toggling)
@@ -118,7 +119,7 @@ export class Select extends FormComponent {
     // Also only prevent the default action if it's a known keyCode. Otherwise
     // don't do anything, e.g. to not prevent tab navigation. Bug:
     // https://bugzilla.mozilla.org/show_bug.cgi?id=1019630
-    if (!Bowser.firefox) {
+    if (this.userInfo.browser.name !== 'Firefox') {
       const expectedIdx = this.getSiblingDropdownOption(
         [39, 40].includes(keyCode)
       );
