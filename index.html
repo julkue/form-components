@@ -14,7 +14,7 @@
 <link rel="stylesheet" href="themes/mandelbrot/css/navy.css?cachebust=1.2.1" type="text/css">
 
 
-<title>Form Components | Form Components v0.14.0</title>
+<title>Form Components | Form Components v0.14.1</title>
 
 </head>
 <body>
@@ -44,7 +44,7 @@
 </svg>
 
     </button>
-    <a href="" class="Header-title" data-pjax>Form Components v0.14.0</a>
+    <a href="" class="Header-title" data-pjax>Form Components v0.14.1</a>
     <a class="github-button" href="https://github.com/julmot/form-components" data-size="large" aria-label="Star julmot/form-components on GitHub">Star</a>
 </div>
 
@@ -82,7 +82,7 @@
 </blockquote>
 <h2 id="installation">Installation</h2>
 <p>Using npm:</p>
-<code class="lang-bash"><pre>$ npm install @julmot/form-components</pre></code><p>Using a CDN:</p>
+<pre><code class="language-bash">$ npm install @julmot/form-components</code></pre><p>Using a CDN:</p>
 <ul>
 <li><a href="https://www.jsdelivr.com/package/npm/@julmot/form-components?path=dist">jsDelivr</a></li>
 </ul>
@@ -90,19 +90,19 @@
 <h2 id="getting-started">Getting Started</h2>
 <p>After you’ve installed the components, you need to generate the HTML according to each component and load and initialize those you want to use. Create a new class instance of the exported class and pass in the element on which you want to initialize the component. In case you’d like to dynamically initialize instances, you can use the also exported <code>selector</code> string to determine if a component exists.</p>
 <p>For example when you want to embed the radio component using Webpack with ES6:</p>
-<code class="lang-js"><pre><span class="hljs-keyword">import</span> <span class="hljs-string">'@julmot/form-components/dist/radio-material-like/radio-material-like.css'</span>;
+<pre><code class="language-js"><span class="hljs-keyword">import</span> <span class="hljs-string">'@julmot/form-components/dist/radio-material-like/radio-material-like.css'</span>;
 <span class="hljs-keyword">import</span> {
   Radio <span class="hljs-keyword">as</span> RadioComponent,
   selector <span class="hljs-keyword">as</span> RadioComponentSelector
 } <span class="hljs-keyword">from</span> <span class="hljs-string">'@julmot/form-components/dist/radio-material-like/radio-material-like'</span>;
 
-<span class="hljs-keyword">new</span> RadioComponent(<span class="hljs-built_in">document</span>.querySelector(RadioComponentSelector));</pre></code><h2 id="options">Options</h2>
+<span class="hljs-keyword">new</span> RadioComponent(<span class="hljs-built_in">document</span>.querySelector(RadioComponentSelector));</code></pre><h2 id="options">Options</h2>
 <p>In addition to the element on which you want to initialize the component, you can also pass options to the component (see above). For example:</p>
-<code class="lang-js"><pre><span class="hljs-keyword">new</span> RadioComponent(<span class="hljs-built_in">document</span>.querySelector(RadioComponentSelector), {
+<pre><code class="language-js"><span class="hljs-keyword">new</span> RadioComponent(<span class="hljs-built_in">document</span>.querySelector(RadioComponentSelector), {
   <span class="hljs-comment">// an object of the options, e.g.</span>
   tabbed: <span class="hljs-literal">false</span>
-});</pre></code><p><strong>These are the options for different components</strong>:</p>
-<h3 id="form-components-checkbox-radio-select-text-area-text-field-">Form Components (Checkbox, Radio, Select, Text Area, Text Field)</h3>
+});</code></pre><p><strong>These are the options for different components</strong>:</p>
+<h3 id="form-components-checkbox-radio-select-text-area-text-field">Form Components (Checkbox, Radio, Select, Text Area, Text Field)</h3>
 <p><strong>tabbed</strong></p>
 <p>Type: boolean<br>Default: true</p>
 <p>If the form component should receive a focus outline when tabbing with the keyboard.</p>

@@ -14,7 +14,7 @@
 <link rel="stylesheet" href="../../themes/mandelbrot/css/navy.css?cachebust=1.2.1" type="text/css">
 
 
-<title>Example Form Material Like Indent: Material Like Indent | Form Components v0.14.0</title>
+<title>Example Form Material Like Indent: Material Like Indent | Form Components v0.14.1</title>
 
 </head>
 <body>
@@ -44,7 +44,7 @@
 </svg>
 
     </button>
-    <a href="../../index.html" class="Header-title" data-pjax>Form Components v0.14.0</a>
+    <a href="../../index.html" class="Header-title" data-pjax>Form Components v0.14.1</a>
     <a class="github-button" href="https://github.com/julmot/form-components" data-size="large" aria-label="Star julmot/form-components on GitHub">Star</a>
 </div>
 
@@ -298,7 +298,7 @@
     <span class="hljs-attr">"message"</span>: <span class="hljs-string">"&lt;p&gt;&lt;b&gt;Error&lt;/b&gt;. The form is not valid! Please check the fields on the site. This message is 100% customizable!&lt;/p&gt;"</span>
   },
   <span class="hljs-attr">"form-message"</span>: {
-    <span class="hljs-attr">"isHidden"</span>: <span class="hljs-literal">null</span>,
+    <span class="hljs-attr">"isHidden"</span>: <span class="hljs-literal">false</span>,
     <span class="hljs-attr">"message"</span>: <span class="hljs-string">"&lt;p&gt;&lt;b&gt;Error&lt;/b&gt;. The form is not valid! Please check the fields on the site. This message is 100% customizable!&lt;/p&gt;"</span>
   },
   <span class="hljs-attr">"already_user"</span>: {
@@ -307,9 +307,9 @@
     <span class="hljs-attr">"label"</span>: <span class="hljs-string">"I have an account already"</span>,
     <span class="hljs-attr">"value"</span>: <span class="hljs-string">"true"</span>,
     <span class="hljs-attr">"required"</span>: <span class="hljs-literal">true</span>,
-    <span class="hljs-attr">"disabled"</span>: <span class="hljs-literal">null</span>,
-    <span class="hljs-attr">"checked"</span>: <span class="hljs-literal">null</span>,
-    <span class="hljs-attr">"error"</span>: <span class="hljs-literal">null</span>
+    <span class="hljs-attr">"disabled"</span>: <span class="hljs-literal">false</span>,
+    <span class="hljs-attr">"checked"</span>: <span class="hljs-literal">false</span>,
+    <span class="hljs-attr">"error"</span>: <span class="hljs-string">""</span>
   },
   <span class="hljs-attr">"no_user"</span>: {
     <span class="hljs-attr">"id"</span>: <span class="hljs-string">"already-user-false"</span>,
@@ -317,65 +317,65 @@
     <span class="hljs-attr">"label"</span>: <span class="hljs-string">"I don't have an account yet"</span>,
     <span class="hljs-attr">"value"</span>: <span class="hljs-string">"false"</span>,
     <span class="hljs-attr">"required"</span>: <span class="hljs-literal">true</span>,
-    <span class="hljs-attr">"disabled"</span>: <span class="hljs-literal">null</span>,
-    <span class="hljs-attr">"checked"</span>: <span class="hljs-literal">null</span>,
-    <span class="hljs-attr">"error"</span>: <span class="hljs-literal">null</span>
+    <span class="hljs-attr">"disabled"</span>: <span class="hljs-literal">false</span>,
+    <span class="hljs-attr">"checked"</span>: <span class="hljs-literal">false</span>,
+    <span class="hljs-attr">"error"</span>: <span class="hljs-string">""</span>
   },
   <span class="hljs-attr">"salutation"</span>: {
     <span class="hljs-attr">"id"</span>: <span class="hljs-string">"salutation"</span>,
     <span class="hljs-attr">"name"</span>: <span class="hljs-string">"salutation"</span>,
     <span class="hljs-attr">"label"</span>: <span class="hljs-string">"Salutation"</span>,
     <span class="hljs-attr">"required"</span>: <span class="hljs-literal">true</span>,
-    <span class="hljs-attr">"disabled"</span>: <span class="hljs-literal">null</span>,
-    <span class="hljs-attr">"selected"</span>: <span class="hljs-literal">null</span>,
+    <span class="hljs-attr">"disabled"</span>: <span class="hljs-literal">false</span>,
+    <span class="hljs-attr">"selected"</span>: <span class="hljs-literal">false</span>,
     <span class="hljs-attr">"options"</span>: [
       <span class="hljs-string">"Mr."</span>,
       <span class="hljs-string">"Ms."</span>,
       <span class="hljs-string">"Mrs."</span>
     ],
-    <span class="hljs-attr">"error"</span>: <span class="hljs-literal">null</span>
+    <span class="hljs-attr">"error"</span>: <span class="hljs-string">""</span>
   },
   <span class="hljs-attr">"firstname"</span>: {
     <span class="hljs-attr">"id"</span>: <span class="hljs-string">"firstname"</span>,
     <span class="hljs-attr">"name"</span>: <span class="hljs-string">"firstname"</span>,
     <span class="hljs-attr">"label"</span>: <span class="hljs-string">"Firstname"</span>,
     <span class="hljs-attr">"required"</span>: <span class="hljs-literal">true</span>,
-    <span class="hljs-attr">"value"</span>: <span class="hljs-literal">null</span>,
-    <span class="hljs-attr">"disabled"</span>: <span class="hljs-literal">null</span>,
+    <span class="hljs-attr">"value"</span>: <span class="hljs-string">""</span>,
+    <span class="hljs-attr">"disabled"</span>: <span class="hljs-literal">false</span>,
     <span class="hljs-attr">"type"</span>: <span class="hljs-string">"text"</span>,
-    <span class="hljs-attr">"autocomplete"</span>: <span class="hljs-literal">null</span>,
-    <span class="hljs-attr">"error"</span>: <span class="hljs-literal">null</span>
+    <span class="hljs-attr">"autocomplete"</span>: <span class="hljs-string">""</span>,
+    <span class="hljs-attr">"error"</span>: <span class="hljs-string">""</span>
   },
   <span class="hljs-attr">"lastname"</span>: {
     <span class="hljs-attr">"id"</span>: <span class="hljs-string">"lastname"</span>,
     <span class="hljs-attr">"name"</span>: <span class="hljs-string">"lastname"</span>,
     <span class="hljs-attr">"label"</span>: <span class="hljs-string">"Lastname"</span>,
     <span class="hljs-attr">"required"</span>: <span class="hljs-literal">true</span>,
-    <span class="hljs-attr">"value"</span>: <span class="hljs-literal">null</span>,
-    <span class="hljs-attr">"disabled"</span>: <span class="hljs-literal">null</span>,
+    <span class="hljs-attr">"value"</span>: <span class="hljs-string">""</span>,
+    <span class="hljs-attr">"disabled"</span>: <span class="hljs-literal">false</span>,
     <span class="hljs-attr">"type"</span>: <span class="hljs-string">"text"</span>,
-    <span class="hljs-attr">"autocomplete"</span>: <span class="hljs-literal">null</span>,
-    <span class="hljs-attr">"error"</span>: <span class="hljs-literal">null</span>
+    <span class="hljs-attr">"autocomplete"</span>: <span class="hljs-string">""</span>,
+    <span class="hljs-attr">"error"</span>: <span class="hljs-string">""</span>
   },
   <span class="hljs-attr">"email"</span>: {
     <span class="hljs-attr">"id"</span>: <span class="hljs-string">"email"</span>,
     <span class="hljs-attr">"name"</span>: <span class="hljs-string">"email"</span>,
     <span class="hljs-attr">"label"</span>: <span class="hljs-string">"Email"</span>,
     <span class="hljs-attr">"required"</span>: <span class="hljs-literal">true</span>,
-    <span class="hljs-attr">"value"</span>: <span class="hljs-literal">null</span>,
-    <span class="hljs-attr">"disabled"</span>: <span class="hljs-literal">null</span>,
+    <span class="hljs-attr">"value"</span>: <span class="hljs-string">""</span>,
+    <span class="hljs-attr">"disabled"</span>: <span class="hljs-literal">false</span>,
     <span class="hljs-attr">"type"</span>: <span class="hljs-string">"email"</span>,
-    <span class="hljs-attr">"autocomplete"</span>: <span class="hljs-literal">null</span>,
-    <span class="hljs-attr">"error"</span>: <span class="hljs-literal">null</span>
+    <span class="hljs-attr">"autocomplete"</span>: <span class="hljs-string">""</span>,
+    <span class="hljs-attr">"error"</span>: <span class="hljs-string">""</span>
   },
   <span class="hljs-attr">"message"</span>: {
     <span class="hljs-attr">"id"</span>: <span class="hljs-string">"message"</span>,
     <span class="hljs-attr">"name"</span>: <span class="hljs-string">"message"</span>,
     <span class="hljs-attr">"label"</span>: <span class="hljs-string">"Message"</span>,
     <span class="hljs-attr">"required"</span>: <span class="hljs-literal">true</span>,
-    <span class="hljs-attr">"value"</span>: <span class="hljs-literal">null</span>,
-    <span class="hljs-attr">"disabled"</span>: <span class="hljs-literal">null</span>,
-    <span class="hljs-attr">"error"</span>: <span class="hljs-literal">null</span>
+    <span class="hljs-attr">"value"</span>: <span class="hljs-string">""</span>,
+    <span class="hljs-attr">"disabled"</span>: <span class="hljs-literal">false</span>,
+    <span class="hljs-attr">"error"</span>: <span class="hljs-string">""</span>
   },
   <span class="hljs-attr">"copy"</span>: {
     <span class="hljs-attr">"id"</span>: <span class="hljs-string">"copy"</span>,
@@ -383,9 +383,9 @@
     <span class="hljs-attr">"label"</span>: <span class="hljs-string">"I want a copy of my message"</span>,
     <span class="hljs-attr">"value"</span>: <span class="hljs-string">"true"</span>,
     <span class="hljs-attr">"required"</span>: <span class="hljs-literal">true</span>,
-    <span class="hljs-attr">"disabled"</span>: <span class="hljs-literal">null</span>,
-    <span class="hljs-attr">"checked"</span>: <span class="hljs-literal">null</span>,
-    <span class="hljs-attr">"error"</span>: <span class="hljs-literal">null</span>
+    <span class="hljs-attr">"disabled"</span>: <span class="hljs-literal">false</span>,
+    <span class="hljs-attr">"checked"</span>: <span class="hljs-literal">false</span>,
+    <span class="hljs-attr">"error"</span>: <span class="hljs-string">""</span>
   }
 }</pre>
             

@@ -14,7 +14,7 @@
 <link rel="stylesheet" href="../../themes/mandelbrot/css/navy.css?cachebust=1.2.1" type="text/css">
 
 
-<title>Select Material Like: Default Light | Form Components v0.14.0</title>
+<title>Select Material Like: Default Light | Form Components v0.14.1</title>
 
 </head>
 <body>
@@ -44,7 +44,7 @@
 </svg>
 
     </button>
-    <a href="../../index.html" class="Header-title" data-pjax>Form Components v0.14.0</a>
+    <a href="../../index.html" class="Header-title" data-pjax>Form Components v0.14.1</a>
     <a class="github-button" href="https://github.com/julmot/form-components" data-size="large" aria-label="Star julmot/form-components on GitHub">Star</a>
 </div>
 
@@ -230,9 +230,9 @@
   <span class="hljs-attr">"id"</span>: <span class="hljs-string">"select"</span>,
   <span class="hljs-attr">"name"</span>: <span class="hljs-string">"select"</span>,
   <span class="hljs-attr">"label"</span>: <span class="hljs-string">"Text"</span>,
-  <span class="hljs-attr">"required"</span>: <span class="hljs-literal">null</span>,
-  <span class="hljs-attr">"disabled"</span>: <span class="hljs-literal">null</span>,
-  <span class="hljs-attr">"selected"</span>: <span class="hljs-literal">null</span>,
+  <span class="hljs-attr">"required"</span>: <span class="hljs-literal">false</span>,
+  <span class="hljs-attr">"disabled"</span>: <span class="hljs-literal">false</span>,
+  <span class="hljs-attr">"selected"</span>: <span class="hljs-literal">false</span>,
   <span class="hljs-attr">"options"</span>: [
     <span class="hljs-string">"Long long option Long long option Long long option Long long option Long long option Long long option Long long option Long long option"</span>,
     <span class="hljs-string">"option 2"</span>,
@@ -335,6 +335,7 @@
     <span class="hljs-keyword">this</span>.error = context.querySelector(<span class="hljs-string">'.select__error'</span>);
     <span class="hljs-keyword">this</span>.dropdown = <span class="hljs-literal">null</span>;
     <span class="hljs-keyword">this</span>.dropdownOptions = [];
+    <span class="hljs-keyword">this</span>.userInfo = Bowser.parse(<span class="hljs-built_in">window</span>.navigator.userAgent);
 
     <span class="hljs-keyword">this</span>.createDropdown();
     <span class="hljs-keyword">if</span> (!<span class="hljs-keyword">this</span>.field.hasAttribute(<span class="hljs-string">'disabled'</span>)) {
@@ -368,7 +369,7 @@
     <span class="hljs-keyword">this</span>.field.addEventListener(<span class="hljs-string">'change'</span>, () =&gt; {
       <span class="hljs-keyword">this</span>.setActive(<span class="hljs-keyword">this</span>.field.selectedIndex);
     });
-    <span class="hljs-keyword">if</span> ((!Bowser.mobile &amp;&amp; !Bowser.tablet)) {
+    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.userInfo.platform.type === <span class="hljs-string">'desktop'</span>) {
       <span class="hljs-comment">// It's important to use mousedown instead of click for Desktop, otherwise</span>
       <span class="hljs-comment">// it's too late to prevent the default select dropdown</span>
       <span class="hljs-comment">// Also listen for pointerdown, in case its a touch Desktop device</span>
@@ -414,7 +415,7 @@
     <span class="hljs-comment">// Due to the fact that Firefox on Windows will open the native</span>
     <span class="hljs-comment">// dropdown by using space and there shouldn't be two dropdowns, we can</span>
     <span class="hljs-comment">// only close the custom dropdown to make it work with FF on Win.</span>
-    <span class="hljs-keyword">if</span> (Bowser.firefox) {
+    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.userInfo.browser.name === <span class="hljs-string">'Firefox'</span>) {
       <span class="hljs-keyword">this</span>.close();
     } <span class="hljs-keyword">else</span> {
       <span class="hljs-comment">// open is the default behavior of all browsers (not toggling)</span>
@@ -437,7 +438,7 @@
     <span class="hljs-comment">// Also only prevent the default action if it's a known keyCode. Otherwise</span>
     <span class="hljs-comment">// don't do anything, e.g. to not prevent tab navigation. Bug:</span>
     <span class="hljs-comment">// https://bugzilla.mozilla.org/show_bug.cgi?id=1019630</span>
-    <span class="hljs-keyword">if</span> (!Bowser.firefox) {
+    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.userInfo.browser.name !== <span class="hljs-string">'Firefox'</span>) {
       <span class="hljs-keyword">const</span> expectedIdx = <span class="hljs-keyword">this</span>.getSiblingDropdownOption(
         [<span class="hljs-number">39</span>, <span class="hljs-number">40</span>].includes(keyCode)
       );
@@ -597,7 +598,7 @@
                 </li>
                 <li class="Meta-item">
                     <strong class="Meta-key">Size:</strong>
-                    <span class="Meta-value">7.7 KB</span>
+                    <span class="Meta-value">7.9 KB</span>
                 </li>
             </ul>
         </div>
