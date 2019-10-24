@@ -3,18 +3,18 @@
     {{render '@message-material-like--error' form-message}}
   {{/ifLastDash}}
   {{render '@message-material-like--error' form-message-hidden}}
-  {{render '@radio-material-like--default-light' already_user}}
-  {{render '@radio-material-like--default-light' no_user}}
+  {{render '@radio-material-like--light' already_user}}
+  {{render '@radio-material-like--light' no_user}}
   {{#ifLastDash _self.name "errors"}}
     <div class="radio__error">
       Please check one option
     </div>
   {{/ifLastDash}}
-  {{render '@select-material-like--default-light' salutation}}
-  {{render '@text-field-material-like--default-light' firstname}}
-  {{render '@text-field-material-like--default-light' lastname}}
-  {{render '@text-field-material-like--default-light' email}}
-  {{render '@text-area-material-like--default-light' message}}
-  {{render '@checkbox-material-like--default-light' copy}}
+  {{render '@select-material-like--light' salutation}}
+  {{render '@text-field-material-like--light' firstname}}
+  {{render '@text-field-material-like--light' lastname}}
+  {{render '@text-field-material-like--light' email}}
+  {{render '@text-area-material-like--light' message}}
+  {{render '@checkbox-material-like--light' copy}}
   <button type="submit">Submit</button>
 </form>

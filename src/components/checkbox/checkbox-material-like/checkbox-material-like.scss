@@ -14,6 +14,8 @@ $checkboxFontSize: 1.125rem;
 $checkboxLineHeight: 1.35rem; // 1.2
 $checkboxIconFontSize: 1.125rem;
 $checkboxFontFamily: inherit;
+$checkboxErrorFontSize: 1rem;
+$checkboxHelperFontSize: 1rem;
 
 // Need to use string here due to:
 // https://github.com/webpack-contrib/sass-loader/issues/487
@@ -29,7 +31,9 @@ $variants: "dark", "light";
     $checkboxIconBorderErrorColor: $red !global;
     $checkboxLinkColor: $checkboxColor !global;
     $checkboxLinkColorHover: $clouds !global;
-    $checkboxErrorMsgColor: $red !global;
+    $checkboxErrorColor: $red !global;
+    $checkboxHelperColor: $black !global;
+    $checkboxHelperInvalidColor: $black !global;
     $checkboxFocusBorderColor: #95a5a6 !global;
   } @else {
     // color settings
@@ -41,7 +45,9 @@ $variants: "dark", "light";
     $checkboxIconBorderErrorColor: $red !global;
     $checkboxLinkColor: $checkboxColor !global;
     $checkboxLinkColorHover: $clouds !global;
-    $checkboxErrorMsgColor: $red !global;
+    $checkboxErrorColor: $red !global;
+    $checkboxHelperColor: $white !global;
+    $checkboxHelperInvalidColor: $white !global;
     $checkboxFocusBorderColor: #95a5a6 !global;
   }
 
@@ -155,12 +161,26 @@ $variants: "dark", "light";
        * Error message
        ************************************************************************/
       #{$block}__error {
-        color: $checkboxErrorMsgColor;
+        font-size: $checkboxErrorFontSize;
+        color: $checkboxErrorColor;
         margin: 5px 0;
 
         a {
-          color: $checkboxErrorMsgColor;
+          color: $checkboxErrorColor;
         }
+      }
+
+      /*************************************************************************
+       * Helper
+       ************************************************************************/
+      #{$block}__helper {
+        font-size: $checkboxHelperFontSize;
+        color: $checkboxHelperColor;
+        margin: 5px 0;
+      }
+
+      &.is-invalid #{$block}__helper {
+        color: $checkboxHelperInvalidColor;
       }
     }
   }

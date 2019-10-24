@@ -8,9 +8,9 @@ context:
   disabled: false
   checked: false
   error: "Please provide a value for this field"
-default: "default-light"
+default: "light"
 variants:
-  - name: "default-light"
-  - name: "default-dark"
+  - name: "light"
+  - name: "dark"
     preview: "@dark"
 notes: "This component is based on 'checkbox material like' and inherits its behavior"
