@@ -5,6 +5,7 @@ build/library/
 dist/development/
 dist/example-form*/
 dist/*.zip
+dist/favicon.ico
 
 yarn.lock
 *.js.map

@@ -4,7 +4,8 @@ const path = require('path'),
   hbs = require('@frctl/handlebars'),
   pkg = require(path.join(__dirname, '../package.json')),
   slash = require('slash'),
-  glob = require('glob');
+  glob = require('glob'),
+  fs = require('fs-extra');
 
 const title = `${pkg.name.split('/').pop().replace('-', ' ').replace(
   /\b\w/g, l => l.toUpperCase())
@@ -96,5 +97,10 @@ fractal.web.set('server.syncOptions', {
   },
   injectChanges: false
 });
+
+fs.copySync(
+  path.join(__dirname, '../public/favicon.ico'),
+  path.join(__dirname, '../dist/favicon.ico')
+);
 
 module.exports = fractal;

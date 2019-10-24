@@ -11,10 +11,12 @@ variants:
   - name: "light"
     context:
       error: ""
+      helper: ""
   - name: "dark"
     preview: "@dark"
     context:
       error: ""
+      helper: ""
   - name: "with-helper-light"
     context:
       error: ""

@@ -44,17 +44,18 @@ variants:
       firstname:
         id: "firstname"
         name: "firstname"
-        label: "Firstname"
+        label: "First name"
         required: true
         value: ""
         disabled: false
         type: "text"
         autocomplete: ""
         error: ""
+        helper: "Please enter all first names"
       lastname:
         id: "lastname"
         name: "lastname"
-        label: "Lastname"
+        label: "Last name"
         required: true
         value: ""
         disabled: false
@@ -123,7 +124,7 @@ variants:
       firstname:
         id: "firstname"
         name: "firstname"
-        label: "Firstname"
+        label: "First name"
         required: true
         value: ""
         disabled: false
@@ -133,7 +134,7 @@ variants:
       lastname:
         id: "lastname"
         name: "lastname"
-        label: "Lastname"
+        label: "Last name"
         required: true
         value: ""
         disabled: false

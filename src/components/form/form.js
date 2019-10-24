@@ -127,19 +127,14 @@ export class Form {
       let target = null,
         insertBefore = null;
       if (type !== 'radio') {
-        let next = field.parentElement.nextSibling,
-          dropdown = field.parentElement.nextElementSibling;
-        if (dropdown && dropdown.classList.contains('select__dropdown')) {
-          next = dropdown.nextSibling; // insert after dropdown
-        }
         target = field.parentElement.parentElement;
-        insertBefore = next;
+        insertBefore = field.parentElement.parentElement.lastElementChild;
       } else {
         const radio = this.getLastRadio(field.name);
         target = radio.parentElement.parentElement;
-        insertBefore = radio.parentElement.nextSibling;
+        insertBefore = radio.parentElement.parentElement.lastElementChild;
       }
-      target.insertBefore(error, insertBefore);
+      target.insertBefore(error, insertBefore.nextSibling);
     }
     this.setErrorDescribedBy(field, error);
     error.innerText = field.validationMessage || 'Please fill out this field';

@@ -12,10 +12,12 @@ variants:
   - name: "light"
     context:
       error: ""
+      helper: ""
   - name: "dark"
     preview: "@dark"
     context:
       error: ""
+      helper: ""
       label: "I agree with the Shipping and Billing terms"
   - name: "with-helper-light"
     context:

@@ -44,7 +44,7 @@ variants:
       firstname:
         id: "firstname"
         name: "firstname"
-        label: "Firstname"
+        label: "First name"
         required: true
         value: ""
         disabled: false
@@ -54,7 +54,7 @@ variants:
       lastname:
         id: "lastname"
         name: "lastname"
-        label: "Lastname"
+        label: "Last name"
         required: true
         value: ""
         disabled: false
@@ -123,7 +123,7 @@ variants:
       firstname:
         id: "firstname"
         name: "firstname"
-        label: "Firstname"
+        label: "First name"
         required: true
         value: ""
         disabled: false
@@ -133,7 +133,7 @@ variants:
       lastname:
         id: "lastname"
         name: "lastname"
-        label: "Lastname"
+        label: "Last name"
         required: true
         value: ""
         disabled: false
