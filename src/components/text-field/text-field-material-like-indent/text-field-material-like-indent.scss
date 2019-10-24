@@ -54,9 +54,10 @@ $variants: "dark", "light";
       }
 
       /*************************************************************************
-       * Error
+       * Error & Helper
        ************************************************************************/
-      #{$block}__error {
+      #{$block}__error,
+      #{$block}__helper {
         margin-left: $textFieldPaddingX;
         margin-right: $textFieldPaddingX;
       }
