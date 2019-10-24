@@ -3,6 +3,9 @@
     <input class="radio__input" id="{{id}}" type="radio" name="{{name}}" {{#if value}}value="{{value}}"{{/if}} {{#if disabled}}disabled{{/if}} {{#if required}}required="true"{{/if}} {{#if checked}}checked{{/if}} />
     <label class="radio__label" for="{{id}}">{{{label}}}</label>
   </div>
+  {{#if helper}}
+    <div class="radio__helper">{{helper}}</div>
+  {{/if}}
   <!-- NOTE: This div is reserved for field-specific error messages by a backend -->
   {{#if error}}
     <div class="radio__error">{{error}}</div>
