@@ -16,6 +16,8 @@ $textAreaLabelFontFamily: inherit;
 $textAreaFontSize: 1.125rem;
 $textAreaLineHeight: 1.375rem;
 $textAreaFontFamily: inherit;
+$textAreaErrorFontSize: 1rem;
+$textAreaHelperFontSize: 1rem;
 
 // size settings
 $textAreaHeight: $textAreaLineHeight * 5;
@@ -54,6 +56,9 @@ $variants: "dark", "light";
 
     $textAreaErrorColor: $red !global;
 
+    $textAreaHelperColor: $black !global;
+    $textAreaHelperInvalidColor: $black !global;
+
     $textAreaBorderTabbedColor: #95a5a6 !global;
   } @else {
     // color settings
@@ -80,6 +85,9 @@ $variants: "dark", "light";
     $textAreaLabelInvalidFilledInActiveColor: $textAreaLabelInvalidColor !global;
 
     $textAreaErrorColor: $red !global;
+
+    $textAreaHelperColor: $white !global;
+    $textAreaHelperInvalidColor: $white !global;
 
     $textAreaBorderTabbedColor: #95a5a6 !global;
   }
@@ -266,12 +274,26 @@ $variants: "dark", "light";
        * Error
        ************************************************************************/
       #{$block}__error {
+        font-size: $textAreaErrorFontSize;
         color: $textAreaErrorColor;
         margin: 5px 0;
 
         a {
           color: $textAreaErrorColor;
         }
+      }
+
+      /*************************************************************************
+       * Helper
+       ************************************************************************/
+      #{$block}__helper {
+        font-size: $textAreaHelperFontSize;
+        color: $textAreaHelperColor;
+        margin: 5px 0;
+      }
+
+      &.is-invalid #{$block}__helper {
+        color: $textAreaHelperInvalidColor;
       }
     }
   }
