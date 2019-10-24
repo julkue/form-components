@@ -24,10 +24,40 @@ context:
     - "option 13"
     - "option 14"
     - "option 15"
-  error: "Please provide a value for this field"
-default: "default-light"
+default: "light"
 variants:
-  - name: "default-light"
-  - name: "default-dark"
+  - name: "light"
+    context:
+      error: ""
+  - name: "dark"
     preview: "@dark"
+    context:
+      error: ""
+  - name: "with-helper-light"
+    context:
+      error: ""
+      helper: "Please note that this form field has a helper text"
+  - name: "with-helper-dark"
+    preview: "@dark"
+    context:
+      error: ""
+      helper: "Please note that this form field has a helper text"
+  - name: "with-error-light"
+    context:
+      error: "Please provide a value for this field"
+      helper: ""
+  - name: "with-error-dark"
+    preview: "@dark"
+    context:
+      error: "Please provide a value for this field"
+      helper: ""
+  - name: "with-error-and-helper-light"
+    context:
+      error: "Please provide a value for this field"
+      helper: "Please note that this form field has a helper text"
+  - name: "with-error-and-helper-dark"
+    preview: "@dark"
+    context:
+      error: "Please provide a value for this field"
+      helper: "Please note that this form field has a helper text"
 notes: "This component is based on 'select lite arrow' and inherits its behavior"

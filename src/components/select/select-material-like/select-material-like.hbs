@@ -12,6 +12,9 @@
       <label class="select__label" for="{{id}}">{{label}}</label>
     {{/if}}
   </div>
+  {{#if helper}}
+    <div class="select__helper">{{helper}}</div>
+  {{/if}}
   <!-- NOTE: This div is reserved for field-specific error messages by a backend -->
   {{#if error}}
     <div class="select__error">{{error}}</div>

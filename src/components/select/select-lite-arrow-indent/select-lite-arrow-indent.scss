@@ -56,9 +56,10 @@ $variants: "dark", "light";
       }
 
       /*************************************************************************
-       * Error message
+       * Error & Helper
        ************************************************************************/
-      #{$block}__error {
+      #{$block}__error,
+      #{$block}__helper {
         margin-left: $selectPaddingX;
         margin-right: $selectPaddingX;
       }
