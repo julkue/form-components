@@ -6,12 +6,42 @@ context:
   required: false
   value: ""
   disabled: false
-  error: "Please provide a value for this field"
   # Any text format, no checkbox/radio:
   type: "text"
   autocomplete: ""
-default: "default-light"
+default: "light"
 variants:
-  - name: "default-light"
-  - name: "default-dark"
+  - name: "light"
+    context:
+      error: ""
+  - name: "dark"
     preview: "@dark"
+    context:
+      error: ""
+  - name: "with-helper-light"
+    context:
+      error: ""
+      helper: "Please note that this form field has a helper text"
+  - name: "with-helper-dark"
+    preview: "@dark"
+    context:
+      error: ""
+      helper: "Please note that this form field has a helper text"
+  - name: "with-error-light"
+    context:
+      error: "Please provide a value for this field"
+      helper: ""
+  - name: "with-error-dark"
+    preview: "@dark"
+    context:
+      error: "Please provide a value for this field"
+      helper: ""
+  - name: "with-error-and-helper-light"
+    context:
+      error: "Please provide a value for this field"
+      helper: "Please note that this form field has a helper text"
+  - name: "with-error-and-helper-dark"
+    preview: "@dark"
+    context:
+      error: "Please provide a value for this field"
+      helper: "Please note that this form field has a helper text"

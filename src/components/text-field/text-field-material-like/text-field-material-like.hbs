@@ -3,6 +3,9 @@
     <input class="text-field__input" id="{{id}}" type="{{type}}" name="{{name}}" {{#if value}}value="{{value}}"{{/if}} {{#if disabled}}disabled{{/if}} {{#if required }}required="true"{{/if}} {{#if autocomplete}}autocomplete="{{autocomplete}}"{{/if}}/>
     <label class="text-field__label" for="{{id}}">{{label}}</label>
   </div>
+  {{#if helper}}
+    <div class="text-field__helper">{{helper}}</div>
+  {{/if}}
   <!-- NOTE: This div is reserved for field-specific error messages by a backend -->
   {{#if error}}
     <div class="text-field__error">{{error}}</div>
