@@ -325,6 +325,7 @@ body {
   padding: 15px; }
   body:not(.transition-ready),
   body:not(.transition-ready) * {
+    -webkit-transition: none !important;
     transition: none !important; }
 
 * {
