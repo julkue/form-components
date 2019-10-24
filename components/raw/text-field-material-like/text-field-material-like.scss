@@ -19,6 +19,8 @@ $textFieldLabelFilledInFontSize: 0.75rem;
 $textFieldLabelFontFamily: inherit;
 $textFieldFontSize: 1.125rem;
 $textFieldFontFamily: inherit;
+$textFieldErrorFontSize: 1rem;
+$textFieldHelperFontSize: 1rem;
 // Don't use the same line height as "height" to avoid a large cursor
 // in Safari on macOS. Also multiply the font size with 1.35 and use it
 // as line height to avoid text jump in FF when you mark the text
@@ -55,6 +57,9 @@ $variants: "dark", "light";
 
     $textFieldErrorColor: $red !global;
 
+    $textFieldHelperColor: $black !global;
+    $textFieldHelperInvalidColor: $black !global;
+
     $textFieldBorderTabbedColor: #95a5a6 !global;
   } @else {
     // color settings
@@ -81,6 +86,9 @@ $variants: "dark", "light";
     $textFieldLabelInvalidFilledInActiveColor: $textFieldLabelInvalidColor !global;
 
     $textFieldErrorColor: $red !global;
+
+    $textFieldHelperColor: $white !global;
+    $textFieldHelperInvalidColor: $white !global;
 
     $textFieldBorderTabbedColor: #95a5a6 !global;
   }
@@ -280,12 +288,26 @@ $variants: "dark", "light";
        * Error
        ************************************************************************/
       #{$block}__error {
+        font-size: $textFieldErrorFontSize;
         color: $textFieldErrorColor;
         margin: 5px $textFieldPaddingX;
 
         a {
           color: $textFieldErrorColor;
         }
+      }
+
+      /*************************************************************************
+       * Helper
+       ************************************************************************/
+      #{$block}__helper {
+        font-size: $textFieldHelperFontSize;
+        color: $textFieldHelperColor;
+        margin: 5px $textFieldPaddingX;
+      }
+
+      &.is-invalid #{$block}__helper {
+        color: $textFieldHelperInvalidColor;
       }
     }
   }

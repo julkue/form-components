@@ -1,0 +1,3602 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="no-js">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>
+    window.frctl = {
+        env: 'static'
+    };
+    </script>
+    <script>var cl = document.querySelector('html').classList; cl.remove('no-js'); cl.add('has-js');</script>
+    <link rel="shortcut icon" href="../../themes/mandelbrot/favicon.ico" type="image/ico">
+
+<link rel="stylesheet" href="../../themes/mandelbrot/css/navy.css?cachebust=1.2.1" type="text/css">
+
+
+<title>Select Material Like: With Error And Helper Light | Form Components v1.0.0</title>
+
+</head>
+<body>
+
+
+
+<div class="Frame" id="frame">
+
+    <div class="Frame-header">
+        <style>
+@media (max-width: 480px) {
+  .Header-title + iframe {
+    display: none;
+  }
+}
+</style>
+<div class="Header">
+    <button class="Header-button Header-navToggle" data-action="toggle-sidebar">
+        <svg class="Header-navToggleIcon Header-navToggleIcon--open" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 0h24v24H0z" fill="none"/>
+    <path d="M19 6.4L17.6 5 12 10.6 6.4 5 5 6.4 10.6 12 5 17.6 6.4 19 12 13.4 17.6 19 19 17.6 13.4 12z"/>
+</svg>
+
+        <svg class="Header-navToggleIcon Header-navToggleIcon--closed" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 0h24v24H0z" fill="none"/>
+    <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+</svg>
+
+    </button>
+    <a href="../../index.html" class="Header-title" data-pjax>Form Components v1.0.0</a>
+    <a class="github-button" href="https://github.com/julmot/form-components" data-size="large" aria-label="Star julmot/form-components on GitHub">Star</a>
+</div>
+
+    </div>
+
+    <div class="Frame-body" data-role="body">
+
+        <div class="Frame-panel Frame-panel--main" data-role="main">
+            <div class="Frame-inner" id="pjax-container">
+            
+
+
+    
+    
+
+<div class="Pen" data-behaviour="pen" id="pen-7b1be833c4dc524803d2dbc4be2267a1">
+
+    
+
+    <div class="Pen-panel Pen-header">
+    <h1 class="Pen-title">
+        <a class="Pen-previewLink" href="../preview/select-material-like--with-error-and-helper-light.html" title="Component preview">
+            Select Material Like: With Error And Helper Light
+            <svg fill="#000000" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 0h24v24H0z" fill="none"/>
+    <path d="M19 4H5c-1.11 0-2 .9-2 2v12c0 1.1.89 2 2 2h4v-2H5V8h14v10h-4v2h4c1.1 0 2-.9 2-2V6c0-1.1-.89-2-2-2zm-7 6l-4 4h3v6h2v-6h3l-4-4z"/>
+</svg>
+
+        </a>
+    </h1>
+    
+
+<div class="Status Status--tag">
+
+<label class="Status-label" style="background-color: #29CC29; border-color: #29CC29;">Ready</label>
+
+</div>
+
+
+</div>
+
+
+    <div class="Pen-panel Pen-preview Preview" data-behaviour="preview" id="preview-7b1be833c4dc524803d2dbc4be2267a1">
+    <div class="Preview-wrapper" data-role="resizer">
+        <div class="Preview-resizer">
+            
+             <iframe
+                class="Preview-iframe"
+                data-role="window"
+                src="../preview/select-material-like--with-error-and-helper-light.html"
+                sandbox="allow-same-origin allow-scripts allow-forms allow-modals"
+                 style=""
+                marginwidth="0" marginheight="0" frameborder="0" vspace="0" hspace="0" scrolling="yes">
+            </iframe>
+        </div>
+        <div class="Preview-handle" data-role="resize-handle"></div>
+        <div class="Preview-overlay"></div>
+    </div>
+</div>
+
+
+    <div class="Pen-handle Pen-handle--browser" data-role="resize-handle"></div>
+
+    <div class="Pen-panel Pen-info" data-role="info">
+    <div class="Browser" data-behaviour="browser" id="browser-7b1be833c4dc524803d2dbc4be2267a1">
+
+    
+
+<div class="Browser-controls">
+    <ul class="Browser-tabs">
+        
+        
+        <li class="Browser-tab Browser-tab--html is-active " data-role="tab">
+            <a href="#browser-7b1be833c4dc524803d2dbc4be2267a1-panel-html">HTML</a>
+        </li>
+        
+        
+        
+        <li class="Browser-tab Browser-tab--view" data-role="tab">
+            <a href="#browser-7b1be833c4dc524803d2dbc4be2267a1-panel-view">View</a>
+        </li>
+        
+        
+        
+        <li class="Browser-tab Browser-tab--context" data-role="tab">
+            <a href="#browser-7b1be833c4dc524803d2dbc4be2267a1-panel-context">Context</a>
+        </li>
+        
+        
+        
+        
+        
+        <li class="Browser-tab Browser-tab--resources" data-role="tab">
+            <a href="#browser-7b1be833c4dc524803d2dbc4be2267a1-panel-assets">Assets</a>
+        </li>
+        
+        
+        
+        
+        
+        <li class="Browser-tab Browser-tab--info" data-role="tab">
+            <a href="#browser-7b1be833c4dc524803d2dbc4be2267a1-panel-info">Info</a>
+        </li>
+        
+        
+        
+        <li class="Browser-tab Browser-tab--notes" data-role="tab">
+            <a href="#browser-7b1be833c4dc524803d2dbc4be2267a1-panel-notes">Notes</a>
+        </li>
+        
+        
+    </ul>
+</div>
+
+
+    
+    
+<div class="Browser-panel Browser-code is-active" data-role="tab-panel" id="browser-7b1be833c4dc524803d2dbc4be2267a1-panel-html">
+    <code class="Code Code--lang-html">
+        
+        <pre><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"select--light"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"select__wrapper"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">select</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"select__select"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"select"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"select"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">""</span> <span class="hljs-attr">disabled</span> <span class="hljs-attr">selected</span>&gt;</span>Please choose<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"Long long option Long long option Long long option Long long option Long long option Long long option Long long option Long long option"</span>&gt;</span>Long long option Long long option Long long option Long long option Long long option Long long option Long long option Long long option<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"option 2"</span>&gt;</span>option 2<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"option 3"</span>&gt;</span>option 3<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"option 4"</span>&gt;</span>option 4<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"option 5"</span>&gt;</span>option 5<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"option 6"</span>&gt;</span>option 6<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"option 7"</span>&gt;</span>option 7<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"option 8"</span>&gt;</span>option 8<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"option 9"</span>&gt;</span>option 9<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"option 10"</span>&gt;</span>option 10<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"option 11"</span>&gt;</span>option 11<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"option 12"</span>&gt;</span>option 12<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"option 13"</span>&gt;</span>option 13<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"option 14"</span>&gt;</span>option 14<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"option 15"</span>&gt;</span>option 15<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">select</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"select__label"</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"select"</span>&gt;</span>Text<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"select__helper"</span>&gt;</span>Please note that this form field has a helper text<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-comment">&lt;!-- <span class="hljs-doctag">NOTE:</span> This div is reserved for field-specific error messages by a backend --&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"select__error"</span>&gt;</span>Please provide a value for this field<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></pre>
+        
+    </code>
+</div>
+
+    
+    <div class="Browser-panel Browser-code" data-role="tab-panel" id="browser-7b1be833c4dc524803d2dbc4be2267a1-panel-view">
+    <code class="Code Code--lang-handlebars">
+        <pre><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"select--</span></span></span><span class="hljs-template-variable">{{splitDashLast _self.name}}</span><span class="xml"><span class="hljs-tag"><span class="hljs-string">"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"select__wrapper"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">select</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"select__select"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"</span></span></span><span class="hljs-template-variable">{{id}}</span><span class="xml"><span class="hljs-tag"><span class="hljs-string">"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"</span></span></span><span class="hljs-template-variable">{{name}}</span><span class="xml"><span class="hljs-tag"><span class="hljs-string">"</span></span></span><span class="hljs-template-tag">{{#<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> disabled}}</span><span class="xml"><span class="hljs-tag"> <span class="hljs-attr">disabled</span></span></span><span class="hljs-template-tag">{{/<span class="hljs-name"><span class="hljs-builtin-name">if</span></span>}}</span><span class="xml"><span class="hljs-tag"> </span></span><span class="hljs-template-tag">{{#<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> required }}</span><span class="xml"><span class="hljs-tag"><span class="hljs-attr">required</span>=<span class="hljs-string">"true"</span></span></span><span class="hljs-template-tag">{{/<span class="hljs-name"><span class="hljs-builtin-name">if</span></span>}}</span><span class="xml"><span class="hljs-tag">&gt;</span>
+    </span><span class="hljs-template-tag">{{#<span class="hljs-name"><span class="hljs-builtin-name">unless</span></span> selected}}</span><span class="xml">
+      <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">""</span> <span class="hljs-attr">disabled</span> <span class="hljs-attr">selected</span>&gt;</span>Please choose<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+    </span><span class="hljs-template-tag">{{/<span class="hljs-name"><span class="hljs-builtin-name">unless</span></span>}}</span><span class="xml">
+    </span><span class="hljs-template-tag">{{#<span class="hljs-name"><span class="hljs-builtin-name">each</span></span> options}}</span><span class="xml">
+      <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"</span></span></span><span class="hljs-template-variable">{{this}}</span><span class="xml"><span class="hljs-tag"><span class="hljs-string">"</span>&gt;</span></span><span class="hljs-template-variable">{{this}}</span><span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+    </span><span class="hljs-template-tag">{{/<span class="hljs-name"><span class="hljs-builtin-name">each</span></span>}}</span><span class="xml">
+    <span class="hljs-tag">&lt;/<span class="hljs-name">select</span>&gt;</span>
+    </span><span class="hljs-template-tag">{{#<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> label}}</span><span class="xml">
+      <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"select__label"</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"</span></span></span><span class="hljs-template-variable">{{id}}</span><span class="xml"><span class="hljs-tag"><span class="hljs-string">"</span>&gt;</span></span><span class="hljs-template-variable">{{label}}</span><span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+    </span><span class="hljs-template-tag">{{/<span class="hljs-name"><span class="hljs-builtin-name">if</span></span>}}</span><span class="xml">
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  </span><span class="hljs-template-tag">{{#<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> helper}}</span><span class="xml">
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"select__helper"</span>&gt;</span></span><span class="hljs-template-variable">{{helper}}</span><span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  </span><span class="hljs-template-tag">{{/<span class="hljs-name"><span class="hljs-builtin-name">if</span></span>}}</span><span class="xml">
+  <span class="hljs-comment">&lt;!-- <span class="hljs-doctag">NOTE:</span> This div is reserved for field-specific error messages by a backend --&gt;</span>
+  </span><span class="hljs-template-tag">{{#<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> error}}</span><span class="xml">
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"select__error"</span>&gt;</span></span><span class="hljs-template-variable">{{error}}</span><span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  </span><span class="hljs-template-variable">{{<span class="hljs-builtin-name">else</span>}}</span><span class="xml">
+    <span class="hljs-comment">&lt;!--&lt;div class="select__error"&gt;Put in the error message here...&lt;/div&gt;--&gt;</span>
+  </span><span class="hljs-template-tag">{{/<span class="hljs-name"><span class="hljs-builtin-name">if</span></span>}}</span><span class="xml">
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span></pre>
+    </code>
+</div>
+
+    
+    <div class="Browser-panel Browser-code" data-role="tab-panel" id="browser-7b1be833c4dc524803d2dbc4be2267a1-panel-context">
+    <code class="Code Code--lang-json">
+        
+            
+            <pre>{
+  <span class="hljs-attr">"id"</span>: <span class="hljs-string">"select"</span>,
+  <span class="hljs-attr">"name"</span>: <span class="hljs-string">"select"</span>,
+  <span class="hljs-attr">"label"</span>: <span class="hljs-string">"Text"</span>,
+  <span class="hljs-attr">"required"</span>: <span class="hljs-literal">false</span>,
+  <span class="hljs-attr">"disabled"</span>: <span class="hljs-literal">false</span>,
+  <span class="hljs-attr">"selected"</span>: <span class="hljs-literal">false</span>,
+  <span class="hljs-attr">"options"</span>: [
+    <span class="hljs-string">"Long long option Long long option Long long option Long long option Long long option Long long option Long long option Long long option"</span>,
+    <span class="hljs-string">"option 2"</span>,
+    <span class="hljs-string">"option 3"</span>,
+    <span class="hljs-string">"option 4"</span>,
+    <span class="hljs-string">"option 5"</span>,
+    <span class="hljs-string">"option 6"</span>,
+    <span class="hljs-string">"option 7"</span>,
+    <span class="hljs-string">"option 8"</span>,
+    <span class="hljs-string">"option 9"</span>,
+    <span class="hljs-string">"option 10"</span>,
+    <span class="hljs-string">"option 11"</span>,
+    <span class="hljs-string">"option 12"</span>,
+    <span class="hljs-string">"option 13"</span>,
+    <span class="hljs-string">"option 14"</span>,
+    <span class="hljs-string">"option 15"</span>
+  ],
+  <span class="hljs-attr">"error"</span>: <span class="hljs-string">"Please provide a value for this field"</span>,
+  <span class="hljs-attr">"helper"</span>: <span class="hljs-string">"Please note that this form field has a helper text"</span>
+}</pre>
+            
+        
+    </code>
+</div>
+
+    
+    
+
+
+<div class="Browser-panel Browser-resources" data-role="tab-panel" id="browser-7b1be833c4dc524803d2dbc4be2267a1-panel-assets">
+    <div class="FileBrowser">
+
+        <div class="FileBrowser-selectWrapper">
+            <label class="FileBrowser-select-label" for="filebrowser-select">File:</label>
+            <select class="FileBrowser-select" id="filebrowser-select">
+                
+                <option value="file-1bfcd9d45e6466018a7e166d9f745203">select-material-like-bundle.js</option>
+                
+                <option value="file-a1d59b4a68998f6d2edab28541525006">select-material-like.js</option>
+                
+                <option value="file-47cc1717007e65650831ede5b5754c86">select-material-like.scss</option>
+                
+            </select>
+        </div>
+
+        
+        <div class="FileBrowser-item is-active" id="file-1bfcd9d45e6466018a7e166d9f745203" data-role="resource-preview">
+            <ul class="Meta">
+                <li class="Meta-item">
+                    <strong class="Meta-key">Content:</strong>
+                    <span class="Meta-value">
+                        <div class="FileBrowser-itemPreview">
+                            
+                            <code class="Code Code--lang-JavaScript FileBrowser-code">
+                                <pre><span class="hljs-keyword">import</span> <span class="hljs-string">'./select-material-like.scss'</span>;
+<span class="hljs-keyword">export</span> * <span class="hljs-keyword">from</span> <span class="hljs-string">'./select-material-like'</span>;
+</pre>
+                            </code>
+                            
+                        </div>
+                    </span>
+                </li>
+                <li class="Meta-item">
+                    <strong class="Meta-key">URL:</strong>
+                    <span class="Meta-value"><a data-no-pjax href="../raw/select-material-like/select-material-like-bundle.js"><span>/components/raw/select-material-like/select-material-like-bundle.js</span></a></span>
+                </li>
+                <li class="Meta-item">
+                    <strong class="Meta-key">Filesystem Path:</strong>
+                    <span class="Meta-value">src/components/select/select-material-like/select-material-like-bundle.js</span>
+                </li>
+                <li class="Meta-item">
+                    <strong class="Meta-key">Size:</strong>
+                    <span class="Meta-value">78 Bytes</span>
+                </li>
+            </ul>
+        </div>
+        
+        <div class="FileBrowser-item" id="file-a1d59b4a68998f6d2edab28541525006" data-role="resource-preview">
+            <ul class="Meta">
+                <li class="Meta-item">
+                    <strong class="Meta-key">Content:</strong>
+                    <span class="Meta-value">
+                        <div class="FileBrowser-itemPreview">
+                            
+                            <code class="Code Code--lang-JavaScript FileBrowser-code">
+                                <pre><span class="hljs-keyword">import</span> FormComponent <span class="hljs-keyword">from</span> <span class="hljs-string">'../../form-component'</span>;
+<span class="hljs-keyword">import</span> Bowser <span class="hljs-keyword">from</span> <span class="hljs-string">'bowser'</span>;
+
+<span class="hljs-keyword">export</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Select</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">FormComponent</span> </span>{
+  <span class="hljs-keyword">constructor</span>(context, options) {
+    <span class="hljs-keyword">super</span>(
+      context,
+      context.querySelector(<span class="hljs-string">'.select__select'</span>),
+      context.querySelector(<span class="hljs-string">'.select__error'</span>),
+      <span class="hljs-string">'Select'</span>,
+      options
+    );
+    <span class="hljs-keyword">super</span>.init();
+
+    <span class="hljs-keyword">this</span>.wrapper = context.querySelector(<span class="hljs-string">'.select__wrapper'</span>);
+    <span class="hljs-keyword">this</span>.error = context.querySelector(<span class="hljs-string">'.select__error'</span>);
+    <span class="hljs-keyword">this</span>.dropdown = <span class="hljs-literal">null</span>;
+    <span class="hljs-keyword">this</span>.dropdownOptions = [];
+    <span class="hljs-keyword">this</span>.userInfo = Bowser.parse(<span class="hljs-built_in">window</span>.navigator.userAgent);
+
+    <span class="hljs-keyword">this</span>.createDropdown();
+    <span class="hljs-keyword">if</span> (!<span class="hljs-keyword">this</span>.field.hasAttribute(<span class="hljs-string">'disabled'</span>)) {
+      <span class="hljs-keyword">this</span>.initEvents();
+    }
+  }
+
+  createDropdown() {
+    <span class="hljs-keyword">this</span>.dropdown = <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">'ul'</span>);
+    <span class="hljs-keyword">this</span>.dropdown.classList.add(<span class="hljs-string">'select__dropdown'</span>);
+    <span class="hljs-keyword">this</span>.dropdownOptions = [...this.field.options].map(<span class="hljs-function"><span class="hljs-params">dropdownOption</span> =&gt;</span> {
+      <span class="hljs-keyword">const</span> option = <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">'li'</span>);
+      option.classList.add(<span class="hljs-string">'select__dropdown-option'</span>);
+      option.textContent = dropdownOption.textContent;
+      <span class="hljs-keyword">if</span> (dropdownOption.getAttribute(<span class="hljs-string">'disabled'</span>) !== <span class="hljs-literal">null</span>) {
+        option.classList.add(<span class="hljs-string">'is-disabled'</span>);
+      }
+      <span class="hljs-keyword">this</span>.dropdown.appendChild(option);
+      <span class="hljs-keyword">return</span> option;
+    });
+    <span class="hljs-keyword">if</span> (!<span class="hljs-keyword">this</span>.error) {
+      <span class="hljs-keyword">this</span>.context.appendChild(<span class="hljs-keyword">this</span>.dropdown);
+    } <span class="hljs-keyword">else</span> {
+      <span class="hljs-keyword">this</span>.context.insertBefore(<span class="hljs-keyword">this</span>.dropdown, <span class="hljs-keyword">this</span>.error);
+    }
+  }
+
+  initEvents() {
+    <span class="hljs-keyword">this</span>.context.addEventListener(<span class="hljs-string">'keydown'</span>, event =&gt; <span class="hljs-keyword">this</span>.onKeydown(event));
+    <span class="hljs-comment">// for native changes (e.g. iOS):</span>
+    <span class="hljs-keyword">this</span>.field.addEventListener(<span class="hljs-string">'change'</span>, () =&gt; {
+      <span class="hljs-keyword">this</span>.setActive(<span class="hljs-keyword">this</span>.field.selectedIndex);
+    });
+    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.userInfo.platform.type === <span class="hljs-string">'desktop'</span>) {
+      <span class="hljs-comment">// It's important to use mousedown instead of click for Desktop, otherwise</span>
+      <span class="hljs-comment">// it's too late to prevent the default select dropdown</span>
+      <span class="hljs-comment">// Also listen for pointerdown, in case its a touch Desktop device</span>
+      <span class="hljs-comment">// (Edge doesn't listen to touchstart if it's a touch Desktop device,</span>
+      <span class="hljs-comment">// only for pointerdown)</span>
+      [<span class="hljs-string">'mousedown'</span>, <span class="hljs-string">'pointerdown'</span>].forEach(<span class="hljs-function"><span class="hljs-params">listener</span> =&gt;</span> {
+        <span class="hljs-keyword">this</span>.field.addEventListener(listener, e =&gt; {
+          e.preventDefault();
+          <span class="hljs-comment">// prevent other above named listeners from handling the same action:</span>
+          e.stopPropagation();
+          <span class="hljs-keyword">this</span>.toggle();
+        });
+      });
+    }
+    <span class="hljs-keyword">this</span>.dropdownOptions.forEach(<span class="hljs-function">(<span class="hljs-params">option, index</span>) =&gt;</span> {
+      <span class="hljs-keyword">if</span> (option.classList.contains(<span class="hljs-string">'is-disabled'</span>)) {
+        <span class="hljs-keyword">return</span>;
+      }
+      option.addEventListener(<span class="hljs-string">'click'</span>, () =&gt; {
+        <span class="hljs-keyword">this</span>.setActive(index);
+        <span class="hljs-keyword">this</span>.close();
+      });
+    });
+    <span class="hljs-keyword">this</span>.setActive(<span class="hljs-keyword">this</span>.field.selectedIndex);
+    <span class="hljs-keyword">this</span>.field.addEventListener(<span class="hljs-string">'blur'</span>, () =&gt; {
+      <span class="hljs-comment">// Make sure to not close the dropdown before the option click event</span>
+      <span class="hljs-comment">// is called. Otherwise you can't select any value using click</span>
+      setTimeout(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+        <span class="hljs-keyword">const</span> target = <span class="hljs-built_in">document</span>.activeElement;
+        <span class="hljs-keyword">if</span> (target === <span class="hljs-keyword">this</span>.context || <span class="hljs-keyword">this</span>.context.contains(target)) {
+          <span class="hljs-keyword">return</span>;
+        }
+        <span class="hljs-keyword">this</span>.close();
+      }, <span class="hljs-number">150</span>);
+    });
+  }
+
+  onEnter() {
+    <span class="hljs-keyword">this</span>.toggle();
+  }
+
+  onSpace() {
+    <span class="hljs-comment">// Due to the fact that Firefox on Windows will open the native</span>
+    <span class="hljs-comment">// dropdown by using space and there shouldn't be two dropdowns, we can</span>
+    <span class="hljs-comment">// only close the custom dropdown to make it work with FF on Win.</span>
+    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.userInfo.browser.name === <span class="hljs-string">'Firefox'</span>) {
+      <span class="hljs-keyword">this</span>.close();
+    } <span class="hljs-keyword">else</span> {
+      <span class="hljs-comment">// open is the default behavior of all browsers (not toggling)</span>
+      <span class="hljs-keyword">this</span>.open();
+    }
+  }
+
+  onEsc() {
+    <span class="hljs-keyword">this</span>.close();
+  }
+
+  onArrowKey(keyCode) {
+    <span class="hljs-comment">// Firefox doesn't allow keydown default behavior prevention,</span>
+    <span class="hljs-comment">// therefore it'll update the value itself and call the change</span>
+    <span class="hljs-comment">// listener which will update the custom dropdown option. Without</span>
+    <span class="hljs-comment">// the prevention of the default select keydown action, macOS shows</span>
+    <span class="hljs-comment">// the native dropdown in this case, meaning it's visible in Firefox</span>
+    <span class="hljs-comment">// on macOS as soon as you're navigating by keyboard. Therefore</span>
+    <span class="hljs-comment">// exceptions must be implemented here for this case, to also work in FF.</span>
+    <span class="hljs-comment">// Also only prevent the default action if it's a known keyCode. Otherwise</span>
+    <span class="hljs-comment">// don't do anything, e.g. to not prevent tab navigation. Bug:</span>
+    <span class="hljs-comment">// https://bugzilla.mozilla.org/show_bug.cgi?id=1019630</span>
+    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.userInfo.browser.name !== <span class="hljs-string">'Firefox'</span>) {
+      <span class="hljs-keyword">const</span> expectedIdx = <span class="hljs-keyword">this</span>.getSiblingDropdownOption(
+        [<span class="hljs-number">39</span>, <span class="hljs-number">40</span>].includes(keyCode)
+      );
+      <span class="hljs-keyword">this</span>.setActive(expectedIdx);
+      <span class="hljs-keyword">if</span> (!<span class="hljs-keyword">this</span>.isOpen) {
+        <span class="hljs-keyword">this</span>.open();
+      }
+    }
+  }
+
+  onKeydown(event) {
+    <span class="hljs-keyword">const</span> keyCode = event.keyCode;
+    <span class="hljs-keyword">switch</span> (keyCode) {
+      <span class="hljs-keyword">case</span> <span class="hljs-number">13</span>: <span class="hljs-comment">// enter</span>
+        event.preventDefault();
+        <span class="hljs-keyword">this</span>.onEnter();
+        <span class="hljs-keyword">break</span>;
+      <span class="hljs-keyword">case</span> <span class="hljs-number">32</span>: <span class="hljs-comment">// space</span>
+        event.preventDefault();
+        <span class="hljs-keyword">this</span>.onSpace();
+        <span class="hljs-keyword">break</span>;
+      <span class="hljs-keyword">case</span> <span class="hljs-number">37</span>: <span class="hljs-comment">// left</span>
+      <span class="hljs-keyword">case</span> <span class="hljs-number">38</span>: <span class="hljs-comment">// up</span>
+      <span class="hljs-keyword">case</span> <span class="hljs-number">39</span>: <span class="hljs-comment">// right</span>
+      <span class="hljs-keyword">case</span> <span class="hljs-number">40</span>: <span class="hljs-comment">// down</span>
+        event.preventDefault();
+        <span class="hljs-keyword">this</span>.onArrowKey(keyCode);
+        <span class="hljs-keyword">break</span>;
+      <span class="hljs-keyword">case</span> <span class="hljs-number">27</span>: <span class="hljs-comment">// esc</span>
+        event.preventDefault();
+        <span class="hljs-keyword">this</span>.onEsc();
+        <span class="hljs-keyword">break</span>;
+      <span class="hljs-keyword">default</span>:
+        <span class="hljs-keyword">return</span>;
+    }
+  }
+
+  <span class="hljs-keyword">get</span> isOpen() {
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.context.classList.contains(<span class="hljs-string">'is-open'</span>);
+  }
+
+  toggle() {
+    <span class="hljs-keyword">if</span> (!<span class="hljs-keyword">this</span>.isOpen) {
+      <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.open();
+    } <span class="hljs-keyword">else</span> {
+      <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.close();
+    }
+  }
+
+  open() {
+    <span class="hljs-keyword">this</span>.context.classList.add(<span class="hljs-string">'is-open'</span>);
+    <span class="hljs-keyword">this</span>.field.focus();
+    <span class="hljs-keyword">this</span>.scrollActiveDropdownOptionIntoView();
+  }
+
+  close() {
+    <span class="hljs-keyword">this</span>.context.classList.remove(<span class="hljs-string">'is-open'</span>);
+    <span class="hljs-keyword">this</span>.setIsFilledIn();
+  }
+
+  setActive(index) {
+    <span class="hljs-comment">// Check if an element with that index exists</span>
+    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.field.options[index]) {
+      <span class="hljs-keyword">this</span>.setActiveDropdownOption(index);
+      <span class="hljs-keyword">this</span>.setActiveNativeOption(index);
+    }
+  }
+
+  setActiveDropdownOption(index) {
+    <span class="hljs-comment">// Check if an element with that index exists</span>
+    <span class="hljs-keyword">if</span> (!<span class="hljs-keyword">this</span>.dropdownOptions[index]) {
+      <span class="hljs-keyword">return</span>;
+    }
+    <span class="hljs-keyword">this</span>.dropdownOptions.forEach(<span class="hljs-function">(<span class="hljs-params">option, dropdownIndex</span>) =&gt;</span> {
+      <span class="hljs-keyword">if</span> (index === dropdownIndex) {
+        option.classList.add(<span class="hljs-string">'is-selected'</span>);
+      } <span class="hljs-keyword">else</span> {
+        option.classList.remove(<span class="hljs-string">'is-selected'</span>);
+      }
+    });
+    <span class="hljs-keyword">this</span>.scrollActiveDropdownOptionIntoView();
+  }
+
+  setActiveNativeOption(index) {
+    <span class="hljs-comment">// Check if an element with that index exists</span>
+    <span class="hljs-keyword">if</span> (!<span class="hljs-keyword">this</span>.field.options[index]) {
+      <span class="hljs-keyword">return</span>;
+    }
+    <span class="hljs-keyword">const</span> hasChanged = <span class="hljs-keyword">this</span>.field.selectedIndex !== index;
+    <span class="hljs-keyword">this</span>.field.selectedIndex = index;
+    [...this.field.options].forEach(<span class="hljs-function">(<span class="hljs-params">option, optionIndex</span>) =&gt;</span> {
+      <span class="hljs-keyword">if</span> (optionIndex === index) {
+        option.selected = <span class="hljs-literal">true</span>;
+        option.setAttribute(<span class="hljs-string">'selected'</span>, <span class="hljs-string">'selected'</span>);
+      } <span class="hljs-keyword">else</span> {
+        option.selected = <span class="hljs-literal">false</span>;
+        <span class="hljs-keyword">if</span> (option.hasAttribute(<span class="hljs-string">'selected'</span>)) {
+          option.removeAttribute(<span class="hljs-string">'selected'</span>);
+        }
+      }
+    });
+    <span class="hljs-keyword">if</span> (hasChanged) {
+      <span class="hljs-comment">// Trigger native onchange event</span>
+      <span class="hljs-keyword">if</span> (<span class="hljs-built_in">document</span>.createEvent) {
+        <span class="hljs-keyword">const</span> evt = <span class="hljs-built_in">document</span>.createEvent(<span class="hljs-string">'HTMLEvents'</span>);
+        evt.initEvent(<span class="hljs-string">'change'</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>);
+        <span class="hljs-keyword">this</span>.field.dispatchEvent(evt);
+      } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (<span class="hljs-built_in">document</span>.createEventObject) {
+        <span class="hljs-keyword">this</span>.field.fireEvent(<span class="hljs-string">'change'</span>);
+      } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> <span class="hljs-keyword">this</span>.field.onchange === <span class="hljs-string">'function'</span>) {
+        <span class="hljs-keyword">this</span>.field.onchange();
+      }
+    }
+  }
+
+  scrollActiveDropdownOptionIntoView() {
+    <span class="hljs-keyword">const</span> target = <span class="hljs-keyword">this</span>.dropdownOptions[<span class="hljs-keyword">this</span>.field.selectedIndex];
+    target.parentNode.scrollTop = target.offsetTop;
+  }
+
+  getSiblingDropdownOption(next) {
+    <span class="hljs-keyword">const</span> base = <span class="hljs-keyword">this</span>.field.selectedIndex;
+    <span class="hljs-keyword">let</span> newIdx = base;
+    <span class="hljs-keyword">if</span> (next) {
+      <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = base + <span class="hljs-number">1</span>; i &lt; <span class="hljs-keyword">this</span>.dropdownOptions.length; i++) {
+        <span class="hljs-keyword">if</span> (!<span class="hljs-keyword">this</span>.dropdownOptions[i].classList.contains(<span class="hljs-string">'is-disabled'</span>)) {
+          newIdx = i;
+          <span class="hljs-keyword">break</span>;
+        }
+      }
+    } <span class="hljs-keyword">else</span> {
+      <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = base - <span class="hljs-number">1</span>; i &gt;= <span class="hljs-number">0</span>; i--) {
+        <span class="hljs-keyword">if</span> (!<span class="hljs-keyword">this</span>.dropdownOptions[i].classList.contains(<span class="hljs-string">'is-disabled'</span>)) {
+          newIdx = i;
+          <span class="hljs-keyword">break</span>;
+        }
+      }
+    }
+    <span class="hljs-keyword">return</span> newIdx;
+  }
+}
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> selector = <span class="hljs-string">'[class^="select--"]'</span>;
+</pre>
+                            </code>
+                            
+                        </div>
+                    </span>
+                </li>
+                <li class="Meta-item">
+                    <strong class="Meta-key">URL:</strong>
+                    <span class="Meta-value"><a data-no-pjax href="../raw/select-material-like/select-material-like.js"><span>/components/raw/select-material-like/select-material-like.js</span></a></span>
+                </li>
+                <li class="Meta-item">
+                    <strong class="Meta-key">Filesystem Path:</strong>
+                    <span class="Meta-value">src/components/select/select-material-like/select-material-like.js</span>
+                </li>
+                <li class="Meta-item">
+                    <strong class="Meta-key">Size:</strong>
+                    <span class="Meta-value">7.9 KB</span>
+                </li>
+            </ul>
+        </div>
+        
+        <div class="FileBrowser-item" id="file-47cc1717007e65650831ede5b5754c86" data-role="resource-preview">
+            <ul class="Meta">
+                <li class="Meta-item">
+                    <strong class="Meta-key">Content:</strong>
+                    <span class="Meta-value">
+                        <div class="FileBrowser-itemPreview">
+                            
+                            <code class="Code Code--lang-SCSS FileBrowser-code">
+                                <pre>@<span class="hljs-keyword">import</span> <span class="hljs-string">"~shared/base"</span>;
+
+<span class="hljs-comment">/*******************************************************************************
+ * Contextual classes:
+ * - is-disabled: When input is disabled
+ * - is-filled-in: When a value is available or the user clicked on the select
+ * - is-open: If the dropdown is open
+ * - is-tabbed: When the select is focused (a11y)
+ * - is-focused: When the input is focused
+ * - is-initialized: When the JS for the component is initialized
+ * - has-no-label: If there is no label available
+ ******************************************************************************/</span>
+<span class="hljs-comment">// sizes</span>
+<span class="hljs-variable">$selectHeight</span>: <span class="hljs-number">2.375rem</span>; <span class="hljs-comment">// 38px + 12px == 50px height</span>
+<span class="hljs-variable">$selectPaddingX</span>: <span class="hljs-number">0</span>;
+<span class="hljs-variable">$selectDropdownOptionPaddingX</span>: <span class="hljs-number">5px</span>;
+<span class="hljs-variable">$selectDropdownMaxHeight</span>: <span class="hljs-number">12.075rem</span>; <span class="hljs-comment">// 7 rows ~ 17.6rem line height, 10px padding</span>
+
+<span class="hljs-comment">// font settings</span>
+<span class="hljs-variable">$selectFontFamily</span>: inherit;
+<span class="hljs-variable">$selectFontSize</span>: <span class="hljs-number">1.125rem</span>;
+
+<span class="hljs-variable">$selectArrowFontSize</span>: <span class="hljs-number">0.75rem</span>;
+
+<span class="hljs-variable">$selectLabelFontFamily</span>: inherit;
+<span class="hljs-variable">$selectLabelFontSize</span>: <span class="hljs-number">0.75rem</span>;
+
+<span class="hljs-variable">$selectDropdownOptionFontFamily</span>: inherit;
+<span class="hljs-variable">$selectDropdownOptionFontSize</span>: <span class="hljs-number">1rem</span>;
+<span class="hljs-variable">$selectDropdownOptionLineHeight</span>: <span class="hljs-number">1.1</span>;
+
+<span class="hljs-variable">$selectErrorFontSize</span>: <span class="hljs-number">1rem</span>;
+<span class="hljs-variable">$selectHelperFontSize</span>: <span class="hljs-number">1rem</span>;
+
+<span class="hljs-comment">// Need to use string here due to:</span>
+<span class="hljs-comment">// https://github.com/webpack-contrib/sass-loader/issues/487</span>
+<span class="hljs-variable">$variants</span>: <span class="hljs-string">"dark"</span>, <span class="hljs-string">"light"</span>;
+@<span class="hljs-keyword">each</span> <span class="hljs-variable">$color</span> in <span class="hljs-variable">$variants</span> {
+  @<span class="hljs-keyword">if</span> <span class="hljs-variable">$color</span> == <span class="hljs-string">"light"</span> {
+    <span class="hljs-comment">// color settings</span>
+    <span class="hljs-variable">$selectBackgroundColor</span>: transparent !global;
+    <span class="hljs-variable">$selectBackgroundActiveColor</span>: <span class="hljs-variable">$selectBackgroundColor</span> !global;
+    <span class="hljs-variable">$selectBackgroundInvalidColor</span>: <span class="hljs-variable">$selectBackgroundColor</span> !global;
+    <span class="hljs-variable">$selectBackgroundInvalidActiveColor</span>: <span class="hljs-variable">$selectBackgroundColor</span> !global;
+
+    <span class="hljs-variable">$selectColor</span>: <span class="hljs-variable">$black</span> !global;
+    <span class="hljs-variable">$selectActiveColor</span>: <span class="hljs-variable">$selectColor</span> !global;
+    <span class="hljs-variable">$selectInvalidColor</span>: <span class="hljs-variable">$selectColor</span> !global;
+    <span class="hljs-variable">$selectInvalidActiveColor</span>: <span class="hljs-variable">$selectColor</span> !global;
+
+    <span class="hljs-variable">$selectBorderBottomColor</span>: <span class="hljs-variable">$black</span> !global;
+    <span class="hljs-variable">$selectBorderBottomActiveColor</span>: <span class="hljs-variable">$selectBorderBottomColor</span> !global;
+    <span class="hljs-variable">$selectBorderBottomInvalidColor</span>: <span class="hljs-variable">$red</span> !global;
+    <span class="hljs-variable">$selectBorderBottomInvalidActiveColor</span>: <span class="hljs-variable">$selectBorderBottomInvalidColor</span> !global;
+    <span class="hljs-variable">$selectDropdownBorderColor</span>: <span class="hljs-variable">$selectBorderBottomActiveColor</span> !global;
+    <span class="hljs-variable">$selectDropdownBorderInvalidColor</span>: <span class="hljs-variable">$selectBorderBottomInvalidActiveColor</span> !global;
+
+    <span class="hljs-variable">$selectErrorColor</span>: <span class="hljs-variable">$red</span> !global;
+    <span class="hljs-variable">$selectTabbedBorderColor</span>: <span class="hljs-number">#95a5a6</span> !global;
+
+    <span class="hljs-variable">$selectHelperColor</span>: <span class="hljs-variable">$black</span> !global;
+    <span class="hljs-variable">$selectHelperInvalidColor</span>: <span class="hljs-variable">$black</span> !global;
+
+    <span class="hljs-variable">$selectArrowColor</span>: <span class="hljs-variable">$black</span> !global;
+    <span class="hljs-variable">$selectArrowActiveColor</span>: <span class="hljs-variable">$selectArrowColor</span> !global;
+    <span class="hljs-variable">$selectArrowInvalidColor</span>: <span class="hljs-variable">$selectArrowColor</span> !global;;
+    <span class="hljs-variable">$selectArrowInvalidActiveColor</span>: <span class="hljs-variable">$selectArrowColor</span> !global;
+
+    <span class="hljs-variable">$selectLabelColor</span>: <span class="hljs-variable">$black</span> !global;
+    <span class="hljs-variable">$selectLabelActiveColor</span>: <span class="hljs-variable">$selectLabelColor</span> !global;
+    <span class="hljs-variable">$selectLabelInvalidColor</span>: <span class="hljs-variable">$red</span> !global;
+    <span class="hljs-variable">$selectLabelInvalidActiveColor</span>: <span class="hljs-variable">$selectLabelInvalidColor</span> !global;
+
+    <span class="hljs-variable">$selectDropdownOptionColor</span>: <span class="hljs-variable">$black</span> !global;
+    <span class="hljs-variable">$selectDropdownOptionBackgroundColor</span>: <span class="hljs-variable">$white</span> !global;
+    <span class="hljs-variable">$selectDropdownOptionHoverBackgroundColor</span>: <span class="hljs-variable">$clouds</span> !global;
+    <span class="hljs-variable">$selectDropdownOptionHoverColor</span>: <span class="hljs-variable">$selectDropdownOptionColor</span> !global;
+    <span class="hljs-variable">$selectDropdownOptionActiveBackgroundColor</span>: <span class="hljs-number">#EEEEEE</span> !global;
+    <span class="hljs-variable">$selectDropdownOptionActiveColor</span>: <span class="hljs-variable">$black</span> !global;
+  } @<span class="hljs-keyword">else</span> {
+    <span class="hljs-comment">// color settings</span>
+    <span class="hljs-variable">$selectBackgroundColor</span>: transparent !global;
+    <span class="hljs-variable">$selectBackgroundActiveColor</span>: <span class="hljs-variable">$selectBackgroundColor</span> !global;
+    <span class="hljs-variable">$selectBackgroundInvalidColor</span>: <span class="hljs-variable">$selectBackgroundColor</span> !global;
+    <span class="hljs-variable">$selectBackgroundInvalidActiveColor</span>: <span class="hljs-variable">$selectBackgroundColor</span> !global;
+
+    <span class="hljs-variable">$selectColor</span>: <span class="hljs-variable">$white</span> !global;
+    <span class="hljs-variable">$selectActiveColor</span>: <span class="hljs-variable">$selectColor</span> !global;
+    <span class="hljs-variable">$selectInvalidColor</span>: <span class="hljs-variable">$selectColor</span> !global;
+    <span class="hljs-variable">$selectInvalidActiveColor</span>: <span class="hljs-variable">$selectColor</span> !global;
+
+    <span class="hljs-variable">$selectBorderBottomColor</span>: <span class="hljs-variable">$white</span> !global;
+    <span class="hljs-variable">$selectBorderBottomActiveColor</span>: <span class="hljs-variable">$selectBorderBottomColor</span> !global;
+    <span class="hljs-variable">$selectBorderBottomInvalidColor</span>: <span class="hljs-variable">$red</span> !global;
+    <span class="hljs-variable">$selectBorderBottomInvalidActiveColor</span>: <span class="hljs-variable">$selectBorderBottomInvalidColor</span> !global;
+    <span class="hljs-variable">$selectDropdownBorderColor</span>: <span class="hljs-variable">$selectBorderBottomActiveColor</span> !global;
+    <span class="hljs-variable">$selectDropdownBorderInvalidColor</span>: <span class="hljs-variable">$selectBorderBottomInvalidActiveColor</span> !global;
+
+    <span class="hljs-variable">$selectErrorColor</span>: <span class="hljs-variable">$red</span> !global;
+    <span class="hljs-variable">$selectTabbedBorderColor</span>: <span class="hljs-number">#95a5a6</span> !global;
+
+    <span class="hljs-variable">$selectHelperColor</span>: <span class="hljs-variable">$white</span> !global;
+    <span class="hljs-variable">$selectHelperInvalidColor</span>: <span class="hljs-variable">$white</span> !global;
+
+    <span class="hljs-variable">$selectArrowColor</span>: <span class="hljs-variable">$white</span> !global;
+    <span class="hljs-variable">$selectArrowActiveColor</span>: <span class="hljs-variable">$selectArrowColor</span> !global;
+    <span class="hljs-variable">$selectArrowInvalidColor</span>: <span class="hljs-variable">$selectArrowColor</span> !global;;
+    <span class="hljs-variable">$selectArrowInvalidActiveColor</span>: <span class="hljs-variable">$selectArrowColor</span> !global;
+
+    <span class="hljs-variable">$selectLabelColor</span>: <span class="hljs-variable">$white</span> !global;
+    <span class="hljs-variable">$selectLabelActiveColor</span>: <span class="hljs-variable">$selectLabelColor</span> !global;
+    <span class="hljs-variable">$selectLabelInvalidColor</span>: <span class="hljs-variable">$red</span> !global;
+    <span class="hljs-variable">$selectLabelInvalidActiveColor</span>: <span class="hljs-variable">$selectLabelInvalidColor</span> !global;
+
+    <span class="hljs-variable">$selectDropdownOptionColor</span>: <span class="hljs-variable">$black</span> !global;
+    <span class="hljs-variable">$selectDropdownOptionBackgroundColor</span>: <span class="hljs-variable">$white</span> !global;
+    <span class="hljs-variable">$selectDropdownOptionHoverBackgroundColor</span>: <span class="hljs-variable">$clouds</span> !global;
+    <span class="hljs-variable">$selectDropdownOptionHoverColor</span>: <span class="hljs-variable">$selectDropdownOptionColor</span> !global;
+    <span class="hljs-variable">$selectDropdownOptionActiveBackgroundColor</span>: <span class="hljs-number">#EEEEEE</span> !global;
+    <span class="hljs-variable">$selectDropdownOptionActiveColor</span>: <span class="hljs-variable">$black</span> !global;
+  }
+
+  <span class="hljs-comment">/*****************************************************************************
+   * General
+   ****************************************************************************/</span>
+  <span class="hljs-selector-class">.select</span> {
+    <span class="hljs-variable">$block</span>: &amp;;
+
+    &amp;--#{unquote(<span class="hljs-variable">$color</span>)} {
+      <span class="hljs-attribute">position</span>: relative;
+
+      &amp;<span class="hljs-selector-class">.is-disabled</span> {
+        &amp;, * {
+          <span class="hljs-attribute">cursor</span>: not-allowed <span class="hljs-meta">!important</span>;
+        }
+      }
+
+      &amp;<span class="hljs-selector-class">.is-tabbed</span> {
+        <span class="hljs-attribute">outline</span>: <span class="hljs-number">1px</span> solid <span class="hljs-variable">$selectTabbedBorderColor</span>;
+        <span class="hljs-attribute">outline-offset</span>: <span class="hljs-number">3px</span>;
+      }
+
+      <span class="hljs-comment">/*************************************************************************
+       * Wrapper
+       ************************************************************************/</span>
+      #{<span class="hljs-variable">$block</span>}__wrapper {
+        <span class="hljs-attribute">position</span>: relative;
+        <span class="hljs-attribute">width</span>: <span class="hljs-number">100%</span>;
+        <span class="hljs-attribute">height</span>: <span class="hljs-variable">$selectHeight</span>;
+        <span class="hljs-attribute">padding-top</span>: <span class="hljs-variable">$selectLabelFontSize</span>;
+        <span class="hljs-attribute">overflow</span>: hidden; <span class="hljs-comment">// for IE text indent fix (see below in select)</span>
+        @<span class="hljs-keyword">include</span> form-components-icons-after(<span class="hljs-string">"arrow-down-material"</span>);
+        &amp;, * {
+          user-<span class="hljs-selector-tag">select</span>: none;
+        }
+
+        <span class="hljs-comment">// <span class="hljs-doctag">NOTE:</span> Specify the arrow on a wrapper as after, as using background</span>
+        <span class="hljs-comment">// image on the select itself will be overwritten by Chrome's autofill</span>
+        <span class="hljs-comment">// feature</span>
+        &amp;:after {
+          <span class="hljs-attribute">position</span>: absolute;
+          <span class="hljs-attribute">top</span>: <span class="hljs-variable">$selectLabelFontSize</span>;
+          <span class="hljs-attribute">right</span>: <span class="hljs-number">0</span>;
+          <span class="hljs-attribute">font-size</span>: <span class="hljs-variable">$selectArrowFontSize</span>;
+          <span class="hljs-attribute">line-height</span>: <span class="hljs-variable">$selectHeight</span>;
+          <span class="hljs-attribute">height</span>: <span class="hljs-variable">$selectHeight</span>;
+          <span class="hljs-attribute">color</span>: <span class="hljs-variable">$selectArrowColor</span>;
+          <span class="hljs-attribute">pointer-events</span>: none; <span class="hljs-comment">// forward clicks on after to select</span>
+        }
+      }
+
+      <span class="hljs-comment">// Opened</span>
+      &amp;<span class="hljs-selector-class">.is-open</span> #{<span class="hljs-variable">$block</span>}__wrapper {
+        &amp;:after {
+          <span class="hljs-attribute">transform</span>: rotate(-<span class="hljs-number">180deg</span>);
+        }
+      }
+
+      <span class="hljs-comment">// No label</span>
+      &amp;<span class="hljs-selector-class">.has-no-label</span> #{<span class="hljs-variable">$block</span>}__wrapper {
+        <span class="hljs-attribute">padding-top</span>: <span class="hljs-number">0</span>;
+
+        &amp;:after {
+          <span class="hljs-attribute">top</span>: <span class="hljs-number">0</span>;
+        }
+      }
+
+      <span class="hljs-comment">// Active</span>
+      &amp;<span class="hljs-selector-class">.is-focused</span> #{<span class="hljs-variable">$block</span>}__wrapper {
+        &amp;:after {
+          <span class="hljs-attribute">color</span>: <span class="hljs-variable">$selectArrowActiveColor</span>;
+        }
+      }
+
+      <span class="hljs-comment">// Invalid</span>
+      &amp;<span class="hljs-selector-class">.is-invalid</span> #{<span class="hljs-variable">$block</span>}__wrapper {
+        &amp;:after {
+          <span class="hljs-attribute">color</span>: <span class="hljs-variable">$selectArrowInvalidColor</span>;
+        }
+      }
+
+      <span class="hljs-comment">// Invalid &amp; Active</span>
+      &amp;<span class="hljs-selector-class">.is-invalid</span><span class="hljs-selector-class">.is-focused</span> #{<span class="hljs-variable">$block</span>}__wrapper {
+        &amp;:after {
+          <span class="hljs-attribute">color</span>: <span class="hljs-variable">$selectArrowInvalidActiveColor</span>;
+        }
+      }
+
+      <span class="hljs-comment">/*************************************************************************
+       * Native select
+       ************************************************************************/</span>
+      #{<span class="hljs-variable">$block</span>}__select {
+        &amp;,
+        &amp;:invalid,
+        &amp;:required {
+          <span class="hljs-attribute">font-size</span>: <span class="hljs-variable">$selectFontSize</span>;
+          <span class="hljs-attribute">font-family</span>: <span class="hljs-variable">$selectFontFamily</span>;
+          <span class="hljs-attribute">height</span>: <span class="hljs-variable">$selectHeight</span>;
+          <span class="hljs-attribute">line-height</span>: <span class="hljs-variable">$selectHeight</span>;
+          <span class="hljs-attribute">padding</span>: <span class="hljs-number">0</span> calc(#{<span class="hljs-variable">$selectPaddingX</span>} + #{<span class="hljs-variable">$selectArrowFontSize</span>} + <span class="hljs-number">10px</span>) <span class="hljs-number">0</span> <span class="hljs-variable">$selectPaddingX</span>;
+          <span class="hljs-attribute">width</span>: <span class="hljs-number">100%</span>;
+          <span class="hljs-attribute">box-sizing</span>: border-box;
+          <span class="hljs-attribute">background-color</span>: <span class="hljs-variable">$selectBackgroundColor</span>;
+          <span class="hljs-attribute">color</span>: <span class="hljs-variable">$selectColor</span>;
+          <span class="hljs-attribute">cursor</span>: pointer;
+          <span class="hljs-attribute">display</span>: block;
+          <span class="hljs-attribute">text-overflow</span>: ellipsis;
+          <span class="hljs-attribute">overflow</span>: hidden;
+          <span class="hljs-attribute">white-space</span>: nowrap;
+          appearance: none; <span class="hljs-comment">// avoid native arrow</span>
+          <span class="hljs-attribute">outline</span>: <span class="hljs-number">0</span>;
+          <span class="hljs-attribute">border-color</span>: <span class="hljs-variable">$selectBorderBottomColor</span>;
+          <span class="hljs-attribute">border-width</span>: <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">1px</span> <span class="hljs-number">0</span>;
+          <span class="hljs-attribute">border-style</span>: solid;
+          <span class="hljs-attribute">border-radius</span>: <span class="hljs-number">0</span>; <span class="hljs-comment">// iOS default removal</span>
+          <span class="hljs-attribute">box-shadow</span>: none; <span class="hljs-comment">// red border removal in case it's invalid/required</span>
+
+          <span class="hljs-comment">// Some hacks to remove native text indentation of select fields, as</span>
+          <span class="hljs-comment">// described in: https://stackoverflow.com/a/45976351/3894981</span>
+          @-moz-document url-prefix() {
+            <span class="hljs-comment">// Firefox only</span>
+            &amp; {
+              <span class="hljs-attribute">text-indent</span>: -<span class="hljs-number">2px</span>
+            }
+          }
+          @supports (-ms-ime-align: auto) {
+            // Edge only
+            &amp; {
+              width: calc(<span class="hljs-number">100%</span> + <span class="hljs-number">4px</span>);
+              <span class="hljs-attribute">margin-left</span>: -<span class="hljs-number">4px</span>;
+            }
+          }
+          @<span class="hljs-keyword">media</span> screen and (-ms-high-contrast: active), screen and (-ms-high-contrast: none) {
+            <span class="hljs-comment">// IE11 only</span>
+            &amp; {
+              <span class="hljs-attribute">width</span>: calc(<span class="hljs-number">100%</span> + <span class="hljs-number">4px</span>);
+              <span class="hljs-attribute">margin-left</span>: -<span class="hljs-number">3px</span>;
+            }
+          }
+
+          <span class="hljs-comment">// hide dotted outline in Firefox</span>
+          &amp;:-moz-focusring {
+            color: transparent;
+            <span class="hljs-attribute">text-shadow</span>: <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-variable">$selectColor</span>;
+          }
+
+          <span class="hljs-comment">// hide native arrow in IE11</span>
+          &amp;::-ms-expand {
+            display: none;
+          }
+
+          <span class="hljs-comment">// hide blue background when active in IE11</span>
+          &amp;::-ms-value {
+            background-color: <span class="hljs-variable">$selectBackgroundColor</span>;
+            <span class="hljs-attribute">color</span>: <span class="hljs-variable">$selectColor</span>;
+          }
+
+          <span class="hljs-comment">// as we have overridden ms-value, we need to fix that in high</span>
+          <span class="hljs-comment">// contrast mode</span>
+          @<span class="hljs-keyword">media</span> screen and (-ms-high-contrast: white-on-black) {
+            &amp;::-ms-value {
+              color: <span class="hljs-variable">$a11yTextColorWhiteOnBlack</span> <span class="hljs-meta">!important</span>;
+            }
+          }
+          @<span class="hljs-keyword">media</span> screen and (-ms-high-contrast: black-on-white) {
+            &amp;::-ms-value {
+              color: <span class="hljs-variable">$a11yTextColorBlackOnWhite</span> <span class="hljs-meta">!important</span>;
+            }
+          }
+
+          <span class="hljs-comment">// use a "bug" of Chrome to overwrite autofill styling</span>
+          <span class="hljs-comment">// https://stackoverflow.com/a/37432260/3894981</span>
+          <span class="hljs-comment">// !important is necessary as it won't work otherwise</span>
+          @-webkit-keyframes autofill {
+            to {
+              <span class="hljs-attribute">color</span>: <span class="hljs-variable">$selectColor</span> <span class="hljs-meta">!important</span>;
+              <span class="hljs-attribute">background-color</span>: <span class="hljs-variable">$selectBackgroundColor</span>;
+            }
+          }
+          &amp;:-webkit-autofill {
+            -webkit-animation-name: autofill;
+            -webkit-<span class="hljs-attribute">animation-fill-mode</span>: both;
+          }
+        }
+      }
+
+      <span class="hljs-comment">// Active</span>
+      &amp;<span class="hljs-selector-class">.is-focused</span> #{<span class="hljs-variable">$block</span>}__select {
+        &amp;,
+        &amp;:invalid,
+        &amp;:required {
+          <span class="hljs-attribute">background</span>: <span class="hljs-variable">$selectBackgroundActiveColor</span>;
+          <span class="hljs-attribute">color</span>: <span class="hljs-variable">$selectActiveColor</span>;
+          <span class="hljs-attribute">border-color</span>: <span class="hljs-variable">$selectBorderBottomActiveColor</span>;
+
+          &amp;:-moz-focusring {
+            color: transparent;
+            <span class="hljs-attribute">text-shadow</span>: <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-variable">$selectActiveColor</span>;
+          }
+
+          &amp;::-ms-expand {
+            display: none;
+          }
+
+          &amp;::-ms-value {
+            background-color: <span class="hljs-variable">$selectBackgroundActiveColor</span>;
+            <span class="hljs-attribute">color</span>: <span class="hljs-variable">$selectActiveColor</span>;
+          }
+
+          @-webkit-keyframes autofill {
+            to {
+              <span class="hljs-attribute">color</span>: <span class="hljs-variable">$selectActiveColor</span> <span class="hljs-meta">!important</span>;
+              <span class="hljs-attribute">background-color</span>: <span class="hljs-variable">$selectBackgroundActiveColor</span>;
+            }
+          }
+        }
+      }
+
+      <span class="hljs-comment">// Invalid</span>
+      &amp;<span class="hljs-selector-class">.is-invalid</span> #{<span class="hljs-variable">$block</span>}__select {
+        &amp;,
+        &amp;:invalid,
+        &amp;:required {
+          <span class="hljs-attribute">background</span>: <span class="hljs-variable">$selectBackgroundInvalidColor</span>;
+          <span class="hljs-attribute">color</span>: <span class="hljs-variable">$selectInvalidColor</span>;
+          <span class="hljs-attribute">border-color</span>: <span class="hljs-variable">$selectBorderBottomInvalidColor</span>;
+
+          &amp;:-moz-focusring {
+            color: transparent;
+            <span class="hljs-attribute">text-shadow</span>: <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-variable">$selectInvalidColor</span>;
+          }
+
+          &amp;::-ms-expand {
+            display: none;
+          }
+
+          &amp;::-ms-value {
+            background-color: <span class="hljs-variable">$selectBackgroundInvalidColor</span>;
+            <span class="hljs-attribute">color</span>: <span class="hljs-variable">$selectInvalidColor</span>;
+          }
+
+          @-webkit-keyframes autofill {
+            to {
+              <span class="hljs-attribute">color</span>: <span class="hljs-variable">$selectInvalidColor</span> <span class="hljs-meta">!important</span>;
+              <span class="hljs-attribute">background-color</span>: <span class="hljs-variable">$selectBackgroundInvalidColor</span>;
+            }
+          }
+        }
+      }
+
+      <span class="hljs-comment">// Invalid &amp; Active</span>
+      &amp;<span class="hljs-selector-class">.is-invalid</span><span class="hljs-selector-class">.is-focused</span> #{<span class="hljs-variable">$block</span>}__select {
+        &amp;,
+        &amp;:invalid,
+        &amp;:required {
+          <span class="hljs-attribute">background</span>: <span class="hljs-variable">$selectBackgroundInvalidActiveColor</span>;
+          <span class="hljs-attribute">color</span>: <span class="hljs-variable">$selectInvalidActiveColor</span>;
+          <span class="hljs-attribute">border-color</span>: <span class="hljs-variable">$selectBorderBottomInvalidActiveColor</span>;
+
+          &amp;:-moz-focusring {
+            color: transparent;
+            <span class="hljs-attribute">text-shadow</span>: <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-variable">$selectInvalidActiveColor</span>;
+          }
+
+          &amp;::-ms-expand {
+            display: none;
+          }
+
+          &amp;::-ms-value {
+            background-color: <span class="hljs-variable">$selectBackgroundInvalidActiveColor</span>;
+            <span class="hljs-attribute">color</span>: <span class="hljs-variable">$selectInvalidActiveColor</span>;
+          }
+
+          @-webkit-keyframes autofill {
+            to {
+              <span class="hljs-attribute">color</span>: <span class="hljs-variable">$selectInvalidActiveColor</span> <span class="hljs-meta">!important</span>;
+              <span class="hljs-attribute">background-color</span>: <span class="hljs-variable">$selectBackgroundInvalidActiveColor</span>;
+            }
+          }
+        }
+      }
+
+      <span class="hljs-comment">/*************************************************************************
+       * Label (will be moved to top when value available)
+       ************************************************************************/</span>
+      #{<span class="hljs-variable">$block</span>}__label {
+        <span class="hljs-attribute">position</span>: absolute;
+        <span class="hljs-attribute">top</span>: <span class="hljs-number">0</span>;
+        <span class="hljs-attribute">left</span>: <span class="hljs-number">0</span>;
+        <span class="hljs-attribute">width</span>: <span class="hljs-number">100%</span>;
+        <span class="hljs-attribute">height</span>: auto;
+        <span class="hljs-attribute">line-height</span>: <span class="hljs-variable">$selectLabelFontSize</span>;
+        <span class="hljs-attribute">color</span>: <span class="hljs-variable">$selectLabelColor</span>;
+        <span class="hljs-attribute">font-size</span>: <span class="hljs-variable">$selectLabelFontSize</span>;
+        <span class="hljs-attribute">font-family</span>: <span class="hljs-variable">$selectLabelFontFamily</span>;
+        <span class="hljs-attribute">padding</span>: <span class="hljs-number">0</span> <span class="hljs-variable">$selectPaddingX</span>;
+        <span class="hljs-attribute">box-sizing</span>: border-box;
+        <span class="hljs-attribute">transform-origin</span>: <span class="hljs-number">0</span> <span class="hljs-number">0</span>;
+      }
+
+      <span class="hljs-comment">// Active</span>
+      &amp;<span class="hljs-selector-class">.is-focused</span> #{<span class="hljs-variable">$block</span>}__label {
+        <span class="hljs-attribute">color</span>: <span class="hljs-variable">$selectLabelActiveColor</span>;
+      }
+
+      <span class="hljs-comment">// Invalid</span>
+      &amp;<span class="hljs-selector-class">.is-invalid</span> #{<span class="hljs-variable">$block</span>}__label {
+        <span class="hljs-attribute">color</span>: <span class="hljs-variable">$selectLabelInvalidColor</span>;
+      }
+
+      <span class="hljs-comment">// Invalid &amp; Active</span>
+      &amp;<span class="hljs-selector-class">.is-invalid</span><span class="hljs-selector-class">.is-focused</span> #{<span class="hljs-variable">$block</span>}__label {
+        <span class="hljs-attribute">color</span>: <span class="hljs-variable">$selectLabelInvalidActiveColor</span>;
+      }
+
+      <span class="hljs-comment">/*************************************************************************
+       * Dropdown
+       ************************************************************************/</span>
+      #{<span class="hljs-variable">$block</span>}__dropdown {
+        <span class="hljs-attribute">position</span>: absolute;
+        <span class="hljs-attribute">border-color</span>: <span class="hljs-variable">$selectDropdownBorderColor</span>;
+        <span class="hljs-attribute">border-width</span>: <span class="hljs-number">0</span> <span class="hljs-number">1px</span> <span class="hljs-number">1px</span> <span class="hljs-number">1px</span>; <span class="hljs-comment">// there's already the border of the select</span>
+        <span class="hljs-attribute">border-style</span>: solid;
+        <span class="hljs-attribute">width</span>: <span class="hljs-number">100%</span>;
+        <span class="hljs-attribute">z-index</span>: <span class="hljs-number">9</span>;
+        <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span>;
+        <span class="hljs-attribute">padding</span>: <span class="hljs-number">0</span>;
+        <span class="hljs-attribute">max-height</span>: calc(#{<span class="hljs-variable">$selectDropdownMaxHeight</span>} + <span class="hljs-number">1px</span>); <span class="hljs-comment">// 1px border</span>
+        <span class="hljs-attribute">overflow-x</span>: hidden;
+        <span class="hljs-attribute">overflow-y</span>: auto;
+        <span class="hljs-attribute">box-sizing</span>: border-box;
+        <span class="hljs-attribute">display</span>: none;
+      }
+
+      <span class="hljs-comment">// Opened</span>
+      &amp;<span class="hljs-selector-class">.is-open</span> #{<span class="hljs-variable">$block</span>}__dropdown {
+        <span class="hljs-attribute">display</span>: block;
+      }
+
+      <span class="hljs-comment">// Invalid</span>
+      &amp;<span class="hljs-selector-class">.is-invalid</span> #{<span class="hljs-variable">$block</span>}__dropdown {
+        <span class="hljs-attribute">border-color</span>: <span class="hljs-variable">$selectDropdownBorderInvalidColor</span>;
+      }
+
+      #{<span class="hljs-variable">$block</span>}__dropdown-<span class="hljs-selector-tag">option</span> {
+        <span class="hljs-attribute">display</span>: block;
+        <span class="hljs-attribute">font-family</span>: <span class="hljs-variable">$selectDropdownOptionFontFamily</span>;
+        <span class="hljs-attribute">font-size</span>: <span class="hljs-variable">$selectDropdownOptionFontSize</span>;
+        <span class="hljs-attribute">line-height</span>: <span class="hljs-variable">$selectDropdownOptionLineHeight</span>;
+        <span class="hljs-attribute">padding</span>: <span class="hljs-number">5px</span> <span class="hljs-variable">$selectDropdownOptionPaddingX</span>;
+        <span class="hljs-attribute">color</span>: <span class="hljs-variable">$selectDropdownOptionColor</span>;
+        <span class="hljs-attribute">background-color</span>: <span class="hljs-variable">$selectDropdownOptionBackgroundColor</span>;
+        <span class="hljs-attribute">cursor</span>: pointer;
+
+        &amp;<span class="hljs-selector-class">.is-selected</span> {
+          <span class="hljs-attribute">background-color</span>: <span class="hljs-variable">$selectDropdownOptionActiveBackgroundColor</span>;
+          <span class="hljs-attribute">color</span>: <span class="hljs-variable">$selectDropdownOptionActiveColor</span>;
+
+          @<span class="hljs-keyword">media</span> screen and (-ms-high-contrast: white-on-black) {
+            <span class="hljs-attribute">color</span>: <span class="hljs-variable">$a11yTextHighlightColorWhiteOnBlack</span>;
+          }
+          @<span class="hljs-keyword">media</span> screen and (-ms-high-contrast: black-on-white) {
+            <span class="hljs-attribute">color</span>: <span class="hljs-variable">$a11yTextHighlightColorBlackOnWhite</span>;
+          }
+        }
+
+        &amp;<span class="hljs-selector-class">.is-disabled</span> {
+          <span class="hljs-attribute">cursor</span>: not-allowed;
+        }
+
+        &amp;:not(<span class="hljs-selector-class">.is-disabled</span>):hover {
+          <span class="hljs-attribute">background-color</span>: <span class="hljs-variable">$selectDropdownOptionHoverBackgroundColor</span>;
+          <span class="hljs-attribute">color</span>: <span class="hljs-variable">$selectDropdownOptionHoverColor</span>;
+        }
+      }
+
+      <span class="hljs-comment">/*************************************************************************
+       * Error
+       ************************************************************************/</span>
+      #{<span class="hljs-variable">$block</span>}__error {
+        <span class="hljs-attribute">font-size</span>: <span class="hljs-variable">$selectErrorFontSize</span>;
+        <span class="hljs-attribute">color</span>: <span class="hljs-variable">$selectErrorColor</span>;
+        <span class="hljs-attribute">margin</span>: <span class="hljs-number">5px</span> <span class="hljs-variable">$selectPaddingX</span>;
+
+        <span class="hljs-selector-tag">a</span> {
+          <span class="hljs-attribute">color</span>: <span class="hljs-variable">$selectErrorColor</span>;
+        }
+      }
+
+      <span class="hljs-comment">/*************************************************************************
+       * Helper
+       ************************************************************************/</span>
+      #{<span class="hljs-variable">$block</span>}__helper {
+        <span class="hljs-attribute">font-size</span>: <span class="hljs-variable">$selectHelperFontSize</span>;
+        <span class="hljs-attribute">color</span>: <span class="hljs-variable">$selectHelperColor</span>;
+        <span class="hljs-attribute">margin</span>: <span class="hljs-number">5px</span> <span class="hljs-variable">$selectPaddingX</span>;
+      }
+
+      &amp;<span class="hljs-selector-class">.is-invalid</span> #{<span class="hljs-variable">$block</span>}__helper {
+        <span class="hljs-attribute">color</span>: <span class="hljs-variable">$selectHelperInvalidColor</span>;
+      }
+    }
+  }
+}
+</pre>
+                            </code>
+                            
+                        </div>
+                    </span>
+                </li>
+                <li class="Meta-item">
+                    <strong class="Meta-key">URL:</strong>
+                    <span class="Meta-value"><a data-no-pjax href="../raw/select-material-like/select-material-like.scss"><span>/components/raw/select-material-like/select-material-like.scss</span></a></span>
+                </li>
+                <li class="Meta-item">
+                    <strong class="Meta-key">Filesystem Path:</strong>
+                    <span class="Meta-value">src/components/select/select-material-like/select-material-like.scss</span>
+                </li>
+                <li class="Meta-item">
+                    <strong class="Meta-key">Size:</strong>
+                    <span class="Meta-value">16.7 KB</span>
+                </li>
+            </ul>
+        </div>
+        
+    </div>
+</div>
+
+
+
+    
+    <div class="Browser-panel" data-role="tab-panel" id="browser-7b1be833c4dc524803d2dbc4be2267a1-panel-info">
+    <ul class="Meta">
+        <li class="Meta-item">
+            <strong class="Meta-key">Handle:</strong>
+            <span class="Meta-value">@select-material-like--with-error-and-helper-light</span>
+        </li>
+        
+        
+        
+        
+        
+        <li class="Meta-item">
+            <strong class="Meta-key">Variants <em class="Meta-count">(8)</em>:</strong>
+            <span class="Meta-value Meta-value--linkList">
+            
+                <a href="select-material-like--light.html">
+                    <span>Light</span>
+                </a>, 
+            
+                <a href="select-material-like--dark.html">
+                    <span>Dark</span>
+                </a>, 
+            
+                <a href="select-material-like--with-helper-light.html">
+                    <span>With Helper Light</span>
+                </a>, 
+            
+                <a href="select-material-like--with-helper-dark.html">
+                    <span>With Helper Dark</span>
+                </a>, 
+            
+                <a href="select-material-like--with-error-light.html">
+                    <span>With Error Light</span>
+                </a>, 
+            
+                <a href="select-material-like--with-error-dark.html">
+                    <span>With Error Dark</span>
+                </a>, 
+            
+                <a href="">
+                    <span>With Error And Helper Light</span>
+                </a>, 
+            
+                <a href="select-material-like--with-error-and-helper-dark.html">
+                    <span>With Error And Helper Dark</span>
+                </a>
+            
+            </span>
+        </li>
+        
+        <li class="Meta-item">
+            <strong class="Meta-key">Preview:</strong>
+            <span class="Meta-value">
+                <ul>
+                    <li><a data-no-pjax href="../preview/select-material-like--with-error-and-helper-light.html"><span>With layout</span> <svg fill="#000000" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 0h24v24H0z" fill="none"/>
+    <path d="M19 4H5c-1.11 0-2 .9-2 2v12c0 1.1.89 2 2 2h4v-2H5V8h14v10h-4v2h4c1.1 0 2-.9 2-2V6c0-1.1-.89-2-2-2zm-7 6l-4 4h3v6h2v-6h3l-4-4z"/>
+</svg>
+</a></li>
+                    <li><a data-no-pjax href="../render/select-material-like--with-error-and-helper-light.html"><span>Component only</span> <svg fill="#000000" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 0h24v24H0z" fill="none"/>
+    <path d="M19 4H5c-1.11 0-2 .9-2 2v12c0 1.1.89 2 2 2h4v-2H5V8h14v10h-4v2h4c1.1 0 2-.9 2-2V6c0-1.1-.89-2-2-2zm-7 6l-4 4h3v6h2v-6h3l-4-4z"/>
+</svg>
+</a></li>
+                </ul>
+            </span>
+        </li>
+        <li class="Meta-item">
+            <strong class="Meta-key">Filesystem Path:</strong>
+            <span class="Meta-value">src/components/select/select-material-like/select-material-like.hbs</span>
+        </li>
+        
+        
+    </ul>
+</div>
+
+    
+    <div class="Browser-panel Browser-notes" data-role="tab-panel" id="browser-7b1be833c4dc524803d2dbc4be2267a1-panel-notes">
+    <div class="Prose Prose--condensed">
+        
+        <p>The material like select shows a custom dropdown in Desktop browsers and the native dropdown on mobile browsers for the best usability. It’s implemented accessible, meaning it works when navigatin with the keyboard.  </p>
+<p>Why was the custom select in Desktop browsers necessary at all? Due to the fact that browsers are offering a very limited set of possibilities to style it. For example you can’t change the blue hover background color of options on Windows.</p>
+
+        
+    </div>
+</div>
+
+    
+
+</div>
+
+</div>
+
+
+    
+
+</div>
+
+
+            </div>
+        </div>
+
+        <div class="Frame-handle" data-role="frame-resize-handle"></div>
+        
+        <div class="Frame-panel Frame-panel--sidebar" data-role="sidebar">
+            <nav class="Navigation">
+
+    
+<div class="Navigation-group">
+
+<div class="Tree" data-behaviour="tree" id="tree-components">
+    <h3 class="Tree-title">components</h3>
+    <ul class="Tree-items Tree-depth-1">
+        
+    
+        
+        <li class="Tree-item Tree-collection Tree-depth-2" data-behaviour="collection" id="tree-components-collection-checkbox">
+            <h4 class="Tree-collectionLabel" data-role="toggle">
+                <span>Checkbox</span>
+            </h4>
+            <ul class="Tree-collectionItems" data-role="items">
+            
+            
+            
+            
+    
+        
+        <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-components-collection-checkbox-lite-checkmark">
+            <h4 class="Tree-collectionLabel" data-role="toggle">
+                <span>Checkbox Lite Checkmark</span>
+            </h4>
+            <ul class="Tree-collectionItems" data-role="items">
+            
+            
+            
+            
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="checkbox-lite-checkmark--light.html" data-pjax>
+                <span>Light</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="checkbox-lite-checkmark--dark.html" data-pjax>
+                <span>Dark</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+
+            </ul>
+        </li>
+        
+    
+        
+        <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-components-collection-checkbox-material-like">
+            <h4 class="Tree-collectionLabel" data-role="toggle">
+                <span>Checkbox Material Like</span>
+            </h4>
+            <ul class="Tree-collectionItems" data-role="items">
+            
+            
+            
+            
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="checkbox-material-like--light.html" data-pjax>
+                <span>Light</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="checkbox-material-like--dark.html" data-pjax>
+                <span>Dark</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="checkbox-material-like--with-helper-light.html" data-pjax>
+                <span>With Helper Light</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="checkbox-material-like--with-helper-dark.html" data-pjax>
+                <span>With Helper Dark</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="checkbox-material-like--with-error-light.html" data-pjax>
+                <span>With Error Light</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="checkbox-material-like--with-error-dark.html" data-pjax>
+                <span>With Error Dark</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="checkbox-material-like--with-error-and-helper-light.html" data-pjax>
+                <span>With Error And Helper Light</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="checkbox-material-like--with-error-and-helper-dark.html" data-pjax>
+                <span>With Error And Helper Dark</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+
+            </ul>
+        </li>
+        
+    
+
+            </ul>
+        </li>
+        
+    
+        
+        <li class="Tree-item Tree-collection Tree-depth-2" data-behaviour="collection" id="tree-components-collection-example-form">
+            <h4 class="Tree-collectionLabel" data-role="toggle">
+                <span>Example Form</span>
+            </h4>
+            <ul class="Tree-collectionItems" data-role="items">
+            
+            
+            
+            
+    
+        
+        <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-components-collection-example-form-material-like">
+            <h4 class="Tree-collectionLabel" data-role="toggle">
+                <span>Example Form Material Like</span>
+            </h4>
+            <ul class="Tree-collectionItems" data-role="items">
+            
+            
+            
+            
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="example-form-material-like--material-like.html" data-pjax>
+                <span>Material Like</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="example-form-material-like--material-like-with-backend-validation-errors.html" data-pjax>
+                <span>Material Like With Backend Validation Errors</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+
+            </ul>
+        </li>
+        
+    
+        
+        <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-components-collection-example-form-material-like-indent">
+            <h4 class="Tree-collectionLabel" data-role="toggle">
+                <span>Example Form Material Like Indent</span>
+            </h4>
+            <ul class="Tree-collectionItems" data-role="items">
+            
+            
+            
+            
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="example-form-material-like-indent--material-like-indent.html" data-pjax>
+                <span>Material Like Indent</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="example-form-material-like-indent--material-like-indent-with-backend-validation-errors.html" data-pjax>
+                <span>Material Like Indent With Backend Validation Errors</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+
+            </ul>
+        </li>
+        
+    
+
+            </ul>
+        </li>
+        
+    
+        
+        <li class="Tree-item Tree-collection Tree-depth-2" data-behaviour="collection" id="tree-components-collection-message">
+            <h4 class="Tree-collectionLabel" data-role="toggle">
+                <span>Message</span>
+            </h4>
+            <ul class="Tree-collectionItems" data-role="items">
+            
+            
+            
+            
+    
+        
+        <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-components-collection-message-material-like">
+            <h4 class="Tree-collectionLabel" data-role="toggle">
+                <span>Message Material Like</span>
+            </h4>
+            <ul class="Tree-collectionItems" data-role="items">
+            
+            
+            
+            
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="message-material-like--error.html" data-pjax>
+                <span>Error</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="message-material-like--warning.html" data-pjax>
+                <span>Warning</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="message-material-like--status.html" data-pjax>
+                <span>Status</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+
+            </ul>
+        </li>
+        
+    
+
+            </ul>
+        </li>
+        
+    
+        
+        <li class="Tree-item Tree-collection Tree-depth-2" data-behaviour="collection" id="tree-components-collection-radio">
+            <h4 class="Tree-collectionLabel" data-role="toggle">
+                <span>Radio</span>
+            </h4>
+            <ul class="Tree-collectionItems" data-role="items">
+            
+            
+            
+            
+    
+        
+        <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-components-collection-radio-material-like">
+            <h4 class="Tree-collectionLabel" data-role="toggle">
+                <span>Radio Material Like</span>
+            </h4>
+            <ul class="Tree-collectionItems" data-role="items">
+            
+            
+            
+            
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="radio-material-like--light.html" data-pjax>
+                <span>Light</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="radio-material-like--dark.html" data-pjax>
+                <span>Dark</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="radio-material-like--with-helper-light.html" data-pjax>
+                <span>With Helper Light</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="radio-material-like--with-helper-dark.html" data-pjax>
+                <span>With Helper Dark</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="radio-material-like--with-error-light.html" data-pjax>
+                <span>With Error Light</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="radio-material-like--with-error-dark.html" data-pjax>
+                <span>With Error Dark</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="radio-material-like--with-error-and-helper-light.html" data-pjax>
+                <span>With Error And Helper Light</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="radio-material-like--with-error-and-helper-dark.html" data-pjax>
+                <span>With Error And Helper Dark</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+
+            </ul>
+        </li>
+        
+    
+
+            </ul>
+        </li>
+        
+    
+        
+        <li class="Tree-item Tree-collection Tree-depth-2" data-behaviour="collection" id="tree-components-collection-select">
+            <h4 class="Tree-collectionLabel" data-role="toggle">
+                <span>Select</span>
+            </h4>
+            <ul class="Tree-collectionItems" data-role="items">
+            
+            
+            
+            
+    
+        
+        <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-components-collection-select-lite-arrow">
+            <h4 class="Tree-collectionLabel" data-role="toggle">
+                <span>Select Lite Arrow</span>
+            </h4>
+            <ul class="Tree-collectionItems" data-role="items">
+            
+            
+            
+            
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="select-lite-arrow--light.html" data-pjax>
+                <span>Light</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="select-lite-arrow--dark.html" data-pjax>
+                <span>Dark</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="select-lite-arrow--with-helper-light.html" data-pjax>
+                <span>With Helper Light</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="select-lite-arrow--with-helper-dark.html" data-pjax>
+                <span>With Helper Dark</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="select-lite-arrow--with-error-light.html" data-pjax>
+                <span>With Error Light</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="select-lite-arrow--with-error-dark.html" data-pjax>
+                <span>With Error Dark</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="select-lite-arrow--with-error-and-helper-light.html" data-pjax>
+                <span>With Error And Helper Light</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="select-lite-arrow--with-error-and-helper-dark.html" data-pjax>
+                <span>With Error And Helper Dark</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+
+            </ul>
+        </li>
+        
+    
+        
+        <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-components-collection-select-lite-arrow-indent">
+            <h4 class="Tree-collectionLabel" data-role="toggle">
+                <span>Select Lite Arrow Indent</span>
+            </h4>
+            <ul class="Tree-collectionItems" data-role="items">
+            
+            
+            
+            
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="select-lite-arrow-indent--light.html" data-pjax>
+                <span>Light</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="select-lite-arrow-indent--dark.html" data-pjax>
+                <span>Dark</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="select-lite-arrow-indent--with-helper-light.html" data-pjax>
+                <span>With Helper Light</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="select-lite-arrow-indent--with-helper-dark.html" data-pjax>
+                <span>With Helper Dark</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="select-lite-arrow-indent--with-error-light.html" data-pjax>
+                <span>With Error Light</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="select-lite-arrow-indent--with-error-dark.html" data-pjax>
+                <span>With Error Dark</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="select-lite-arrow-indent--with-error-and-helper-light.html" data-pjax>
+                <span>With Error And Helper Light</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="select-lite-arrow-indent--with-error-and-helper-dark.html" data-pjax>
+                <span>With Error And Helper Dark</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+
+            </ul>
+        </li>
+        
+    
+        
+        <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-components-collection-select-material-like">
+            <h4 class="Tree-collectionLabel" data-role="toggle">
+                <span>Select Material Like</span>
+            </h4>
+            <ul class="Tree-collectionItems" data-role="items">
+            
+            
+            
+            
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="select-material-like--light.html" data-pjax>
+                <span>Light</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="select-material-like--dark.html" data-pjax>
+                <span>Dark</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="select-material-like--with-helper-light.html" data-pjax>
+                <span>With Helper Light</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="select-material-like--with-helper-dark.html" data-pjax>
+                <span>With Helper Dark</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="select-material-like--with-error-light.html" data-pjax>
+                <span>With Error Light</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="select-material-like--with-error-dark.html" data-pjax>
+                <span>With Error Dark</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity is-current" data-state="current" data-role="item">
+            <a class="Tree-entityLink" href="" data-pjax>
+                <span>With Error And Helper Light</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="select-material-like--with-error-and-helper-dark.html" data-pjax>
+                <span>With Error And Helper Dark</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+
+            </ul>
+        </li>
+        
+    
+        
+        <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-components-collection-select-material-like-indent">
+            <h4 class="Tree-collectionLabel" data-role="toggle">
+                <span>Select Material Like Indent</span>
+            </h4>
+            <ul class="Tree-collectionItems" data-role="items">
+            
+            
+            
+            
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="select-material-like-indent--light.html" data-pjax>
+                <span>Light</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="select-material-like-indent--dark.html" data-pjax>
+                <span>Dark</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="select-material-like-indent--with-helper-light.html" data-pjax>
+                <span>With Helper Light</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="select-material-like-indent--with-helper-dark.html" data-pjax>
+                <span>With Helper Dark</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="select-material-like-indent--with-error-light.html" data-pjax>
+                <span>With Error Light</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="select-material-like-indent--with-error-dark.html" data-pjax>
+                <span>With Error Dark</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="select-material-like-indent--with-error-and-helper-light.html" data-pjax>
+                <span>With Error And Helper Light</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="select-material-like-indent--with-error-and-helper-dark.html" data-pjax>
+                <span>With Error And Helper Dark</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+
+            </ul>
+        </li>
+        
+    
+
+            </ul>
+        </li>
+        
+    
+        
+        <li class="Tree-item Tree-collection Tree-depth-2" data-behaviour="collection" id="tree-components-collection-text-area">
+            <h4 class="Tree-collectionLabel" data-role="toggle">
+                <span>Text Area</span>
+            </h4>
+            <ul class="Tree-collectionItems" data-role="items">
+            
+            
+            
+            
+    
+        
+        <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-components-collection-text-area-material-like">
+            <h4 class="Tree-collectionLabel" data-role="toggle">
+                <span>Text Area Material Like</span>
+            </h4>
+            <ul class="Tree-collectionItems" data-role="items">
+            
+            
+            
+            
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="text-area-material-like--light.html" data-pjax>
+                <span>Light</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="text-area-material-like--dark.html" data-pjax>
+                <span>Dark</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="text-area-material-like--with-helper-light.html" data-pjax>
+                <span>With Helper Light</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="text-area-material-like--with-helper-dark.html" data-pjax>
+                <span>With Helper Dark</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="text-area-material-like--with-error-light.html" data-pjax>
+                <span>With Error Light</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="text-area-material-like--with-error-dark.html" data-pjax>
+                <span>With Error Dark</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="text-area-material-like--with-error-and-helper-light.html" data-pjax>
+                <span>With Error And Helper Light</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="text-area-material-like--with-error-and-helper-dark.html" data-pjax>
+                <span>With Error And Helper Dark</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+
+            </ul>
+        </li>
+        
+    
+
+            </ul>
+        </li>
+        
+    
+        
+        <li class="Tree-item Tree-collection Tree-depth-2" data-behaviour="collection" id="tree-components-collection-text-field">
+            <h4 class="Tree-collectionLabel" data-role="toggle">
+                <span>Text Field</span>
+            </h4>
+            <ul class="Tree-collectionItems" data-role="items">
+            
+            
+            
+            
+    
+        
+        <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-components-collection-text-field-material-like">
+            <h4 class="Tree-collectionLabel" data-role="toggle">
+                <span>Text Field Material Like</span>
+            </h4>
+            <ul class="Tree-collectionItems" data-role="items">
+            
+            
+            
+            
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="text-field-material-like--light.html" data-pjax>
+                <span>Light</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="text-field-material-like--dark.html" data-pjax>
+                <span>Dark</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="text-field-material-like--with-helper-light.html" data-pjax>
+                <span>With Helper Light</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="text-field-material-like--with-helper-dark.html" data-pjax>
+                <span>With Helper Dark</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="text-field-material-like--with-error-light.html" data-pjax>
+                <span>With Error Light</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="text-field-material-like--with-error-dark.html" data-pjax>
+                <span>With Error Dark</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="text-field-material-like--with-error-and-helper-light.html" data-pjax>
+                <span>With Error And Helper Light</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="text-field-material-like--with-error-and-helper-dark.html" data-pjax>
+                <span>With Error And Helper Dark</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+
+            </ul>
+        </li>
+        
+    
+        
+        <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-components-collection-text-field-material-like-indent">
+            <h4 class="Tree-collectionLabel" data-role="toggle">
+                <span>Text Field Material Like Indent</span>
+            </h4>
+            <ul class="Tree-collectionItems" data-role="items">
+            
+            
+            
+            
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="text-field-material-like-indent--light.html" data-pjax>
+                <span>Light</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="text-field-material-like-indent--dark.html" data-pjax>
+                <span>Dark</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="text-field-material-like-indent--with-helper-light.html" data-pjax>
+                <span>With Helper Light</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="text-field-material-like-indent--with-helper-dark.html" data-pjax>
+                <span>With Helper Dark</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="text-field-material-like-indent--with-error-light.html" data-pjax>
+                <span>With Error Light</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="text-field-material-like-indent--with-error-dark.html" data-pjax>
+                <span>With Error Dark</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="text-field-material-like-indent--with-error-and-helper-light.html" data-pjax>
+                <span>With Error And Helper Light</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="text-field-material-like-indent--with-error-and-helper-dark.html" data-pjax>
+                <span>With Error And Helper Dark</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+
+            </ul>
+        </li>
+        
+    
+
+            </ul>
+        </li>
+        
+    
+
+    </ul>
+</div>
+
+</div>
+
+
+
+    
+<div class="Navigation-group">
+
+<div class="Tree" data-behaviour="tree" id="tree-docs">
+    <h3 class="Tree-title">documentation</h3>
+    <ul class="Tree-items Tree-depth-1">
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="../../index.html" data-pjax>
+                <span>Form Components</span>
+                
+            </a>
+        </li>
+        
+    
+
+    </ul>
+</div>
+
+</div>
+
+
+
+    
+
+
+</nav>
+
+        </div>
+    </div>
+</div>
+
+
+
+
+<script src="../../themes/mandelbrot/js/mandelbrot.js?cachebust=1.2.1"></script>
+
+<script src="https://buttons.github.io/buttons.js?cachebust=1.2.1"></script>
+
+
+
+</body>
+</html>

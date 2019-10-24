@@ -14,7 +14,7 @@
 <link rel="stylesheet" href="../../themes/mandelbrot/css/navy.css?cachebust=1.2.1" type="text/css">
 
 
-<title>Text Area Material Like | Form Components v0.14.1</title>
+<title>Text Area Material Like | Form Components v1.0.0</title>
 
 </head>
 <body>
@@ -44,7 +44,7 @@
 </svg>
 
     </button>
-    <a href="../../index.html" class="Header-title" data-pjax>Form Components v0.14.1</a>
+    <a href="../../index.html" class="Header-title" data-pjax>Form Components v1.0.0</a>
     <a class="github-button" href="https://github.com/julmot/form-components" data-size="large" aria-label="Star julmot/form-components on GitHub">Star</a>
 </div>
 
@@ -171,7 +171,7 @@
         <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"text-area__label"</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"text"</span>&gt;</span>Text<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
     <span class="hljs-comment">&lt;!-- <span class="hljs-doctag">NOTE:</span> This div is reserved for field-specific error messages by a backend --&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"text-area__error"</span>&gt;</span>Please provide a value for this field<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-comment">&lt;!--&lt;div class="text-area__error"&gt;Put in the error message here...&lt;/div&gt;--&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></pre>
         
     </code>
@@ -185,6 +185,9 @@
     <span class="hljs-tag">&lt;<span class="hljs-name">textarea</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"text-area__input"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"</span></span></span><span class="hljs-template-variable">{{id}}</span><span class="xml"><span class="hljs-tag"><span class="hljs-string">"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"</span></span></span><span class="hljs-template-variable">{{name}}</span><span class="xml"><span class="hljs-tag"><span class="hljs-string">"</span> </span></span><span class="hljs-template-tag">{{#<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> value}}</span><span class="xml"><span class="hljs-tag"><span class="hljs-attr">value</span>=<span class="hljs-string">"</span></span></span><span class="hljs-template-variable">{{value}}</span><span class="xml"><span class="hljs-tag"><span class="hljs-string">"</span></span></span><span class="hljs-template-tag">{{/<span class="hljs-name"><span class="hljs-builtin-name">if</span></span>}}</span><span class="xml"><span class="hljs-tag"> </span></span><span class="hljs-template-tag">{{#<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> disabled}}</span><span class="xml"><span class="hljs-tag"><span class="hljs-attr">disabled</span></span></span><span class="hljs-template-tag">{{/<span class="hljs-name"><span class="hljs-builtin-name">if</span></span>}}</span><span class="xml"><span class="hljs-tag"> </span></span><span class="hljs-template-tag">{{#<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> required }}</span><span class="xml"><span class="hljs-tag"><span class="hljs-attr">required</span>=<span class="hljs-string">"true"</span></span></span><span class="hljs-template-tag">{{/<span class="hljs-name"><span class="hljs-builtin-name">if</span></span>}}</span><span class="xml"><span class="hljs-tag">&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">textarea</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"text-area__label"</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"</span></span></span><span class="hljs-template-variable">{{id}}</span><span class="xml"><span class="hljs-tag"><span class="hljs-string">"</span>&gt;</span></span><span class="hljs-template-variable">{{label}}</span><span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  </span><span class="hljs-template-tag">{{#<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> helper}}</span><span class="xml">
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"text-area__helper"</span>&gt;</span></span><span class="hljs-template-variable">{{helper}}</span><span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  </span><span class="hljs-template-tag">{{/<span class="hljs-name"><span class="hljs-builtin-name">if</span></span>}}</span><span class="xml">
   <span class="hljs-comment">&lt;!-- <span class="hljs-doctag">NOTE:</span> This div is reserved for field-specific error messages by a backend --&gt;</span>
   </span><span class="hljs-template-tag">{{#<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> error}}</span><span class="xml">
     <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"text-area__error"</span>&gt;</span></span><span class="hljs-template-variable">{{error}}</span><span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
@@ -206,8 +209,7 @@
   <span class="hljs-attr">"label"</span>: <span class="hljs-string">"Text"</span>,
   <span class="hljs-attr">"required"</span>: <span class="hljs-literal">false</span>,
   <span class="hljs-attr">"value"</span>: <span class="hljs-string">""</span>,
-  <span class="hljs-attr">"disabled"</span>: <span class="hljs-literal">false</span>,
-  <span class="hljs-attr">"error"</span>: <span class="hljs-string">"Please provide a value for this field"</span>
+  <span class="hljs-attr">"disabled"</span>: <span class="hljs-literal">false</span>
 }</pre>
             
         
@@ -352,6 +354,8 @@ $textAreaLabelFontFamily: inherit;
 $textAreaFontSize: 1.125rem;
 $textAreaLineHeight: 1.375rem;
 $textAreaFontFamily: inherit;
+$textAreaErrorFontSize: 1rem;
+$textAreaHelperFontSize: 1rem;
 
 // size settings
 $textAreaHeight: $textAreaLineHeight * 5;
@@ -390,6 +394,9 @@ $variants: "dark", "light";
 
     $textAreaErrorColor: $red !global;
 
+    $textAreaHelperColor: $black !global;
+    $textAreaHelperInvalidColor: $black !global;
+
     $textAreaBorderTabbedColor: #95a5a6 !global;
   } @else {
     // color settings
@@ -416,6 +423,9 @@ $variants: "dark", "light";
     $textAreaLabelInvalidFilledInActiveColor: $textAreaLabelInvalidColor !global;
 
     $textAreaErrorColor: $red !global;
+
+    $textAreaHelperColor: $white !global;
+    $textAreaHelperInvalidColor: $white !global;
 
     $textAreaBorderTabbedColor: #95a5a6 !global;
   }
@@ -602,12 +612,26 @@ $variants: "dark", "light";
        * Error
        ************************************************************************/
       #{$block}__error {
+        font-size: $textAreaErrorFontSize;
         color: $textAreaErrorColor;
         margin: 5px 0;
 
         a {
           color: $textAreaErrorColor;
         }
+      }
+
+      /*************************************************************************
+       * Helper
+       ************************************************************************/
+      #{$block}__helper {
+        font-size: $textAreaHelperFontSize;
+        color: $textAreaHelperColor;
+        margin: 5px 0;
+      }
+
+      &amp;.is-invalid #{$block}__helper {
+        color: $textAreaHelperInvalidColor;
       }
     }
   }
@@ -628,7 +652,7 @@ $variants: "dark", "light";
                 </li>
                 <li class="Meta-item">
                     <strong class="Meta-key">Size:</strong>
-                    <span class="Meta-value">10.1 KB</span>
+                    <span class="Meta-value">10.8 KB</span>
                 </li>
             </ul>
         </div>
@@ -651,15 +675,39 @@ $variants: "dark", "light";
         
         
         <li class="Meta-item">
-            <strong class="Meta-key">Variants <em class="Meta-count">(2)</em>:</strong>
+            <strong class="Meta-key">Variants <em class="Meta-count">(8)</em>:</strong>
             <span class="Meta-value Meta-value--linkList">
             
-                <a href="text-area-material-like--default-light.html">
-                    <span>Default Light</span>
+                <a href="text-area-material-like--light.html">
+                    <span>Light</span>
                 </a>, 
             
-                <a href="text-area-material-like--default-dark.html">
-                    <span>Default Dark</span>
+                <a href="text-area-material-like--dark.html">
+                    <span>Dark</span>
+                </a>, 
+            
+                <a href="text-area-material-like--with-helper-light.html">
+                    <span>With Helper Light</span>
+                </a>, 
+            
+                <a href="text-area-material-like--with-helper-dark.html">
+                    <span>With Helper Dark</span>
+                </a>, 
+            
+                <a href="text-area-material-like--with-error-light.html">
+                    <span>With Error Light</span>
+                </a>, 
+            
+                <a href="text-area-material-like--with-error-dark.html">
+                    <span>With Error Dark</span>
+                </a>, 
+            
+                <a href="text-area-material-like--with-error-and-helper-light.html">
+                    <span>With Error And Helper Light</span>
+                </a>, 
+            
+                <a href="text-area-material-like--with-error-and-helper-dark.html">
+                    <span>With Error And Helper Dark</span>
                 </a>
             
             </span>
@@ -768,8 +816,8 @@ $variants: "dark", "light";
         
         
         <li class="Tree-item Tree-entity" data-role="item">
-            <a class="Tree-entityLink" href="checkbox-lite-checkmark--default-light.html" data-pjax>
-                <span>Default Light</span>
+            <a class="Tree-entityLink" href="checkbox-lite-checkmark--light.html" data-pjax>
+                <span>Light</span>
                 
 
 <div class="Status Status--unlabelled">
@@ -792,8 +840,8 @@ $variants: "dark", "light";
         
         
         <li class="Tree-item Tree-entity" data-role="item">
-            <a class="Tree-entityLink" href="checkbox-lite-checkmark--default-dark.html" data-pjax>
-                <span>Default Dark</span>
+            <a class="Tree-entityLink" href="checkbox-lite-checkmark--dark.html" data-pjax>
+                <span>Dark</span>
                 
 
 <div class="Status Status--unlabelled">
@@ -832,8 +880,8 @@ $variants: "dark", "light";
         
         
         <li class="Tree-item Tree-entity" data-role="item">
-            <a class="Tree-entityLink" href="checkbox-material-like--default-light.html" data-pjax>
-                <span>Default Light</span>
+            <a class="Tree-entityLink" href="checkbox-material-like--light.html" data-pjax>
+                <span>Light</span>
                 
 
 <div class="Status Status--unlabelled">
@@ -856,8 +904,152 @@ $variants: "dark", "light";
         
         
         <li class="Tree-item Tree-entity" data-role="item">
-            <a class="Tree-entityLink" href="checkbox-material-like--default-dark.html" data-pjax>
-                <span>Default Dark</span>
+            <a class="Tree-entityLink" href="checkbox-material-like--dark.html" data-pjax>
+                <span>Dark</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="checkbox-material-like--with-helper-light.html" data-pjax>
+                <span>With Helper Light</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="checkbox-material-like--with-helper-dark.html" data-pjax>
+                <span>With Helper Dark</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="checkbox-material-like--with-error-light.html" data-pjax>
+                <span>With Error Light</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="checkbox-material-like--with-error-dark.html" data-pjax>
+                <span>With Error Dark</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="checkbox-material-like--with-error-and-helper-light.html" data-pjax>
+                <span>With Error And Helper Light</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="checkbox-material-like--with-error-and-helper-dark.html" data-pjax>
+                <span>With Error And Helper Dark</span>
                 
 
 <div class="Status Status--unlabelled">
@@ -1160,8 +1352,8 @@ $variants: "dark", "light";
         
         
         <li class="Tree-item Tree-entity" data-role="item">
-            <a class="Tree-entityLink" href="radio-material-like--default-light.html" data-pjax>
-                <span>Default Light</span>
+            <a class="Tree-entityLink" href="radio-material-like--light.html" data-pjax>
+                <span>Light</span>
                 
 
 <div class="Status Status--unlabelled">
@@ -1184,8 +1376,152 @@ $variants: "dark", "light";
         
         
         <li class="Tree-item Tree-entity" data-role="item">
-            <a class="Tree-entityLink" href="radio-material-like--default-dark.html" data-pjax>
-                <span>Default Dark</span>
+            <a class="Tree-entityLink" href="radio-material-like--dark.html" data-pjax>
+                <span>Dark</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="radio-material-like--with-helper-light.html" data-pjax>
+                <span>With Helper Light</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="radio-material-like--with-helper-dark.html" data-pjax>
+                <span>With Helper Dark</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="radio-material-like--with-error-light.html" data-pjax>
+                <span>With Error Light</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="radio-material-like--with-error-dark.html" data-pjax>
+                <span>With Error Dark</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="radio-material-like--with-error-and-helper-light.html" data-pjax>
+                <span>With Error And Helper Light</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="radio-material-like--with-error-and-helper-dark.html" data-pjax>
+                <span>With Error And Helper Dark</span>
                 
 
 <div class="Status Status--unlabelled">
@@ -1240,8 +1576,8 @@ $variants: "dark", "light";
         
         
         <li class="Tree-item Tree-entity" data-role="item">
-            <a class="Tree-entityLink" href="select-lite-arrow--default-light.html" data-pjax>
-                <span>Default Light</span>
+            <a class="Tree-entityLink" href="select-lite-arrow--light.html" data-pjax>
+                <span>Light</span>
                 
 
 <div class="Status Status--unlabelled">
@@ -1264,8 +1600,152 @@ $variants: "dark", "light";
         
         
         <li class="Tree-item Tree-entity" data-role="item">
-            <a class="Tree-entityLink" href="select-lite-arrow--default-dark.html" data-pjax>
-                <span>Default Dark</span>
+            <a class="Tree-entityLink" href="select-lite-arrow--dark.html" data-pjax>
+                <span>Dark</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="select-lite-arrow--with-helper-light.html" data-pjax>
+                <span>With Helper Light</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="select-lite-arrow--with-helper-dark.html" data-pjax>
+                <span>With Helper Dark</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="select-lite-arrow--with-error-light.html" data-pjax>
+                <span>With Error Light</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="select-lite-arrow--with-error-dark.html" data-pjax>
+                <span>With Error Dark</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="select-lite-arrow--with-error-and-helper-light.html" data-pjax>
+                <span>With Error And Helper Light</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="select-lite-arrow--with-error-and-helper-dark.html" data-pjax>
+                <span>With Error And Helper Dark</span>
                 
 
 <div class="Status Status--unlabelled">
@@ -1304,8 +1784,8 @@ $variants: "dark", "light";
         
         
         <li class="Tree-item Tree-entity" data-role="item">
-            <a class="Tree-entityLink" href="select-lite-arrow-indent--default-light.html" data-pjax>
-                <span>Default Light</span>
+            <a class="Tree-entityLink" href="select-lite-arrow-indent--light.html" data-pjax>
+                <span>Light</span>
                 
 
 <div class="Status Status--unlabelled">
@@ -1328,8 +1808,152 @@ $variants: "dark", "light";
         
         
         <li class="Tree-item Tree-entity" data-role="item">
-            <a class="Tree-entityLink" href="select-lite-arrow-indent--default-dark.html" data-pjax>
-                <span>Default Dark</span>
+            <a class="Tree-entityLink" href="select-lite-arrow-indent--dark.html" data-pjax>
+                <span>Dark</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="select-lite-arrow-indent--with-helper-light.html" data-pjax>
+                <span>With Helper Light</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="select-lite-arrow-indent--with-helper-dark.html" data-pjax>
+                <span>With Helper Dark</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="select-lite-arrow-indent--with-error-light.html" data-pjax>
+                <span>With Error Light</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="select-lite-arrow-indent--with-error-dark.html" data-pjax>
+                <span>With Error Dark</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="select-lite-arrow-indent--with-error-and-helper-light.html" data-pjax>
+                <span>With Error And Helper Light</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="select-lite-arrow-indent--with-error-and-helper-dark.html" data-pjax>
+                <span>With Error And Helper Dark</span>
                 
 
 <div class="Status Status--unlabelled">
@@ -1368,8 +1992,8 @@ $variants: "dark", "light";
         
         
         <li class="Tree-item Tree-entity" data-role="item">
-            <a class="Tree-entityLink" href="select-material-like--default-light.html" data-pjax>
-                <span>Default Light</span>
+            <a class="Tree-entityLink" href="select-material-like--light.html" data-pjax>
+                <span>Light</span>
                 
 
 <div class="Status Status--unlabelled">
@@ -1392,8 +2016,152 @@ $variants: "dark", "light";
         
         
         <li class="Tree-item Tree-entity" data-role="item">
-            <a class="Tree-entityLink" href="select-material-like--default-dark.html" data-pjax>
-                <span>Default Dark</span>
+            <a class="Tree-entityLink" href="select-material-like--dark.html" data-pjax>
+                <span>Dark</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="select-material-like--with-helper-light.html" data-pjax>
+                <span>With Helper Light</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="select-material-like--with-helper-dark.html" data-pjax>
+                <span>With Helper Dark</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="select-material-like--with-error-light.html" data-pjax>
+                <span>With Error Light</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="select-material-like--with-error-dark.html" data-pjax>
+                <span>With Error Dark</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="select-material-like--with-error-and-helper-light.html" data-pjax>
+                <span>With Error And Helper Light</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="select-material-like--with-error-and-helper-dark.html" data-pjax>
+                <span>With Error And Helper Dark</span>
                 
 
 <div class="Status Status--unlabelled">
@@ -1432,8 +2200,8 @@ $variants: "dark", "light";
         
         
         <li class="Tree-item Tree-entity" data-role="item">
-            <a class="Tree-entityLink" href="select-material-like-indent--default-light.html" data-pjax>
-                <span>Default Light</span>
+            <a class="Tree-entityLink" href="select-material-like-indent--light.html" data-pjax>
+                <span>Light</span>
                 
 
 <div class="Status Status--unlabelled">
@@ -1456,8 +2224,152 @@ $variants: "dark", "light";
         
         
         <li class="Tree-item Tree-entity" data-role="item">
-            <a class="Tree-entityLink" href="select-material-like-indent--default-dark.html" data-pjax>
-                <span>Default Dark</span>
+            <a class="Tree-entityLink" href="select-material-like-indent--dark.html" data-pjax>
+                <span>Dark</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="select-material-like-indent--with-helper-light.html" data-pjax>
+                <span>With Helper Light</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="select-material-like-indent--with-helper-dark.html" data-pjax>
+                <span>With Helper Dark</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="select-material-like-indent--with-error-light.html" data-pjax>
+                <span>With Error Light</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="select-material-like-indent--with-error-dark.html" data-pjax>
+                <span>With Error Dark</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="select-material-like-indent--with-error-and-helper-light.html" data-pjax>
+                <span>With Error And Helper Light</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="select-material-like-indent--with-error-and-helper-dark.html" data-pjax>
+                <span>With Error And Helper Dark</span>
                 
 
 <div class="Status Status--unlabelled">
@@ -1512,8 +2424,8 @@ $variants: "dark", "light";
         
         
         <li class="Tree-item Tree-entity" data-role="item">
-            <a class="Tree-entityLink" href="text-area-material-like--default-light.html" data-pjax>
-                <span>Default Light</span>
+            <a class="Tree-entityLink" href="text-area-material-like--light.html" data-pjax>
+                <span>Light</span>
                 
 
 <div class="Status Status--unlabelled">
@@ -1536,8 +2448,152 @@ $variants: "dark", "light";
         
         
         <li class="Tree-item Tree-entity" data-role="item">
-            <a class="Tree-entityLink" href="text-area-material-like--default-dark.html" data-pjax>
-                <span>Default Dark</span>
+            <a class="Tree-entityLink" href="text-area-material-like--dark.html" data-pjax>
+                <span>Dark</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="text-area-material-like--with-helper-light.html" data-pjax>
+                <span>With Helper Light</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="text-area-material-like--with-helper-dark.html" data-pjax>
+                <span>With Helper Dark</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="text-area-material-like--with-error-light.html" data-pjax>
+                <span>With Error Light</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="text-area-material-like--with-error-dark.html" data-pjax>
+                <span>With Error Dark</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="text-area-material-like--with-error-and-helper-light.html" data-pjax>
+                <span>With Error And Helper Light</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="text-area-material-like--with-error-and-helper-dark.html" data-pjax>
+                <span>With Error And Helper Dark</span>
                 
 
 <div class="Status Status--unlabelled">
@@ -1592,8 +2648,8 @@ $variants: "dark", "light";
         
         
         <li class="Tree-item Tree-entity" data-role="item">
-            <a class="Tree-entityLink" href="text-field-material-like--default-light.html" data-pjax>
-                <span>Default Light</span>
+            <a class="Tree-entityLink" href="text-field-material-like--light.html" data-pjax>
+                <span>Light</span>
                 
 
 <div class="Status Status--unlabelled">
@@ -1616,8 +2672,152 @@ $variants: "dark", "light";
         
         
         <li class="Tree-item Tree-entity" data-role="item">
-            <a class="Tree-entityLink" href="text-field-material-like--default-dark.html" data-pjax>
-                <span>Default Dark</span>
+            <a class="Tree-entityLink" href="text-field-material-like--dark.html" data-pjax>
+                <span>Dark</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="text-field-material-like--with-helper-light.html" data-pjax>
+                <span>With Helper Light</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="text-field-material-like--with-helper-dark.html" data-pjax>
+                <span>With Helper Dark</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="text-field-material-like--with-error-light.html" data-pjax>
+                <span>With Error Light</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="text-field-material-like--with-error-dark.html" data-pjax>
+                <span>With Error Dark</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="text-field-material-like--with-error-and-helper-light.html" data-pjax>
+                <span>With Error And Helper Light</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="text-field-material-like--with-error-and-helper-dark.html" data-pjax>
+                <span>With Error And Helper Dark</span>
                 
 
 <div class="Status Status--unlabelled">
@@ -1656,8 +2856,8 @@ $variants: "dark", "light";
         
         
         <li class="Tree-item Tree-entity" data-role="item">
-            <a class="Tree-entityLink" href="text-field-material-like-indent--default-light.html" data-pjax>
-                <span>Default Light</span>
+            <a class="Tree-entityLink" href="text-field-material-like-indent--light.html" data-pjax>
+                <span>Light</span>
                 
 
 <div class="Status Status--unlabelled">
@@ -1680,8 +2880,152 @@ $variants: "dark", "light";
         
         
         <li class="Tree-item Tree-entity" data-role="item">
-            <a class="Tree-entityLink" href="text-field-material-like-indent--default-dark.html" data-pjax>
-                <span>Default Dark</span>
+            <a class="Tree-entityLink" href="text-field-material-like-indent--dark.html" data-pjax>
+                <span>Dark</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="text-field-material-like-indent--with-helper-light.html" data-pjax>
+                <span>With Helper Light</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="text-field-material-like-indent--with-helper-dark.html" data-pjax>
+                <span>With Helper Dark</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="text-field-material-like-indent--with-error-light.html" data-pjax>
+                <span>With Error Light</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="text-field-material-like-indent--with-error-dark.html" data-pjax>
+                <span>With Error Dark</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="text-field-material-like-indent--with-error-and-helper-light.html" data-pjax>
+                <span>With Error And Helper Light</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="text-field-material-like-indent--with-error-and-helper-dark.html" data-pjax>
+                <span>With Error And Helper Dark</span>
                 
 
 <div class="Status Status--unlabelled">

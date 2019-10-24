@@ -13,6 +13,8 @@ $radioFontSize: 1.125rem;
 $radioLineHeight: 1.35rem;
 $radioIconFontSize: 1.25rem;
 $radioFontFamily: inherit;
+$radioErrorFontSize: 1rem;
+$radioHelperFontSize: 1rem;
 
 // Need to use string here due to:
 // https://github.com/webpack-contrib/sass-loader/issues/487
@@ -28,7 +30,9 @@ $variants: "dark", "light";
     $radioBorderErrorColor: $red !global;
     $radioLinkColor: $radioColor !global;
     $radioLinkColorHover: $clouds !global;
-    $radioErrorMsgColor: $red !global;
+    $radioErrorColor: $red !global;
+    $radioHelperColor: $black !global;
+    $radioHelperInvalidColor: $black !global;
     $radioFocusBorderColor: #95a5a6 !global;
   } @else {
     // color settings
@@ -40,7 +44,9 @@ $variants: "dark", "light";
     $radioBorderErrorColor: $red !global;
     $radioLinkColor: $radioColor !global;
     $radioLinkColorHover: $clouds !global;
-    $radioErrorMsgColor: $red !global;
+    $radioErrorColor: $red !global;
+    $radioHelperColor: $white !global;
+    $radioHelperInvalidColor: $white !global;
     $radioFocusBorderColor: #95a5a6 !global;
   }
 
@@ -159,12 +165,26 @@ $variants: "dark", "light";
        * Error message
        ************************************************************************/
       #{$block}__error {
-        color: $radioErrorMsgColor;
+        font-size: $radioErrorFontSize;
+        color: $radioErrorColor;
         margin: 5px 0;
 
         a {
-          color: $radioErrorMsgColor;
+          color: $radioErrorColor;
         }
+      }
+
+      /*************************************************************************
+       * Helper
+       ************************************************************************/
+      #{$block}__helper {
+        font-size: $radioHelperFontSize;
+        color: $radioHelperColor;
+        margin: 5px 0;
+      }
+
+      &.is-invalid #{$block}__helper {
+        color: $radioHelperInvalidColor;
       }
     }
   }
