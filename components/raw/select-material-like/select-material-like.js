@@ -13,7 +13,7 @@ export class Select extends FormComponent {
     super.init();
 
     this.wrapper = context.querySelector('.select__wrapper');
-    this.error = context.querySelector('.select__error');
+    this.helperField = context.querySelector('.select__helper');
     this.dropdown = null;
     this.dropdownOptions = [];
     this.userInfo = Bowser.parse(window.navigator.userAgent);
@@ -37,10 +37,12 @@ export class Select extends FormComponent {
       this.dropdown.appendChild(option);
       return option;
     });
-    if (!this.error) {
-      this.context.appendChild(this.dropdown);
+    if (this.helperField) {
+      this.context.insertBefore(this.dropdown, this.helperField);
+    } else if (this.errorField) {
+      this.context.insertBefore(this.dropdown, this.errorField);
     } else {
-      this.context.insertBefore(this.dropdown, this.error);
+      this.context.appendChild(this.dropdown);
     }
   }
 

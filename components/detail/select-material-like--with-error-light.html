@@ -14,7 +14,7 @@
 <link rel="stylesheet" href="../../themes/mandelbrot/css/navy.css?cachebust=1.2.1" type="text/css">
 
 
-<title>Select Material Like: With Error Light | Form Components v1.0.1</title>
+<title>Select Material Like: With Error Light | Form Components v1.0.2</title>
 
 </head>
 <body>
@@ -44,7 +44,7 @@
 </svg>
 
     </button>
-    <a href="../../index.html" class="Header-title" data-pjax>Form Components v1.0.1</a>
+    <a href="../../index.html" class="Header-title" data-pjax>Form Components v1.0.2</a>
     <a class="github-button" href="https://github.com/julmot/form-components" data-size="large" aria-label="Star julmot/form-components on GitHub">Star</a>
 </div>
 
@@ -336,7 +336,7 @@
     <span class="hljs-keyword">super</span>.init();
 
     <span class="hljs-keyword">this</span>.wrapper = context.querySelector(<span class="hljs-string">'.select__wrapper'</span>);
-    <span class="hljs-keyword">this</span>.error = context.querySelector(<span class="hljs-string">'.select__error'</span>);
+    <span class="hljs-keyword">this</span>.helperField = context.querySelector(<span class="hljs-string">'.select__helper'</span>);
     <span class="hljs-keyword">this</span>.dropdown = <span class="hljs-literal">null</span>;
     <span class="hljs-keyword">this</span>.dropdownOptions = [];
     <span class="hljs-keyword">this</span>.userInfo = Bowser.parse(<span class="hljs-built_in">window</span>.navigator.userAgent);
@@ -360,10 +360,12 @@
       <span class="hljs-keyword">this</span>.dropdown.appendChild(option);
       <span class="hljs-keyword">return</span> option;
     });
-    <span class="hljs-keyword">if</span> (!<span class="hljs-keyword">this</span>.error) {
-      <span class="hljs-keyword">this</span>.context.appendChild(<span class="hljs-keyword">this</span>.dropdown);
+    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.helperField) {
+      <span class="hljs-keyword">this</span>.context.insertBefore(<span class="hljs-keyword">this</span>.dropdown, <span class="hljs-keyword">this</span>.helperField);
+    } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.errorField) {
+      <span class="hljs-keyword">this</span>.context.insertBefore(<span class="hljs-keyword">this</span>.dropdown, <span class="hljs-keyword">this</span>.errorField);
     } <span class="hljs-keyword">else</span> {
-      <span class="hljs-keyword">this</span>.context.insertBefore(<span class="hljs-keyword">this</span>.dropdown, <span class="hljs-keyword">this</span>.error);
+      <span class="hljs-keyword">this</span>.context.appendChild(<span class="hljs-keyword">this</span>.dropdown);
     }
   }
 
@@ -602,7 +604,7 @@
                 </li>
                 <li class="Meta-item">
                     <strong class="Meta-key">Size:</strong>
-                    <span class="Meta-value">7.9 KB</span>
+                    <span class="Meta-value">8 KB</span>
                 </li>
             </ul>
         </div>
