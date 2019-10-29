@@ -1,6 +1,6 @@
 {
   "name": "@julmot/form-components",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Custom Form Components. Without Any Framework. Accessible.",
   "keywords": [
     "form",
@@ -38,7 +38,7 @@
     "concurrently": "^5.0.0",
     "css-loader": "^3.2.0",
     "del-cli": "^3.0.0",
-    "eslint": "^6.5.1",
+    "eslint": "^6.6.0",
     "eslint-loader": "^3.0.2",
     "file-loader": "^4.2.0",
     "fs-extra": "^8.1.0",
@@ -46,7 +46,7 @@
     "grunt": "^1.0.4",
     "grunt-replace": "^1.0.1",
     "grunt-webfont": "^1.7.2",
-    "handlebars": "^4.4.5",
+    "handlebars": "^4.5.1",
     "jit-grunt": "^0.10.0",
     "mini-css-extract-plugin": "^0.8.0",
     "node-sass": "^4.13.0",

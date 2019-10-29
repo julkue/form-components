@@ -11,21 +11,19 @@ export default class FormComponent {
     this.label = this.context.querySelector('label');
   }
 
-  init() {
-    if (this.field.hasAttribute('disabled')) {
-      this.context.classList.add('is-disabled');
-    }
-    if (!this.label) {
-      this.context.classList.add('has-no-label');
-    }
+  init(reinit = false) {
+    this.context.classList[this.field.hasAttribute('disabled') ? 'add' : 'remove']('is-disabled');
+    this.context.classList[!this.label ? 'add' : 'remove']('has-no-label');
     if (this.errorField) {
       this.setInvalid();
     }
     this.setIsFilledIn();
-    this.initFocus();
-    this.context.classList.add('is-initialized');
-    if (this.options.debug) {
-      console.debug(`${this.name} initialized`);
+    if (!reinit) {
+      this.initFocus();
+      this.context.classList.add('is-initialized');
+      if (this.options.debug) {
+        console.debug(`${this.name} initialized`);
+      }
     }
   }
 
@@ -60,6 +58,7 @@ export default class FormComponent {
     });
     this.field.addEventListener('fieldReset', () => {
       this.setIsFilledIn();
+      this.init(true);
     });
   }
 
