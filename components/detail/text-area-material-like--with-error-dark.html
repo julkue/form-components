@@ -14,7 +14,7 @@
 <link rel="stylesheet" href="../../themes/mandelbrot/css/navy.css?cachebust=1.2.1" type="text/css">
 
 
-<title>Text Area Material Like: With Error Dark | Form Components v1.0.3</title>
+<title>Text Area Material Like: With Error Dark | Form Components v1.0.4</title>
 
 </head>
 <body>
@@ -44,7 +44,7 @@
 </svg>
 
     </button>
-    <a href="../../index.html" class="Header-title" data-pjax>Form Components v1.0.3</a>
+    <a href="../../index.html" class="Header-title" data-pjax>Form Components v1.0.4</a>
     <a class="github-button" href="https://github.com/julmot/form-components" data-size="large" aria-label="Star julmot/form-components on GitHub">Star</a>
 </div>
 
@@ -412,12 +412,12 @@ $variants: "dark", "light";
     $textAreaBackgroundInvalidColor: $white !global;
     $textAreaBackgroundInvalidActiveColor: $white !global;
 
-    $textAreaColor: $white !global;
-    $textAreaActiveColor: $white !global;
-    $textAreaInvalidColor: $white !global;
-    $textAreaInvalidActiveColor: $white !global;
+    $textAreaColor: $black !global;
+    $textAreaActiveColor: $black !global;
+    $textAreaInvalidColor: $black !global;
+    $textAreaInvalidActiveColor: $black !global;
 
-    $textAreaLabelColor: $white !global;
+    $textAreaLabelColor: $black !global;
     $textAreaLabelFilledInColor: $textAreaLabelColor !global;
     $textAreaLabelFilledInActiveColor: $textAreaLabelColor !global;
     $textAreaLabelInvalidColor: $red !global;
@@ -452,16 +452,19 @@ $variants: "dark", "light";
         padding: 1px;
         box-sizing: border-box;
         border-radius: $textAreaBorderRadius;
+        background: $textAreaBackgroundColor;
 
+        // Fix inconsistency in Chrome
+        // https://stackoverflow.com/questions/24923424/textarea-padding-inconsistency-in-firefox-and-chrome
         &amp;:before {
           position: absolute;
-          top: 1px;
-          left: 1px;
-          width: calc(100% - 30px - 2px); // 30px == scrollbar reserve, 2px border
-          height: calc(#{$textAreaLabelFontSizeFilledIn} + #{$textAreaPaddingY} + #{$textAreaLabelSpacing});
+          top: 0;
+          left: 0;
+          width: calc(100% - 25px - 2px); // 25px == scrollbar reserve, 2px border
           background: $textAreaBackgroundColor;
           content: "";
           z-index: 1;
+          height: calc(#{$textAreaLabelFontSizeFilledIn} + #{$textAreaPaddingY} + #{$textAreaLabelSpacing});
         }
       }
 
@@ -469,6 +472,10 @@ $variants: "dark", "light";
         border-width: 2px;
         border-color: $textAreaBorderActiveColor;
         padding: 0;
+
+        &amp;:before {
+          height: calc(#{$textAreaLabelFontSizeFilledIn} + #{$textAreaPaddingY} + #{$textAreaLabelSpacing} - 1px);
+        }
       }
 
       &amp;.is-invalid #{$block}__wrapper {
@@ -540,7 +547,7 @@ $variants: "dark", "light";
         left: 0;
         height: $textAreaHeight;
         line-height: $textAreaLineHeight;
-        width: calc(100% - 30px); // 30px == scrollbar reserve
+        width: calc(100% - 25px); // 25px == scrollbar reserve
         box-sizing: border-box;
         cursor: text;
         padding: 0 0 0 $textAreaPaddingX;
@@ -674,7 +681,7 @@ $variants: "dark", "light";
                 </li>
                 <li class="Meta-item">
                     <strong class="Meta-key">Size:</strong>
-                    <span class="Meta-value">11.3 KB</span>
+                    <span class="Meta-value">11.6 KB</span>
                 </li>
             </ul>
         </div>

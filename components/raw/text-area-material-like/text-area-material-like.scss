@@ -72,12 +72,12 @@ $variants: "dark", "light";
     $textAreaBackgroundInvalidColor: $white !global;
     $textAreaBackgroundInvalidActiveColor: $white !global;
 
-    $textAreaColor: $white !global;
-    $textAreaActiveColor: $white !global;
-    $textAreaInvalidColor: $white !global;
-    $textAreaInvalidActiveColor: $white !global;
+    $textAreaColor: $black !global;
+    $textAreaActiveColor: $black !global;
+    $textAreaInvalidColor: $black !global;
+    $textAreaInvalidActiveColor: $black !global;
 
-    $textAreaLabelColor: $white !global;
+    $textAreaLabelColor: $black !global;
     $textAreaLabelFilledInColor: $textAreaLabelColor !global;
     $textAreaLabelFilledInActiveColor: $textAreaLabelColor !global;
     $textAreaLabelInvalidColor: $red !global;
@@ -112,16 +112,19 @@ $variants: "dark", "light";
         padding: 1px;
         box-sizing: border-box;
         border-radius: $textAreaBorderRadius;
+        background: $textAreaBackgroundColor;
 
+        // Fix inconsistency in Chrome
+        // https://stackoverflow.com/questions/24923424/textarea-padding-inconsistency-in-firefox-and-chrome
         &:before {
           position: absolute;
-          top: 1px;
-          left: 1px;
-          width: calc(100% - 30px - 2px); // 30px == scrollbar reserve, 2px border
-          height: calc(#{$textAreaLabelFontSizeFilledIn} + #{$textAreaPaddingY} + #{$textAreaLabelSpacing});
+          top: 0;
+          left: 0;
+          width: calc(100% - 25px - 2px); // 25px == scrollbar reserve, 2px border
           background: $textAreaBackgroundColor;
           content: "";
           z-index: 1;
+          height: calc(#{$textAreaLabelFontSizeFilledIn} + #{$textAreaPaddingY} + #{$textAreaLabelSpacing});
         }
       }
 
@@ -129,6 +132,10 @@ $variants: "dark", "light";
         border-width: 2px;
         border-color: $textAreaBorderActiveColor;
         padding: 0;
+
+        &:before {
+          height: calc(#{$textAreaLabelFontSizeFilledIn} + #{$textAreaPaddingY} + #{$textAreaLabelSpacing} - 1px);
+        }
       }
 
       &.is-invalid #{$block}__wrapper {
@@ -200,7 +207,7 @@ $variants: "dark", "light";
         left: 0;
         height: $textAreaHeight;
         line-height: $textAreaLineHeight;
-        width: calc(100% - 30px); // 30px == scrollbar reserve
+        width: calc(100% - 25px); // 25px == scrollbar reserve
         box-sizing: border-box;
         cursor: text;
         padding: 0 0 0 $textAreaPaddingX;
