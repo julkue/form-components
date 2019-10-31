@@ -378,10 +378,10 @@ $variants: "dark", "light";
     $textAreaBorderInvalidColor: $red !global;
     $textAreaBorderInvalidActiveColor: $red !global;
 
-    $textAreaBackgroundColor: transparent !global;
-    $textAreaBackgroundActiveColor: transparent !global;
-    $textAreaBackgroundInvalidColor: transparent !global;
-    $textAreaBackgroundInvalidActiveColor: transparent !global;
+    $textAreaBackgroundColor: $white !global;
+    $textAreaBackgroundActiveColor: $white !global;
+    $textAreaBackgroundInvalidColor: $white !global;
+    $textAreaBackgroundInvalidActiveColor: $white !global;
 
     $textAreaColor: $black !global;
     $textAreaActiveColor: $black !global;
@@ -408,10 +408,10 @@ $variants: "dark", "light";
     $textAreaBorderInvalidColor: $red !global;
     $textAreaBorderInvalidActiveColor: $red !global;
 
-    $textAreaBackgroundColor: transparent !global;
-    $textAreaBackgroundActiveColor: transparent !global;
-    $textAreaBackgroundInvalidColor: transparent !global;
-    $textAreaBackgroundInvalidActiveColor: transparent !global;
+    $textAreaBackgroundColor: $white !global;
+    $textAreaBackgroundActiveColor: $white !global;
+    $textAreaBackgroundInvalidColor: $white !global;
+    $textAreaBackgroundInvalidActiveColor: $white !global;
 
     $textAreaColor: $white !global;
     $textAreaActiveColor: $white !global;
@@ -453,15 +453,29 @@ $variants: "dark", "light";
         padding: 1px;
         box-sizing: border-box;
         border-radius: $textAreaBorderRadius;
+
+        &amp;:before {
+          position: absolute;
+          top: 1px;
+          left: 1px;
+          width: calc(100% - 30px - 2px); // 30px == scrollbar reserve, 2px border
+          height: calc(#{$textAreaLabelFontSizeFilledIn} + #{$textAreaPaddingY} + #{$textAreaLabelSpacing});
+          background: $textAreaBackgroundColor;
+          content: "";
+          z-index: 1;
+        }
       }
+
       &amp;.is-focused #{$block}__wrapper {
         border-width: 2px;
         border-color: $textAreaBorderActiveColor;
         padding: 0;
       }
+
       &amp;.is-invalid #{$block}__wrapper {
         border-color: $textAreaBorderInvalidColor;
       }
+
       &amp;.is-invalid.is-focused #{$block}__wrapper {
         border-color: $textAreaBorderInvalidActiveColor;
       }
@@ -527,16 +541,17 @@ $variants: "dark", "light";
         left: 0;
         height: $textAreaHeight;
         line-height: $textAreaLineHeight;
-        width: 100%;
+        width: calc(100% - 30px); // 30px == scrollbar reserve
         box-sizing: border-box;
         cursor: text;
-        padding: 0 $textAreaPaddingX;
+        padding: 0 0 0 $textAreaPaddingX;
         font-size: $textAreaLabelFontSize;
         font-family: $textAreaLabelFontFamily;
         color: $textAreaLabelColor;
         user-select: none;
         background-color: transparent;
         transform: translateY(0);
+        z-index: 2;
         @include transition("transform .275s", "height .275s", "font-size .275s", "color .275s", "line-height .275s");
       }
 
@@ -561,6 +576,7 @@ $variants: "dark", "light";
         color: $textAreaLabelFilledInColor;
         line-height: $textAreaLabelFontSizeFilledIn;
       }
+
       #{$block}__input:-webkit-autofill + #{$block}__label {
         // webkit autofill is used to remove the delay between Chrome, which
         // fills in predefined data, and JS that's being loaded
@@ -578,6 +594,7 @@ $variants: "dark", "light";
         margin-top: -1px;
         margin-left: -1px;
       }
+
       &amp;.is-filled-in.is-focused #{$block}__input:-webkit-autofill + #{$block}__label {
         color: $textAreaLabelFilledInActiveColor;
         margin-top: -1px;
@@ -589,6 +606,7 @@ $variants: "dark", "light";
       &amp;.is-invalid:not(.is-initialized) #{$block}__label {
         color: $textAreaLabelInvalidColor;
       }
+
       &amp;.is-invalid #{$block}__input:-webkit-autofill + #{$block}__label {
         color: $textAreaLabelInvalidColor;
       }
@@ -598,6 +616,7 @@ $variants: "dark", "light";
       &amp;.is-invalid.is-filled-in:not(.is-initialized) #{$block}__label {
         color: $textAreaLabelInvalidFilledInColor;
       }
+
       &amp;.is-invalid.is-filled-in #{$block}__input:-webkit-autofill + #{$block}__label {
         color: $textAreaLabelInvalidFilledInColor;
       }
@@ -607,6 +626,7 @@ $variants: "dark", "light";
       &amp;.is-invalid.is-filled-in.is-focused:not(.is-initialized) #{$block}__label {
         color: $textAreaLabelInvalidFilledInActiveColor;
       }
+
       &amp;.is-invalid.is-filled-in.is-focused #{$block}__input:-webkit-autofill + #{$block}__label {
         color: $textAreaLabelInvalidFilledInActiveColor;
       }
@@ -655,7 +675,7 @@ $variants: "dark", "light";
                 </li>
                 <li class="Meta-item">
                     <strong class="Meta-key">Size:</strong>
-                    <span class="Meta-value">10.8 KB</span>
+                    <span class="Meta-value">11.3 KB</span>
                 </li>
             </ul>
         </div>
