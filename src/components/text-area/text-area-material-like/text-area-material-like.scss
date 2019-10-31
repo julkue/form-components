@@ -37,10 +37,10 @@ $variants: "dark", "light";
     $textAreaBorderInvalidColor: $red !global;
     $textAreaBorderInvalidActiveColor: $red !global;
 
-    $textAreaBackgroundColor: transparent !global;
-    $textAreaBackgroundActiveColor: transparent !global;
-    $textAreaBackgroundInvalidColor: transparent !global;
-    $textAreaBackgroundInvalidActiveColor: transparent !global;
+    $textAreaBackgroundColor: $white !global;
+    $textAreaBackgroundActiveColor: $white !global;
+    $textAreaBackgroundInvalidColor: $white !global;
+    $textAreaBackgroundInvalidActiveColor: $white !global;
 
     $textAreaColor: $black !global;
     $textAreaActiveColor: $black !global;
@@ -67,10 +67,10 @@ $variants: "dark", "light";
     $textAreaBorderInvalidColor: $red !global;
     $textAreaBorderInvalidActiveColor: $red !global;
 
-    $textAreaBackgroundColor: transparent !global;
-    $textAreaBackgroundActiveColor: transparent !global;
-    $textAreaBackgroundInvalidColor: transparent !global;
-    $textAreaBackgroundInvalidActiveColor: transparent !global;
+    $textAreaBackgroundColor: $white !global;
+    $textAreaBackgroundActiveColor: $white !global;
+    $textAreaBackgroundInvalidColor: $white !global;
+    $textAreaBackgroundInvalidActiveColor: $white !global;
 
     $textAreaColor: $white !global;
     $textAreaActiveColor: $white !global;
@@ -112,6 +112,17 @@ $variants: "dark", "light";
         padding: 1px;
         box-sizing: border-box;
         border-radius: $textAreaBorderRadius;
+
+        &:before {
+          position: absolute;
+          top: 1px;
+          left: 1px;
+          width: calc(100% - 30px - 2px); // 30px == scrollbar reserve, 2px border
+          height: calc(#{$textAreaLabelFontSizeFilledIn} + #{$textAreaPaddingY} + #{$textAreaLabelSpacing});
+          background: $textAreaBackgroundColor;
+          content: "";
+          z-index: 1;
+        }
       }
 
       &.is-focused #{$block}__wrapper {
@@ -199,6 +210,7 @@ $variants: "dark", "light";
         user-select: none;
         background-color: transparent;
         transform: translateY(0);
+        z-index: 2;
         @include transition("transform .275s", "height .275s", "font-size .275s", "color .275s", "line-height .275s");
       }
 
