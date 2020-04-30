@@ -91,6 +91,13 @@ Parameters: The `submit` event
 
 A callback when the form was submitted valid.
 
+**getFocusMessageOffset**
+
+Type: function  
+Default: `function(){ return 10; }`
+
+A callback to overwrite the default 10px y-offset of the message from the top of the page. The retured value must be a number (without the suffix 'px').
+
 ### Message
 
 **focusOnStart**
