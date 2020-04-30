@@ -11,7 +11,7 @@
     <script>var cl = document.querySelector('html').classList; cl.remove('no-js'); cl.add('has-js');</script>
     <link rel="shortcut icon" href="../../themes/mandelbrot/favicon.ico" type="image/ico">
 
-<link rel="stylesheet" href="../../themes/mandelbrot/css/navy.css?cachebust=1.2.1" type="text/css">
+<link rel="stylesheet" href="../../themes/mandelbrot/css/navy.css?cachebust=1.3.0" type="text/css">
 
 
 <title>Select Material Like: With Error And Helper Dark | Form Components v1.0.4</title>
@@ -618,7 +618,7 @@
                         <div class="FileBrowser-itemPreview">
                             
                             <code class="Code Code--lang-SCSS FileBrowser-code">
-                                <pre>@<span class="hljs-keyword">import</span> <span class="hljs-string">"~shared/base"</span>;
+                                <pre><span class="hljs-keyword">@import</span> <span class="hljs-string">"~shared/base"</span>;
 
 <span class="hljs-comment">/*******************************************************************************
  * Contextual classes:
@@ -655,8 +655,8 @@
 <span class="hljs-comment">// Need to use string here due to:</span>
 <span class="hljs-comment">// https://github.com/webpack-contrib/sass-loader/issues/487</span>
 <span class="hljs-variable">$variants</span>: <span class="hljs-string">"dark"</span>, <span class="hljs-string">"light"</span>;
-@<span class="hljs-keyword">each</span> <span class="hljs-variable">$color</span> in <span class="hljs-variable">$variants</span> {
-  @<span class="hljs-keyword">if</span> <span class="hljs-variable">$color</span> == <span class="hljs-string">"light"</span> {
+<span class="hljs-keyword">@each</span> <span class="hljs-variable">$color</span> in <span class="hljs-variable">$variants</span> {
+  <span class="hljs-keyword">@if</span> <span class="hljs-variable">$color</span> == <span class="hljs-string">"light"</span> {
     <span class="hljs-comment">// color settings</span>
     <span class="hljs-variable">$selectBackgroundColor</span>: transparent !global;
     <span class="hljs-variable">$selectBackgroundActiveColor</span>: <span class="hljs-variable">$selectBackgroundColor</span> !global;
@@ -697,7 +697,7 @@
     <span class="hljs-variable">$selectDropdownOptionHoverColor</span>: <span class="hljs-variable">$selectDropdownOptionColor</span> !global;
     <span class="hljs-variable">$selectDropdownOptionActiveBackgroundColor</span>: <span class="hljs-number">#EEEEEE</span> !global;
     <span class="hljs-variable">$selectDropdownOptionActiveColor</span>: <span class="hljs-variable">$black</span> !global;
-  } @<span class="hljs-keyword">else</span> {
+  } <span class="hljs-keyword">@else</span> {
     <span class="hljs-comment">// color settings</span>
     <span class="hljs-variable">$selectBackgroundColor</span>: transparent !global;
     <span class="hljs-variable">$selectBackgroundActiveColor</span>: <span class="hljs-variable">$selectBackgroundColor</span> !global;
@@ -769,7 +769,7 @@
         <span class="hljs-attribute">height</span>: <span class="hljs-variable">$selectHeight</span>;
         <span class="hljs-attribute">padding-top</span>: <span class="hljs-variable">$selectLabelFontSize</span>;
         <span class="hljs-attribute">overflow</span>: hidden; <span class="hljs-comment">// for IE text indent fix (see below in select)</span>
-        @<span class="hljs-keyword">include</span> form-components-icons-after(<span class="hljs-string">"arrow-down-material"</span>);
+        <span class="hljs-keyword">@include</span> form-components-icons-after(<span class="hljs-string">"arrow-down-material"</span>);
         &amp;, * {
           user-<span class="hljs-selector-tag">select</span>: none;
         }
@@ -777,7 +777,7 @@
         <span class="hljs-comment">// <span class="hljs-doctag">NOTE:</span> Specify the arrow on a wrapper as after, as using background</span>
         <span class="hljs-comment">// image on the select itself will be overwritten by Chrome's autofill</span>
         <span class="hljs-comment">// feature</span>
-        &amp;:after {
+        &amp;<span class="hljs-selector-pseudo">:after</span> {
           <span class="hljs-attribute">position</span>: absolute;
           <span class="hljs-attribute">top</span>: <span class="hljs-variable">$selectLabelFontSize</span>;
           <span class="hljs-attribute">right</span>: <span class="hljs-number">0</span>;
@@ -791,7 +791,7 @@
 
       <span class="hljs-comment">// Opened</span>
       &amp;<span class="hljs-selector-class">.is-open</span> #{<span class="hljs-variable">$block</span>}__wrapper {
-        &amp;:after {
+        &amp;<span class="hljs-selector-pseudo">:after</span> {
           <span class="hljs-attribute">transform</span>: rotate(-<span class="hljs-number">180deg</span>);
         }
       }
@@ -800,28 +800,28 @@
       &amp;<span class="hljs-selector-class">.has-no-label</span> #{<span class="hljs-variable">$block</span>}__wrapper {
         <span class="hljs-attribute">padding-top</span>: <span class="hljs-number">0</span>;
 
-        &amp;:after {
+        &amp;<span class="hljs-selector-pseudo">:after</span> {
           <span class="hljs-attribute">top</span>: <span class="hljs-number">0</span>;
         }
       }
 
       <span class="hljs-comment">// Active</span>
       &amp;<span class="hljs-selector-class">.is-focused</span> #{<span class="hljs-variable">$block</span>}__wrapper {
-        &amp;:after {
+        &amp;<span class="hljs-selector-pseudo">:after</span> {
           <span class="hljs-attribute">color</span>: <span class="hljs-variable">$selectArrowActiveColor</span>;
         }
       }
 
       <span class="hljs-comment">// Invalid</span>
       &amp;<span class="hljs-selector-class">.is-invalid</span> #{<span class="hljs-variable">$block</span>}__wrapper {
-        &amp;:after {
+        &amp;<span class="hljs-selector-pseudo">:after</span> {
           <span class="hljs-attribute">color</span>: <span class="hljs-variable">$selectArrowInvalidColor</span>;
         }
       }
 
       <span class="hljs-comment">// Invalid &amp; Active</span>
       &amp;<span class="hljs-selector-class">.is-invalid</span><span class="hljs-selector-class">.is-focused</span> #{<span class="hljs-variable">$block</span>}__wrapper {
-        &amp;:after {
+        &amp;<span class="hljs-selector-pseudo">:after</span> {
           <span class="hljs-attribute">color</span>: <span class="hljs-variable">$selectArrowInvalidActiveColor</span>;
         }
       }
@@ -831,8 +831,8 @@
        ************************************************************************/</span>
       #{<span class="hljs-variable">$block</span>}__select {
         &amp;,
-        &amp;:invalid,
-        &amp;:required {
+        &amp;<span class="hljs-selector-pseudo">:invalid</span>,
+        &amp;<span class="hljs-selector-pseudo">:required</span> {
           <span class="hljs-attribute">font-size</span>: <span class="hljs-variable">$selectFontSize</span>;
           <span class="hljs-attribute">font-family</span>: <span class="hljs-variable">$selectFontFamily</span>;
           <span class="hljs-attribute">height</span>: <span class="hljs-variable">$selectHeight</span>;
@@ -857,7 +857,7 @@
 
           <span class="hljs-comment">// Some hacks to remove native text indentation of select fields, as</span>
           <span class="hljs-comment">// described in: https://stackoverflow.com/a/45976351/3894981</span>
-          @-moz-document url-prefix() {
+          <span class="hljs-keyword">@-moz-document</span> url-prefix() {
             <span class="hljs-comment">// Firefox only</span>
             &amp; {
               <span class="hljs-attribute">text-indent</span>: -<span class="hljs-number">2px</span>
@@ -870,7 +870,7 @@
               <span class="hljs-attribute">margin-left</span>: -<span class="hljs-number">4px</span>;
             }
           }
-          @<span class="hljs-keyword">media</span> screen and (-ms-high-contrast: active), screen and (-ms-high-contrast: none) {
+          <span class="hljs-keyword">@media</span> screen <span class="hljs-keyword">and</span> (-ms-high-contrast: active), screen <span class="hljs-keyword">and</span> (-ms-high-contrast: none) {
             <span class="hljs-comment">// IE11 only</span>
             &amp; {
               <span class="hljs-attribute">width</span>: calc(<span class="hljs-number">100%</span> + <span class="hljs-number">4px</span>);
@@ -897,12 +897,12 @@
 
           <span class="hljs-comment">// as we have overridden ms-value, we need to fix that in high</span>
           <span class="hljs-comment">// contrast mode</span>
-          @<span class="hljs-keyword">media</span> screen and (-ms-high-contrast: white-on-black) {
+          <span class="hljs-keyword">@media</span> screen <span class="hljs-keyword">and</span> (-ms-high-contrast: white-on-black) {
             &amp;::-ms-value {
               color: <span class="hljs-variable">$a11yTextColorWhiteOnBlack</span> <span class="hljs-meta">!important</span>;
             }
           }
-          @<span class="hljs-keyword">media</span> screen and (-ms-high-contrast: black-on-white) {
+          <span class="hljs-keyword">@media</span> screen <span class="hljs-keyword">and</span> (-ms-high-contrast: black-on-white) {
             &amp;::-ms-value {
               color: <span class="hljs-variable">$a11yTextColorBlackOnWhite</span> <span class="hljs-meta">!important</span>;
             }
@@ -911,7 +911,7 @@
           <span class="hljs-comment">// use a "bug" of Chrome to overwrite autofill styling</span>
           <span class="hljs-comment">// https://stackoverflow.com/a/37432260/3894981</span>
           <span class="hljs-comment">// !important is necessary as it won't work otherwise</span>
-          @-webkit-keyframes autofill {
+          <span class="hljs-keyword">@-webkit-keyframes</span> autofill {
             to {
               <span class="hljs-attribute">color</span>: <span class="hljs-variable">$selectColor</span> <span class="hljs-meta">!important</span>;
               <span class="hljs-attribute">background-color</span>: <span class="hljs-variable">$selectBackgroundColor</span>;
@@ -927,8 +927,8 @@
       <span class="hljs-comment">// Active</span>
       &amp;<span class="hljs-selector-class">.is-focused</span> #{<span class="hljs-variable">$block</span>}__select {
         &amp;,
-        &amp;:invalid,
-        &amp;:required {
+        &amp;<span class="hljs-selector-pseudo">:invalid</span>,
+        &amp;<span class="hljs-selector-pseudo">:required</span> {
           <span class="hljs-attribute">background</span>: <span class="hljs-variable">$selectBackgroundActiveColor</span>;
           <span class="hljs-attribute">color</span>: <span class="hljs-variable">$selectActiveColor</span>;
           <span class="hljs-attribute">border-color</span>: <span class="hljs-variable">$selectBorderBottomActiveColor</span>;
@@ -947,7 +947,7 @@
             <span class="hljs-attribute">color</span>: <span class="hljs-variable">$selectActiveColor</span>;
           }
 
-          @-webkit-keyframes autofill {
+          <span class="hljs-keyword">@-webkit-keyframes</span> autofill {
             to {
               <span class="hljs-attribute">color</span>: <span class="hljs-variable">$selectActiveColor</span> <span class="hljs-meta">!important</span>;
               <span class="hljs-attribute">background-color</span>: <span class="hljs-variable">$selectBackgroundActiveColor</span>;
@@ -959,8 +959,8 @@
       <span class="hljs-comment">// Invalid</span>
       &amp;<span class="hljs-selector-class">.is-invalid</span> #{<span class="hljs-variable">$block</span>}__select {
         &amp;,
-        &amp;:invalid,
-        &amp;:required {
+        &amp;<span class="hljs-selector-pseudo">:invalid</span>,
+        &amp;<span class="hljs-selector-pseudo">:required</span> {
           <span class="hljs-attribute">background</span>: <span class="hljs-variable">$selectBackgroundInvalidColor</span>;
           <span class="hljs-attribute">color</span>: <span class="hljs-variable">$selectInvalidColor</span>;
           <span class="hljs-attribute">border-color</span>: <span class="hljs-variable">$selectBorderBottomInvalidColor</span>;
@@ -979,7 +979,7 @@
             <span class="hljs-attribute">color</span>: <span class="hljs-variable">$selectInvalidColor</span>;
           }
 
-          @-webkit-keyframes autofill {
+          <span class="hljs-keyword">@-webkit-keyframes</span> autofill {
             to {
               <span class="hljs-attribute">color</span>: <span class="hljs-variable">$selectInvalidColor</span> <span class="hljs-meta">!important</span>;
               <span class="hljs-attribute">background-color</span>: <span class="hljs-variable">$selectBackgroundInvalidColor</span>;
@@ -991,8 +991,8 @@
       <span class="hljs-comment">// Invalid &amp; Active</span>
       &amp;<span class="hljs-selector-class">.is-invalid</span><span class="hljs-selector-class">.is-focused</span> #{<span class="hljs-variable">$block</span>}__select {
         &amp;,
-        &amp;:invalid,
-        &amp;:required {
+        &amp;<span class="hljs-selector-pseudo">:invalid</span>,
+        &amp;<span class="hljs-selector-pseudo">:required</span> {
           <span class="hljs-attribute">background</span>: <span class="hljs-variable">$selectBackgroundInvalidActiveColor</span>;
           <span class="hljs-attribute">color</span>: <span class="hljs-variable">$selectInvalidActiveColor</span>;
           <span class="hljs-attribute">border-color</span>: <span class="hljs-variable">$selectBorderBottomInvalidActiveColor</span>;
@@ -1011,7 +1011,7 @@
             <span class="hljs-attribute">color</span>: <span class="hljs-variable">$selectInvalidActiveColor</span>;
           }
 
-          @-webkit-keyframes autofill {
+          <span class="hljs-keyword">@-webkit-keyframes</span> autofill {
             to {
               <span class="hljs-attribute">color</span>: <span class="hljs-variable">$selectInvalidActiveColor</span> <span class="hljs-meta">!important</span>;
               <span class="hljs-attribute">background-color</span>: <span class="hljs-variable">$selectBackgroundInvalidActiveColor</span>;
@@ -1096,10 +1096,10 @@
           <span class="hljs-attribute">background-color</span>: <span class="hljs-variable">$selectDropdownOptionActiveBackgroundColor</span>;
           <span class="hljs-attribute">color</span>: <span class="hljs-variable">$selectDropdownOptionActiveColor</span>;
 
-          @<span class="hljs-keyword">media</span> screen and (-ms-high-contrast: white-on-black) {
+          <span class="hljs-keyword">@media</span> screen <span class="hljs-keyword">and</span> (-ms-high-contrast: white-on-black) {
             <span class="hljs-attribute">color</span>: <span class="hljs-variable">$a11yTextHighlightColorWhiteOnBlack</span>;
           }
-          @<span class="hljs-keyword">media</span> screen and (-ms-high-contrast: black-on-white) {
+          <span class="hljs-keyword">@media</span> screen <span class="hljs-keyword">and</span> (-ms-high-contrast: black-on-white) {
             <span class="hljs-attribute">color</span>: <span class="hljs-variable">$a11yTextHighlightColorBlackOnWhite</span>;
           }
         }
@@ -1108,7 +1108,7 @@
           <span class="hljs-attribute">cursor</span>: not-allowed;
         }
 
-        &amp;:not(<span class="hljs-selector-class">.is-disabled</span>):hover {
+        &amp;<span class="hljs-selector-pseudo">:not</span>(<span class="hljs-selector-class">.is-disabled</span>)<span class="hljs-selector-pseudo">:hover</span> {
           <span class="hljs-attribute">background-color</span>: <span class="hljs-variable">$selectDropdownOptionHoverBackgroundColor</span>;
           <span class="hljs-attribute">color</span>: <span class="hljs-variable">$selectDropdownOptionHoverColor</span>;
         }
@@ -1272,11 +1272,19 @@
         </div>
 
         <div class="Frame-handle" data-role="frame-resize-handle"></div>
-        
+
         <div class="Frame-panel Frame-panel--sidebar" data-role="sidebar">
             <nav class="Navigation">
+    
+        <div class="Navigation-search">
+    <form action="" class="Search" data-behaviour="search">
+        <label class="Search-label" for="search-input">Search</label>
+        <input class="Search-input" id="search-input" type="text" placeholder="Enter keyword..." data-role="input">
+    </form>
+</div>
 
     
+        
 <div class="Navigation-group">
 
 <div class="Tree" data-behaviour="tree" id="tree-components">
@@ -3555,8 +3563,8 @@
 </div>
 
 
-
     
+        
 <div class="Navigation-group">
 
 <div class="Tree" data-behaviour="tree" id="tree-docs">
@@ -3581,10 +3589,25 @@
 </div>
 
 
+    
+        
 
     
+        <div class="Navigation-group">
+    <div class="Tree">
+        <div class="Tree-title">
+            Information
+        </div>
+        <div class="Tree-aside">
+            Built on:
+            <time datetime="2020-04-30T16:50:17.531Z">
+                4/30/2020
+            </time>
+        </div>
+    </div>
+</div>
 
-
+    
 </nav>
 
         </div>
@@ -3594,9 +3617,9 @@
 
 
 
-<script src="../../themes/mandelbrot/js/mandelbrot.js?cachebust=1.2.1"></script>
+<script src="../../themes/mandelbrot/js/mandelbrot.js?cachebust=1.3.0"></script>
 
-<script src="https://buttons.github.io/buttons.js?cachebust=1.2.1"></script>
+<script src="https://buttons.github.io/buttons.js?cachebust=1.3.0"></script>
 
 
 

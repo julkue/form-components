@@ -11,7 +11,7 @@
     <script>var cl = document.querySelector('html').classList; cl.remove('no-js'); cl.add('has-js');</script>
     <link rel="shortcut icon" href="../../themes/mandelbrot/favicon.ico" type="image/ico">
 
-<link rel="stylesheet" href="../../themes/mandelbrot/css/navy.css?cachebust=1.2.1" type="text/css">
+<link rel="stylesheet" href="../../themes/mandelbrot/css/navy.css?cachebust=1.3.0" type="text/css">
 
 
 <title>Message Material Like: Status | Form Components v1.0.4</title>
@@ -183,13 +183,13 @@
     
     <div class="Browser-panel Browser-code" data-role="tab-panel" id="browser-5c96dbfa8246c0dab8375fa2f921c37c-panel-view">
     <code class="Code Code--lang-handlebars">
-        <pre><span class="xml"></span><span class="hljs-template-tag">{{#<span class="hljs-name">ifCond</span> _self.name <span class="hljs-string">"==="</span> <span class="hljs-string">"error"</span>}}</span><span class="xml">
+        <pre><span class="hljs-template-tag">{{#<span class="hljs-name">ifCond</span> _self.name "===" "error"}}</span><span class="xml">
   <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"message--error </span></span></span><span class="hljs-template-tag">{{#<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> isHidden}}</span><span class="xml"><span class="hljs-tag"><span class="hljs-string">is-hidden</span></span></span><span class="hljs-template-tag">{{/<span class="hljs-name"><span class="hljs-builtin-name">if</span></span>}}</span><span class="xml"><span class="hljs-tag"><span class="hljs-string">"</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"alert"</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"message__container"</span>&gt;</span>
       <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"message__icon-container"</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"visually-hidden"</span>&gt;</span>Error message<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
         </span><span class="hljs-template-tag">{{#<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> message}}</span><span class="xml">
-          </span><span class="hljs-template-variable">{{{message}}</span><span class="xml">}
+          </span><span class="hljs-template-variable">{{{message}}}</span><span class="xml">
         </span><span class="hljs-template-variable">{{<span class="hljs-builtin-name">else</span>}}</span><span class="xml">
           <span class="hljs-tag">&lt;<span class="hljs-name">ul</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"message__list"</span>&gt;</span>
             <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"message__list-item"</span>&gt;</span>E-mail <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>field<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span> is required.<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
@@ -203,13 +203,13 @@
     <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 </span><span class="hljs-template-tag">{{/<span class="hljs-name">ifCond</span>}}</span><span class="xml">
-</span><span class="hljs-template-tag">{{#<span class="hljs-name">ifCond</span> _self.name <span class="hljs-string">"==="</span> <span class="hljs-string">"warning"</span>}}</span><span class="xml">
+</span><span class="hljs-template-tag">{{#<span class="hljs-name">ifCond</span> _self.name "===" "warning"}}</span><span class="xml">
   <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"message--warning </span></span></span><span class="hljs-template-tag">{{#<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> isHidden}}</span><span class="xml"><span class="hljs-tag"><span class="hljs-string">is-hidden</span></span></span><span class="hljs-template-tag">{{/<span class="hljs-name"><span class="hljs-builtin-name">if</span></span>}}</span><span class="xml"><span class="hljs-tag"><span class="hljs-string">"</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"alert"</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"message__container"</span>&gt;</span>
       <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"message__icon-container"</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"visually-hidden"</span>&gt;</span>Warning message<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
         </span><span class="hljs-template-tag">{{#<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> message}}</span><span class="xml">
-          </span><span class="hljs-template-variable">{{{message}}</span><span class="xml">}
+          </span><span class="hljs-template-variable">{{{message}}}</span><span class="xml">
         </span><span class="hljs-template-variable">{{<span class="hljs-builtin-name">else</span>}}</span><span class="xml">
           <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"message__text"</span>&gt;</span>Please <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>mind<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span> the gap.<span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>There might be a problem.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
         </span><span class="hljs-template-tag">{{/<span class="hljs-name"><span class="hljs-builtin-name">if</span></span>}}</span><span class="xml">
@@ -220,13 +220,13 @@
     <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 </span><span class="hljs-template-tag">{{/<span class="hljs-name">ifCond</span>}}</span><span class="xml">
-</span><span class="hljs-template-tag">{{#<span class="hljs-name">ifCond</span> _self.name <span class="hljs-string">"==="</span> <span class="hljs-string">"status"</span>}}</span><span class="xml">
+</span><span class="hljs-template-tag">{{#<span class="hljs-name">ifCond</span> _self.name "===" "status"}}</span><span class="xml">
   <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"message--status </span></span></span><span class="hljs-template-tag">{{#<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> isHidden}}</span><span class="xml"><span class="hljs-tag"><span class="hljs-string">is-hidden</span></span></span><span class="hljs-template-tag">{{/<span class="hljs-name"><span class="hljs-builtin-name">if</span></span>}}</span><span class="xml"><span class="hljs-tag"><span class="hljs-string">"</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"alert"</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"message__container"</span>&gt;</span>
       <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"message__icon-container"</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"visually-hidden"</span>&gt;</span>Status message<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
         </span><span class="hljs-template-tag">{{#<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> message}}</span><span class="xml">
-          </span><span class="hljs-template-variable">{{{message}}</span><span class="xml">}
+          </span><span class="hljs-template-variable">{{{message}}}</span><span class="xml">
         </span><span class="hljs-template-variable">{{<span class="hljs-builtin-name">else</span>}}</span><span class="xml">
           <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"message__text"</span>&gt;</span>Yip. That <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>action<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span> worked! Updated Page <span class="hljs-tag">&lt;<span class="hljs-name">em</span>&gt;</span>Test Title<span class="hljs-tag">&lt;/<span class="hljs-name">em</span>&gt;</span> successfully<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
         </span><span class="hljs-template-tag">{{/<span class="hljs-name"><span class="hljs-builtin-name">if</span></span>}}</span><span class="xml">
@@ -236,7 +236,7 @@
       <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-</span><span class="hljs-template-tag">{{/<span class="hljs-name">ifCond</span>}}</span><span class="xml"></span></pre>
+</span><span class="hljs-template-tag">{{/<span class="hljs-name">ifCond</span>}}</span></pre>
     </code>
 </div>
 
@@ -428,7 +428,7 @@
                         <div class="FileBrowser-itemPreview">
                             
                             <code class="Code Code--lang-SCSS FileBrowser-code">
-                                <pre>@<span class="hljs-keyword">import</span> <span class="hljs-string">"~shared/base"</span>;
+                                <pre><span class="hljs-keyword">@import</span> <span class="hljs-string">"~shared/base"</span>;
 
 <span class="hljs-variable">$fontFamily</span>: inherit;
 <span class="hljs-variable">$fontSize</span>: <span class="hljs-number">1.125rem</span>;
@@ -465,10 +465,10 @@
 
     <span class="hljs-comment">// in high contrast mode, no background color is displayed, therefore</span>
     <span class="hljs-comment">// use border as an alternative design pattern</span>
-    @<span class="hljs-keyword">media</span> screen and (-ms-high-contrast: white-on-black) {
+    <span class="hljs-keyword">@media</span> screen <span class="hljs-keyword">and</span> (-ms-high-contrast: white-on-black) {
       <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid <span class="hljs-variable">$a11yNonTextColorWhiteOnBlack</span>;
     }
-    @<span class="hljs-keyword">media</span> screen and (-ms-high-contrast: black-on-white) {
+    <span class="hljs-keyword">@media</span> screen <span class="hljs-keyword">and</span> (-ms-high-contrast: black-on-white) {
       <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid <span class="hljs-variable">$a11yNonTextColorBlackOnWhite</span>;
     }
 
@@ -482,16 +482,16 @@
     <span class="hljs-selector-tag">em</span> {
       <span class="hljs-comment">// em is used to indicate a title quote</span>
       <span class="hljs-attribute">font-style</span>: normal;
-      &amp;:before {
+      &amp;<span class="hljs-selector-pseudo">:before</span> {
         <span class="hljs-attribute">content</span>: <span class="hljs-string">"\00BB"</span>;
       }
-      &amp;:after {
+      &amp;<span class="hljs-selector-pseudo">:after</span> {
         <span class="hljs-attribute">content</span>: <span class="hljs-string">"\00AB"</span>;
       }
     }
 
     <span class="hljs-selector-tag">span</span><span class="hljs-selector-class">.visually-hidden</span> {
-      @<span class="hljs-keyword">include</span> visually-hidden;
+      <span class="hljs-keyword">@include</span> visually-hidden;
     }
   }
 
@@ -500,7 +500,7 @@
     <span class="hljs-attribute">color</span>: <span class="hljs-variable">$errorColor</span>;
 
     <span class="hljs-selector-tag">a</span> {
-      @<span class="hljs-keyword">include</span> link-underline-small(<span class="hljs-variable">$errorColor</span>, <span class="hljs-variable">$errorLinkHoverColor</span>);
+      <span class="hljs-keyword">@include</span> link-underline-small(<span class="hljs-variable">$errorColor</span>, <span class="hljs-variable">$errorLinkHoverColor</span>);
     }
   }
   &amp;--warning {
@@ -508,7 +508,7 @@
     <span class="hljs-attribute">color</span>: <span class="hljs-variable">$warningColor</span>;
 
     <span class="hljs-selector-tag">a</span> {
-      @<span class="hljs-keyword">include</span> link-underline-small(<span class="hljs-variable">$warningColor</span>, <span class="hljs-variable">$warningLinkHoverColor</span>);
+      <span class="hljs-keyword">@include</span> link-underline-small(<span class="hljs-variable">$warningColor</span>, <span class="hljs-variable">$warningLinkHoverColor</span>);
     }
   }
   &amp;--status {
@@ -516,12 +516,12 @@
     <span class="hljs-attribute">color</span>: <span class="hljs-variable">$statusColor</span>;
 
     <span class="hljs-selector-tag">a</span> {
-      @<span class="hljs-keyword">include</span> link-underline-small(<span class="hljs-variable">$statusColor</span>, <span class="hljs-variable">$statusLinkHoverColor</span>);
+      <span class="hljs-keyword">@include</span> link-underline-small(<span class="hljs-variable">$statusColor</span>, <span class="hljs-variable">$statusLinkHoverColor</span>);
     }
   }
 
   &amp;__container {
-    @<span class="hljs-keyword">include</span> container;
+    <span class="hljs-keyword">@include</span> container;
     <span class="hljs-attribute">position</span>: relative;
   }
 
@@ -532,7 +532,7 @@
     <span class="hljs-attribute">position</span>: relative;
     <span class="hljs-attribute">padding</span>: <span class="hljs-number">0</span> #{<span class="hljs-variable">$closeButtonIconSize</span> + <span class="hljs-number">15</span>} <span class="hljs-number">0</span> #{<span class="hljs-variable">$iconSize</span> + <span class="hljs-number">15</span>};
 
-    &amp;:before {
+    &amp;<span class="hljs-selector-pseudo">:before</span> {
       <span class="hljs-attribute">position</span>: absolute;
       <span class="hljs-attribute">top</span>: <span class="hljs-number">3px</span>; <span class="hljs-comment">// optical alignment</span>
       <span class="hljs-attribute">left</span>: <span class="hljs-number">0</span>;
@@ -542,13 +542,13 @@
     }
   }
   &amp;--error &amp;__icon-container {
-    @<span class="hljs-keyword">include</span> form-components-icons-before(<span class="hljs-string">"error"</span>);
+    <span class="hljs-keyword">@include</span> form-components-icons-before(<span class="hljs-string">"error"</span>);
   }
   &amp;--warning &amp;__icon-container {
-    @<span class="hljs-keyword">include</span> form-components-icons-before(<span class="hljs-string">"warning"</span>);
+    <span class="hljs-keyword">@include</span> form-components-icons-before(<span class="hljs-string">"warning"</span>);
   }
   &amp;--status &amp;__icon-container {
-    @<span class="hljs-keyword">include</span> form-components-icons-before(<span class="hljs-string">"status"</span>);
+    <span class="hljs-keyword">@include</span> form-components-icons-before(<span class="hljs-string">"status"</span>);
   }
 
   <span class="hljs-comment">/*****************************************************************************
@@ -564,7 +564,7 @@
       <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span>;
       <span class="hljs-attribute">padding</span>: <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">20px</span>;
 
-      &amp;:before {
+      &amp;<span class="hljs-selector-pseudo">:before</span> {
         <span class="hljs-attribute">position</span>: absolute;
         <span class="hljs-attribute">top</span>: <span class="hljs-number">0</span>;
         <span class="hljs-attribute">left</span>: <span class="hljs-number">0</span>;
@@ -591,7 +591,7 @@
     <span class="hljs-attribute">cursor</span>: pointer;
     <span class="hljs-attribute">border</span>: <span class="hljs-number">0</span>;
     <span class="hljs-attribute">outline</span>: <span class="hljs-number">0</span>;
-    @<span class="hljs-keyword">include</span> form-components-icons-after(<span class="hljs-string">"close"</span>);
+    <span class="hljs-keyword">@include</span> form-components-icons-after(<span class="hljs-string">"close"</span>);
 
     <span class="hljs-comment">// hide dotted outline in Firefox</span>
     &amp;:-moz-focusring {
@@ -599,7 +599,7 @@
       <span class="hljs-attribute">text-shadow</span>: <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-variable">$closeButtonIconColor</span>;
     }
 
-    &amp;:after {
+    &amp;<span class="hljs-selector-pseudo">:after</span> {
       <span class="hljs-attribute">color</span>: <span class="hljs-variable">$closeButtonIconColor</span>;
       <span class="hljs-attribute">font-size</span>: <span class="hljs-variable">$closeButtonIconSize</span>;
       <span class="hljs-attribute">line-height</span>: <span class="hljs-variable">$closeButtonIconSize</span>;
@@ -714,11 +714,19 @@
         </div>
 
         <div class="Frame-handle" data-role="frame-resize-handle"></div>
-        
+
         <div class="Frame-panel Frame-panel--sidebar" data-role="sidebar">
             <nav class="Navigation">
+    
+        <div class="Navigation-search">
+    <form action="" class="Search" data-behaviour="search">
+        <label class="Search-label" for="search-input">Search</label>
+        <input class="Search-input" id="search-input" type="text" placeholder="Enter keyword..." data-role="input">
+    </form>
+</div>
 
     
+        
 <div class="Navigation-group">
 
 <div class="Tree" data-behaviour="tree" id="tree-components">
@@ -2997,8 +3005,8 @@
 </div>
 
 
-
     
+        
 <div class="Navigation-group">
 
 <div class="Tree" data-behaviour="tree" id="tree-docs">
@@ -3023,10 +3031,25 @@
 </div>
 
 
+    
+        
 
     
+        <div class="Navigation-group">
+    <div class="Tree">
+        <div class="Tree-title">
+            Information
+        </div>
+        <div class="Tree-aside">
+            Built on:
+            <time datetime="2020-04-30T16:50:17.531Z">
+                4/30/2020
+            </time>
+        </div>
+    </div>
+</div>
 
-
+    
 </nav>
 
         </div>
@@ -3036,9 +3059,9 @@
 
 
 
-<script src="../../themes/mandelbrot/js/mandelbrot.js?cachebust=1.2.1"></script>
+<script src="../../themes/mandelbrot/js/mandelbrot.js?cachebust=1.3.0"></script>
 
-<script src="https://buttons.github.io/buttons.js?cachebust=1.2.1"></script>
+<script src="https://buttons.github.io/buttons.js?cachebust=1.3.0"></script>
 
 
 
