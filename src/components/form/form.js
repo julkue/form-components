@@ -185,7 +185,7 @@ export class Form {
       if (this.options.focusMessage) {
         new MoveTo({
           duration: 400,
-          tolerance: 10
+          tolerance: this.getMoveToTolerance()
         }).move(this.message);
       }
       this.message.setAttribute('role', role);
@@ -200,5 +200,9 @@ export class Form {
         messageClose.setAttribute('tabindex', '-1');
       }
     }
+  }
+
+  getMoveToTolerance() {
+    return 10;
   }
 }
