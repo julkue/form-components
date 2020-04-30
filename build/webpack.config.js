@@ -53,7 +53,7 @@ let config = module.exports = {
       test: /\.(scss|css)$/,
       use: [{
         loader: miniCssExtractPlugin.loader
-      },{
+      }, {
         loader: 'css-loader'
       }, {
         loader: 'postcss-loader',
