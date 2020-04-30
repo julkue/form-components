@@ -9,7 +9,10 @@ export class Form {
         message: true,
         focusMessage: true,
         onValid: () => {},
-        onInvalid: () => {}
+        onInvalid: () => {},
+        getFocusMessageOffset: () => {
+          return 10;
+        }
       }, options);
       this.initEvents();
     }
@@ -185,7 +188,7 @@ export class Form {
       if (this.options.focusMessage) {
         new MoveTo({
           duration: 400,
-          tolerance: this.getMoveToTolerance()
+          tolerance: this.options.getFocusMessageOffset()
         }).move(this.message);
       }
       this.message.setAttribute('role', role);
@@ -200,9 +203,5 @@ export class Form {
         messageClose.setAttribute('tabindex', '-1');
       }
     }
-  }
-
-  getMoveToTolerance() {
-    return 10;
   }
 }
