@@ -122,6 +122,9 @@
 <p><strong>onValid</strong></p>
 <p>Type: function<br>Default: <code>function(){}</code><br>Parameters: The <code>submit</code> event</p>
 <p>A callback when the form was submitted valid.</p>
+<p><strong>getFocusMessageOffset</strong></p>
+<p>Type: function<br>Default: <code>function(){ return 10; }</code></p>
+<p>A callback to overwrite the default 10px y-offset of the message from the top of the page. The retured value must be a number (without the suffix ‘px’).</p>
 <h3 id="message">Message</h3>
 <p><strong>focusOnStart</strong></p>
 <p>Type: boolean<br>Default: true</p>
@@ -2498,7 +2501,7 @@
         </div>
         <div class="Tree-aside">
             Built on:
-            <time datetime="2020-04-30T16:50:17.531Z">
+            <time datetime="2020-04-30T17:42:15.246Z">
                 4/30/2020
             </time>
         </div>
