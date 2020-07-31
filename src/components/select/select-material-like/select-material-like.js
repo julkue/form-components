@@ -18,39 +18,24 @@ export class Select extends FormComponent {
     this.dropdownOptions = [];
     this.userInfo = Bowser.parse(window.navigator.userAgent);
 
-    this.createDropdown();
-    if (!this.field.hasAttribute('disabled')) {
-      this.initEvents();
-    }
+    this.initEvents();
   }
 
-  createDropdown() {
-    this.dropdown = document.createElement('ul');
-    this.dropdown.classList.add('select__dropdown');
-    this.dropdownOptions = [...this.field.options].map(dropdownOption => {
-      const option = document.createElement('li');
-      option.classList.add('select__dropdown-option');
-      option.textContent = dropdownOption.textContent;
-      if (dropdownOption.getAttribute('disabled') !== null) {
-        option.classList.add('is-disabled');
-      }
-      this.dropdown.appendChild(option);
-      return option;
-    });
-    if (this.helperField) {
-      this.context.insertBefore(this.dropdown, this.helperField);
-    } else if (this.errorField) {
-      this.context.insertBefore(this.dropdown, this.errorField);
-    } else {
-      this.context.appendChild(this.dropdown);
-    }
+  get isOpen() {
+    return this.context.classList.contains('is-open');
   }
 
   initEvents() {
-    this.context.addEventListener('keydown', event => this.onKeydown(event));
+    this.context.addEventListener('keydown', event => {
+      if (!this.field.hasAttribute('disabled')) {
+        this.onKeydown(event);
+      }
+    });
     // for native changes (e.g. iOS):
     this.field.addEventListener('change', () => {
-      this.setActive(this.field.selectedIndex);
+      if (!this.field.hasAttribute('disabled')) {
+        this.setActive(this.field.selectedIndex);
+      }
     });
     if (this.userInfo.platform.type === 'desktop') {
       // It's important to use mousedown instead of click for Desktop, otherwise
@@ -60,33 +45,27 @@ export class Select extends FormComponent {
       // only for pointerdown)
       ['mousedown', 'pointerdown'].forEach(listener => {
         this.field.addEventListener(listener, e => {
-          e.preventDefault();
-          // prevent other above named listeners from handling the same action:
-          e.stopPropagation();
-          this.toggle();
+          if (!this.field.hasAttribute('disabled')) {
+            e.preventDefault();
+            // prevent other above named listeners from handling the same action:
+            e.stopPropagation();
+            this.toggle();
+          }
         });
       });
     }
-    this.dropdownOptions.forEach((option, index) => {
-      if (option.classList.contains('is-disabled')) {
-        return;
-      }
-      option.addEventListener('click', () => {
-        this.setActive(index);
-        this.close();
-      });
-    });
-    this.setActive(this.field.selectedIndex);
     this.field.addEventListener('blur', () => {
-      // Make sure to not close the dropdown before the option click event
-      // is called. Otherwise you can't select any value using click
-      setTimeout(() => {
-        const target = document.activeElement;
-        if (target === this.context || this.context.contains(target)) {
-          return;
-        }
-        this.close();
-      }, 150);
+      if (!this.field.hasAttribute('disabled')) {
+        // Make sure to not close the dropdown before the option click event
+        // is called. Otherwise you can't select any value using click
+        setTimeout(() => {
+          const target = document.activeElement;
+          if (target === this.context || this.context.contains(target)) {
+            return;
+          }
+          this.close();
+        }, 150);
+      }
     });
   }
 
@@ -159,8 +138,42 @@ export class Select extends FormComponent {
     }
   }
 
-  get isOpen() {
-    return this.context.classList.contains('is-open');
+  createDropdown() {
+    this.dropdown = document.createElement('ul');
+    this.dropdown.classList.add('select__dropdown');
+    this.dropdownOptions = [...this.field.options].map(dropdownOption => {
+      const option = document.createElement('li');
+      option.classList.add('select__dropdown-option');
+      option.textContent = dropdownOption.textContent;
+      if (dropdownOption.getAttribute('disabled') !== null) {
+        option.classList.add('is-disabled');
+      }
+      this.dropdown.appendChild(option);
+      return option;
+    });
+    if (this.helperField) {
+      this.context.insertBefore(this.dropdown, this.helperField);
+    } else if (this.errorField) {
+      this.context.insertBefore(this.dropdown, this.errorField);
+    } else {
+      this.context.appendChild(this.dropdown);
+    }
+    this.dropdownOptions.forEach((option, index) => {
+      if (option.classList.contains('is-disabled')) {
+        return;
+      }
+      option.addEventListener('click', () => {
+        this.setActive(index);
+        this.close();
+      });
+    });
+    this.setActive(this.field.selectedIndex);
+  }
+
+  deleteDropdown() {
+    if (this.dropdown && this.dropdown.parentElement) {
+      this.dropdown.parentElement.removeChild(this.dropdown);
+    }
   }
 
   toggle() {
@@ -172,6 +185,7 @@ export class Select extends FormComponent {
   }
 
   open() {
+    this.createDropdown();
     this.context.classList.add('is-open');
     this.field.focus();
     this.scrollActiveDropdownOptionIntoView();
@@ -180,6 +194,7 @@ export class Select extends FormComponent {
   close() {
     this.context.classList.remove('is-open');
     this.setIsFilledIn();
+    this.deleteDropdown();
   }
 
   setActive(index) {
