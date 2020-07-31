@@ -11,10 +11,12 @@
     <script>var cl = document.querySelector('html').classList; cl.remove('no-js'); cl.add('has-js');</script>
     <link rel="shortcut icon" href="../../themes/mandelbrot/favicon.ico" type="image/ico">
 
-<link rel="stylesheet" href="../../themes/mandelbrot/css/navy.css?cachebust=1.3.0" type="text/css">
+<link rel="stylesheet" href="../../themes/mandelbrot/css/navy.css?cachebust=1.4.0" type="text/css">
+
+<link rel="stylesheet" href="../../themes/mandelbrot/css/highlight.css?cachebust=1.4.0" type="text/css">
 
 
-<title>Select Material Like: With Error Light | Form Components v1.1.0</title>
+<title>Select Material Like: With Error Light | Form Components v1.1.1</title>
 
 </head>
 <body>
@@ -33,18 +35,22 @@
 </style>
 <div class="Header">
     <button class="Header-button Header-navToggle" data-action="toggle-sidebar">
-        <svg class="Header-navToggleIcon Header-navToggleIcon--open" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+        <div class="Header-navToggleIcon Header-navToggleIcon--open">
+            <svg height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
     <path d="M0 0h24v24H0z" fill="none"/>
     <path d="M19 6.4L17.6 5 12 10.6 6.4 5 5 6.4 10.6 12 5 17.6 6.4 19 12 13.4 17.6 19 19 17.6 13.4 12z"/>
 </svg>
 
-        <svg class="Header-navToggleIcon Header-navToggleIcon--closed" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+        </div>
+        <div class="Header-navToggleIcon Header-navToggleIcon--closed">
+            <svg height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
     <path d="M0 0h24v24H0z" fill="none"/>
     <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
 </svg>
 
+        </div>
     </button>
-    <a href="../../index.html" class="Header-title" data-pjax>Form Components v1.1.0</a>
+    <a href="../../index.html" class="Header-title" data-pjax>Form Components v1.1.1</a>
     <a class="github-button" href="https://github.com/julmot/form-components" data-size="large" aria-label="Star julmot/form-components on GitHub">Star</a>
 </div>
 
@@ -95,7 +101,6 @@
                 class="Preview-iframe"
                 data-role="window"
                 src="../preview/select-material-like--with-error-light.html"
-                sandbox="allow-same-origin allow-scripts allow-forms allow-modals"
                  style=""
                 marginwidth="0" marginheight="0" frameborder="0" vspace="0" hspace="0" scrolling="yes">
             </iframe>
@@ -163,28 +168,28 @@
     
     
 <div class="Browser-panel Browser-code is-active" data-role="tab-panel" id="browser-1323c6a4bb33f5c7518d0b71d380fc34-panel-html">
-    <code class="Code Code--lang-html">
+    <code class="Code Code--lang-html hljs">
         
         <pre><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"select--light"</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"select__wrapper"</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">select</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"select__select"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"select"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"select"</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">""</span> <span class="hljs-attr">disabled</span> <span class="hljs-attr">selected</span>&gt;</span>Please choose<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"Long long option Long long option Long long option Long long option Long long option Long long option Long long option Long long option"</span>&gt;</span>Long long option Long long option Long long option Long long option Long long option Long long option Long long option Long long option<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"option 2"</span>&gt;</span>option 2<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"option 3"</span>&gt;</span>option 3<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"option 4"</span>&gt;</span>option 4<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"option 5"</span>&gt;</span>option 5<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"option 6"</span>&gt;</span>option 6<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"option 7"</span>&gt;</span>option 7<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"option 8"</span>&gt;</span>option 8<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"option 9"</span>&gt;</span>option 9<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"option 10"</span>&gt;</span>option 10<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"option 11"</span>&gt;</span>option 11<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"option 12"</span>&gt;</span>option 12<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"option 13"</span>&gt;</span>option 13<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"option 14"</span>&gt;</span>option 14<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"option 15"</span>&gt;</span>option 15<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-name">select</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">""</span> <span class="hljs-attr">disabled</span> <span class="hljs-attr">selected</span>&gt;</span>Please choose<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"Long long option Long long option Long long option Long long option Long long option Long long option Long long option Long long option"</span>&gt;</span>Long long option Long long option Long long option Long long option Long long option Long long option Long long option Long long option<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"option 2"</span>&gt;</span>option 2<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"option 3"</span>&gt;</span>option 3<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"option 4"</span>&gt;</span>option 4<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"option 5"</span>&gt;</span>option 5<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"option 6"</span>&gt;</span>option 6<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"option 7"</span>&gt;</span>option 7<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"option 8"</span>&gt;</span>option 8<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"option 9"</span>&gt;</span>option 9<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"option 10"</span>&gt;</span>option 10<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"option 11"</span>&gt;</span>option 11<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"option 12"</span>&gt;</span>option 12<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"option 13"</span>&gt;</span>option 13<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"option 14"</span>&gt;</span>option 14<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"option 15"</span>&gt;</span>option 15<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">select</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"select__label"</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"select"</span>&gt;</span>Text<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
     <span class="hljs-comment">&lt;!-- <span class="hljs-doctag">NOTE:</span> This div is reserved for field-specific error messages by a backend --&gt;</span>
@@ -196,7 +201,7 @@
 
     
     <div class="Browser-panel Browser-code" data-role="tab-panel" id="browser-1323c6a4bb33f5c7518d0b71d380fc34-panel-view">
-    <code class="Code Code--lang-handlebars">
+    <code class="Code Code--lang-handlebars hljs">
         <pre><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"select--</span></span></span><span class="hljs-template-variable">{{splitDashLast _self.name}}</span><span class="xml"><span class="hljs-tag"><span class="hljs-string">"</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"select__wrapper"</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">select</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"select__select"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"</span></span></span><span class="hljs-template-variable">{{id}}</span><span class="xml"><span class="hljs-tag"><span class="hljs-string">"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"</span></span></span><span class="hljs-template-variable">{{name}}</span><span class="xml"><span class="hljs-tag"><span class="hljs-string">"</span></span></span><span class="hljs-template-tag">{{#<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> disabled}}</span><span class="xml"><span class="hljs-tag"> <span class="hljs-attr">disabled</span></span></span><span class="hljs-template-tag">{{/<span class="hljs-name"><span class="hljs-builtin-name">if</span></span>}}</span><span class="xml"><span class="hljs-tag"> </span></span><span class="hljs-template-tag">{{#<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> required }}</span><span class="xml"><span class="hljs-tag"><span class="hljs-attr">required</span>=<span class="hljs-string">"true"</span></span></span><span class="hljs-template-tag">{{/<span class="hljs-name"><span class="hljs-builtin-name">if</span></span>}}</span><span class="xml"><span class="hljs-tag">&gt;</span>
@@ -226,7 +231,7 @@
 
     
     <div class="Browser-panel Browser-code" data-role="tab-panel" id="browser-1323c6a4bb33f5c7518d0b71d380fc34-panel-context">
-    <code class="Code Code--lang-json">
+    <code class="Code Code--lang-json hljs">
         
             
             <pre>{
@@ -289,7 +294,7 @@
                     <span class="Meta-value">
                         <div class="FileBrowser-itemPreview">
                             
-                            <code class="Code Code--lang-JavaScript FileBrowser-code">
+                            <code class="Code Code--lang-JavaScript FileBrowser-code hljs">
                                 <pre><span class="hljs-keyword">import</span> <span class="hljs-string">'./select-material-like.scss'</span>;
 <span class="hljs-keyword">export</span> * <span class="hljs-keyword">from</span> <span class="hljs-string">'./select-material-like'</span>;
 </pre>
@@ -320,7 +325,7 @@
                     <span class="Meta-value">
                         <div class="FileBrowser-itemPreview">
                             
-                            <code class="Code Code--lang-JavaScript FileBrowser-code">
+                            <code class="Code Code--lang-JavaScript FileBrowser-code hljs">
                                 <pre><span class="hljs-keyword">import</span> FormComponent <span class="hljs-keyword">from</span> <span class="hljs-string">'../../form-component'</span>;
 <span class="hljs-keyword">import</span> Bowser <span class="hljs-keyword">from</span> <span class="hljs-string">'bowser'</span>;
 
@@ -341,39 +346,24 @@
     <span class="hljs-keyword">this</span>.dropdownOptions = [];
     <span class="hljs-keyword">this</span>.userInfo = Bowser.parse(<span class="hljs-built_in">window</span>.navigator.userAgent);
 
-    <span class="hljs-keyword">this</span>.createDropdown();
-    <span class="hljs-keyword">if</span> (!<span class="hljs-keyword">this</span>.field.hasAttribute(<span class="hljs-string">'disabled'</span>)) {
-      <span class="hljs-keyword">this</span>.initEvents();
-    }
+    <span class="hljs-keyword">this</span>.initEvents();
   }
 
-  createDropdown() {
-    <span class="hljs-keyword">this</span>.dropdown = <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">'ul'</span>);
-    <span class="hljs-keyword">this</span>.dropdown.classList.add(<span class="hljs-string">'select__dropdown'</span>);
-    <span class="hljs-keyword">this</span>.dropdownOptions = [...this.field.options].map(<span class="hljs-function"><span class="hljs-params">dropdownOption</span> =&gt;</span> {
-      <span class="hljs-keyword">const</span> option = <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">'li'</span>);
-      option.classList.add(<span class="hljs-string">'select__dropdown-option'</span>);
-      option.textContent = dropdownOption.textContent;
-      <span class="hljs-keyword">if</span> (dropdownOption.getAttribute(<span class="hljs-string">'disabled'</span>) !== <span class="hljs-literal">null</span>) {
-        option.classList.add(<span class="hljs-string">'is-disabled'</span>);
-      }
-      <span class="hljs-keyword">this</span>.dropdown.appendChild(option);
-      <span class="hljs-keyword">return</span> option;
-    });
-    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.helperField) {
-      <span class="hljs-keyword">this</span>.context.insertBefore(<span class="hljs-keyword">this</span>.dropdown, <span class="hljs-keyword">this</span>.helperField);
-    } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.errorField) {
-      <span class="hljs-keyword">this</span>.context.insertBefore(<span class="hljs-keyword">this</span>.dropdown, <span class="hljs-keyword">this</span>.errorField);
-    } <span class="hljs-keyword">else</span> {
-      <span class="hljs-keyword">this</span>.context.appendChild(<span class="hljs-keyword">this</span>.dropdown);
-    }
+  <span class="hljs-keyword">get</span> isOpen() {
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.context.classList.contains(<span class="hljs-string">'is-open'</span>);
   }
 
   initEvents() {
-    <span class="hljs-keyword">this</span>.context.addEventListener(<span class="hljs-string">'keydown'</span>, event =&gt; <span class="hljs-keyword">this</span>.onKeydown(event));
+    <span class="hljs-keyword">this</span>.context.addEventListener(<span class="hljs-string">'keydown'</span>, event =&gt; {
+      <span class="hljs-keyword">if</span> (!<span class="hljs-keyword">this</span>.field.hasAttribute(<span class="hljs-string">'disabled'</span>)) {
+        <span class="hljs-keyword">this</span>.onKeydown(event);
+      }
+    });
     <span class="hljs-comment">// for native changes (e.g. iOS):</span>
     <span class="hljs-keyword">this</span>.field.addEventListener(<span class="hljs-string">'change'</span>, () =&gt; {
-      <span class="hljs-keyword">this</span>.setActive(<span class="hljs-keyword">this</span>.field.selectedIndex);
+      <span class="hljs-keyword">if</span> (!<span class="hljs-keyword">this</span>.field.hasAttribute(<span class="hljs-string">'disabled'</span>)) {
+        <span class="hljs-keyword">this</span>.setActive(<span class="hljs-keyword">this</span>.field.selectedIndex);
+      }
     });
     <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.userInfo.platform.type === <span class="hljs-string">'desktop'</span>) {
       <span class="hljs-comment">// It's important to use mousedown instead of click for Desktop, otherwise</span>
@@ -383,33 +373,27 @@
       <span class="hljs-comment">// only for pointerdown)</span>
       [<span class="hljs-string">'mousedown'</span>, <span class="hljs-string">'pointerdown'</span>].forEach(<span class="hljs-function"><span class="hljs-params">listener</span> =&gt;</span> {
         <span class="hljs-keyword">this</span>.field.addEventListener(listener, e =&gt; {
-          e.preventDefault();
-          <span class="hljs-comment">// prevent other above named listeners from handling the same action:</span>
-          e.stopPropagation();
-          <span class="hljs-keyword">this</span>.toggle();
+          <span class="hljs-keyword">if</span> (!<span class="hljs-keyword">this</span>.field.hasAttribute(<span class="hljs-string">'disabled'</span>)) {
+            e.preventDefault();
+            <span class="hljs-comment">// prevent other above named listeners from handling the same action:</span>
+            e.stopPropagation();
+            <span class="hljs-keyword">this</span>.toggle();
+          }
         });
       });
     }
-    <span class="hljs-keyword">this</span>.dropdownOptions.forEach(<span class="hljs-function">(<span class="hljs-params">option, index</span>) =&gt;</span> {
-      <span class="hljs-keyword">if</span> (option.classList.contains(<span class="hljs-string">'is-disabled'</span>)) {
-        <span class="hljs-keyword">return</span>;
-      }
-      option.addEventListener(<span class="hljs-string">'click'</span>, () =&gt; {
-        <span class="hljs-keyword">this</span>.setActive(index);
-        <span class="hljs-keyword">this</span>.close();
-      });
-    });
-    <span class="hljs-keyword">this</span>.setActive(<span class="hljs-keyword">this</span>.field.selectedIndex);
     <span class="hljs-keyword">this</span>.field.addEventListener(<span class="hljs-string">'blur'</span>, () =&gt; {
-      <span class="hljs-comment">// Make sure to not close the dropdown before the option click event</span>
-      <span class="hljs-comment">// is called. Otherwise you can't select any value using click</span>
-      setTimeout(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
-        <span class="hljs-keyword">const</span> target = <span class="hljs-built_in">document</span>.activeElement;
-        <span class="hljs-keyword">if</span> (target === <span class="hljs-keyword">this</span>.context || <span class="hljs-keyword">this</span>.context.contains(target)) {
-          <span class="hljs-keyword">return</span>;
-        }
-        <span class="hljs-keyword">this</span>.close();
-      }, <span class="hljs-number">150</span>);
+      <span class="hljs-keyword">if</span> (!<span class="hljs-keyword">this</span>.field.hasAttribute(<span class="hljs-string">'disabled'</span>)) {
+        <span class="hljs-comment">// Make sure to not close the dropdown before the option click event</span>
+        <span class="hljs-comment">// is called. Otherwise you can't select any value using click</span>
+        setTimeout(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+          <span class="hljs-keyword">const</span> target = <span class="hljs-built_in">document</span>.activeElement;
+          <span class="hljs-keyword">if</span> (target === <span class="hljs-keyword">this</span>.context || <span class="hljs-keyword">this</span>.context.contains(target)) {
+            <span class="hljs-keyword">return</span>;
+          }
+          <span class="hljs-keyword">this</span>.close();
+        }, <span class="hljs-number">150</span>);
+      }
     });
   }
 
@@ -482,8 +466,42 @@
     }
   }
 
-  <span class="hljs-keyword">get</span> isOpen() {
-    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.context.classList.contains(<span class="hljs-string">'is-open'</span>);
+  createDropdown() {
+    <span class="hljs-keyword">this</span>.dropdown = <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">'ul'</span>);
+    <span class="hljs-keyword">this</span>.dropdown.classList.add(<span class="hljs-string">'select__dropdown'</span>);
+    <span class="hljs-keyword">this</span>.dropdownOptions = [...this.field.options].map(<span class="hljs-function"><span class="hljs-params">dropdownOption</span> =&gt;</span> {
+      <span class="hljs-keyword">const</span> option = <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">'li'</span>);
+      option.classList.add(<span class="hljs-string">'select__dropdown-option'</span>);
+      option.textContent = dropdownOption.textContent;
+      <span class="hljs-keyword">if</span> (dropdownOption.getAttribute(<span class="hljs-string">'disabled'</span>) !== <span class="hljs-literal">null</span>) {
+        option.classList.add(<span class="hljs-string">'is-disabled'</span>);
+      }
+      <span class="hljs-keyword">this</span>.dropdown.appendChild(option);
+      <span class="hljs-keyword">return</span> option;
+    });
+    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.helperField) {
+      <span class="hljs-keyword">this</span>.context.insertBefore(<span class="hljs-keyword">this</span>.dropdown, <span class="hljs-keyword">this</span>.helperField);
+    } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.errorField) {
+      <span class="hljs-keyword">this</span>.context.insertBefore(<span class="hljs-keyword">this</span>.dropdown, <span class="hljs-keyword">this</span>.errorField);
+    } <span class="hljs-keyword">else</span> {
+      <span class="hljs-keyword">this</span>.context.appendChild(<span class="hljs-keyword">this</span>.dropdown);
+    }
+    <span class="hljs-keyword">this</span>.dropdownOptions.forEach(<span class="hljs-function">(<span class="hljs-params">option, index</span>) =&gt;</span> {
+      <span class="hljs-keyword">if</span> (option.classList.contains(<span class="hljs-string">'is-disabled'</span>)) {
+        <span class="hljs-keyword">return</span>;
+      }
+      option.addEventListener(<span class="hljs-string">'click'</span>, () =&gt; {
+        <span class="hljs-keyword">this</span>.setActive(index);
+        <span class="hljs-keyword">this</span>.close();
+      });
+    });
+    <span class="hljs-keyword">this</span>.setActive(<span class="hljs-keyword">this</span>.field.selectedIndex);
+  }
+
+  deleteDropdown() {
+    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.dropdown &amp;&amp; <span class="hljs-keyword">this</span>.dropdown.parentElement) {
+      <span class="hljs-keyword">this</span>.dropdown.parentElement.removeChild(<span class="hljs-keyword">this</span>.dropdown);
+    }
   }
 
   toggle() {
@@ -495,6 +513,7 @@
   }
 
   open() {
+    <span class="hljs-keyword">this</span>.createDropdown();
     <span class="hljs-keyword">this</span>.context.classList.add(<span class="hljs-string">'is-open'</span>);
     <span class="hljs-keyword">this</span>.field.focus();
     <span class="hljs-keyword">this</span>.scrollActiveDropdownOptionIntoView();
@@ -503,6 +522,7 @@
   close() {
     <span class="hljs-keyword">this</span>.context.classList.remove(<span class="hljs-string">'is-open'</span>);
     <span class="hljs-keyword">this</span>.setIsFilledIn();
+    <span class="hljs-keyword">this</span>.deleteDropdown();
   }
 
   setActive(index) {
@@ -604,7 +624,7 @@
                 </li>
                 <li class="Meta-item">
                     <strong class="Meta-key">Size:</strong>
-                    <span class="Meta-value">8 KB</span>
+                    <span class="Meta-value">8.4 KB</span>
                 </li>
             </ul>
         </div>
@@ -616,7 +636,7 @@
                     <span class="Meta-value">
                         <div class="FileBrowser-itemPreview">
                             
-                            <code class="Code Code--lang-SCSS FileBrowser-code">
+                            <code class="Code Code--lang-SCSS FileBrowser-code hljs">
                                 <pre><span class="hljs-keyword">@import</span> <span class="hljs-string">"~shared/base"</span>;
 
 <span class="hljs-comment">/*******************************************************************************
@@ -1275,10 +1295,17 @@
         <div class="Frame-panel Frame-panel--sidebar" data-role="sidebar">
             <nav class="Navigation">
     
-        <div class="Navigation-search">
+        <div class="Navigation-group Navigation-search">
     <form action="" class="Search" data-behaviour="search">
         <label class="Search-label" for="search-input">Search</label>
-        <input class="Search-input" id="search-input" type="text" placeholder="Enter keyword..." data-role="input">
+        <input class="Search-input" id="search-input" type="search" placeholder="Search…" data-role="input">
+        <button type="button" data-behaviour="clear-search" class="Search-clearButton" aria-label="Clear search" hidden>
+            <svg height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 0h24v24H0z" fill="none"/>
+    <path d="M19 6.4L17.6 5 12 10.6 6.4 5 5 6.4 10.6 12 5 17.6 6.4 19 12 13.4 17.6 19 19 17.6 13.4 12z"/>
+</svg>
+
+        </button>
     </form>
 </div>
 
@@ -1287,16 +1314,23 @@
 <div class="Navigation-group">
 
 <div class="Tree" data-behaviour="tree" id="tree-components">
-    <h3 class="Tree-title">components</h3>
+    <div class="Tree-header">
+        <h3 class="Tree-title">components</h3>
+
+        <button type="button" data-behaviour="collapse-tree" class="Tree-collapse" title="Collapse tree" aria-label="Collapse tree" hidden>
+            <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m9 11c-.6 0-1 .4-1 1s.4 1 1 1h6c.6 0 1-.4 1-1s-.4-1-1-1z"/><path d="m19 21h-14c-1.1 0-2-.9-2-2v-14c0-1.1.9-2 2-2h14c1.1 0 2 .9 2 2v14c0 1.1-.9 2-2 2zm-14-16v14h14v-14z"/></svg>
+
+        </button>
+    </div>
     <ul class="Tree-items Tree-depth-1">
         
     
         
         <li class="Tree-item Tree-collection Tree-depth-2" data-behaviour="collection" id="tree-components-collection-checkbox">
-            <h4 class="Tree-collectionLabel" data-role="toggle">
-                <span>Checkbox</span>
-            </h4>
-            <ul class="Tree-collectionItems" data-role="items">
+            <button class="Tree-collectionLabel" data-role="toggle" aria-expanded="true" aria-controls="tree-components-collection-checkbox-items">
+                Checkbox
+            </button>
+            <ul class="Tree-collectionItems" data-role="items" id="tree-components-collection-checkbox-items">
             
             
             
@@ -1304,10 +1338,10 @@
     
         
         <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-components-collection-checkbox-lite-checkmark">
-            <h4 class="Tree-collectionLabel" data-role="toggle">
-                <span>Checkbox Lite Checkmark</span>
-            </h4>
-            <ul class="Tree-collectionItems" data-role="items">
+            <button class="Tree-collectionLabel" data-role="toggle" aria-expanded="true" aria-controls="tree-components-collection-checkbox-lite-checkmark-items">
+                Checkbox Lite Checkmark
+            </button>
+            <ul class="Tree-collectionItems" data-role="items" id="tree-components-collection-checkbox-lite-checkmark-items">
             
             
             
@@ -1368,10 +1402,10 @@
     
         
         <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-components-collection-checkbox-material-like">
-            <h4 class="Tree-collectionLabel" data-role="toggle">
-                <span>Checkbox Material Like</span>
-            </h4>
-            <ul class="Tree-collectionItems" data-role="items">
+            <button class="Tree-collectionLabel" data-role="toggle" aria-expanded="true" aria-controls="tree-components-collection-checkbox-material-like-items">
+                Checkbox Material Like
+            </button>
+            <ul class="Tree-collectionItems" data-role="items" id="tree-components-collection-checkbox-material-like-items">
             
             
             
@@ -1581,10 +1615,10 @@
     
         
         <li class="Tree-item Tree-collection Tree-depth-2" data-behaviour="collection" id="tree-components-collection-example-form">
-            <h4 class="Tree-collectionLabel" data-role="toggle">
-                <span>Example Form</span>
-            </h4>
-            <ul class="Tree-collectionItems" data-role="items">
+            <button class="Tree-collectionLabel" data-role="toggle" aria-expanded="true" aria-controls="tree-components-collection-example-form-items">
+                Example Form
+            </button>
+            <ul class="Tree-collectionItems" data-role="items" id="tree-components-collection-example-form-items">
             
             
             
@@ -1592,10 +1626,10 @@
     
         
         <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-components-collection-example-form-material-like">
-            <h4 class="Tree-collectionLabel" data-role="toggle">
-                <span>Example Form Material Like</span>
-            </h4>
-            <ul class="Tree-collectionItems" data-role="items">
+            <button class="Tree-collectionLabel" data-role="toggle" aria-expanded="true" aria-controls="tree-components-collection-example-form-material-like-items">
+                Example Form Material Like
+            </button>
+            <ul class="Tree-collectionItems" data-role="items" id="tree-components-collection-example-form-material-like-items">
             
             
             
@@ -1656,10 +1690,10 @@
     
         
         <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-components-collection-example-form-material-like-indent">
-            <h4 class="Tree-collectionLabel" data-role="toggle">
-                <span>Example Form Material Like Indent</span>
-            </h4>
-            <ul class="Tree-collectionItems" data-role="items">
+            <button class="Tree-collectionLabel" data-role="toggle" aria-expanded="true" aria-controls="tree-components-collection-example-form-material-like-indent-items">
+                Example Form Material Like Indent
+            </button>
+            <ul class="Tree-collectionItems" data-role="items" id="tree-components-collection-example-form-material-like-indent-items">
             
             
             
@@ -1725,10 +1759,10 @@
     
         
         <li class="Tree-item Tree-collection Tree-depth-2" data-behaviour="collection" id="tree-components-collection-message">
-            <h4 class="Tree-collectionLabel" data-role="toggle">
-                <span>Message</span>
-            </h4>
-            <ul class="Tree-collectionItems" data-role="items">
+            <button class="Tree-collectionLabel" data-role="toggle" aria-expanded="true" aria-controls="tree-components-collection-message-items">
+                Message
+            </button>
+            <ul class="Tree-collectionItems" data-role="items" id="tree-components-collection-message-items">
             
             
             
@@ -1736,10 +1770,10 @@
     
         
         <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-components-collection-message-material-like">
-            <h4 class="Tree-collectionLabel" data-role="toggle">
-                <span>Message Material Like</span>
-            </h4>
-            <ul class="Tree-collectionItems" data-role="items">
+            <button class="Tree-collectionLabel" data-role="toggle" aria-expanded="true" aria-controls="tree-components-collection-message-material-like-items">
+                Message Material Like
+            </button>
+            <ul class="Tree-collectionItems" data-role="items" id="tree-components-collection-message-material-like-items">
             
             
             
@@ -1829,10 +1863,10 @@
     
         
         <li class="Tree-item Tree-collection Tree-depth-2" data-behaviour="collection" id="tree-components-collection-radio">
-            <h4 class="Tree-collectionLabel" data-role="toggle">
-                <span>Radio</span>
-            </h4>
-            <ul class="Tree-collectionItems" data-role="items">
+            <button class="Tree-collectionLabel" data-role="toggle" aria-expanded="true" aria-controls="tree-components-collection-radio-items">
+                Radio
+            </button>
+            <ul class="Tree-collectionItems" data-role="items" id="tree-components-collection-radio-items">
             
             
             
@@ -1840,10 +1874,10 @@
     
         
         <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-components-collection-radio-material-like">
-            <h4 class="Tree-collectionLabel" data-role="toggle">
-                <span>Radio Material Like</span>
-            </h4>
-            <ul class="Tree-collectionItems" data-role="items">
+            <button class="Tree-collectionLabel" data-role="toggle" aria-expanded="true" aria-controls="tree-components-collection-radio-material-like-items">
+                Radio Material Like
+            </button>
+            <ul class="Tree-collectionItems" data-role="items" id="tree-components-collection-radio-material-like-items">
             
             
             
@@ -2053,10 +2087,10 @@
     
         
         <li class="Tree-item Tree-collection Tree-depth-2" data-behaviour="collection" id="tree-components-collection-select">
-            <h4 class="Tree-collectionLabel" data-role="toggle">
-                <span>Select</span>
-            </h4>
-            <ul class="Tree-collectionItems" data-role="items">
+            <button class="Tree-collectionLabel" data-role="toggle" aria-expanded="true" aria-controls="tree-components-collection-select-items">
+                Select
+            </button>
+            <ul class="Tree-collectionItems" data-role="items" id="tree-components-collection-select-items">
             
             
             
@@ -2064,10 +2098,10 @@
     
         
         <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-components-collection-select-lite-arrow">
-            <h4 class="Tree-collectionLabel" data-role="toggle">
-                <span>Select Lite Arrow</span>
-            </h4>
-            <ul class="Tree-collectionItems" data-role="items">
+            <button class="Tree-collectionLabel" data-role="toggle" aria-expanded="true" aria-controls="tree-components-collection-select-lite-arrow-items">
+                Select Lite Arrow
+            </button>
+            <ul class="Tree-collectionItems" data-role="items" id="tree-components-collection-select-lite-arrow-items">
             
             
             
@@ -2272,10 +2306,10 @@
     
         
         <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-components-collection-select-lite-arrow-indent">
-            <h4 class="Tree-collectionLabel" data-role="toggle">
-                <span>Select Lite Arrow Indent</span>
-            </h4>
-            <ul class="Tree-collectionItems" data-role="items">
+            <button class="Tree-collectionLabel" data-role="toggle" aria-expanded="true" aria-controls="tree-components-collection-select-lite-arrow-indent-items">
+                Select Lite Arrow Indent
+            </button>
+            <ul class="Tree-collectionItems" data-role="items" id="tree-components-collection-select-lite-arrow-indent-items">
             
             
             
@@ -2480,10 +2514,10 @@
     
         
         <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-components-collection-select-material-like">
-            <h4 class="Tree-collectionLabel" data-role="toggle">
-                <span>Select Material Like</span>
-            </h4>
-            <ul class="Tree-collectionItems" data-role="items">
+            <button class="Tree-collectionLabel" data-role="toggle" aria-expanded="true" aria-controls="tree-components-collection-select-material-like-items">
+                Select Material Like
+            </button>
+            <ul class="Tree-collectionItems" data-role="items" id="tree-components-collection-select-material-like-items">
             
             
             
@@ -2688,10 +2722,10 @@
     
         
         <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-components-collection-select-material-like-indent">
-            <h4 class="Tree-collectionLabel" data-role="toggle">
-                <span>Select Material Like Indent</span>
-            </h4>
-            <ul class="Tree-collectionItems" data-role="items">
+            <button class="Tree-collectionLabel" data-role="toggle" aria-expanded="true" aria-controls="tree-components-collection-select-material-like-indent-items">
+                Select Material Like Indent
+            </button>
+            <ul class="Tree-collectionItems" data-role="items" id="tree-components-collection-select-material-like-indent-items">
             
             
             
@@ -2901,10 +2935,10 @@
     
         
         <li class="Tree-item Tree-collection Tree-depth-2" data-behaviour="collection" id="tree-components-collection-text-area">
-            <h4 class="Tree-collectionLabel" data-role="toggle">
-                <span>Text Area</span>
-            </h4>
-            <ul class="Tree-collectionItems" data-role="items">
+            <button class="Tree-collectionLabel" data-role="toggle" aria-expanded="true" aria-controls="tree-components-collection-text-area-items">
+                Text Area
+            </button>
+            <ul class="Tree-collectionItems" data-role="items" id="tree-components-collection-text-area-items">
             
             
             
@@ -2912,10 +2946,10 @@
     
         
         <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-components-collection-text-area-material-like">
-            <h4 class="Tree-collectionLabel" data-role="toggle">
-                <span>Text Area Material Like</span>
-            </h4>
-            <ul class="Tree-collectionItems" data-role="items">
+            <button class="Tree-collectionLabel" data-role="toggle" aria-expanded="true" aria-controls="tree-components-collection-text-area-material-like-items">
+                Text Area Material Like
+            </button>
+            <ul class="Tree-collectionItems" data-role="items" id="tree-components-collection-text-area-material-like-items">
             
             
             
@@ -3125,10 +3159,10 @@
     
         
         <li class="Tree-item Tree-collection Tree-depth-2" data-behaviour="collection" id="tree-components-collection-text-field">
-            <h4 class="Tree-collectionLabel" data-role="toggle">
-                <span>Text Field</span>
-            </h4>
-            <ul class="Tree-collectionItems" data-role="items">
+            <button class="Tree-collectionLabel" data-role="toggle" aria-expanded="true" aria-controls="tree-components-collection-text-field-items">
+                Text Field
+            </button>
+            <ul class="Tree-collectionItems" data-role="items" id="tree-components-collection-text-field-items">
             
             
             
@@ -3136,10 +3170,10 @@
     
         
         <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-components-collection-text-field-material-like">
-            <h4 class="Tree-collectionLabel" data-role="toggle">
-                <span>Text Field Material Like</span>
-            </h4>
-            <ul class="Tree-collectionItems" data-role="items">
+            <button class="Tree-collectionLabel" data-role="toggle" aria-expanded="true" aria-controls="tree-components-collection-text-field-material-like-items">
+                Text Field Material Like
+            </button>
+            <ul class="Tree-collectionItems" data-role="items" id="tree-components-collection-text-field-material-like-items">
             
             
             
@@ -3344,10 +3378,10 @@
     
         
         <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-components-collection-text-field-material-like-indent">
-            <h4 class="Tree-collectionLabel" data-role="toggle">
-                <span>Text Field Material Like Indent</span>
-            </h4>
-            <ul class="Tree-collectionItems" data-role="items">
+            <button class="Tree-collectionLabel" data-role="toggle" aria-expanded="true" aria-controls="tree-components-collection-text-field-material-like-indent-items">
+                Text Field Material Like Indent
+            </button>
+            <ul class="Tree-collectionItems" data-role="items" id="tree-components-collection-text-field-material-like-indent-items">
             
             
             
@@ -3567,7 +3601,14 @@
 <div class="Navigation-group">
 
 <div class="Tree" data-behaviour="tree" id="tree-docs">
-    <h3 class="Tree-title">documentation</h3>
+    <div class="Tree-header">
+        <h3 class="Tree-title">documentation</h3>
+
+        <button type="button" data-behaviour="collapse-tree" class="Tree-collapse" title="Collapse tree" aria-label="Collapse tree" hidden>
+            <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m9 11c-.6 0-1 .4-1 1s.4 1 1 1h6c.6 0 1-.4 1-1s-.4-1-1-1z"/><path d="m19 21h-14c-1.1 0-2-.9-2-2v-14c0-1.1.9-2 2-2h14c1.1 0 2 .9 2 2v14c0 1.1-.9 2-2 2zm-14-16v14h14v-14z"/></svg>
+
+        </button>
+    </div>
     <ul class="Tree-items Tree-depth-1">
         
     
@@ -3594,13 +3635,15 @@
     
         <div class="Navigation-group">
     <div class="Tree">
-        <div class="Tree-title">
-            Information
+        <div class="Tree-header">
+            <div class="Tree-title">
+                Information
+            </div>
         </div>
         <div class="Tree-aside">
             Built on:
-            <time datetime="2020-04-30T17:43:20.078Z">
-                4/30/2020
+            <time datetime="2020-07-31T12:42:25.182Z">
+                7/31/2020
             </time>
         </div>
     </div>
@@ -3616,9 +3659,9 @@
 
 
 
-<script src="../../themes/mandelbrot/js/mandelbrot.js?cachebust=1.3.0"></script>
+<script src="../../themes/mandelbrot/js/mandelbrot.js?cachebust=1.4.0"></script>
 
-<script src="https://buttons.github.io/buttons.js?cachebust=1.3.0"></script>
+<script src="https://buttons.github.io/buttons.js?cachebust=1.4.0"></script>
 
 
 
