@@ -20,7 +20,7 @@ export class Checkbox extends FormComponent {
     // Apply events to the wrapper and not context to ignore error messages
     // that are located outside the wrapper
     this.wrapper.addEventListener('mousedown', () => {
-      if (this.field.checked) {
+      if (this.field.checked || this.field.disabled) {
         return;
       }
       this.animationPassed = false;
@@ -30,7 +30,7 @@ export class Checkbox extends FormComponent {
       this.context.classList.add('is-pressed');
     });
     this.wrapper.addEventListener('mouseup', () => {
-      if (this.field.checked) {
+      if (this.field.checked || this.field.disabled) {
         return;
       }
       if (!this.animationPassed) {
