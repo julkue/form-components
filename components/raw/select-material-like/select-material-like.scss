@@ -130,7 +130,12 @@ $variants: "dark", "light";
       position: relative;
 
       &.is-disabled {
-        &, * {
+        * {
+          pointer-events: none;
+        }
+
+        &,
+        * {
           cursor: not-allowed !important;
         }
       }

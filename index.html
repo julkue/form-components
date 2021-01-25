@@ -10,10 +10,17 @@
     </script>
     <script>var cl = document.querySelector('html').classList; cl.remove('no-js'); cl.add('has-js');</script>
     <link rel="shortcut icon" href="themes/mandelbrot/favicon.ico" type="image/ico">
+<style>
+    :root {
+        
+        
+        
+    }
+</style>
 
-<link rel="stylesheet" href="themes/mandelbrot/css/navy.css?cachebust=1.4.0" type="text/css">
+<link rel="stylesheet" href="themes/mandelbrot/css/navy.css?cachebust=1.7.0" type="text/css">
 
-<link rel="stylesheet" href="themes/mandelbrot/css/highlight.css?cachebust=1.4.0" type="text/css">
+<link rel="stylesheet" href="themes/mandelbrot/css/highlight.css?cachebust=1.7.0" type="text/css">
 
 
 <title>Form Components | Form Components v1.1.2</title>
@@ -96,11 +103,11 @@
 <h2 id="getting-started">Getting Started</h2>
 <p>After you’ve installed the components, you need to generate the HTML according to each component and load and initialize those you want to use. Create a new class instance of the exported class and pass in the element on which you want to initialize the component. In case you’d like to dynamically initialize instances, you can use the also exported <code>selector</code> string to determine if a component exists.</p>
 <p>For example when you want to embed the radio component using Webpack with ES6:</p>
-<pre><code class="hljs language-js"><span class="hljs-keyword">import</span> <span class="hljs-string">'@julmot/form-components/dist/radio-material-like/radio-material-like.css'</span>;
+<pre><code class="hljs language-js"><span class="hljs-keyword">import</span> <span class="hljs-string">&#x27;@julmot/form-components/dist/radio-material-like/radio-material-like.css&#x27;</span>;
 <span class="hljs-keyword">import</span> {
   Radio <span class="hljs-keyword">as</span> RadioComponent,
   selector <span class="hljs-keyword">as</span> RadioComponentSelector
-} <span class="hljs-keyword">from</span> <span class="hljs-string">'@julmot/form-components/dist/radio-material-like/radio-material-like'</span>;
+} <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@julmot/form-components/dist/radio-material-like/radio-material-like&#x27;</span>;
 
 <span class="hljs-keyword">new</span> RadioComponent(<span class="hljs-built_in">document</span>.querySelector(RadioComponentSelector));</code></pre><h2 id="options">Options</h2>
 <p>In addition to the element on which you want to initialize the component, you can also pass options to the component (see above). For example:</p>
@@ -199,8 +206,11 @@
 
     
         
-<div class="Navigation-group">
 
+    
+    
+    <div class="Navigation-group">
+        
 <div class="Tree" data-behaviour="tree" id="tree-components">
     <div class="Tree-header">
         <h3 class="Tree-title">components</h3>
@@ -214,26 +224,30 @@
         
     
         
-        <li class="Tree-item Tree-collection Tree-depth-2" data-behaviour="collection" id="tree-components-collection-checkbox">
-            <button class="Tree-collectionLabel" data-role="toggle" aria-expanded="true" aria-controls="tree-components-collection-checkbox-items">
-                Checkbox
-            </button>
-            <ul class="Tree-collectionItems" data-role="items" id="tree-components-collection-checkbox-items">
             
             
-            
-            
+            <li class="Tree-item Tree-collection Tree-depth-2" data-behaviour="collection" id="tree-components-collection-checkbox">
+                <button class="Tree-collectionLabel" data-role="toggle" aria-expanded="true" aria-controls="tree-components-collection-checkbox-items">
+                    Checkbox
+                </button>
+                <ul class="Tree-collectionItems" data-role="items" id="tree-components-collection-checkbox-items">
+                
+                
+                
+                
     
         
-        <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-components-collection-checkbox-lite-checkmark">
-            <button class="Tree-collectionLabel" data-role="toggle" aria-expanded="true" aria-controls="tree-components-collection-checkbox-lite-checkmark-items">
-                Checkbox Lite Checkmark
-            </button>
-            <ul class="Tree-collectionItems" data-role="items" id="tree-components-collection-checkbox-lite-checkmark-items">
             
             
-            
-            
+            <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-components-collection-checkbox-lite-checkmark">
+                <button class="Tree-collectionLabel" data-role="toggle" aria-expanded="true" aria-controls="tree-components-collection-checkbox-lite-checkmark-items">
+                    Checkbox Lite Checkmark
+                </button>
+                <ul class="Tree-collectionItems" data-role="items" id="tree-components-collection-checkbox-lite-checkmark-items">
+                
+                
+                
+                
     
         
         
@@ -284,20 +298,23 @@
         
     
 
-            </ul>
-        </li>
+                </ul>
+            </li>
+            
         
     
         
-        <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-components-collection-checkbox-material-like">
-            <button class="Tree-collectionLabel" data-role="toggle" aria-expanded="true" aria-controls="tree-components-collection-checkbox-material-like-items">
-                Checkbox Material Like
-            </button>
-            <ul class="Tree-collectionItems" data-role="items" id="tree-components-collection-checkbox-material-like-items">
             
             
-            
-            
+            <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-components-collection-checkbox-material-like">
+                <button class="Tree-collectionLabel" data-role="toggle" aria-expanded="true" aria-controls="tree-components-collection-checkbox-material-like-items">
+                    Checkbox Material Like
+                </button>
+                <ul class="Tree-collectionItems" data-role="items" id="tree-components-collection-checkbox-material-like-items">
+                
+                
+                
+                
     
         
         
@@ -492,36 +509,42 @@
         
     
 
-            </ul>
-        </li>
+                </ul>
+            </li>
+            
         
     
 
-            </ul>
-        </li>
+                </ul>
+            </li>
+            
         
     
         
-        <li class="Tree-item Tree-collection Tree-depth-2" data-behaviour="collection" id="tree-components-collection-example-form">
-            <button class="Tree-collectionLabel" data-role="toggle" aria-expanded="true" aria-controls="tree-components-collection-example-form-items">
-                Example Form
-            </button>
-            <ul class="Tree-collectionItems" data-role="items" id="tree-components-collection-example-form-items">
             
             
-            
-            
+            <li class="Tree-item Tree-collection Tree-depth-2" data-behaviour="collection" id="tree-components-collection-example-form">
+                <button class="Tree-collectionLabel" data-role="toggle" aria-expanded="true" aria-controls="tree-components-collection-example-form-items">
+                    Example Form
+                </button>
+                <ul class="Tree-collectionItems" data-role="items" id="tree-components-collection-example-form-items">
+                
+                
+                
+                
     
         
-        <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-components-collection-example-form-material-like">
-            <button class="Tree-collectionLabel" data-role="toggle" aria-expanded="true" aria-controls="tree-components-collection-example-form-material-like-items">
-                Example Form Material Like
-            </button>
-            <ul class="Tree-collectionItems" data-role="items" id="tree-components-collection-example-form-material-like-items">
             
             
-            
-            
+            <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-components-collection-example-form-material-like">
+                <button class="Tree-collectionLabel" data-role="toggle" aria-expanded="true" aria-controls="tree-components-collection-example-form-material-like-items">
+                    Example Form Material Like
+                </button>
+                <ul class="Tree-collectionItems" data-role="items" id="tree-components-collection-example-form-material-like-items">
+                
+                
+                
+                
     
         
         
@@ -572,20 +595,23 @@
         
     
 
-            </ul>
-        </li>
+                </ul>
+            </li>
+            
         
     
         
-        <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-components-collection-example-form-material-like-indent">
-            <button class="Tree-collectionLabel" data-role="toggle" aria-expanded="true" aria-controls="tree-components-collection-example-form-material-like-indent-items">
-                Example Form Material Like Indent
-            </button>
-            <ul class="Tree-collectionItems" data-role="items" id="tree-components-collection-example-form-material-like-indent-items">
             
             
-            
-            
+            <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-components-collection-example-form-material-like-indent">
+                <button class="Tree-collectionLabel" data-role="toggle" aria-expanded="true" aria-controls="tree-components-collection-example-form-material-like-indent-items">
+                    Example Form Material Like Indent
+                </button>
+                <ul class="Tree-collectionItems" data-role="items" id="tree-components-collection-example-form-material-like-indent-items">
+                
+                
+                
+                
     
         
         
@@ -636,36 +662,42 @@
         
     
 
-            </ul>
-        </li>
+                </ul>
+            </li>
+            
         
     
 
-            </ul>
-        </li>
+                </ul>
+            </li>
+            
         
     
         
-        <li class="Tree-item Tree-collection Tree-depth-2" data-behaviour="collection" id="tree-components-collection-message">
-            <button class="Tree-collectionLabel" data-role="toggle" aria-expanded="true" aria-controls="tree-components-collection-message-items">
-                Message
-            </button>
-            <ul class="Tree-collectionItems" data-role="items" id="tree-components-collection-message-items">
             
             
-            
-            
+            <li class="Tree-item Tree-collection Tree-depth-2" data-behaviour="collection" id="tree-components-collection-message">
+                <button class="Tree-collectionLabel" data-role="toggle" aria-expanded="true" aria-controls="tree-components-collection-message-items">
+                    Message
+                </button>
+                <ul class="Tree-collectionItems" data-role="items" id="tree-components-collection-message-items">
+                
+                
+                
+                
     
         
-        <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-components-collection-message-material-like">
-            <button class="Tree-collectionLabel" data-role="toggle" aria-expanded="true" aria-controls="tree-components-collection-message-material-like-items">
-                Message Material Like
-            </button>
-            <ul class="Tree-collectionItems" data-role="items" id="tree-components-collection-message-material-like-items">
             
             
-            
-            
+            <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-components-collection-message-material-like">
+                <button class="Tree-collectionLabel" data-role="toggle" aria-expanded="true" aria-controls="tree-components-collection-message-material-like-items">
+                    Message Material Like
+                </button>
+                <ul class="Tree-collectionItems" data-role="items" id="tree-components-collection-message-material-like-items">
+                
+                
+                
+                
     
         
         
@@ -740,36 +772,42 @@
         
     
 
-            </ul>
-        </li>
+                </ul>
+            </li>
+            
         
     
 
-            </ul>
-        </li>
+                </ul>
+            </li>
+            
         
     
         
-        <li class="Tree-item Tree-collection Tree-depth-2" data-behaviour="collection" id="tree-components-collection-radio">
-            <button class="Tree-collectionLabel" data-role="toggle" aria-expanded="true" aria-controls="tree-components-collection-radio-items">
-                Radio
-            </button>
-            <ul class="Tree-collectionItems" data-role="items" id="tree-components-collection-radio-items">
             
             
-            
-            
+            <li class="Tree-item Tree-collection Tree-depth-2" data-behaviour="collection" id="tree-components-collection-radio">
+                <button class="Tree-collectionLabel" data-role="toggle" aria-expanded="true" aria-controls="tree-components-collection-radio-items">
+                    Radio
+                </button>
+                <ul class="Tree-collectionItems" data-role="items" id="tree-components-collection-radio-items">
+                
+                
+                
+                
     
         
-        <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-components-collection-radio-material-like">
-            <button class="Tree-collectionLabel" data-role="toggle" aria-expanded="true" aria-controls="tree-components-collection-radio-material-like-items">
-                Radio Material Like
-            </button>
-            <ul class="Tree-collectionItems" data-role="items" id="tree-components-collection-radio-material-like-items">
             
             
-            
-            
+            <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-components-collection-radio-material-like">
+                <button class="Tree-collectionLabel" data-role="toggle" aria-expanded="true" aria-controls="tree-components-collection-radio-material-like-items">
+                    Radio Material Like
+                </button>
+                <ul class="Tree-collectionItems" data-role="items" id="tree-components-collection-radio-material-like-items">
+                
+                
+                
+                
     
         
         
@@ -964,36 +1002,42 @@
         
     
 
-            </ul>
-        </li>
+                </ul>
+            </li>
+            
         
     
 
-            </ul>
-        </li>
+                </ul>
+            </li>
+            
         
     
         
-        <li class="Tree-item Tree-collection Tree-depth-2" data-behaviour="collection" id="tree-components-collection-select">
-            <button class="Tree-collectionLabel" data-role="toggle" aria-expanded="true" aria-controls="tree-components-collection-select-items">
-                Select
-            </button>
-            <ul class="Tree-collectionItems" data-role="items" id="tree-components-collection-select-items">
             
             
-            
-            
+            <li class="Tree-item Tree-collection Tree-depth-2" data-behaviour="collection" id="tree-components-collection-select">
+                <button class="Tree-collectionLabel" data-role="toggle" aria-expanded="true" aria-controls="tree-components-collection-select-items">
+                    Select
+                </button>
+                <ul class="Tree-collectionItems" data-role="items" id="tree-components-collection-select-items">
+                
+                
+                
+                
     
         
-        <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-components-collection-select-lite-arrow">
-            <button class="Tree-collectionLabel" data-role="toggle" aria-expanded="true" aria-controls="tree-components-collection-select-lite-arrow-items">
-                Select Lite Arrow
-            </button>
-            <ul class="Tree-collectionItems" data-role="items" id="tree-components-collection-select-lite-arrow-items">
             
             
-            
-            
+            <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-components-collection-select-lite-arrow">
+                <button class="Tree-collectionLabel" data-role="toggle" aria-expanded="true" aria-controls="tree-components-collection-select-lite-arrow-items">
+                    Select Lite Arrow
+                </button>
+                <ul class="Tree-collectionItems" data-role="items" id="tree-components-collection-select-lite-arrow-items">
+                
+                
+                
+                
     
         
         
@@ -1188,20 +1232,23 @@
         
     
 
-            </ul>
-        </li>
+                </ul>
+            </li>
+            
         
     
         
-        <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-components-collection-select-lite-arrow-indent">
-            <button class="Tree-collectionLabel" data-role="toggle" aria-expanded="true" aria-controls="tree-components-collection-select-lite-arrow-indent-items">
-                Select Lite Arrow Indent
-            </button>
-            <ul class="Tree-collectionItems" data-role="items" id="tree-components-collection-select-lite-arrow-indent-items">
             
             
-            
-            
+            <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-components-collection-select-lite-arrow-indent">
+                <button class="Tree-collectionLabel" data-role="toggle" aria-expanded="true" aria-controls="tree-components-collection-select-lite-arrow-indent-items">
+                    Select Lite Arrow Indent
+                </button>
+                <ul class="Tree-collectionItems" data-role="items" id="tree-components-collection-select-lite-arrow-indent-items">
+                
+                
+                
+                
     
         
         
@@ -1396,20 +1443,23 @@
         
     
 
-            </ul>
-        </li>
+                </ul>
+            </li>
+            
         
     
         
-        <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-components-collection-select-material-like">
-            <button class="Tree-collectionLabel" data-role="toggle" aria-expanded="true" aria-controls="tree-components-collection-select-material-like-items">
-                Select Material Like
-            </button>
-            <ul class="Tree-collectionItems" data-role="items" id="tree-components-collection-select-material-like-items">
             
             
-            
-            
+            <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-components-collection-select-material-like">
+                <button class="Tree-collectionLabel" data-role="toggle" aria-expanded="true" aria-controls="tree-components-collection-select-material-like-items">
+                    Select Material Like
+                </button>
+                <ul class="Tree-collectionItems" data-role="items" id="tree-components-collection-select-material-like-items">
+                
+                
+                
+                
     
         
         
@@ -1604,20 +1654,23 @@
         
     
 
-            </ul>
-        </li>
+                </ul>
+            </li>
+            
         
     
         
-        <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-components-collection-select-material-like-indent">
-            <button class="Tree-collectionLabel" data-role="toggle" aria-expanded="true" aria-controls="tree-components-collection-select-material-like-indent-items">
-                Select Material Like Indent
-            </button>
-            <ul class="Tree-collectionItems" data-role="items" id="tree-components-collection-select-material-like-indent-items">
             
             
-            
-            
+            <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-components-collection-select-material-like-indent">
+                <button class="Tree-collectionLabel" data-role="toggle" aria-expanded="true" aria-controls="tree-components-collection-select-material-like-indent-items">
+                    Select Material Like Indent
+                </button>
+                <ul class="Tree-collectionItems" data-role="items" id="tree-components-collection-select-material-like-indent-items">
+                
+                
+                
+                
     
         
         
@@ -1812,36 +1865,42 @@
         
     
 
-            </ul>
-        </li>
+                </ul>
+            </li>
+            
         
     
 
-            </ul>
-        </li>
+                </ul>
+            </li>
+            
         
     
         
-        <li class="Tree-item Tree-collection Tree-depth-2" data-behaviour="collection" id="tree-components-collection-text-area">
-            <button class="Tree-collectionLabel" data-role="toggle" aria-expanded="true" aria-controls="tree-components-collection-text-area-items">
-                Text Area
-            </button>
-            <ul class="Tree-collectionItems" data-role="items" id="tree-components-collection-text-area-items">
             
             
-            
-            
+            <li class="Tree-item Tree-collection Tree-depth-2" data-behaviour="collection" id="tree-components-collection-text-area">
+                <button class="Tree-collectionLabel" data-role="toggle" aria-expanded="true" aria-controls="tree-components-collection-text-area-items">
+                    Text Area
+                </button>
+                <ul class="Tree-collectionItems" data-role="items" id="tree-components-collection-text-area-items">
+                
+                
+                
+                
     
         
-        <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-components-collection-text-area-material-like">
-            <button class="Tree-collectionLabel" data-role="toggle" aria-expanded="true" aria-controls="tree-components-collection-text-area-material-like-items">
-                Text Area Material Like
-            </button>
-            <ul class="Tree-collectionItems" data-role="items" id="tree-components-collection-text-area-material-like-items">
             
             
-            
-            
+            <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-components-collection-text-area-material-like">
+                <button class="Tree-collectionLabel" data-role="toggle" aria-expanded="true" aria-controls="tree-components-collection-text-area-material-like-items">
+                    Text Area Material Like
+                </button>
+                <ul class="Tree-collectionItems" data-role="items" id="tree-components-collection-text-area-material-like-items">
+                
+                
+                
+                
     
         
         
@@ -2036,36 +2095,42 @@
         
     
 
-            </ul>
-        </li>
+                </ul>
+            </li>
+            
         
     
 
-            </ul>
-        </li>
+                </ul>
+            </li>
+            
         
     
         
-        <li class="Tree-item Tree-collection Tree-depth-2" data-behaviour="collection" id="tree-components-collection-text-field">
-            <button class="Tree-collectionLabel" data-role="toggle" aria-expanded="true" aria-controls="tree-components-collection-text-field-items">
-                Text Field
-            </button>
-            <ul class="Tree-collectionItems" data-role="items" id="tree-components-collection-text-field-items">
             
             
-            
-            
+            <li class="Tree-item Tree-collection Tree-depth-2" data-behaviour="collection" id="tree-components-collection-text-field">
+                <button class="Tree-collectionLabel" data-role="toggle" aria-expanded="true" aria-controls="tree-components-collection-text-field-items">
+                    Text Field
+                </button>
+                <ul class="Tree-collectionItems" data-role="items" id="tree-components-collection-text-field-items">
+                
+                
+                
+                
     
         
-        <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-components-collection-text-field-material-like">
-            <button class="Tree-collectionLabel" data-role="toggle" aria-expanded="true" aria-controls="tree-components-collection-text-field-material-like-items">
-                Text Field Material Like
-            </button>
-            <ul class="Tree-collectionItems" data-role="items" id="tree-components-collection-text-field-material-like-items">
             
             
-            
-            
+            <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-components-collection-text-field-material-like">
+                <button class="Tree-collectionLabel" data-role="toggle" aria-expanded="true" aria-controls="tree-components-collection-text-field-material-like-items">
+                    Text Field Material Like
+                </button>
+                <ul class="Tree-collectionItems" data-role="items" id="tree-components-collection-text-field-material-like-items">
+                
+                
+                
+                
     
         
         
@@ -2260,20 +2325,23 @@
         
     
 
-            </ul>
-        </li>
+                </ul>
+            </li>
+            
         
     
         
-        <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-components-collection-text-field-material-like-indent">
-            <button class="Tree-collectionLabel" data-role="toggle" aria-expanded="true" aria-controls="tree-components-collection-text-field-material-like-indent-items">
-                Text Field Material Like Indent
-            </button>
-            <ul class="Tree-collectionItems" data-role="items" id="tree-components-collection-text-field-material-like-indent-items">
             
             
-            
-            
+            <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-components-collection-text-field-material-like-indent">
+                <button class="Tree-collectionLabel" data-role="toggle" aria-expanded="true" aria-controls="tree-components-collection-text-field-material-like-indent-items">
+                    Text Field Material Like Indent
+                </button>
+                <ul class="Tree-collectionItems" data-role="items" id="tree-components-collection-text-field-material-like-indent-items">
+                
+                
+                
+                
     
         
         
@@ -2468,20 +2536,23 @@
         
     
 
-            </ul>
-        </li>
+                </ul>
+            </li>
+            
         
     
 
-            </ul>
-        </li>
+                </ul>
+            </li>
+            
         
     
 
     </ul>
 </div>
 
-</div>
+    </div>
+    
 
 
     
@@ -2521,21 +2592,31 @@
         
 
     
-        <div class="Navigation-group">
+        
+<div class="Navigation-group">
     <div class="Tree">
         <div class="Tree-header">
-            <div class="Tree-title">
+            <h3 class="Tree-title">
                 Information
-            </div>
+            </h3>
         </div>
-        <div class="Tree-aside">
-            Built on:
-            <time datetime="2020-09-16T14:38:34.591Z">
-                9/16/2020
-            </time>
-        </div>
+        <dl class="Tree-aside">
+            
+                <div>
+                    <dt class="Tree-asideTerm">Built on:</dt>
+                    <dd class="Tree-asideDescription">
+                        
+                            <time datetime="2021-01-25T20:58:05.109Z">
+                                1/25/2021
+                            </time>
+                        
+                    </dd>
+                </div>
+            
+        </dl>
     </div>
 </div>
+
 
     
 </nav>
@@ -2547,9 +2628,9 @@
 
 
 
-<script src="themes/mandelbrot/js/mandelbrot.js?cachebust=1.4.0"></script>
+<script src="themes/mandelbrot/js/mandelbrot.js?cachebust=1.7.0"></script>
 
-<script src="https://buttons.github.io/buttons.js?cachebust=1.4.0"></script>
+<script src="https://buttons.github.io/buttons.js?cachebust=1.7.0"></script>
 
 
 
