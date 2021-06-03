@@ -54,17 +54,16 @@ export class Select extends FormComponent {
         });
       });
     }
+    // blur event.explicitOriginalTarget isn't cross-browser compatible. To check whether the blur event wasn't
+    // caused by a mousedown inside the dropdown, catch the event beforehand
+    let clicky = null;
+    this.context.addEventListener('mousedown', event => clicky = event.target);
+    this.context.addEventListener('mouseup', () => clicky = null);
     this.field.addEventListener('blur', () => {
       if (!this.field.hasAttribute('disabled')) {
-        // Make sure to not close the dropdown before the option click event
-        // is called. Otherwise you can't select any value using click
-        setTimeout(() => {
-          const target = document.activeElement;
-          if (target === this.context || this.context.contains(target)) {
-            return;
-          }
+        if (clicky === null || (this.context !== clicky && !this.context.contains(clicky))) {
           this.close();
-        }, 150);
+        }
       }
     });
   }
